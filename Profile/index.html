@@ -1,0 +1,944 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Profile/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Profile - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#impact" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Profile
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Profile" class="md-nav__link md-nav__link--active">
+      Profile
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Profile.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="pro-profiles"><a name="S-profile"></a>Pro: 프로필(Profiles)</h1>
+<p>이상적으로는 우리의 코드가 이 가이드라인의 모든 규칙을 따를 것이다.
+그렇게 함으로써 깔끔하고, 규칙적이면서 오류에 취약하지도 않은 코드가 될 것이다. 어쩌면 가장 빠른 코드가 될수도 있다.
+불행하게도, 그렇게 되는것은 불가능에 가까운데, 보통 우리가 작성하는 코드가 이미 존재하는 코드들에 맞추거나 이미 존재하는 라이브러리들을 사용해야 하기 때문이다.
+그런 코드가 수십년간 작성되어 왔고, 그 코드들은 이 가이드라인을 따르지 않는다.
+<a href="../appendix/Modernizing/">점진적으로 적용</a>하는 것을 목표해야 한다.</p>
+<p>점진적으로 적용하기 위한 전략이 무엇이던간에, 어떤 문제들에 일련의 서로 연관된 가이드라인들을 적용할 수 있게 되고, 나머지 문제들은 나중을 위해 남겨놓을 필요가 있다.
+언제나 그런 것은 아니지만 "연관된 가이드라인들"과 같은 생각이 중요할 떄가 있다.
+가이드라인이 이미 작성된 코드(code base)와 관련있다고 여겨지거나 특별한 어플리케이션 영역에 적용되기 위한 일련의 특별한 가이드라인이 적용되면
+우리는 그런 가이드라인 묶음들을 "프로필"이라고 부른다.
+우리의 의도는 이런 가이드라인들이 일관성을 가지고 "범위 오류들을 없애는 것"이나 "정적 타입 안전성"과 같은 특정한 목적을 이루는 것을 돕는 것이다.
+각 프로필들은 오류의 한 종류(class)를 없애기 위해 설계되었다.
+개별적인 규칙을을 "아무거나" 따르는 것은 이미 존재하는 코드에 해당 규칙에서 정의하는 개선(improvement)보다 교란(disruptive)을 낳을 가능성이 크다.</p>
+<p>"프로필"은 결정론적(deterministic)이고 어디에서도 적용 가능(portably enforceable)하며 특정한 보증(specific guarantee)을 달성하기 위해 설계된 규칙(즉, 규정)들의 부분집합을 말한다.
+"결정론적"이라는 표현의 의미는 지역적인 분석만을 필요로 하고 컴파일러 안에서 구현할 수 있는 것(비록 그럴 필요가 없더라도)을 의미한다.
+"어디에도 적용가능"하다는 해당 규칙들이 언어의 규칙과 비슷하다는 것을 말한다. 따라서 프로그래머들은 같은 코드에 대해서 같은 해답을 제시하는 서로 다른 도구들을 사용할 수 있다.</p>
+<p>언어 프로필을 사용해 경고가 없도록 작성된 코드는 프로필에 부합하는(conform) 것으로 생각할 수 있다.
+프로필에 부합하는 코드는 작성하는 순간부터 해당 프로필이 목표하는 안전성 속성(safety property)에 대해서는 안전하다고 볼 수 있을것이다.
+프로필에서 목표하는 속성에 대한 오류가 발생했을 때, 설령 해당 오류가 다른 코드, 라이브러리 혹은 외부 환경에 의해서 프로그램에 생겨났더라도 프로필에 부합하는 코드가 그 오류의 근본 원인(root cause)이 되지는 않을 것이다. 
+프로필에서는 쉽고 정확하게 코드를 작성하도록 유도하기 위해 새로운 라이브러리 타입을 제시할수도 있다.</p>
+<p>프로필 요약:</p>
+<ul>
+<li><a href="#SS-type">Pro.type: 타입 안전성</a></li>
+<li><a href="#SS-bounds">Pro.bounds: 경계 안전성</a></li>
+<li><a href="#SS-lifetime">Pro.lifetime: 수명 안전성</a></li>
+</ul>
+<p>미래에는, 훨씬 더 많은 프로필을 정의하고 이미 존재하는 프로필들에 검사 방법을 추가하기를 기대한다.
+그 후보들로는 다음과 같은 것들이 있다:</p>
+<ul>
+<li>narrowing arithmetic promotions/conversions (likely part of a separate safe-arithmetic profile)</li>
+<li>arithmetic cast from negative floating point to unsigned integral type (ditto)</li>
+<li>selected undefined behavior: Start with Gabriel Dos Reis's UB list developed for the WG21 study group</li>
+<li>selected unspecified behavior: Addressing portability concerns.</li>
+<li><code>const</code> violations: Mostly done by compilers already, but we can catch inappropriate casting and underuse of <code>const</code>.</li>
+</ul>
+<p>프로필을 적용할 수 있도록 하는것은 구현에 달려있다(implementation defined); 보편적으로, 이는 사용되는 분석 도구들에 달려있다.</p>
+<p>프로필 검사를 수행하지 않도록 만들고 싶다면, 언어의 Contract를 사용해서 <code>suppress</code>라고 표기하라. 예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="p">[[</span><span class="n">suppress</span><span class="p">(</span><span class="n">bounds</span><span class="p">)]]</span> <span class="kt">char</span><span class="o">*</span> <span class="n">raw_find</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="n">x</span><span class="p">)</span>
+        <span class="c1">// find x in p[0]..p[n - 1]</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이제 <code>raw_find()</code>는 주어진 내용에 마음대로(scramble) 사용할 수 있다.
+당연히, 이런 억제(suppression)는 거의 사용되지 않아야 한다.</p>
+<h2 id="prosafety"><a name="SS-type"></a>Pro.safety: 타입 안전성 프로필</h2>
+<p>이 프로필은 타입을 정확하게 사용하고, 부주의하게(inadvertent) 타입을 조작하지 않는 코드를 작성하는 것을 돕는다.
+그 방법으로 타입을 위배(violate)하는 궁극적인 원인을 제거하는데 집중한다. 
+원인에는 타입 변환을 사용하거나 공용체(<code>union</code>)의 사용이 포함된다.</p>
+<p>이 목적을 위해서, 타입 안전성은 임의의 변수가 그 타입에서 정의한 규칙을 준수하지 않는 방법으로 사용되지 않는 것으로 정의한다.
+타입 <code>T</code>로 접근하는 메모리 영역이 실제로는 전혀 상관없는 타입 <code>U</code>의 개체를 담고 있어서는 안된다.
+타입 안전성이 <a href="#SS-bounds">경계 안전성</a>, <a href="#SS-lifetime">수명 안전성</a>과 같이 충족되어야 완전해지도록 의도되었다는 점에 유의하라.</p>
+<p>이 프로필의 구현체는 소스코드에서 아래의 패턴에 맞지 않는 부분을 찾아내고 진단할 수 있어야 한다.</p>
+<p>타입 안전성 프로필 요약:</p>
+<ul>
+<li><a name="Pro-type-avoidcasts"></a>Type.1: <a href="../Expr/#Res-casts">Avoid casts</a>:</li>
+<li><a name="Pro-type-reinterpretcast"></a>Don't use <code>reinterpret_cast</code>; A strict version of <a href="#Res-casts">Avoid casts</a> and <a href="../Expr/#Res-casts-named">prefer named casts</a></li>
+<li><a name="Pro-type-arithmeticcast"></a>Don't use <code>static_cast</code> for arithmetic types; A strict version of <a href="../Expr/#Res-casts">Avoid casts</a> and <a href="../Expr/#Res-casts-named">prefer named casts</a>.</li>
+<li><a name="Pro-type-identitycast"></a>Don't cast between pointer types where the source type and the target type are the same; A strict version of <a href="../Expr/#Res-casts">Avoid casts</a>.</li>
+<li><a name="Pro-type-implicitpointercast"></a>Don't cast between pointer types when the conversion could be implicit; A strict version of <a href="../Expr/#Res-casts">Avoid casts</a>.</li>
+<li><a name="Pro-type-downcast"></a>Type.2: Don't use <code>static_cast</code> to downcast: <a href="../Class/#Rh-dynamic_cast">Use <code>dynamic_cast</code> instead</a>.</li>
+<li><a name="Pro-type-constcast"></a>Type.3: Don't use <code>const_cast</code> to cast away <code>const</code> (i.e., at all): <a href="../Expr/#Res-casts-const">Don't cast away const</a>.</li>
+<li><a name="Pro-type-cstylecast"></a>Type.4: Don't use C-style <code>(T)expression</code> or functional <code>T(expression)</code> casts: Prefer <a href="../Expr/#Res-construct">construction</a> or <a href="../Expr/#Res-cast-named">named casts</a>.</li>
+<li><a name="Pro-type-init"></a>Type.5: Don't use a variable before it has been initialized: <a href="../Expr/#Res-always">always initialize</a>.</li>
+<li><a name="Pro-type-memberinit"></a>Type.6: Always initialize a member variable: <a href="../Expr/#Res-always">always initialize</a>, possibly using <a href="../Class/#Rc-default0">default constructors</a> or <a href="../Class/#Rc-in-class-initializers">default member initializers</a>.</li>
+<li><a name="Pro-type-unon"></a>Type.7: Avoid naked union: <a href="../Class/#Ru-naked">Use <code>variant</code> instead</a>.</li>
+<li><a name="Pro-type-varargs"></a>Type.8: Avoid varargs: <a href="../Functions/#F-varargs">Don't use <code>va_arg</code> arguments</a>.</li>
+</ul>
+<h5 id="impact">Impact</h5>
+<p>타입 안전성 프로필을 준수하면 모든 처리(operation)들이 유효한 개체에서 수행된다고 확신할 수 있다.
+오류를 알리기 위해서 발생하는 예외는 정적으로는(컴파일 시간에) 탐지해낼 수 없다.
+타입 안전성이 <a href="#SS-bounds">경계 안전성</a>, <a href="#SS-lifetime">수명 안전성</a>과 같이 충족되어야 완전해지도록 의도되었다는 점에 유의하라.
+이를 보장할 수 없다면, 임의의 메모리 영역에 어떤 개체, 개체들, 혹은 개체의 일부가 저장되어 있는지와 상관없는 접근이 발생할 수 있다.</p>
+<h2 id="probounds-bound"><a name="SS-bounds"></a>Pro.bounds: 경계(bound) 안전성 프로필</h2>
+<p>이 프로필은 메모리의 할당된 블록들의 경계 내에서 동작하는 코드를 작성하는 것을 돕는다
+그 방법으로 경계를 위반하는 궁극적인 원인을 제거하는데 집중한다:
+바로 포인터를 계산하거나 배열의 인덱스를 사용하는 부분이다.
+이 프로필의 핵심적인 특징 중 하나는 포인터가 배열이 아니라 오직 하나의 개체만을 가리키도록 제한한다는 것이다. </p>
+<p>경계 안전성은 프로그램이 할당된 구간(range)을 벗어난 메모리에 위치한 개체를 사용하지 않는 것을 의미한다.
+경계 안전성은 타입 안전성과 수명 안전성과 같이 충족되어야 완전해지도록 의도되었다. 다른 안전성들이 경계 위반을 허용하는 안전하지 않은 처리들에 대해 다룰 것이다.</p>
+<p>경계 안전성 프로필 요약:</p>
+<ul>
+<li><a href="Pro-bounds-arithmetic"></a>Bounds.1: Don't use pointer arithmetic. Use <code>span</code> instead: <a href="#Ri-array">Pass pointers to single objects (only)</a> and <a href="#Res-ptr">Keep pointer arithmetic simple</a>.</li>
+<li><a href="Pro-bounds-arrayindex"></a>Bounds.2: Only index into arrays using constant expressions: <a href="#Ri-array">Pass pointers to single objects (only)</a> and <a href="#Res-ptr">Keep pointer arithmetic simple</a>.</li>
+<li><a href="Pro-bounds-decay"></a>Bounds.3: No array-to-pointer decay: <a href="#Ri-array">Pass pointers to single objects (only)</a> and <a href="#Res-ptr">Keep pointer arithmetic simple</a>.</li>
+<li><a href="Pro-bounds-stdlib"></a>Bounds.4: Don't use standard-library functions and types that are not bounds-checked: <a href="#Rsl-bounds">Use the standard library in a type-safe manner</a>.</li>
+</ul>
+<h5 id="impact_1">Impact</h5>
+<p>경계 안전성을 따르면 개체에 - 특히 배열에 - 접근할 때 개체에 할당된 메모리 너머에 접근하지 않게 된다.
+이는 (악명높은) "버퍼 오버플로우"를 비롯해 찾기 어려운 오류들을 소멸시킨다.
+이는 (경계를 벗어나서 값을 변경할 때 발생하는) 메모리 오염(corruption)의 유명한 원인을 비롯해 보안 약점도 함께 막는다.
+경계를 벗어난 접근이 "단순히 읽기"만 수행하더라도, (접근 대상이 의도한 타입이 아닌 경우) 불변조건을 위반하거나 "이상한 값"을 반환할 수도 있다.</p>
+<h2 id="prolifetime"><a name="SS-lifetime"></a>Pro.lifetime: 수명 안전성 프로필</h2>
+<p>아무것도 가리키지 않는 포인터를 통해 접근하는 것은 오류의 주 원인이다.
+또한 전통적인 C 혹은 C++ 스타일의 프로그래밍은 이 문제를 피하기 매우 어렵다.
+예를 들어 포인터가 초기화되지 않았거나, <code>nullptr</code>이거나, 배열의 범위를 벗어나거나, 삭제된 개체일 수 있다.
+<a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/docs/Lifetime.pdf">현재 디자인 명세를 함께 보라</a>.</p>
+<p>수명 안전성 프로필 요약:</p>
+<ul>
+<li><a href="Pro-lifetime-invalid-deref"></a>Lifetime.1: Don't dereference a possibly invalid pointer:<a href="#Res-deref">detect or avoid</a>.</li>
+</ul>
+<h5 id="impact_2">Impact</h5>
+<p>코딩 스타일 규칙, 정적 분석, 라이브러리 지원이 완전히 함께 적용되면 이 프로필은</p>
+<ul>
+<li>C++의 짜증나는(nasty) 오류의 주 원인 중 하나를 없애버린다</li>
+<li>잠재적인 보안 문제의 원인을 없앤다</li>
+<li>"편집증적인(paranoia)" 검사를 없애 성능을 향상시킨다</li>
+<li>코드의 정확함에 자신감을 가지게 한다</li>
+<li>C++ 언어의 핵심 규칙을 따름으로써 미정의 행동이 발생하지 않게 한다.</li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Philosophy/" title="Philosophy" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Philosophy
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Resource/" title="Resource" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Resource
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

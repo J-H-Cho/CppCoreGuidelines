@@ -1,2 +1,0 @@
-include: [CppCoreGuidelines.md]
-exclude: [docs, talks, Gemfile, params.json]

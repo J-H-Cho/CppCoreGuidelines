@@ -1,0 +1,1996 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Concurrency/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Concurrency - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#reason" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Concurrency
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Concurrency" class="md-nav__link md-nav__link--active">
+      Concurrency
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Concurrency.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="cp"><a name="S-concurrency"></a>CP: 동시성과 병렬성</h1>
+<p>종종 우리 컴퓨터가 동시에 많은 작업들을 해주길 (최소한 그렇게 보이기를) 원할 때가 있죠.</p>
+<p>이유는 다양합니다. (예를 들면, 단일 프로세서만 쓰면서 여러 이벤트를 기다리기를 원하거나, 동시에 다수의 데이터 스트림을 처리하길 원하거나, 또는 하드웨어 기능들을 사용하길 원할 수도 있겠죠.) 
+동시성과 병렬성을 표현하기 위한 기본 기능들 또한 그러합니다.</p>
+<p>여기서는, ISO 표준 C++에서 제공하는 기초적인 동시성과 병렬성을 위한 기능에 관한 몇몇 일반적인 원칙과 규칙에 대해서 기술합니다. </p>
+<p>동시적이고 병렬적인 프로그래밍을 위한 기계 수준의 지원(The core machine support)은 바로 스레드입니다. 스레드들을 같은 메모리를 공유하면서도 다수의 프로그램들을 독립적으로 실행할 수 있도록 해줍니다.  </p>
+<p>많은 이유로 인해 동시성 프로그래밍은 까다로운데, 무엇보다도 스레드들 사이에 적절한 동기화(synchronization)가 없다면 한 스레드에서 데이터를 읽는 동안 다른 스레드에서 같은 데이터를 덮어쓸 때의 동작을 정의할 수 없기 때문(undefined behavior)입니다.</p>
+<p>이미 존재하는 단일 스레드 코드는 <code>std::async</code> 또는 <code>std::thread</code>를 전략적으로 추가하는 것으로 간단하게 병렬화할 수 있습니다. 또는 코드 전체를 완전히 다시 작성해야 할 수도 있죠. 이는 원래의 코드가 스레드에 적합하게(thread-friendly) 작성되었느냐에 따라 다릅니다.</p>
+<p>핵심 가이드라인의 동시성/병렬성 규칙들은 3가지 목표를 가지고 설계되었습니다:</p>
+<ul>
+<li>멀티스레드 환경에서 실행되는 코드를 작성할 수 있도록 돕는 것 </li>
+<li>표준 라이브러리에서 제공하는 스레드 기본연산(primitives)을 사용하는 깔끔하고, 안전한 방법을 보여주는 것</li>
+<li>동시성과 병렬성이 기대만큼의 성능 향상을 가져오지 못할 때의 가이드를 제공하는 것</li>
+</ul>
+<p>C++에서의 동시성은 아직 진행 중이라는 것을 기억하길 바랍니다. C++ 11에서는 많은 동시성 기본연산을 소개했었고, C++14와 C++17에서는 발전이 이루어졌습니다. 
+C++를 사용한 동시적인(concurrent) 프로그램들을 쉽게 작성하는 것에 대한 관심도 늘어났죠. 
+이 문서에 있는 일부 라이브러리와 관련된 가이드도 시간이 지남에 따라 계속 바뀌기를 기대합니다.</p>
+<p>(당연하게도) 이 부분은 많은 작업이 필요합니다.
+핵심 가이드라인이 전문가가 아닌 사람들을 위한 규칙으로 시작한다는 점을 유의해주십시오. 당신이 전문가라면, 조금 더 기다리셔야 할겁니다; 
+이 문서에 기여하는 것도 좋구요. 하지만 정확하고, 빠른 동시적인 프로그램을 작성하길 원하는 대부분의 프로그래머들을 생각해 주시기 바랍니다.</p>
+<p>동시성과 병렬성 규칙 요약:  </p>
+<ul>
+<li><a href="#Rconc-multi">CP.1: 코드가 멀티스레드 프로그램의 일부로 동작할 것이라 가정하라</a></li>
+<li><a href="#Rconc-races">CP.2: 데이터 경쟁을 피하라</a></li>
+<li><a href="#Rconc-data">CP.3: 쓰기 가능한 데이터의 명시적인 공유를 최소화하라</a></li>
+<li><a href="#Rconc-task">CP.4: 스레드보단 작업 단위로 생각하라</a></li>
+<li><a href="#Rconc-volatile">CP.8: 동기화를 위해 <code>volatile</code>을 사용하지 말아라</a></li>
+<li><a href="#Rconc-tools">CP.9: 가능한 모든 경우에, 도구 (tool) 를 이용하여 자신의 병행 실행 코드를 검증하라</a></li>
+</ul>
+<p><strong>참고</strong>:</p>
+<ul>
+<li><a href="#SScp-con">CP.con: 동시성(Concurrency)</a></li>
+<li><a href="#SScp-par">CP.par: 병렬성(Parallelism)</a></li>
+<li><a href="#SScp-mess">CP.mess: 메세지 전달(Message passing)</a></li>
+<li><a href="#SScp-vec">CP.vec: 벡터화(Vectorization)</a></li>
+<li><a href="#SScp-free">CP.free: 무잠금 프로그래밍(Lock-free programming)</a></li>
+<li><a href="#SScp-etc">CP.etc: 기타 동시성 규칙들</a></li>
+</ul>
+<h3 id="cp1"><a name="Rconc-multi"></a>CP.1: 코드가 멀티스레드 프로그램의 일부로 동작할 것이라 가정하라</h3>
+<h5 id="reason">Reason</h5>
+<p>동시성이 지금, 그리고 미래의 언젠가 사용되지 않을 것이라고 확정하기 어렵다. 코드는 재사용된다.<br />
+스레드를 사용하는 라이브러리들은 다른 프로그램의 일부로 사용되기 마련이다. 
+이 규칙은 단일 응용 프로그램보다는 라이브러리 코드에 더 시급하게 적용되어야 한다. 하지만, Ctrl C, V의 마법 덕분에, 코드가 예상치 않은 곳에서 나타날 수 있다. </p>
+<h5 id="example">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">double</span> <span class="nf">cached_computation</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="kt">double</span> <span class="n">cached_x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+        <span class="k">static</span> <span class="kt">double</span> <span class="n">cached_result</span> <span class="o">=</span> <span class="n">COMPUTATION_OF_ZERO</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">result</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">cached_x</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">cached_result</span><span class="p">;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">computation</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+        <span class="n">cached_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">cached_result</span> <span class="o">=</span> <span class="n">result</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>비록 <code>cached_computation</code>함수는 단일 스레드 환경에선 완벽하게 동작하지만, 멀티 스레드 환경에선 두 개의 <code>static</code> 변수들이 데이터 경쟁으로 이어지고, 비정의 동작(undefined behavior)을 유발할 것이다.</p>
+<p>멀티 스레드 환경에서 이런 코드를 안전하게 바꿀 수 있는 방법들이 있다:</p>
+<ul>
+<li>동시성에 대한 사항을 상위 호출자에게 위임하라</li>
+<li><code>static</code> 변수들을 <code>thread_local</code>로 만들어라 (아마 캐싱을 덜 효율적으로 만들 수도 있다) </li>
+<li>동시적인 제어를 구현하라, 예컨대, 두 <code>static</code>변수를 <code>static</code> 잠금으로 보호하라 (성능을 감소시킬 수 있다) </li>
+<li>호출자가 캐시로 사용할 메모리를 제공하도록 하라. 그렇게 함으로써 메모리 할당과 동시성에 대한 문제를 호출자에게 위임하라</li>
+<li>멀티 스레드 환경에서의 빌드, 실행을 거부하라</li>
+<li>두 가지 구현을 지원하라. 단일 스레드 환경을 위한 구현과 멀티 스레드 환경을 위한 것 모두</li>
+</ul>
+<h5 id="exception">Exception</h5>
+<p>멀티 스레드 환경에서 절대 실행되지 않을 코드.  </p>
+<p>주의: 멀티 스레드 프로그램에서 절대로 돌아가지 않을 줄 "알았던" 코드들이 몇년 뒤엔 멀티 스레드 프로그램의 일부가 된 사례는 많이 있다. 일반적으로, 그런 프로그램들은 데이터 경쟁을 없애기 위한 고통스러운 노력으로 이어진다. 
+때문에, 멀티 스레드 환경에서 실행되는 것을 의도하지 않은 코드들은 분명하게 해당 사항이 기술되어야 하고, 이상적으로는 컴파일 또는 실행시간에 버그를 일찍 찾을 수 있는 메커니즘이 함께 사용되되어야 한다.</p>
+<h3 id="cp2"><a name="Rconc-races"></a>CP.2: 데이터 경쟁을 피하라</h3>
+<h5 id="reason_1">Reason</h5>
+<p>데이터 경쟁이 있으면, 아무것도 보장할 수 없으며 미묘한 에러들이 계속될 것이다.</p>
+<h5 id="note">Note</h5>
+<p>쉽게 말해서, 만약 두 스레드가 같은 객체를 (동기화 없이) 동시적으로 접근할 수 있다면, 그리고 한 스레드가 쓰기(non-<code>const</code> 연산)를 수행한다면, 데이터 경쟁이 있는 것이다.<br />
+어떻게 동기화를 사용하고 데이터 경쟁을 없앨 것인지 더 알고 싶다면 동시성에 대한 좋은 책들을 참고하라.</p>
+<h5 id="example-bad">Example, bad</h5>
+<p>데이터 경쟁이 존재하는 예시는 많다. 지금 이 순간 실행 중인 production 소프트웨어들 중에도 존재할 것이다. </p>
+<p>간단한 예시를 들자면:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">get_id</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">static</span> <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">id</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>여기서 증가 연산은 데이터 경쟁의 예시다.</p>
+<p>이 코드는 다음과 같이 잘못될 수 있다:</p>
+<ul>
+<li>스레드 A가 <code>id</code>를 로드하고, OS가 A를 중지시킨다. 그 사이 다른 스레드가 ID를 수백 개 생성한다. 그 후에 A는 다시 실행되고, A의 문맥에서 증가한 <code>id</code>값이 다시 써지게 된다.</li>
+<li>스레드 A와 B가 <code>id</code>를 로드하고 동시에 증가시킨다. 그 결과 두 스레드는 같은 ID값을 가진다.</li>
+</ul>
+<p>지역 정적 변수들은 데이터 경쟁의 일반적인 원인이다.</p>
+<h5 id="example-bad_1">Example, bad:</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">fstream</span><span class="o">&amp;</span>  <span class="n">fs</span><span class="p">,</span> <span class="n">regex</span> <span class="n">pat</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">array</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">max</span><span class="o">&gt;</span> <span class="n">buf</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">read_vec</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">max</span><span class="p">);</span>            <span class="c1">// read from fs into buf</span>
+        <span class="n">gsl</span><span class="o">::</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">s</span> <span class="p">{</span><span class="n">buf</span><span class="p">};</span>
+        <span class="c1">// ...</span>
+        <span class="k">auto</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]{</span> <span class="n">sort</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="p">});</span>     <span class="c1">// spawn a task to sort</span>
+        <span class="c1">// ...</span>
+        <span class="k">auto</span> <span class="n">h2</span> <span class="o">=</span> <span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]{</span> <span class="k">return</span> <span class="n">find_all</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">pat</span><span class="p">);</span> <span class="p">});</span>   <span class="c1">// spawn a task to find matches</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 코드에서는, <code>buf</code>의 원소들에 대한 데이터 경쟁이 있다. (<code>sort</code>가 읽기/쓰기 모두 수행할 것이다).
+좋은 데이터 경쟁이란 없다.
+이 코드에선 스택의 데이터에 대한 데이터 경쟁이 발생하는데, 모든 데이터 경쟁이 이처럼 찾아내기 쉽지는 않다.</p>
+<h5 id="example-bad_2">Example, bad:</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// code not controlled by a lock</span>
+
+    <span class="kt">unsigned</span> <span class="n">val</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ... other thread can change val here ...</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span><span class="o">:</span> <span class="c1">// ...</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="c1">// ...</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="c1">// ...</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="c1">// ...</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="c1">// ...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 경우, <code>val</code>이 바뀔수도 있다는 것을 모르는 컴파일러는 <code>switch</code>를 5개의 엔트리를 지닌 점프 테이블로 구현할 것이다. 그러면, <code>[0..4]</code>범위 밖의 값을 가진 <code>val</code>은 프로그램의 어딘가로 점프를 할 것이고, 그 지점부터 실행될 것이다.<br />
+데이터 경쟁이 있으면 그 무엇도 장담할 수 없다.<br />
+실제로, 더 안좋은 결과로 이어질 수도 있다: 컴파일 결과 코드를 보면서 길잃은 점프가 특정 값에 따라서 어디로 갈지 알 수 있을지도 모르지만, 이는 보안 위험이 될수도 있다.</p>
+<h5 id="enforcement">Enforcement</h5>
+<p>최소한 무엇이라도 하라.<br />
+이 문제를 해결하기 위해 상업용 그리고 오픈소스 도구들을 사용하라. 하지만 정적 도구들은 종종 잘못된 코드를 용인할수도 있다. 또 런타임 도구들은 종종 상당한 비용을 필요로 한다. 
+더 나은 도구들이 나오기를 바란다. 여러 도구들을 사용하는 것이 하나를 사용하는 것보다 많은 문제를 잡아낼 수 있을 것이다.</p>
+<p>데이터 경쟁 문제를 완화하기 위한 방법이 몇가지 있다:</p>
+<ul>
+<li>더 적은 전역 데이터</li>
+<li>더 적은 <code>static</code> 변수들</li>
+<li>스택 메모리 중심의 사용 (포인터들을 너무 많이 던지지 말아라)</li>
+<li>변경할 수 없는 데이터를 더 많이 써라. (리터럴, <code>constexpr</code>, <code>const</code>)</li>
+</ul>
+<h3 id="cp3"><a name="Rconc-data"></a>CP.3: 쓰기 가능한 데이터의 명시적인 공유를 최소화하라</h3>
+<h5 id="reason_2">Reason</h5>
+<p>쓰기 가능한 데이터를 공유하지 않는다면, 데이터 경쟁을 원천적으로 막을 수 있다.
+공유를 줄일 수록, 동기화 접근과 데이터 경쟁의 가능성을 줄일 수 있다. 
+더해서, 대기와 잠금 역시 줄어든다. (따라서 성능이 향상될 것이다)</p>
+<h5 id="example_1">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">bool</span> <span class="nf">validate</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Reading</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+    <span class="n">Graph</span><span class="o">&lt;</span><span class="n">Temp_node</span><span class="o">&gt;</span> <span class="n">temperature_gradiants</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Reading</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+    <span class="n">Image</span> <span class="nf">altitude_map</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Reading</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+
+    <span class="kt">void</span> <span class="nf">process_readings</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Reading</span><span class="o">&gt;&amp;</span> <span class="n">surface_readings</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">validate</span><span class="p">(</span><span class="n">surface_readings</span><span class="p">))</span> <span class="k">throw</span> <span class="n">Invalid_data</span><span class="p">{};</span> <span class="p">});</span>
+        <span class="k">auto</span> <span class="n">h2</span> <span class="o">=</span> <span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">temperature_gradiants</span><span class="p">(</span><span class="n">surface_readings</span><span class="p">);</span> <span class="p">});</span>
+        <span class="k">auto</span> <span class="n">h3</span> <span class="o">=</span> <span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">altitude_map</span><span class="p">(</span><span class="n">surface_readings</span><span class="p">);</span> <span class="p">});</span>
+        <span class="c1">// ...</span>
+        <span class="n">h1</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+        <span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">h2</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+        <span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">h3</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>위 코드에서 <code>const</code>들이 없다면, <code>surface_readings</code>에 대한 잠재적 데이터 경쟁 때문에 모든 비동기적인 함수 호출을 다시 점검해야 할 것이다.<br />
+<code>surface_readings</code>을 (이 함수에 대해서) <code>const</code>로 만들면 문제 영역을 함수 안쪽으로 한정할 수 있다.</p>
+<h5 id="note_1">Note</h5>
+<p>변경할 수 없는 데이터는 안전하고 효율적으로 공유될 수 있다.<br />
+여기엔 잠금이 필요하지 않다: 상수에 대해서는 데이터 경쟁이 발생하지 않는다.</p>
+<p><a href="#SScp-mess">CP.mess: Message Passing</a>와 <a href="#Rconc-data-by-value">CP.31: prefer pass by value</a>를 함께 확인하라.</p>
+<h5 id="enforcement_1">Enforcement</h5>
+<p>???</p>
+<h3 id="cp4"><a name="Rconc-task"></a>CP.4: 스레드보단 작업 단위로 생각하라</h3>
+<h5 id="reason_3">Reason</h5>
+<p><code>thread</code>자체는 구현에 대한 개념이다. 이는 기계에 대해서 생각하는 것이다.<br />
+작업은 프로그램((Application)에 대해서 생각하는 것이다. 당신의 생각과 더 가까울 것이고, 아마도 다른 작업들과 동시적일 것이다.<br />
+응용개념은 추론하기도 쉽다.</p>
+<h5 id="example_2">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">some_fun</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span>  <span class="n">msg</span><span class="p">,</span> <span class="n">msg2</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">publisher</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span> <span class="p">});</span>       <span class="c1">// bad: less expressive</span>
+                                                             <span class="c1">//      and more error-prone</span>
+        <span class="k">auto</span> <span class="n">pubtask</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">async</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="n">msg2</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span> <span class="p">});</span>  <span class="c1">// OK</span>
+        <span class="c1">// ...</span>
+        <span class="n">publisher</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_2">Note</h5>
+<p><code>async()</code>를 제외하면, 표준 라이브러리 기능들은 저-레벨에, 기계 중심적(machine-oriented)이고, 스레드-잠금 레벨에 위치한다. 
+이 기능들은 필수적이지만, 우리는 생산성, 신뢰성, 그리고 성능을 위해서 추상화의 수준을 더 높일 필요가 있다.</p>
+<p>상위 레벨의, 응용 프로그램 중심적인 라이브러리들을 사용하는 것에 대해선 논의의 여지가 있다.
+(가능하다면 표준 라이브러리 기능들을 사용하라).</p>
+<h5 id="enforcement_2">Enforcement</h5>
+<p>???</p>
+<h3 id="cp8-volatile"><a name="Rconc-volatile"></a>CP.8: 동기화를 위해 <code>volatile</code>을 사용하지 말아라</h3>
+<h5 id="reason_4">Reason</h5>
+<p>C++ 에선, 다른 언어와는 다르게, <code>volatile</code>이 원자성과 스레드간 동기화를 제공하지 않는다.
+또한 <code>volatile</code>은 명령어 재배치(컴파일러와 하드웨어 모두)를 제한하지도 않는다.</p>
+<p><code>volatile</code>은 동시성과 무관하다.</p>
+<h5 id="example-bad_3">Example, bad:</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">free_slots</span> <span class="o">=</span> <span class="n">max_slots</span><span class="p">;</span> <span class="c1">// current source of memory for objects</span>
+
+    <span class="n">Pool</span><span class="o">*</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">free_slots</span><span class="o">--</span><span class="p">)</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">pool</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 코드엔 문제가 있다:</p>
+<p>단일 스레드 프로그램이라면, 이 코드는 아무런 문제가 없다. 하지만 두 스레드가 동시에 실행한다면, <code>free_slots</code>에 대한 경쟁 상태가 발생한다. 따라서 두 스레드는 같은 <code>free_slots</code>값을 가질 수도 있다.  </p>
+<p>이는 (명백하게) 잘못된 결과로 이어진다. 다른 언어들에 익숙한 사람들은 이 코드를 다음과 같이 수정할 것이다.:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">volatile</span> <span class="kt">int</span> <span class="n">free_slots</span> <span class="o">=</span> <span class="n">max_slots</span><span class="p">;</span> <span class="c1">// current source of memory for objects</span>
+
+    <span class="n">Pool</span><span class="o">*</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">free_slots</span><span class="o">--</span><span class="p">)</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">pool</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>volatile</code>로 바꿨지만, 동기화엔 아무런 영향이 없다. 이 코드엔 여전히 데이터 경쟁이 존재한다!</p>
+<p>C++ 에선, 동기화를 원한다면 <code>atomic</code> 타입들을 사용해야 한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">atomic</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">free_slots</span> <span class="o">=</span> <span class="n">max_slots</span><span class="p">;</span> <span class="c1">// current source of memory for objects</span>
+
+    <span class="n">Pool</span><span class="o">*</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">free_slots</span><span class="o">--</span><span class="p">)</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">pool</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이제 <code>--</code>연산은 원자적이다. 이는 다른 스레드가 끼여들 여지가 있는 읽기-증가-쓰기 과정과는 다르다.</p>
+<h5 id="alternative">Alternative</h5>
+<p>다른 언어에서 <code>volatile</code>을 사용했다면, C++에선 <code>atomic</code>을 사용하라.
+더 복잡한 경우라면 <code>mutex</code>를 사용하라.</p>
+<h5 id="see-also">See also</h5>
+<p><a href="#Rconc-volatile2"><code>volatile</code>의 적절한 사용</a></p>
+<h3 id="cp9-tool"><a name="Rconc-tools"></a>CP.9: 가능한 모든 경우에, 도구 (tool) 를 이용하여 자신의 병행 실행 코드를 검증하라</h3>
+<p>경험이 보여주듯, 병행 실행 코드는 올바르게 작성하기가 극히 어려우며,
+컴파일 시점 점검, 실행 시점 점검 및 테스팅을 통한 병행 실행 문제를 검출하는 것이
+순차적인 코드에서 일반적인 문제점을 찾는 것만큼 효과적이지 않다.
+미묘한 병행 실행 오류들은 메모리 손상이나 교착 상태와 같은 심각한 폐해를 가져올 수 있다.</p>
+<h5 id="example_3">Example</h5>
+<div class="codehilite"><pre><span></span>???
+</pre></div>
+
+
+<h5 id="note_3">Note</h5>
+<p>스레드 안전한 프로그램을 만드는 것은 숙달된 개발자들조차 종종 곤란하게 만드는 만만찮은 작업이다: 적절한 도구를 사용하는 것은 이러한 위험을 덜 수 있는 중요한 전략이다.
+이러한 도구들은 상용 / 오픈소스 와 연구용 / 생산용을 가리지 않고 다양한 형태의 수많은 종류가 제공되고 있다.
+안타깝게도, 각자의 요구 사항과 제약사항이 모두 다르므로, 특정 도구를 추천하기는 어려우나,
+몇 가지를 거론할 수는 있다:</p>
+<ul>
+<li>
+<p>정적 지침 도구: <a href="http://clang.llvm.org/docs/ThreadSafetyAnalysis.html">clang</a>
+과 <a href="https://gcc.gnu.org/wiki/ThreadSafetyAnnotation">GCC</a> 의
+몇몇 지난 버전들은 스레드 안전의 특성과 관련된 몇 가지 정적 주해문 (static annotation) 을 지원한다.
+이러한 기법의 일관성 있는 사용은 다양한 종류의 스레드 안전 관련 오류를 컴파일 시점 오류로 만들어준다.
+이러한 주해문들은 일반적으로 지역적이며 (특정 멤버 변수를 특정 뮤텍스를 통해 보호되게 표시함으로써),
+대개의 경우 쉽게 배울 수 있다. 그러나, 다른 많은 정적 도구들과 마찬가지로,
+본디 검출되어야 하나 허용 처리되는 잘못된 거짓 음성 (false negative) 결과를 종종 제출할 수도 있다.</p>
+</li>
+<li>
+<p>동적 지침 도구: Clang 의 <a href="http://clang.llvm.org/docs/ThreadSanitizer.html">Thread Sanitizer</a> (aka TSAN)
+은 강력한 동적 도구의 한 예이다: 이 도구는 프로그램의 메모리 접근을 장부에 기록할 수 있도록 빌드 및 실행을 변경하여,
+해당 프로그램 실행 시 데이터 경쟁을 확실히 검출해 낼 수 있도록 한다.
+이를 위해서는 메모리 사용랑 (대부분의 경우 5-10배) 과 CPU 성능 저하 (2-20배) 를 비용으로 지불해야 한다.
+이러한 동적 도구들은 통합 테스트나 카나리아 테스트 혹은 복수의 스레드상에서 작동하는 단위 테스트에 적용하기 가장 알맞다.
+작업량이 영향을 미친다: TSAN 이 검출해 낸 문제점은 거의 항상 실질적인 데이터 경쟁을 정확하게 짚어 내지만,
+해당 실행 과정 중에 발견된 문제만이 검출 가능하다.</p>
+</li>
+</ul>
+<h5 id="enforcement_3">Enforcement</h5>
+<p>특정 프로그램들에 있어서 어떤 도구를 사용하는 것이 유용할 것인지 고르는 것은 해당 프로그램 제작자에게 달려 있다.</p>
+<h2 id="cpcon"><a name="SScp-con"></a>CP.con: 동시성</h2>
+<p>이 Section은 다수의 스레드들이 공유 데이터를 사용해 통신하는 부분에 대해 다룹니다.</p>
+<ul>
+<li>병렬 알고리즘은 <a href="#SScp-par">parallelism</a>를 참조하세요</li>
+<li>명시적인 공유없는 작업간 통신방법은 <a href="#SScp-mess">messaging</a>을 참조하세요</li>
+<li>For vector parallel code, see <a href="#SScp-vec">vectorization</a></li>
+<li>무잠금 프로그래밍은 <a href="#SScp-free">lock free</a>를 참조하세요</li>
+</ul>
+<p>동시성 규칙 요약:</p>
+<ul>
+<li><a href="#Rconc-raii">CP.20: <code>lock()</code>/<code>unlock()</code> 대신 RAII를 사용하라</a></li>
+<li><a href="#Rconc-lock">CP.21: 복수의 <code>mutex</code> 획득을 위해서는 <code>std::lock()</code> 이나 <code>std::scoped_lock</code> 을 사용하라</a></li>
+<li><a href="#Rconc-unknown">CP.22: lock 을 사용 중일 때는 알 수 없는 코드를 호출하지 말아라(예: callback)</a></li>
+<li><a href="#Rconc-join">CP.23: join 하는 <code>thread</code>를 유효범위 안의 컨테이너처럼 생각하라</a></li>
+<li><a href="#Rconc-detach">CP.24: <code>thread</code>를 전역 컨테이너처럼 생각하라</a></li>
+<li><a href="#Rconc-joining_thread">CP.25: <code>std::thread</code> 보다는 <code>gsl::joining_thread</code> 사용을 우선하여 고려하라</a></li>
+<li><a href="#Rconc-detached_thread">CP.26: 스레드를 <code>detach()</code> 하지 말아라</a></li>
+<li><a href="#Rconc-data">CP.31: 스레드들 간의 작은 데이터 전달은 참조나 포인터보다는 값으로 전달하라</a></li>
+<li><a href="#Rconc-shared">CP.32: 관련 없는 <code>thread</code>간의 소유권 공유는 <code>shared_ptr</code>를 사용하라</a></li>
+<li><a href="#Rconc-switch">CP.40: 문맥 교환을 최소화하라</a></li>
+<li><a href="#Rconc-create">CP.41: 스레드 생성과 소멸을 최소화하라</a></li>
+<li><a href="#Rconc-wait">CP.42: 조건 없이 <code>wait</code>하지 말아라</a></li>
+<li><a href="#Rconc-time">CP.43: 임계 영역(Critical Section)에서의 시간을 최소화하라</a></li>
+<li><a href="#Rconc-name">CP.44: <code>lock_guard</code>과 <code>unique_lock</code>에는 이름을 붙여라</a></li>
+<li><a href="#Rconc-mutex">CP.50: <code>mutex</code> 를 보호(guard) 해야 하는 데이터와 함께 선언하라. 가능한 경우에는  <code>synchronized_value&lt;T&gt;</code> 를 사용하라</a></li>
+<li>??? 언제 스핀락(spinlock)을 사용하는가</li>
+<li>??? 언제 <code>try_lock()</code>을 사용하는가</li>
+<li>??? 언제 <code>unique_lock</code>보다 <code>lock_guard</code>를 쓰는가</li>
+<li>??? Time multiplexing</li>
+<li>??? 언제/어떻게 <code>new thread</code>를 사용하는가</li>
+</ul>
+<h3 id="cp20-lockunlock-raii"><a name="Rconc-raii"></a>CP.20: <code>lock()</code>/<code>unlock()</code> 대신 RAII를 사용하라</h3>
+<h5 id="reason_5">Reason</h5>
+<p>잠금을 해제하지 않음으로 인한 오류를 예방한다.</p>
+<h5 id="example-bad_4">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">do_stuff</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">mtx</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+        <span class="c1">// ... do stuff ...</span>
+        <span class="n">mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>얼마 후 또는 나중에, 누군가 <code>mtx.unlock()</code>을 잊어버린다. 그리곤 <code>return</code>을 <code>... do stuff ...</code>에 붙이거나, 예외나 무언가를 던진다.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">do_stuff</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span> <span class="p">{</span><span class="n">mtx</span><span class="p">};</span>
+        <span class="c1">// ... do stuff ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_4">Enforcement</h5>
+<p><code>lock()</code>과 <code>unlock()</code>의 호출에 표식을 남겨라  ???</p>
+<h3 id="cp21-mutex-stdlock-stdscoped_lock"><a name="Rconc-lock"></a>CP.21: 복수의 <code>mutex</code> 획득을 위해서는 <code>std::lock()</code> 이나 <code>std::scoped_lock</code> 을 사용하라</h3>
+<h5 id="reason_6">Reason</h5>
+<p>복수의 <code>mutex</code> 로 인한 교착상태를 방지한다.</p>
+<h5 id="example_4">Example</h5>
+<p>다음 코드는 교착 상태를 유발한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// thread 1</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck2</span><span class="p">(</span><span class="n">m2</span><span class="p">);</span>
+
+    <span class="c1">// thread 2</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck2</span><span class="p">(</span><span class="n">m2</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">);</span>
+</pre></div>
+
+
+<p>대신하여 <code>lock()</code> 을 사용하라 :</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// thread 1</span>
+    <span class="n">lock</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">adopt_lock</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck2</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">adopt_lock</span><span class="p">);</span>
+
+    <span class="c1">// thread 2</span>
+    <span class="n">lock</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">m1</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck2</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">adopt_lock</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">adopt_lock</span><span class="p">);</span>
+</pre></div>
+
+
+<p>혹은 (더 좋은 방법이지만, C++17 에서만 가능한):</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// thread 1</span>
+    <span class="n">scoped_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="p">,</span> <span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">);</span>
+
+    <span class="c1">// thread 2</span>
+    <span class="n">scoped_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="p">,</span> <span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck2</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">m1</span><span class="p">);</span>
+</pre></div>
+
+
+<p>위 코드에서, <code>thread1</code> 과 <code>thread2</code> 의 작성자들은 여전히 <code>mutex</code> 들의 순서에 합의하지는 못했지만, 그 순서는 더 이상 문제가 되지 않는다.</p>
+<h5 id="note_4">Note</h5>
+<p>실제 코드에서는, <code>mutex</code> 들이 서로 간의 의도된 관계나 의도된 획득 순서를 프로그래머에게 쉽게 상기시킬 수 있도록 명명돼 있는 경우가 드물다.
+또한 실제 코드에서는, <code>mutex</code> 들이 편리하게도 항상 연속된 줄에 획득이 이루어지지는 않는다.</p>
+<p>C++17 에서는 간단히 아래와 같이 작성하여</p>
+<div class="codehilite"><pre><span></span>    <span class="n">lock_guard</span> <span class="nf">lck1</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">adopt_lock</span><span class="p">);</span>
+</pre></div>
+
+
+<p><code>mutex</code> 타입을 자동으로 추론되도록 할 수 있다.</p>
+<h5 id="enforcement_5">Enforcement</h5>
+<p>복수의 <code>mutex</code> 획득을 검출해 내라.
+일반적으로 이는 판별이 어려운 경우가 많지만, 흔히 볼 수 있는 간단한 (상단의 예제와 같은) 사례를 잡아내는 것은 어렵지 않다.</p>
+<h3 id="cp22-lock-callback"><a name="Rconc-unknown"></a>CP.22: lock 을 사용 중일 때는 알 수 없는 코드를 호출하지 말아라 (예: callback)</h3>
+<h5 id="reason_7">Reason</h5>
+<p>어떤 동작을 할지 확실치 않은 코드를 호출하는 것은 교착 상태를 유발할 위험을 감수하는 것이다.</p>
+<h5 id="example_5">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">do_this</span><span class="p">(</span><span class="n">Foo</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span> <span class="p">{</span><span class="n">my_mutex</span><span class="p">};</span>
+        <span class="c1">// ... do something ...</span>
+        <span class="n">p</span><span class="o">-&gt;</span><span class="n">act</span><span class="p">(</span><span class="n">my_data</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>만약 당신이 <code>Foo::act</code> 가 어떤 작업을 하는지 모른다면 (해당 함수는 아직 작성되지 않은 파생 클래스의 멤버를 호출하는 가상 함수일 수 있다),
+<code>do_this</code> 함수를 (재귀적으로) 부를 수도 있어 <code>my_mutex</code> 에 교착상태를 유발할 수 있다.
+아니면 해당 함수가 다른 뮤텍스를 잠그고 적절한 시간 안에 해제를 하지 않아, <code>do_this</code> 를 호출하는 다른 코드에 있어 지연을 유발할 수도 있다.</p>
+<h5 id="example_6">Example</h5>
+<p>"미지의 코드 호출" 문제의 흔한 사례는 동일한 객체에 대해 잠금 권한을 얻으려 하는 함수를 호출하는 경우이다.
+이러한 호출 문제는 <code>recursive_mutex</code> 를 사용함으로써 종종 해결이 가능하다. 예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">recursive_mutex</span> <span class="n">my_mutex</span><span class="p">;</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Action</span><span class="o">&gt;</span>
+    <span class="kt">void</span> <span class="n">do_something</span><span class="p">(</span><span class="n">Action</span> <span class="n">f</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">recursive_mutex</span><span class="o">&gt;</span> <span class="n">lck</span> <span class="p">{</span><span class="n">my_mutex</span><span class="p">};</span>
+        <span class="c1">// ... do something ...</span>
+        <span class="n">f</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>    <span class="c1">// f will do something to *this</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>만약, 아마도 그러하겠지만, <code>f()</code> 가 <code>*this</code> 에 대해서 어떤 작업을 수행한다고 하면, 해당 함수를 호출하기 전에 객체의 불변 조건 (invariant) 이 유지되고 있는지 확인해야 한다.</p>
+<h5 id="enforcement_6">Enforcement</h5>
+<ul>
+<li>재귀 용이 아닌 <code>mutex</code> 를 잠근 후 호출하는 가상 함수 호출을 지적하라</li>
+<li>재귀 용이 아닌 <code>mutex</code> 를 잠근 후 호출하는 콜백 함수 호출을 지적하라</li>
+</ul>
+<h3 id="cp23-join-thread"><a name="Rconc-join"></a>CP.23: join 하는 <code>thread</code>를 유효범위 안의 컨테이너처럼 생각하라</h3>
+<h5 id="reason_8">Reason</h5>
+<p>포인터 사용의 안전성과 메모리 누수 방지를 위하여, 어떤 포인터들이 <code>thread</code> 에서 사용되는지 주의 깊게 살펴야 한다.
+만약 <code>thread</code> 가 join 한다고 하면, <code>thread</code> 의 유효범위 및 포함되는 유효범위 내의 객체에 대한 포인터를 안전하게 전달할 수 있다.</p>
+<h5 id="example_7">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">glob</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">some_fct</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">77</span><span class="p">;</span>
+        <span class="n">joining_thread</span> <span class="n">t0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>           <span class="c1">// OK</span>
+        <span class="n">joining_thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>            <span class="c1">// OK</span>
+        <span class="n">joining_thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">glob</span><span class="p">);</span>        <span class="c1">// OK</span>
+        <span class="k">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+        <span class="n">joining_thread</span> <span class="n">t3</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>      <span class="c1">// OK</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>gsl::joining_thread</code> 는 join 하는 소멸자를 가지고 있으며 <code>detached()</code> 될 수 없는 <code>std::thread</code> 이다.
+"OK" 라고 함은  <code>thread</code> 가 전달받은 포인터를 사용할 수 있는 한, 해당 객체가 유효범위 안에 ("살아") 있을 것임을 의미한다.
+<code>thread</code> 들이 병행 실행된다는 사실이 여기에서는 존속 기간이나 소유권 관련 문제에 있어서 아무런 영향을 미치지 않는다;
+이 <code>thread</code> 들은 단순히 <code>some_fct</code> 로부터 호출되는 함수 객체들로 볼 수 있다.</p>
+<h5 id="enforcement_7">Enforcement</h5>
+<p><code>joining_thread</code> 가 <code>detach()</code> 되지 않도록 확인하라.
+확인이 끝난 후에는, (지역 객체들에 대한) 통상적인 존속 기간과 소유권 적용 방식을 따른다.</p>
+<h3 id="cp24-thread"><a name="Rconc-detach"></a>CP.24: <code>thread</code>를 전역 컨테이너처럼 생각하라</h3>
+<h5 id="reason_9">Reason</h5>
+<p>포인터를 안전하게 남겨두고 누수(leak)을 방지하기 위해선, 어떤 포인터들이 <code>thread</code>에 의해서 사용되는지 고려해야 한다.</p>
+<p>만약 <code>thread</code>가 detach되었다면, 정적 객체 또는 자유 영역에 있는 객체들에 대한 포인터만 안전하게 전달할 수 있다.</p>
+<h5 id="example_8">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">glob</span> <span class="o">=</span> <span class="mi">33</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">some_fct</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">77</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t0</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>           <span class="c1">// bad</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>            <span class="c1">// bad</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">glob</span><span class="p">);</span>        <span class="c1">// OK</span>
+        <span class="k">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t3</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>      <span class="c1">// bad</span>
+        <span class="c1">// ...</span>
+        <span class="n">t0</span><span class="p">.</span><span class="n">detach</span><span class="p">();</span>
+        <span class="n">t1</span><span class="p">.</span><span class="n">detach</span><span class="p">();</span>
+        <span class="n">t2</span><span class="p">.</span><span class="n">detach</span><span class="p">();</span>
+        <span class="n">t3</span><span class="p">.</span><span class="n">detach</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>"OK" 라고 함은  <code>thread</code> 가 전달받은 포인터를 사용할 수 있는 한, 해당 객체가 유효범위 안에 ("살아") 있을 것임을 의미한다.
+"bad" 라고 함은 <code>thread</code> 가 전달받은 포인터가 가리키는 객체가 소멸된 이후에 해당 포인터를 사용할 수도 있음을 의미한다.
+<code>thread</code> 들이 병행 실행된다는 사실이 여기에서는 존속 기간이나 소유권 관련 문제에 있어서 아무런 영향을 미치지 않는다;
+이 <code>thread</code> 들은 단순히 <code>some_fct</code> 로부터 호출되는 함수 객체들로 볼 수 있다.</p>
+<h5 id="note_5">Note</h5>
+<p>정적 저장소 존속 기간을 가진 객체들도 detach 된 스레드에서 사용 시 문제를 야기할 수 있다:
+스레드가 프로그램의 종료 시점까지 수행된다면, 정적 저장소 존속 기간을 가진 객체들의 소멸 시점까지
+병행 실행될 수 있으며, 그로 인해 해당 객체들에 대한 접근에 있어 경쟁이 유발될 수 있다.</p>
+<h5 id="note_6">Note</h5>
+<p>이 규칙은 <a href="#Rconc-detached_thread">don't <code>detach()</code></a> and <a href="#Rconc-joining_thread">use <code>gsl::joining_thread</code></a> 를 따른다면 불필요하다.
+그러나, 해당 지침을 따르기 위해서 코드를 변경하는 것이 어렵거나 혹은 서드파티 라이브러리들의 경우에는 아예 불가능할 수도 있다.
+이러한 경우에는, 이 규칙이 존속기간 및 타입 안전에 필수적일 수 있다.</p>
+<p>일반적으로 <code>detach()</code> 가 특정 <code>thread</code> 에 대해 수행되는지는 판별이 어려운 경우가 많지만, 흔히 볼 수 있는 간단한 사례는 손쉽게 검출해 낼 수 있다.
+만약 특정 <code>thread</code> 가 <code>detach()</code> 하지 않음을 입증할 수 없다면, 해당 스레드는 <code>detach()</code> 하며 최초 생성된 유효 범위를 넘어서까지 유지될 수 있다고 가정해야 한다;
+확인이 끝난 후에는, (전역 객체들에 대한) 통상적인 존속기간과 소유권 적용 방식을 따른다.</p>
+<h5 id="enforcement_8">Enforcement</h5>
+<p>지역 변수들을 <code>detach()</code> 할지도 모르는 스레드에 전달하는 시도들을 지적하라.</p>
+<h3 id="cp25-stdthread-gsljoining_thread"><a name="Rconc-joining_thread"></a>CP.25: <code>std::thread</code> 보다는 <code>gsl::joining_thread</code> 사용을 우선하여 고려하라</h3>
+<h5 id="reason_10">Reason</h5>
+<p><code>joining_thread</code>는 유효 범위가 끝날 때 join 한다.</p>
+<p>Detach한 스레드들은 관찰(monitor)하기가 어렵다. 
+(잠재적으로 detach할 스레드를 포함해서) 이 스레드들에서 오류가 없다고 확신하기 어렵다.  </p>
+<h5 id="example-bad_5">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello &quot;</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">struct</span> <span class="n">F</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;parallel world &quot;</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">{</span><span class="n">f</span><span class="p">};</span>      <span class="c1">// f() executes in separate thread</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">{</span><span class="n">F</span><span class="p">()};</span>    <span class="c1">// F()() executes in separate thread</span>
+    <span class="p">}</span>  <span class="c1">// spot the bugs</span>
+</pre></div>
+
+
+<h5 id="example_9">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello &quot;</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">struct</span> <span class="n">F</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;parallel world &quot;</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span><span class="p">{</span><span class="n">f</span><span class="p">};</span>      <span class="c1">// f() executes in separate thread</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span><span class="p">{</span><span class="n">F</span><span class="p">()};</span>    <span class="c1">// F()() executes in separate thread</span>
+
+        <span class="n">t1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+        <span class="n">t2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+    <span class="p">}</span>  <span class="c1">// one bad bug left</span>
+</pre></div>
+
+
+<h5 id="example-bad_6">Example, bad</h5>
+<p><code>join()</code> 혹은 <code>detach()</code> 할지를 결정하는 코드는 매우 복잡할 수 있으며 심지어는 해당 스레드가 호출하는 함수 내에서 결정되거나 해당 스레드를 생성한 함수가 호출하는 다른 함수에 의해서 결정될 수도 있다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">tricky</span><span class="p">(</span><span class="kr">thread</span><span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">is_odd</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+            <span class="n">t</span><span class="o">-&gt;</span><span class="n">detach</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kr">thread</span> <span class="n">t</span> <span class="p">{</span> <span class="n">tricky</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">n</span> <span class="p">};</span>
+        <span class="c1">// ...</span>
+        <span class="c1">// ... should I join here? ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이는 존속기간 분석을 심각할 정도로 복잡하게 만들며, 실제 일어날 수도 있는 어떤 경우들에 대해서는 분석 자체를 불가능하게도 만들 수 있다.
+이는 우리가 스레드 내부에서 <code>use()</code> 함수 내의 지역 객체들을 참조하거나 <code>use()</code> 함수에서 해당 스레드 내의 지역 객체를 참조하는 것이 안전하지 않다는 것을 의미한다.</p>
+<h5 id="note_7">Note</h5>
+<p>"종료되지 않아야 하는 스레드" 들은  <code>detach()</code> 하기보다는, 전역으로 만들어 포함되는 유효 범위 내에나 혹은 자유 영역에 위치시키도록 하라.
+<a href="#Rconc-detached_thread">don't <code>detach</code></a>.</p>
+<h5 id="note_8">Note</h5>
+<p><code>std::thread</code> 를 사용하는 오래된 코드나 서드파티 라이브러리들로 인해 이 규칙은 도입하기가 어려울 수 있다.</p>
+<h5 id="enforcement_9">Enforcement</h5>
+<p><code>std::thread</code> 이 사용되는 경우들을 지적하라:</p>
+<ul>
+<li><code>gsl::joining_thread</code> 사용을 권장한다.</li>
+<li>만약 detach 하는 경우라면, 포함되는 유효 범위에 <a href="#Rconc-detached_thread">"exporting ownership"</a> 하는 것을 권장한다.</li>
+<li>join 을 하는지 detach 를 하는지 명확하지 않다면 심각하게 경고하라.</li>
+</ul>
+<h3 id="cp26-detach"><a name="Rconc-detached_thread"></a>CP.26: 스레드를 <code>detach()</code> 하지 말아라</h3>
+<h5 id="reason_11">Reason</h5>
+<p>보통, 생성된 유효범위를 넘어서서 실행이 유지되어야 하는 필요성은  <code>thread</code> 의 내재된 작업 특성이나,
+해당 특성을 <code>detach</code> 를 사용함으로써 구현하는 것은 추적 관찰 (monitor) 및 해당 스레드와의 통신을 어렵게 만든다.
+특히, (물론 불가능하지는 않지만) 스레드가 예상된 시점까지 실행이 완료되기를 보장하거나 예상된 시점까지 실행이 유지되기를 보장하는 것은 더욱 어렵다.</p>
+<h5 id="example_10">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">heartbeat</span><span class="p">();</span>
+
+    <span class="kt">void</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t</span><span class="p">(</span><span class="n">heartbeat</span><span class="p">);</span>             <span class="c1">// don&#39;t join; heartbeat is meant to run forever</span>
+        <span class="n">t</span><span class="p">.</span><span class="n">detach</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이는 <code>detach()</code> 가 흔히 사용되는, 스레드의 합리적인 사용 예이다.
+그러나, 여전히 문제가 있다.
+우리가 detach 된 스레드가 여전히 실행되고 있는지 어떻게 추적 관찰할 수 있는가?
+때때로 heartbeat 상에 어떤 문제가 발생할 수 있으며, heartbeat 를 잃는 것은 그것을 필요하는 시스템 상에서는 심각한 문제일 수 있다.
+따라서, 우리는 해당 스레드와 통신을 할 필요가 있다
+(e.g., 메시지 스트림이나 <code>condition_variable</code> 을 이용한 알림 이벤트를 통해서).</p>
+<p>많은 경우에 더 우월하다고 볼 수 있는 대안으로는 해당 스레드를 생성되는 (혹은 활성화되는)  유효 범위 밖에 배치함으로써 존속 기간을 제어하는 것이다.
+예제:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">heartbeat</span><span class="p">();</span>
+
+    <span class="n">gsl</span><span class="o">::</span><span class="n">joining_thread</span> <span class="n">t</span><span class="p">(</span><span class="n">heartbeat</span><span class="p">);</span>             <span class="c1">// heartbeat is meant to run &quot;forever&quot;</span>
+</pre></div>
+
+
+<p>이 heartbeat (에러나 하드웨어 문제 등을 방지하는) 는 프로그램이 실행되는 동안 유지될 것이다.</p>
+<p>때로는, 생성 시점과 소유권 시점을 분리할 필요가 있다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">heartbeat</span><span class="p">();</span>
+
+    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">gsl</span><span class="o">::</span><span class="n">joining_thread</span><span class="o">&gt;</span> <span class="n">tick_tock</span> <span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+
+    <span class="kt">void</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// heartbeat is meant to run as long as tick_tock lives</span>
+        <span class="n">tick_tock</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">gsl</span><span class="o">::</span><span class="n">joining_thread</span><span class="o">&gt;</span><span class="p">(</span><span class="n">heartbeat</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h4 id="enforcement_10">Enforcement</h4>
+<p><code>detach()</code> 사용을 지적하라.</p>
+<h3 id="cp31"><a name="Rconc-data-by-value"></a>CP.31: 스레드들 간의 작은 데이터 전달은 참조나 포인터보다는 값으로 전달하라</h3>
+<h5 id="reason_12">Reason</h5>
+<p>소량의 데이터 복사는 잠금장치를 이용하는 것보다 복사 및 접근 비용이 저렴하다.
+복사는 자연히도 유일한 소유권을 제공하며(코드를 단순화할 수 있다) 데이터 경쟁의 가능성을 제거한다.</p>
+<h5 id="note_9">Note</h5>
+<p>"소량" 이 정확하게 어느 정도인지를 정의하기는 불가능하다.</p>
+<h5 id="example_11">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">string</span> <span class="nf">modify1</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">modify2</span><span class="p">(</span><span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">fct</span><span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">res</span> <span class="o">=</span> <span class="n">async</span><span class="p">(</span><span class="n">modify1</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+        <span class="n">async</span><span class="p">(</span><span class="n">modify2</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>modify1</code> 호출은 두 번의 <code>string</code> 값 복사를 필요로 하지만, <code>modify2</code> 호출은 값 복사를 필요로 하지 않는다.
+반면에 <code>modify1</code> 의 구현은 우리가 단일 스레드 환경에서 작성했을 법한 코드와 정확히 동일하나,
+<code>modify2</code> 의 구현은 데이터 경쟁을 피하기 위하여 일정 형태의 잠금 기법을 이용해야 한다.
+문자열이 짧다면 (10 글자 정도), <code>modify1</code> 호출은 놀라울 정도로 빠를것이다;
+근본적으로 모든 필요한 비용은 <code>thread</code> 전환에 들어갈 뿐이기 때문이다. 만약 문자열이 길다면 (1,000,000 글자 정도),
+이를 두 번이나 복사하는 것은 좋은 선택이 아닐 것이다.</p>
+<p>이 논의는 <code>async</code> 등의 사용과는 아무 연관이 없음을 유의하라.
+이는 메시지 전달 방식 혹은 공유 메모리 방식을 사용을 고려할 때도 동일하게 적용된다.</p>
+<h5 id="enforcement_11">Enforcement</h5>
+<p>???</p>
+<h3 id="cp32-thread-shared_ptr"><a name="Rconc-shared"></a>CP.32: 관련 없는 <code>thread</code>간의 소유권 공유는 <code>shared_ptr</code>를 사용하라</h3>
+<h5 id="reason_13">Reason</h5>
+<p>만약 스레드들이 서로 무관하다면 (달리 말해, 같은 유효범위 안에 없거나 한 스레드가 다른 스레드의 생애를 포함하지 않는 경우),
+그리고 소멸되어야 하는 자유 영역 메모리를 공유할 필요가 있다면, <code>shared_ptr</code>또는 동등한 것이 소멸을 보장할 수 있다.</p>
+<h5 id="example_12">Example</h5>
+<div class="codehilite"><pre><span></span>???
+</pre></div>
+
+
+<h5 id="note_10">Note</h5>
+<ul>
+<li>정적(예컨대 전역) 객체는 한 스레드가 객체의 소멸에 책임이 있다는 점에서 공유할 수 있다</li>
+<li>소멸되지 않는 자유 영역의 객체는 공유할 수 있다.</li>
+<li>한 스레드가 객체를 소유하고, 다른 스레드가 소유자 스레드보다 오래 살아남지 않으면 객체를 안전하게 공유할 수 있다.</li>
+</ul>
+<h5 id="enforcement_12">Enforcement</h5>
+<p>???</p>
+<h3 id="cp40"><a name="Rconc-switch"></a>CP.40: 문맥 교환을 최소화하라</h3>
+<h5 id="reason_14">Reason</h5>
+<p>문맥 교환(Context switches)은 매우 높은 비용을 필요로 한다.</p>
+<h5 id="example_13">Example</h5>
+<div class="codehilite"><pre><span></span>???
+</pre></div>
+
+
+<h5 id="enforcement_13">Enforcement</h5>
+<p>???</p>
+<h3 id="cp41"><a name="Rconc-create"></a>CP.41: 스레드 생성과 소멸을 최소화하라</h3>
+<h5 id="reason_15">Reason</h5>
+<p>스레드 생성은 매우 높은 비용을 필요로 한다.</p>
+<h5 id="example_14">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">worker</span><span class="p">(</span><span class="n">Message</span> <span class="n">m</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// process</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">master</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Message</span> <span class="n">m</span><span class="p">;</span> <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span> <span class="p">)</span>
+            <span class="n">run_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span> <span class="kr">thread</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="n">m</span><span class="p">));</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 코드는 메세지마다 <code>thread</code>를 생성한다. 그리고 <code>run_list</code>는 아마도 작업들이 끝나면 스레드를 파괴할 것이다.</p>
+<p>대신, 미리 만들어둔 작업자(worker) 스레드들이 메세지를 처리하도록 할 수 있다.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">Sync_queue</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;</span> <span class="n">work</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">master</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Message</span> <span class="n">m</span><span class="p">;</span> <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span> <span class="p">)</span>
+            <span class="n">work</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">worker</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Message</span> <span class="n">m</span><span class="p">;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">work</span><span class="p">.</span><span class="n">get</span><span class="p">();</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// process</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">workers</span><span class="p">()</span>  <span class="c1">// set up worker threads (specifically 4 worker threads)</span>
+    <span class="p">{</span>
+        <span class="n">joining_thread</span> <span class="n">w1</span> <span class="p">{</span><span class="n">worker</span><span class="p">};</span>
+        <span class="n">joining_thread</span> <span class="n">w2</span> <span class="p">{</span><span class="n">worker</span><span class="p">};</span>
+        <span class="n">joining_thread</span> <span class="n">w3</span> <span class="p">{</span><span class="n">worker</span><span class="p">};</span>
+        <span class="n">joining_thread</span> <span class="n">w4</span> <span class="p">{</span><span class="n">worker</span><span class="p">};</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_11">Note</h5>
+<p>시스템에서 잘 만든 스레드 풀을 지원한다면, 그것을 사용하라.</p>
+<p>시스템에서 잘 만든 메세지 큐를 지원하면, 그것을 사용하라.</p>
+<h5 id="enforcement_14">Enforcement</h5>
+<p>???</p>
+<h3 id="cp42-wait"><a name="Rconc-wait"></a>CP.42: 조건 없이 <code>wait</code>하지 말아라</h3>
+<h5 id="reason_16">Reason</h5>
+<p>조건을 주지 않고 <code>wait</code>하는 것은 작업을 위해 깨어나는 것(wakeup) 또는 단순히 작업이 없다는 것을 확인하기 위해 깨어나는 것을 놓치게 한다.</p>
+<h5 id="example-bad_7">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">std</span><span class="o">::</span><span class="n">condition_variable</span> <span class="n">cv</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mx</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">thread1</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// do some work ...</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mx</span><span class="p">);</span>
+            <span class="n">cv</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>    <span class="c1">// wake other thread</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">thread2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mx</span><span class="p">);</span>
+            <span class="n">cv</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lock</span><span class="p">);</span>    <span class="c1">// might block forever</span>
+            <span class="c1">// do work ...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>여기서, 코드에 표현되지 않은 다른 <code>thread</code>가 다른 <code>thread1</code>의 알림(notification)을 소비하면, <code>thread2</code>는 영원히 대기할 수도 있다.</p>
+<h5 id="example_15">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">class</span> <span class="nc">Sync_queue</span> <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">void</span> <span class="n">put</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">put</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span> <span class="n">val</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">get</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">);</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
+        <span class="n">condition_variable</span> <span class="n">cond</span><span class="p">;</span>    <span class="c1">// this controls access</span>
+        <span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="kt">void</span> <span class="n">Sync_queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">put</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">cond</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="kt">void</span> <span class="n">Sync_queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">get</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+        <span class="n">cond</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lck</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]{</span> <span class="k">return</span> <span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">});</span>    <span class="c1">// prevent spurious wakeup</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이제 만약 큐가 비어있는 상태에서 <code>get()</code>을 실행하는 스레드가 깨어나게 된다면(예를 들면 다른 스레드가 먼저 <code>get()</code>을 실행해서 가져갔다거나), 
+해당 스레드는 그대로 다시 sleep 상태가 될 것이다.</p>
+<h5 id="enforcement_15">Enforcement</h5>
+<p>조건이 없는 모든 <code>waits</code>를 지적하라.</p>
+<h3 id="cp43-critical-section"><a name="Rconc-time"></a>CP.43: 임계 영역(Critical Section)에서의 시간을 최소화하라</h3>
+<h5 id="reason_17">Reason</h5>
+<p><code>mutex</code>를 가진 시간이 짧을 수록, 다른 <code>thread</code>가 대기해야 하는 경우가 줄어들 것이다. 
+그리고 <code>thread</code>의 중지(suspection)와 재실행(resumption)은 많은 비용을 필요로 한다.</p>
+<h5 id="example_16">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">do_something</span><span class="p">()</span> <span class="c1">// bad</span>
+    <span class="p">{</span>
+        <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span><span class="p">(</span><span class="n">my_lock</span><span class="p">);</span>
+        <span class="n">do0</span><span class="p">();</span>  <span class="c1">// preparation: does not need lock</span>
+        <span class="n">do1</span><span class="p">();</span>  <span class="c1">// transaction: needs locking</span>
+        <span class="n">do2</span><span class="p">();</span>  <span class="c1">// cleanup: does not need locking</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 코드에선 필요 이상으로 오랫동안 잠금을 소유하고 있다:</p>
+<p>필요하지 않다면 잠금을 가져서는 안되며, 정리를 시작하기 전에 잠금을 해제해야 한다.<br />
+이렇게 다시 작성할 수 있을 것이다.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">do_something</span><span class="p">()</span> <span class="c1">// bad</span>
+    <span class="p">{</span>
+        <span class="n">do0</span><span class="p">();</span>  <span class="c1">// preparation: does not need lock</span>
+        <span class="n">my_lock</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+        <span class="n">do1</span><span class="p">();</span>  <span class="c1">// transaction: needs locking</span>
+        <span class="n">my_lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+        <span class="n">do2</span><span class="p">();</span>  <span class="c1">// cleanup: does not need locking</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>하지만 이러한 코드는 안전성에 대해서 타협할 뿐이고, <a href="#Rconc-raii">RAII를 사용하라</a> 규칙을 위반한다.</p>
+<p>대신, 임계영역에 유효범위 블록을 추가하라:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">do_something</span><span class="p">()</span> <span class="c1">// OK</span>
+    <span class="p">{</span>
+        <span class="n">do0</span><span class="p">();</span>  <span class="c1">// preparation: does not need lock</span>
+        <span class="p">{</span>
+            <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span><span class="p">(</span><span class="n">my_lock</span><span class="p">);</span>
+            <span class="n">do1</span><span class="p">();</span>  <span class="c1">// transaction: needs locking</span>
+        <span class="p">}</span>
+        <span class="n">do2</span><span class="p">();</span>  <span class="c1">// cleanup: does not need locking</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_16">Enforcement</h5>
+<p>일반적으로 불가능하다.
+RAII를 적용하지 않은 <code>lock()</code>과 <code>unlock()</code>을 지적하라.</p>
+<h3 id="cp44-lock_guard-unique_lock"><a name="Rconc-name"></a>CP.44: <code>lock_guard</code>과 <code>unique_lock</code>에는 이름을 붙여라</h3>
+<h5 id="reason_18">Reason</h5>
+<p>이름이 없는 지역 개체들은 일시적으로 생성되고 즉시 소멸된다</p>
+<h5 id="example_17">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m1</span><span class="p">);</span>
+    <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="p">{</span><span class="n">m2</span><span class="p">};</span>
+    <span class="n">lock</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">);</span>
+</pre></div>
+
+
+<p>이 코드는 별로 문제 없어 보이지만, 그렇지 않다.</p>
+<h5 id="enforcement_17">Enforcement</h5>
+<p>이름을 부여하지 않은 <code>lock_guard</code>와 <code>unique_lock</code>을 지적하라</p>
+<h3 id="cp50-mutex-guard-synchronized_valuelttgt"><a name="Rconc-mutex"></a>CP.50: <code>mutex</code> 를 보호(guard) 해야 하는 데이터와 함께 선언하라. 가능한 경우에는  <code>synchronized_value&lt;T&gt;</code> 를 사용하라</h3>
+<h5 id="reason_19">Reason</h5>
+<p>코드를 읽는 사람에게 있어 데이터가 보호된다는 사실과 어떻게 보호될지를 분명히 전달한다. 이는 뮤텍스를 잠그지 않거나 엉뚱한 뮤텍스를 잠글 확률을 낮춘다.</p>
+<p><code>synchronized_value&lt;T&gt;</code> 를 사용하는 것은 해당 데이터가 뮤텍스를 가지고 있으며, 데이터 접근 시 해당되는 올바른 뮤텍스가 잠길 것임을 보장한다.
+<code>synchronized_value</code> 를 이후의 TS 나 C++ 표준에 추가하기 위한 <a href="http://wg21.link/p0290">WG21 proposal</a>) 을 참고하라.</p>
+<h5 id="example_18">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">Record</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">m</span><span class="p">;</span>   <span class="c1">// take this mutex before accessing other members</span>
+        <span class="c1">// ...</span>
+    <span class="p">};</span>
+
+    <span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="n">DataRecord</span> <span class="p">{</span>
+           <span class="c1">// ...</span>
+        <span class="p">};</span>
+        <span class="n">synchronized_value</span><span class="o">&lt;</span><span class="n">DataRecord</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span> <span class="c1">// Protect the data with a mutex</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="enforcement_18">Enforcement</h5>
+<p>??? 가능한가?</p>
+<h2 id="cppar-parallelism"><a name="SScp-par"></a>CP.par: 병렬성(Parallelism)</h2>
+<p>여기서 병렬성(parallelism)은 많은 데이터에 대해서 동시에 한 작업을 병렬적으로 수행하는 것을 의미한다.</p>
+<p>병렬성 규칙 요약:</p>
+<ul>
+<li>???</li>
+<li>???</li>
+<li>적합하다고 판단되면, 표준 라이브러리의 병렬 알고리즘들을 사용하라.</li>
+<li>병렬성을 위해 설계된 알고리즘들을 사용하라. 불필요한 의존성을 지닌 알고리즘을 사용하지 말아라.</li>
+</ul>
+<h2 id="cpmess-message-passing"><a name="SScp-mess"></a>CP.mess: 메세지 전달(Message passing)</h2>
+<p>표준 라이브러리에서 제공하는 기능들은 저수준에 속한다. 즉, <code>thread</code>, <code>mutex</code>, <code>atomic</code>을 사용한 하드웨어와 가까운 프로그래밍에 초점을 두고 있다. 
+대부분의 사람들은 이 레벨에서 작업해선 안된다: 에러를 만들기 쉽고, 개발이 느리다.</p>
+<p>가능하다면 메세징 라이브러리, 병렬 알고리즘, 그리고 벡터화같은 상위 레벨의 기능을 사용하라.
+이 영역에선 프로그래머가 명시적으로 동기화 할 필요가 없는 메세지 전달에 대해 살펴본다.</p>
+<p>메세지 전달 규칙 요약:</p>
+<ul>
+<li><a href="#Rconc-future">CP.60: 동시적인 작업으로부터 반환값을 받는데 <code>future</code>를 사용하라</a></li>
+<li><a href="#Rconc-async">CP.61: 동시적인 작업을 생성하기 위해선 <code>async()</code>를 사용하라</a></li>
+<li>메세지 큐</li>
+<li>메세징 라이브러리들</li>
+</ul>
+<p>???? should there be a "use X rather than <code>std::async</code>" where X is something that would use a better specified thread pool?</p>
+<p>??? Is <code>std::async</code> worth using in light of future (and even existing, as libraries) parallelism facilities? What should the guidelines recommend if someone wants to parallelize, e.g., <code>std::accumulate</code> (with the additional precondition of commutativity), or merge sort?</p>
+<h3 id="cp60-future"><a name="Rconc-future"></a>CP.60: 동시적인 작업으로부터 반환값을 받는데 <code>future</code>를 사용하라</h3>
+<h5 id="reason_20">Reason</h5>
+<p><code>future</code>는 비동기 작업에 대한 일반적인 함수 호출-반환 문맥을 남겨두는데 사용된다. 명시적인 잠금이 없고 정확한 반환값과 에러(예외) 반환 모두 간단히 처리된다.</p>
+<h5 id="example_19">Example</h5>
+<div class="codehilite"><pre><span></span>???
+</pre></div>
+
+
+<h5 id="note_12">Note</h5>
+<p>???</p>
+<h5 id="enforcement_19">Enforcement</h5>
+<p>???</p>
+<h3 id="cp61-async"><a name="Rconc-async"></a>CP.61: 동시적인 작업을 생성하기 위해선 <code>async()</code>를 사용하라</h3>
+<h5 id="reason_21">Reason</h5>
+<p>(원문 오기로 인한 내용 없음)</p>
+<h5 id="example_20">Example</h5>
+<div class="codehilite"><pre><span></span>???
+</pre></div>
+
+
+<h5 id="note_13">Note</h5>
+<p>불행하게도 <code>async()</code>는 완벽하지 않다.
+예를 들면, 스레드의 생성을 최소화하기 위해 스레드 풀이 사용된다는 보장을 하지 않는다. 실제로, 대부분의 동시적인 <code>async()</code>들은 스레드 풀을 구현하고 있지 않다.</p>
+<p>그렇지만, <code>async()</code>는 단순하고 논리적으로 정확하다. 더 나은 무언가가 나오거나 많은 비동기적인 작업들을 최적화 해야만 하지 않다면, <code>async()</code>를 계속 써도 무방하다.</p>
+<h5 id="enforcement_20">Enforcement</h5>
+<p>???</p>
+<h2 id="cpvec-vectorization"><a name="SScp-vec"></a>CP.vec: 벡터화(Vectorization)</h2>
+<p>벡터화란 명시적인 동기화를 사용하지 않고 몇개의 작업들을 동시적으로 수행하는 기술을 의미한다.
+연산은 단순하게 자료구조(벡터, 배열 등등)의 원소들에 병렬적으로 작용된다.
+벡터화는 비 지역적 변화를 필요로 하지 않는다는 점에서 흥미로운 속성을 지닌다. 하지만, 벡터화는 단순한 자료구조들과 병렬적 연산을 가능하게 하는 특별한 알고리즘이 함께 써야 최적의 성능을 보인다.</p>
+<p>벡터화 규칙 요약:</p>
+<ul>
+<li>???</li>
+<li>???</li>
+</ul>
+<h2 id="cpfree-lock-free"><a name="SScp-free"></a>CP.free: 무잠금(Lock-free) 프로그래밍</h2>
+<p><code>mutex</code>와 <code>condition_variable</code>를 사용한 동기화는 상대적으로 높은 비용을 지불해야 할 수 있다. 나아가서, 데드락(deadlock)으로 이어질 가능성 또한 존재한다.
+때때로, 성능과 데드락의 가능성을 없애기 위해선, 까다로운 저-수준의 "무잠금" 기능들을 사용해야 한다. 
+이 기능들은 일시적으로 배타적인(원자적인) 메모리 접근을 사용한다.<br />
+Lock-free 프로그래밍은 <code>thread</code>, <code>mutex</code>와 같은 상위레벨의 동시성 메커니즘을 구현하는데 사용되기도 한다.  </p>
+<p>Lock-free 프로그래밍 규칙 요약:</p>
+<ul>
+<li><a href="#Rconc-lockfree">CP.100: 정말 필요할 때만 lock-free 프로그래밍을 사용하라</a></li>
+<li><a href="#Rconc-distrust">CP.101: 하드웨어/컴파일러 조합을 불신하라</a></li>
+<li><a href="#Rconc-literature">CP.102: 문헌을 세심하가 공부하라</a></li>
+<li>언제/어떻게 atomic을 사용할 것인가</li>
+<li>기아상태를 회피하라</li>
+<li>정교하게 조작한 lock-free 메모리 접근보다는 lock-free 자료구조를 사용하라</li>
+<li><a href="#Rconc-double">CP.110: Do not write your own double-checked locking for initialization</a></li>
+<li><a href="#Rconc-double-pattern">CP.111: Use a conventional pattern if you really need double-checked locking</a></li>
+<li>언제/어떻게 CAS(Compare And Swap) 연산을 사용하는가</li>
+</ul>
+<h3 id="cp100-lock-free"><a name="Rconc-lockfree"></a>CP.100: 정말 필요할 때만 lock-free 프로그래밍을 사용하라</h3>
+<h5 id="reason_22">Reason</h5>
+<p>lock-free 프로그래밍은 에러를 발생시키기 쉽고 언어 기능, 머신 아키텍처, 자료구조에 대한 전문가 수준의 지식을 필요로 한다.</p>
+<h5 id="example-bad_8">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// 공유되는 연결리스트의 헤드(시작점)</span>
+    <span class="k">extern</span> <span class="n">atomic</span><span class="o">&lt;</span><span class="n">Link</span><span class="o">*&gt;</span> <span class="n">head</span><span class="p">;</span>
+
+    <span class="n">Link</span><span class="o">*</span> <span class="n">nh</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Link</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>    <span class="c1">// 링크에 삽입할 준비를 한다</span>
+    <span class="n">Link</span><span class="o">*</span> <span class="n">h</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="n">load</span><span class="p">();</span>                 <span class="c1">// 리스트의 공유 head를 읽는다</span>
+
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="c1">// 조건을 충족하면, 다른 곳에 삽입한다.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;=</span> <span class="n">data</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+        <span class="c1">// 다음 원소는 이전의 head이다</span>
+        <span class="n">nh</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">head</span><span class="p">.</span><span class="n">compare_exchange_weak</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">nh</span><span class="p">));</span>
+    <span class="c1">// nh를 h 또는 head에 삽입한다.</span>
+</pre></div>
+
+
+<p>버그를 찾아보라.<br />
+테스팅을 통해서 찾기 정말정말 어려울 것이다.<br />
+ABA 문제에 대해서 읽어보라.</p>
+<h5 id="exception_1">Exception</h5>
+<p>기본적으로 적용되는 순차 무모순 메모리 모델 (<code>memory_order_seq_cst</code>)을 사용하는 한, <a href="#???">원자적 변수들</a> 단순성과 안전성을 위해 사용될 수 있다.</p>
+<h5 id="note_14">Note</h5>
+<p>상위 레벨 동시성 메커니즘들은 <code>thread</code>와 <code>mutex</code> 같은 lock-free 프로그래밍으로 구현되었다.</p>
+<p><strong>Alternative</strong>: 다른 사람들에 의해서 구현되었거나 라이브러리의 일부로 존재하는 lock-free 자료구조를 사용하라.</p>
+<h3 id="cp101"><a name="Rconc-distrust"></a>CP.101: 하드웨어/컴파일러 조합을 불신하라</h3>
+<h5 id="reason_23">Reason</h5>
+<p>lock-free프로그래밍에 사용되는 저-수준 하드웨어 인터페이스는 가장 구현하기 어렵고 미묘한 이식성 문제가 발생할 수 있다.<br />
+성능을 위해 lock-free 프로그래밍을 사용하고 있다면, 오히려 성능 저하(regression)가 있지는 않은지 확인해야 한다.</p>
+<h5 id="note_15">Note</h5>
+<p>(정적/동적) 명령어 재배치(Instruction Reordering) 때문에 이 레벨에서는 효율적으로 생각하는 것이 어렵다 (특히 relaxed 메모리 모델을 사용하고 있다면).
+경험과, (준)형식적인 lock-free 모델들, 그런 모델들에 대한 점검이 유용할 수 있다.
+테스팅 - 종종 엄청나게 넓은 영역에 대한 - 은 필수적이다.
+"Don't fly too close to the wind."</p>
+<h5 id="enforcement_21">Enforcement</h5>
+<p>하드웨어, 운영체제, 컴파일러, 그리고 라이브러리의 모든 변화를 포함하는 강력한 테스팅 규칙을 세워라.</p>
+<h3 id="cp102"><a name="Rconc-literature"></a>CP.102: 문헌을 세심하게 공부하라</h3>
+<h5 id="reason_24">Reason</h5>
+<p>atomic에서의 예외와 표준적인 패턴들, lock-free 프로그래밍은 온전히 전문가를 위한 내용이다. 
+lock-free 코드를 적용하기에 앞서서 전문가가 되어라.</p>
+<h5 id="references">References</h5>
+<ul>
+<li>Anthony Williams: C++ concurrency in action. Manning Publications.</li>
+<li>Boehm, Adve, You Don't Know Jack About Shared Variables or Memory Models , Communications of the ACM, Feb 2012.</li>
+<li>Boehm, "Threads Basics", HPL TR 2009-259.</li>
+<li>Adve, Boehm, "Memory Models: A Case for Rethinking Parallel Languages and Hardware", Communications of the ACM, August 2010.</li>
+<li>Boehm, Adve, "Foundations of the C++ Concurrency Memory Model", PLDI 08.</li>
+<li>Mark Batty, Scott Owens, Susmit Sarkar, Peter Sewell, and Tjark Weber, "Mathematizing C++ Concurrency", POPL 2011.</li>
+<li>Damian Dechev, Peter Pirkelbauer, and Bjarne Stroustrup: Understanding and Effectively Preventing the ABA Problem in Descriptor-based Lock-free Designs. 13th IEEE Computer Society ISORC 2010 Symposium. May 2010.</li>
+<li>Damian Dechev and Bjarne Stroustrup: Scalable Non-blocking Concurrent Objects for Mission Critical Code. ACM OOPSLA'09. October 2009</li>
+<li>Damian Dechev, Peter Pirkelbauer, Nicolas Rouquette, and Bjarne Stroustrup: Semantically Enhanced Containers for Concurrent Real-Time Systems. Proc. 16th Annual IEEE International Conference and Workshop on the Engineering of Computer Based Systems (IEEE ECBS). April 2009.</li>
+</ul>
+<h3 id="cp110-double-checked-locking"><a name="Rconc-double"></a>CP.110: 초기화를 위한 독자적인 이중 확인 잠금 (double-checked locking) 코드를 작성하지 말라</h3>
+<h5 id="reason_25">Reason</h5>
+<p>C++11 이후부터는, 정적 지역 변수들이 스레드 안전 (thread-safe) 한 방식으로 초기화된다. 따라서 RAII 패턴과 함께 사용 시, 정적 지역 변수들의 사용은 초기화를 위한 독자적인 이중 확인 잠금 (double-checked locking) 코드를 작성해야 할 필요성을 대체한다. 또한 std::call_once 사용 역시 동일한 목적을 달성할 수 있다. 그러므로 독자적인 이중 확인 잠금 코드를 작성하기보다는 C++11 의 정적 지역 변수나 std::call_once 을 사용하라.</p>
+<h5 id="example_21">Example</h5>
+<p>std::call_once 를 사용하는 예제.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">once_flag</span> <span class="n">my_once_flag</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">call_once</span><span class="p">(</span><span class="n">my_once_flag</span><span class="p">,</span> <span class="p">[]()</span>
+        <span class="p">{</span>
+            <span class="c1">// do this only once</span>
+        <span class="p">});</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>C++11 의 스레드 안전한 정적 지역 변수를 사용하는 예제.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Assuming the compiler is compliant with C++11</span>
+        <span class="k">static</span> <span class="n">My_class</span> <span class="n">my_object</span><span class="p">;</span> <span class="c1">// Constructor called only once</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">My_class</span>
+    <span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">My_class</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// do this only once</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="enforcement_22">Enforcement</h5>
+<p>??? 저 idiom 확인할 수 있는 건가요?</p>
+<h3 id="cp111"><a name="Rconc-double-pattern"></a>CP.111: 이중 확인 잠금이 꼭 필요할 경우에는 전통적인 패턴을 사용하라</h3>
+<h5 id="reason_26">Reason</h5>
+<p>이중 확인 잠금 코드는 엉망으로 만들기 쉽다. <a href="#Rconc-double">CP.110: 초기화를 위한 독자적인 이중 확인 잠금 코드를 작성하지 말라</a> 및 <a href="#Rconc-lockfree">CP.100: 정말 필요할 때만 lock-free 프로그래밍을 사용하라</a> 과 같은 규칙에도 불구하고 독자적인 이중 확인 잠금 코드를 작성해야만 한다면, 전통적인 패턴을 이용해서 작성하도록 하라.</p>
+<p>스레드 안전하지 않은 (non-thread-safe) 특정 동작에 있어, 동작 자체가 복잡하고도 수행 빈도가 낮으며 해당 동작의 수행이 필요하지 않다는 것을 보장하는 (그 반대의 경우를 보장하기 위해서는 사용할 수 없는) 신속하고도 스레드-안전한 시험 방법이 존재하는 상황에서의 이중 확인 잠금 패턴의 사용이  <a href="#Rconc-double">CP.110: 초기화를 위한 독자적인 이중 확인 잠금 코드를 작성하지 말라</a> 을 위반하지 않는 경우에 해당한다.</p>
+<h5 id="example-bad_9">Example, bad</h5>
+<p>volatile 의 사용을 통한 아래의 첫 번째 시험은 스레드 안전하지 않다. <a href="#Rconc-volatile2">CP.200: <code>volatile</code>은 C++가 아닌 메모리에 대해서만 사용하라</a> 을 참고하라.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">mutex</span> <span class="n">action_mutex</span><span class="p">;</span>
+    <span class="k">volatile</span> <span class="kt">bool</span> <span class="n">action_needed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">action_mutex</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">take_action</span><span class="p">();</span>
+            <span class="n">action_needed</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="example-good">Example, good</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">mutex</span> <span class="n">action_mutex</span><span class="p">;</span>
+    <span class="n">atomic</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">action_needed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">action_mutex</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">take_action</span><span class="p">();</span>
+            <span class="n">action_needed</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>획득 적재 (acquire load) 방식이 순차 일관 적재 (sequentially-consistent load) 방식보다 효율적인 경우, 미세 조정된 메모리 순서 (memory order) 를 통해 성능상 이점을 얻을 수 있다.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">mutex</span> <span class="n">action_mutex</span><span class="p">;</span>
+    <span class="n">atomic</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">action_needed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">memory_order_acquire</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">action_mutex</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">action_needed</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">memory_order_relaxed</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">take_action</span><span class="p">();</span>
+            <span class="n">action_needed</span><span class="p">.</span><span class="n">store</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span> <span class="n">memory_order_release</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_23">Enforcement</h5>
+<p>??? 해당 idiom 이 탐지 가능한가?</p>
+<h2 id="cpetc"><a name="SScp-etc"></a>CP.etc: 기타 동시성 규칙들</h2>
+<p>이 규칙들은 분류를 적용하지 않는다:</p>
+<ul>
+<li><a href="#Rconc-volatile2">CP.200:  <code>volatile</code>은 C++가 아닌 메모리에 대해서만 사용하라</a></li>
+<li><a href="#Rconc-signal">CP.201: ??? 시그널</a></li>
+</ul>
+<h3 id="cp200-volatile-c"><a name="Rconc-volatile2"></a>CP.200: <code>volatile</code>은 C++가 아닌 메모리에 대해서만 사용하라</h3>
+<h5 id="reason_27">Reason</h5>
+<p><code>volatile</code>은 "C++가 아닌" 코드 또는 C++ 메모리 모델을 따르지 않는 하드웨어에 있는 객체를 참조하기 위해 사용된다.</p>
+<h5 id="example_22">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">const</span> <span class="k">volatile</span> <span class="kt">long</span> <span class="n">clock</span><span class="p">;</span>
+</pre></div>
+
+
+<p>이 코드는 시계 회로가 지속적으로 업데이트하는 레지스터를 의미한다.
+<code>clock</code>은 <code>volatile</code>인데, 이는 C++ 프로그램 내에서는 아무것도 하지 않았지만 값이 바뀔 수 있기 때문이다.
+예컨대, <code>clock</code>을 두번 읽는 것은 다른 값을 반환할 수도 있다, 때문에 최적화기(optimizer)는 반복된 읽기 과정을 최적화해서 없애지 않는 것이 나을 것이다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">long</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">;</span>
+    <span class="c1">// ... no use of clock here ...</span>
+    <span class="kt">long</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">clock</span><span class="p">;</span>
+</pre></div>
+
+
+<p><code>clock</code>은 프로그램에서 값을 쓰려고 하면 안되기 때문에 <code>const</code>로 사용된다.</p>
+<h5 id="note_16">Note</h5>
+<p>하드웨어를 직접 조작하는 최저 레벨의 코드를 작성하는 게 아니라면, <code>volatile</code>는 피하는게 좋은 난해한(esoteric) 기능이라고 생각하라.</p>
+<h5 id="example_23">Example</h5>
+<p>일반적으로 C++ 코드는 다른 어딘가(하드웨어 또는 다른 언어)에 속한 메모리를 가져올 때  <code>volatile</code>을 사용한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="k">volatile</span><span class="o">*</span> <span class="n">vi</span> <span class="o">=</span> <span class="n">get_hardware_memory_location</span><span class="p">();</span>
+        <span class="c1">// note: we get a pointer to someone else&#39;s memory here</span>
+        <span class="c1">// volatile says &quot;treat this with extra respect&quot;</span>
+</pre></div>
+
+
+<p>때때로 C++ 코드는  <code>volatile</code> 메모리를 할당하고 의도적으로 포인터를 다른 어딘가(하드웨어 또는 다른언어)와 공유하기도 한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">static</span> <span class="k">volatile</span> <span class="kt">long</span> <span class="n">vl</span><span class="p">;</span>
+    <span class="n">please_use_this</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vl</span><span class="p">);</span>   <span class="c1">// escape a reference to this to &quot;elsewhere&quot; (not C++)</span>
+</pre></div>
+
+
+<h5 id="example-bad_10">Example; bad</h5>
+<p><code>volatile</code> 지역변수들은 거의 대부분의 경우 잘못 사용된 것이다 --  local variables are nearly always wrong -- 그 변수들이 일시적(emphemeral)이라면 어떻게 다른 언어/기계들과 공유될 수 있겠는가?</p>
+<p>멤버 변수들의 경우도 같은 이유로 <code>volatile</code>의 잘못된 사용일 수 있다.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">volatile</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// bad, volatile local variable</span>
+        <span class="c1">// etc.</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">My_type</span> <span class="p">{</span>
+        <span class="k">volatile</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// suspicious, volatile member variable</span>
+        <span class="c1">// etc.</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="note_17">Note</h5>
+<p>C++ 에서는, 다른 언어와는 달리, <code>volatile</code>은 동기화와 관련해 <a href="#Rconc-volatile">아무것도 하지 않는다</a>.</p>
+<h5 id="enforcement_24">Enforcement</h5>
+<ul>
+<li><code>volatile T</code> 을 사용하는 지역, 멤버 변수들을 지적하라; 대부분의 경우  <code>atomic&lt;T&gt;</code> 를 의도했을 것이다.</li>
+<li>???</li>
+</ul>
+<h3 id="cp201"><a name="Rconc-signal"></a>CP.201: ??? 시그널</h3>
+<p>???UNIX signal handling???. May be worth reminding how little is async-signal-safe, and how to communicate with a signal handler (best is probably "not at all")</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Class/" title="Class" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Class
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Const/" title="Const" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Const
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1073 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Enum/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Enum - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#reason" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Enum
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Enum" class="md-nav__link md-nav__link--active">
+      Enum
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Enum.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="enum"><a name="S-enum"></a>Enum: 열거형</h1>
+<blockquote>
+<p>역주 : 열거형(enumeration)<br />
+역주 : 열거체(enumerator)<br />
+역주 : 열거값(enumerator value)  </p>
+</blockquote>
+<p>열거형은 정수 값의 집합을 정의하는데 사용되며, 그런 값들의 집합을 타입으로 정의하는데 사용된다.
+열거형에는 두 종류가 있는데, "단순한" <code>enum</code>과 <code>class enum</code>이다.</p>
+<p>열거형 규칙 요약:</p>
+<ul>
+<li><a href="#Renum-macro">Enum.1: 매크로보다 열거형을 사용하라</a></li>
+<li><a href="#Renum-set">Enum.2: 서로 관련있는 상수들의 집합을 표현하기 위해 열거형을 사용하라</a></li>
+<li><a href="#Renum-class">Enum.3: 단순한 <code>enum</code>보다 <code>enum class</code>를 선호하라</a></li>
+<li><a href="#Renum-oper">Enum.4: 안전하고 단순한 사용을 위해 열거형들을 위한 연산을 정의하라</a></li>
+<li><a href="#Renum-caps">Enum.5: 열거체들을 <code>ALL_CAPS</code>형태로 사용하지 마라</a></li>
+<li><a href="#Renum-unnamed">Enum.6: 이름없는 열거형을 지양하라</a></li>
+<li><a href="#Renum-underlying">Enum.7: 필요할 때만 기본 타입을 명시하라</a></li>
+<li><a href="#Renum-value">Enum.8: 열거체들의 값은 필요할때만 명시하라</a></li>
+</ul>
+<h3 id="enum1"><a name="Renum-macro"></a>Enum.1: 매크로보다 열거형을 사용하라</h3>
+<h5 id="reason">Reason</h5>
+<p>매크로는 유효범위 또는 타입 규칙들을 무시한다. 전처리 과정에서 소멸되기 때문에 일반적으로 디버깅 도구에서는 확인할 수 없다.</p>
+<h5 id="example">Example</h5>
+<p>오래된, 나쁜 코드를 먼저 보자.</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// webcolors.h (3rd party header)</span>
+    <span class="cp">#define RED   0xFF0000</span>
+    <span class="cp">#define GREEN 0x00FF00</span>
+    <span class="cp">#define BLUE  0x0000FF</span>
+
+    <span class="c1">// productinfo.h</span>
+    <span class="c1">// 여기서는 제품의 색에 따른 보조 타입을 정의한다</span>
+    <span class="cp">#define RED    0</span>
+    <span class="cp">#define PURPLE 1</span>
+    <span class="cp">#define BLUE   2</span>
+
+    <span class="kt">int</span> <span class="n">webby</span> <span class="o">=</span> <span class="n">BLUE</span><span class="p">;</span>   <span class="c1">// webby == 2; 엉뚱한 값이 사용된다</span>
+</pre></div>
+
+
+<p><code>enum</code> 대신 이렇게 작성할 수 있다:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Web_color</span> <span class="p">{</span>
+            <span class="n">red</span>     <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span>
+            <span class="n">green</span>   <span class="o">=</span> <span class="mh">0x00FF00</span><span class="p">,</span>
+            <span class="n">blue</span>    <span class="o">=</span> <span class="mh">0x0000FF</span>
+        <span class="p">};</span>
+
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Product_info</span> <span class="p">{</span>
+            <span class="n">red</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">purple</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="n">blue</span>    <span class="o">=</span> <span class="mi">2</span>
+        <span class="p">};</span>
+
+    <span class="kt">int</span>       <span class="n">webby</span> <span class="o">=</span> <span class="n">blue</span><span class="p">;</span>   <span class="c1">// 에러: enum class를 명시해야한다</span>
+    <span class="n">Web_color</span> <span class="n">webby</span> <span class="o">=</span> <span class="n">Web_color</span><span class="o">::</span><span class="n">blue</span><span class="p">;</span>
+</pre></div>
+
+
+<p>이름의 충돌을 막기 위해서 <code>enum class</code>를 사용할 수 있다</p>
+<h5 id="enforcement">Enforcement</h5>
+<p>정수 값을 사용하는 매크로들을 지적하라</p>
+<h3 id="enum2"><a name="Renum-set"></a>Enum.2: 서로 관련있는 상수들의 집합을 표현하기 위해 열거형을 사용하라</h3>
+<h5 id="reason_1">Reason</h5>
+<p>모든 열거형들은 열거체들이 특정한 타입으로 묶일 수 있다는 것을 의미한다</p>
+<h5 id="example_1">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Web_color</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span> <span class="n">green</span> <span class="o">=</span> <span class="mh">0x00FF00</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mh">0x0000FF</span> <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="note">Note</h5>
+<p>열거형을 사용해 <code>switch</code>하는 것은 일반적이며, 비정상적인 <code>case</code>에 대해 컴파일러가 경고할 수 있다.</p>
+<p>예를 들자면:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Product_info</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">purple</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">};</span>
+
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">Product_info</span> <span class="n">inf</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// default를 사용하지 않고,</span>
+        <span class="c1">// case가 모든 enumerator들을 검출하지도 않는다.</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">inf</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">Product_info</span><span class="o">::</span><span class="nl">red</span>    <span class="p">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;red&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">Product_info</span><span class="o">::</span><span class="nl">purple</span> <span class="p">:</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;purple&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이처럼 한개 모자란(off-by-one) <code>switch</code>구문은 보통 열거체가 추가되었거나 충분한 테스트가 없었기 때문에 발생한다.</p>
+<h5 id="enforcement_1">Enforcement</h5>
+<ul>
+<li><code>case</code>가 모든 열거체들을 고려하지 않는 <code>switch</code>구문을 지적하라</li>
+<li><code>case</code>가 일부 열거체만 사용하고, <code>default</code>를 사용하지 않는 경우 지적하라</li>
+</ul>
+<h3 id="enum3-enum-enum-class"><a name="Renum-class"></a>Enum.3: 단순한 <code>enum</code>보다 <code>enum class</code>를 선호하라</h3>
+<h5 id="reason_2">Reason</h5>
+<p>오해의 소지가 없다. 전통적으로 사용된 enum은 int와 다를 것이 없다.</p>
+<h5 id="example_2">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">Print_color</span><span class="p">(</span><span class="kt">int</span> <span class="n">color</span><span class="p">);</span>
+
+    <span class="k">enum</span> <span class="n">Web_color</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span> <span class="n">green</span> <span class="o">=</span> <span class="mh">0x00FF00</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mh">0x0000FF</span> <span class="p">};</span>
+    <span class="k">enum</span> <span class="n">Product_info</span> <span class="p">{</span> <span class="n">Red</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Purple</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Blue</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">};</span>
+
+    <span class="n">Web_color</span> <span class="n">webby</span> <span class="o">=</span> <span class="n">Web_color</span><span class="o">::</span><span class="n">blue</span><span class="p">;</span>
+
+    <span class="c1">// 분명 이 둘중 하나는 버그를 일으킬 것이다</span>
+    <span class="n">Print_color</span><span class="p">(</span><span class="n">webby</span><span class="p">);</span>
+    <span class="n">Print_color</span><span class="p">(</span><span class="n">Product_info</span><span class="o">::</span><span class="n">Blue</span><span class="p">);</span>
+</pre></div>
+
+
+<p>대신, <code>enum class</code> 사용하면:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">Print_color</span><span class="p">(</span><span class="kt">int</span> <span class="n">color</span><span class="p">);</span>
+
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Web_color</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span> <span class="n">green</span> <span class="o">=</span> <span class="mh">0x00FF00</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mh">0x0000FF</span> <span class="p">};</span>
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Product_info</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">purple</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">};</span>
+
+    <span class="n">Web_color</span> <span class="n">webby</span> <span class="o">=</span> <span class="n">Web_color</span><span class="o">::</span><span class="n">blue</span><span class="p">;</span>
+    <span class="n">Print_color</span><span class="p">(</span><span class="n">webby</span><span class="p">);</span>  <span class="c1">// Error: cannot convert Web_color to int.</span>
+    <span class="n">Print_color</span><span class="p">(</span><span class="n">Product_info</span><span class="o">::</span><span class="n">Red</span><span class="p">);</span>  <span class="c1">// Error: cannot convert Product_info to int.</span>
+</pre></div>
+
+
+<h5 id="enforcement_2">Enforcement</h5>
+<p>(쉬움) 클래스가 아닌 <code>enum</code> 정의를 조심하라.</p>
+<h3 id="enum4"><a name="Renum-oper"></a>Enum.4: 안전하고 단순한 사용을 위해 열거형들을 위한 연산을 정의하라</h3>
+<h5 id="reason_3">Reason</h5>
+<p>에러를 방지하는데 편리하다</p>
+<h5 id="example_3">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Day</span> <span class="p">{</span> <span class="n">mon</span><span class="p">,</span> <span class="n">tue</span><span class="p">,</span> <span class="n">wed</span><span class="p">,</span> <span class="n">thu</span><span class="p">,</span> <span class="n">fri</span><span class="p">,</span> <span class="n">sat</span><span class="p">,</span> <span class="n">sun</span> <span class="p">};</span>
+
+    <span class="n">Day</span> <span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="n">Day</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">d</span> <span class="o">==</span> <span class="n">Day</span><span class="o">::</span><span class="n">sun</span> <span class="o">?</span> <span class="n">Day</span><span class="o">::</span><span class="nl">mon</span> <span class="p">:</span> <span class="n">Day</span><span class="p">{</span><span class="o">++</span><span class="n">d</span><span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="n">Day</span> <span class="n">today</span> <span class="o">=</span> <span class="n">Day</span><span class="o">::</span><span class="n">sat</span><span class="p">;</span>
+    <span class="n">Day</span> <span class="n">tomorrow</span> <span class="o">=</span> <span class="o">++</span><span class="n">today</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="enforcement_3">Enforcement</h5>
+<p>Flag repeated expressions cast back into an enumeration.</p>
+<h3 id="enum5-all_caps"><a name="Renum-caps"></a>Enum.5: 열거체들을 <code>ALL_CAPS</code>형태로 사용하지 마라</h3>
+<h5 id="reason_4">Reason</h5>
+<p>매크로들의 충돌을 방지한다</p>
+<h5 id="example-bad">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// webcolors.h (third party header)</span>
+    <span class="cp">#define RED   0xFF0000</span>
+    <span class="cp">#define GREEN 0x00FF00</span>
+    <span class="cp">#define BLUE  0x0000FF</span>
+
+    <span class="c1">// productinfo.h</span>
+    <span class="c1">// 매크로가 문법에러를 발생시킨다</span>
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Product_info</span> <span class="p">{</span> <span class="n">RED</span><span class="p">,</span> <span class="n">PURPLE</span><span class="p">,</span> <span class="n">BLUE</span> <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="enforcement_4">Enforcement</h5>
+<p>대문자만으로 구성된 열거체들을 지적하라</p>
+<h3 id="enum6"><a name="Renum-unnamed"></a>Enum.6: 이름없는 열거형을 지양하라</h3>
+<h5 id="reason_5">Reason</h5>
+<p>열거형에 이름을 붙일 수 없다면, 서로 상관없는 값들이다.</p>
+<h5 id="example-bad_1">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">is_signed</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">};</span>
+</pre></div>
+
+
+<p>이런 코드는 정수 상수들을 정의하는 편리한 방법이 나타나기 전까진 일반적이었다.</p>
+<h5 id="alternative">Alternative</h5>
+<p>대신 <code>constexpr</code>를 사용하라 :</p>
+<div class="codehilite"><pre><span></span>    <span class="k">constexpr</span> <span class="kt">int</span>   <span class="n">red</span>         <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">short</span> <span class="n">scale</span>       <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">bool</span>  <span class="n">is_signed</span>   <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</pre></div>
+
+
+<h5 id="enforcement_5">Enforcement</h5>
+<p>이름없는 열거형을 지적하라</p>
+<h3 id="enum7"><a name="Renum-underlying"></a>Enum.7: 필요할 때만 기본 타입을 명시하라</h3>
+<h5 id="reason_6">Reason</h5>
+<p>기본 타입은 읽고 쓰기에 쉽다.
+<code>int</code>는 기본 정수 타입이며, C 언어의 <code>enum</code>과 호환된다.</p>
+<h5 id="example_4">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// 기본 타입(char)가 공간을 절약해준다</span>
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Direction</span> <span class="o">:</span> <span class="kt">char</span> <span class="p">{</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span>
+                                  <span class="n">ne</span><span class="p">,</span> <span class="n">nw</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">sw</span> <span class="p">};</span>  
+
+    <span class="c1">// 기본 타입(int)가 공간을 소모한다.(redundant)</span>
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Web_color</span> <span class="o">:</span> <span class="kt">int</span> <span class="p">{</span> <span class="n">red</span>   <span class="o">=</span> <span class="mh">0xFF0000</span><span class="p">,</span>
+                                 <span class="n">green</span> <span class="o">=</span> <span class="mh">0x00FF00</span><span class="p">,</span>
+                                 <span class="n">blue</span>  <span class="o">=</span> <span class="mh">0x0000FF</span> <span class="p">};</span>  
+</pre></div>
+
+
+<h5 id="note_1">Note</h5>
+<p>기본 타입을 정의하는 것은 전방 선언이 필요한 경우 필수적이다.</p>
+<blockquote>
+<p>역주 : 전방 선언(forward declaration)</p>
+</blockquote>
+<div class="codehilite"><pre><span></span>    <span class="c1">// Forward declaration</span>
+    <span class="k">enum</span> <span class="nl">Flags</span> <span class="p">:</span> <span class="kt">char</span><span class="p">;</span>
+
+    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Flags</span><span class="p">);</span>
+
+    <span class="c1">// ....</span>
+
+    <span class="c1">// Definition</span>
+    <span class="k">enum</span> <span class="nl">flags</span> <span class="p">:</span> <span class="kt">char</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="enforcement_6">Enforcement</h5>
+<p>????</p>
+<h3 id="enum8"><a name="Renum-value"></a>Enum.8: 열거체들의 값은 필요할때만 명시하라</h3>
+<h5 id="reason_7">Reason</h5>
+<p>이는 가장 단순한 방법이며, 열거값의 중복을 방지한다. 열거체들이 기본값을 사용하면 연속된 값을 사용하게 되므로 <code>switch</code>구문의 구현에 좋다.</p>
+<h5 id="example_5">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Col1</span> <span class="p">{</span> <span class="n">red</span><span class="p">,</span> <span class="n">yellow</span><span class="p">,</span> <span class="n">blue</span> <span class="p">};</span>
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Col2</span> <span class="p">{</span> <span class="n">red</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">yellow</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">};</span> <span class="c1">// typo</span>
+
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Month</span> <span class="p">{</span> <span class="n">jan</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">feb</span><span class="p">,</span> <span class="n">mar</span><span class="p">,</span> <span class="n">apr</span><span class="p">,</span> <span class="n">may</span><span class="p">,</span> <span class="n">jun</span><span class="p">,</span>
+                       <span class="n">jul</span><span class="p">,</span> <span class="n">august</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">oct</span><span class="p">,</span> <span class="n">nov</span><span class="p">,</span> <span class="n">dec</span> <span class="p">};</span>
+                       <span class="c1">// 달력은 1월부터 시작한다</span>
+
+    <span class="k">enum</span> <span class="k">class</span> <span class="nc">Base_flag</span> <span class="p">{</span>
+        <span class="n">dec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">oct</span> <span class="o">=</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">hex</span> <span class="o">=</span> <span class="n">dec</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+    <span class="p">};</span>
+    <span class="c1">// 비트들의 집합</span>
+</pre></div>
+
+
+<p>(<code>Month</code> 와 같이) 관습적인 값이 필요한 경우, 또는 (<code>Base_flag</code>의 특정 비트 처럼)연속적인 값이 적합하지 않은 경우 값을 명시하라.</p>
+<h5 id="enforcement_7">Enforcement</h5>
+<ul>
+<li>중복된 열거값에는 지적하라</li>
+<li>연속적인 열거값을 명시하는 경우는 지적하라</li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../CPL/" title="C-Style" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                C-Style
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Errors/" title="Errors" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Errors
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

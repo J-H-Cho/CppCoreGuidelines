@@ -1,0 +1,955 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Glossary/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Glossary - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Glossary
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Glossary" class="md-nav__link md-nav__link--active">
+      Glossary
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Glossary.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="glossary"><a name="S-glossary"></a>Glossary</h1>
+<p>A relatively informal definition of terms used in the guidelines
+(based of the glossary in <a href="http://www.stroustrup.com/programming.html">Programming: Principles and Practice using C++</a>)</p>
+<p>More information on many topics about C++ can be found on the <a href="https://isocpp.org">Standard C++ Foundation</a>'s site.</p>
+<ul>
+<li><em>ABI</em>: Application Binary Interface, a specification for a specific hardware platform combined with the operating system. Contrast with API.</li>
+<li><em>abstract class</em>: a class that cannot be directly used to create objects; often used to define an interface to derived classes.
+  A class is made abstract by having a pure virtual function or only protected constructors.</li>
+<li><em>abstraction</em>: a description of something that selectively and deliberately ignores (hides) details (e.g., implementation details); selective ignorance.</li>
+<li><em>address</em>: a value that allows us to find an object in a computer's memory.</li>
+<li><em>algorithm</em>: a procedure or formula for solving a problem; a finite series of computational steps to produce a result.</li>
+<li><em>alias</em>: an alternative way of referring to an object; often a name, pointer, or reference.</li>
+<li><em>API</em>: Application Programming Interface, a set of functions that form the communication between various software components. Contrast with ABI.</li>
+<li><em>application</em>: a program or a collection of programs that is considered an entity by its users.</li>
+<li><em>approximation</em>: something (e.g., a value or a design) that is close to the perfect or ideal (value or design).
+  Often an approximation is a result of trade-offs among ideals.</li>
+<li><em>argument</em>: a value passed to a function or a template, in which it is accessed through a parameter.</li>
+<li><em>array</em>: a homogeneous sequence of elements, usually numbered, e.g., <code>[0:max)</code>.</li>
+<li><em>assertion</em>: a statement inserted into a program to state (assert) that something must always be true at this point in the program.</li>
+<li><em>base class</em>: a class used as the base of a class hierarchy. Typically a base class has one or more virtual functions.</li>
+<li><em>bit</em>: the basic unit of information in a computer. A bit can have the value 0 or the value 1.</li>
+<li><em>bug</em>: an error in a program.</li>
+<li><em>byte</em>: the basic unit of addressing in most computers. Typically, a byte holds 8 bits.</li>
+<li><em>class</em>: a user-defined type that may contain data members, function members, and member types.</li>
+<li><em>code</em>: a program or a part of a program; ambiguously used for both source code and object code.</li>
+<li><em>compiler</em>: a program that turns source code into object code.</li>
+<li><em>complexity</em>: a hard-to-precisely-define notion or measure of the difficulty of constructing a solution to a problem or of the solution itself.
+  Sometimes complexity is used to (simply) mean an estimate of the number of operations needed to execute an algorithm.</li>
+<li><em>computation</em>: the execution of some code, usually taking some input and producing some output.</li>
+<li><em>concept</em>: (1) a notion, and idea; (2) a set of requirements, usually for a template argument.</li>
+<li><em>concrete class</em>: class for which objects can be created.</li>
+<li><em>constant</em>: a value that cannot be changed (in a given scope); not mutable.</li>
+<li><em>constructor</em>: an operation that initializes ("constructs") an object.
+  Typically a constructor establishes an invariant and often acquires resources needed for an object to be used (which are then typically released by a destructor).</li>
+<li><em>container</em>: an object that holds elements (other objects).</li>
+<li><em>copy</em>: an operation that makes two object have values that compare equal. See also move.</li>
+<li><em>correctness</em>: a program or a piece of a program is correct if it meets its specification.
+  Unfortunately, a specification can be incomplete or inconsistent, or can fail to meet users' reasonable expectations.
+  Thus, to produce acceptable code, we sometimes have to do more than just follow the formal specification.</li>
+<li><em>cost</em>: the expense (e.g., in programmer time, run time, or space) of producing a program or of executing it.
+  Ideally, cost should be a function of complexity.</li>
+<li><em>customization point</em>: ???</li>
+<li><em>data</em>: values used in a computation.</li>
+<li><em>debugging</em>: the act of searching for and removing errors from a program; usually far less systematic than testing.</li>
+<li><em>declaration</em>: the specification of a name with its type in a program.</li>
+<li><em>definition</em>: a declaration of an entity that supplies all information necessary to complete a program using the entity.
+  Simplified definition: a declaration that allocates memory.</li>
+<li><em>derived class</em>: a class derived from one or more base classes.</li>
+<li><em>design</em>: an overall description of how a piece of software should operate to meet its specification.</li>
+<li><em>destructor</em>: an operation that is implicitly invoked (called) when an object is destroyed (e.g., at the end of a scope). Often, it releases resources.</li>
+<li><em>encapsulation</em>: protecting something meant to be private (e.g., implementation details) from unauthorized access.</li>
+<li><em>error</em>: a mismatch between reasonable expectations of program behavior (often expressed as a requirement or a users' guide) and what a program actually does.</li>
+<li><em>executable</em>: a program ready to be run (executed) on a computer.</li>
+<li><em>feature creep</em>: a tendency to add excess functionality to a program "just in case."</li>
+<li><em>file</em>: a container of permanent information in a computer.</li>
+<li><em>floating-point number</em>: a computer's approximation of a real number, such as 7.93 and 10.78e-3.</li>
+<li><em>function</em>: a named unit of code that can be invoked (called) from different parts of a program; a logical unit of computation.</li>
+<li><em>generic programming</em>: a style of programming focused on the design and efficient implementation of algorithms.
+  A generic algorithm will work for all argument types that meet its requirements. In C++, generic programming typically uses templates.</li>
+<li><em>global variable</em>: technically, a named object in namespace scope.</li>
+<li><em>handle</em>: a class that allows access to another through a member pointer or reference. See also resource, copy, move.</li>
+<li><em>header</em>: a file containing declarations used to share interfaces between parts of a program.</li>
+<li><em>hiding</em>: the act of preventing a piece of information from being directly seen or accessed.
+  For example, a name from a nested (inner) scope can prevent that same name from an outer (enclosing) scope from being directly used.</li>
+<li><em>ideal</em>: the perfect version of something we are striving for. Usually we have to make trade-offs and settle for an approximation.</li>
+<li><em>implementation</em>: (1) the act of writing and testing code; (2) the code that implements a program.</li>
+<li><em>infinite loop</em>: a loop where the termination condition never becomes true. See iteration.</li>
+<li><em>infinite recursion</em>: a recursion that doesn't end until the machine runs out of memory to hold the calls.
+  In reality, such recursion is never infinite but is terminated by some hardware error.</li>
+<li><em>information hiding</em>: the act of separating interface and implementation, thus hiding implementation details not meant for the user's attention and providing an abstraction.</li>
+<li><em>initialize</em>: giving an object its first (initial) value.</li>
+<li><em>input</em>: values used by a computation (e.g., function arguments and characters typed on a keyboard).</li>
+<li><em>integer</em>: a whole number, such as 42 and -99.</li>
+<li><em>interface</em>: a declaration or a set of declarations specifying how a piece of code (such as a function or a class) can be called.</li>
+<li><em>invariant</em>: something that must be always true at a given point (or points) of a program; typically used to describe the state (set of values) of an object or the state of a loop before entry into the repeated statement.</li>
+<li><em>iteration</em>: the act of repeatedly executing a piece of code; see recursion.</li>
+<li><em>iterator</em>: an object that identifies an element of a sequence.</li>
+<li><em>ISO</em>: International Organization for Standardization. The C++ language is an ISO standard, ISO/IEC 14882. More information at <a href="http://iso.org">iso.org</a>.</li>
+<li><em>library</em>: a collection of types, functions, classes, etc. implementing a set of facilities (abstractions) meant to be potentially used as part of more that one program.</li>
+<li><em>lifetime</em>: the time from the initialization of an object until it becomes unusable (goes out of scope, is deleted, or the program terminates).</li>
+<li><em>linker</em>: a program that combines object code files and libraries into an executable program.</li>
+<li><em>literal</em>: a notation that directly specifies a value, such as 12 specifying the integer value "twelve."</li>
+<li><em>loop</em>: a piece of code executed repeatedly; in C++, typically a for-statement or a <code>while</code>-statement.</li>
+<li><em>move</em>: an operation that transfers a value from one object to another leaving behind a value representing "empty." See also copy.</li>
+<li><em>mutable</em>: changeable; the opposite of immutable, constant, and invariable.</li>
+<li><em>object</em>: (1) an initialized region of memory of a known type which holds a value of that type; (2) a region of memory.</li>
+<li><em>object code</em>: output from a compiler intended as input for a linker (for the linker to produce executable code).</li>
+<li><em>object file</em>: a file containing object code.</li>
+<li><em>object-oriented programming</em>: (OOP) a style of programming focused on the design and use of classes and class hierarchies.</li>
+<li><em>operation</em>: something that can perform some action, such as a function and an operator.</li>
+<li><em>output</em>: values produced by a computation (e.g., a function result or lines of characters written on a screen).</li>
+<li><em>overflow</em>: producing a value that cannot be stored in its intended target.</li>
+<li><em>overload</em>: defining two functions or operators with the same name but different argument (operand) types.</li>
+<li><em>override</em>: defining a function in a derived class with the same name and argument types as a virtual function in the base class, thus making the function callable through the interface defined by the base class.</li>
+<li><em>owner</em>: an object responsible for releasing a resource.</li>
+<li><em>paradigm</em>: a somewhat pretentious term for design or programming style; often used with the (erroneous) implication that there exists a paradigm that is superior to all others.</li>
+<li><em>parameter</em>: a declaration of an explicit input to a function or a template. When called, a function can access the arguments passed through the names of its parameters.</li>
+<li><em>pointer</em>: (1) a value used to identify a typed object in memory; (2) a variable holding such a value.</li>
+<li><em>post-condition</em>: a condition that must hold upon exit from a piece of code, such as a function or a loop.</li>
+<li><em>pre-condition</em>: a condition that must hold upon entry into a piece of code, such as a function or a loop.</li>
+<li><em>program</em>: code (possibly with associated data) that is sufficiently complete to be executed by a computer.</li>
+<li><em>programming</em>: the art of expressing solutions to problems as code.</li>
+<li><em>programming language</em>: a language for expressing programs.</li>
+<li><em>pseudo code</em>: a description of a computation written in an informal notation rather than a programming language.</li>
+<li><em>pure virtual function</em>: a virtual function that must be overridden in a derived class.</li>
+<li><em>RAII</em>: ("Resource Acquisition Is Initialization") a basic technique for resource management based on scopes.</li>
+<li><em>range</em>: a sequence of values that can be described by a start point and an end point. For example, <code>[0:5)</code> means the values 0, 1, 2, 3, and 4.</li>
+<li><em>recursion</em>: the act of a function calling itself; see also iteration.</li>
+<li><em>reference</em>: (1) a value describing the location of a typed value in memory; (2) a variable holding such a value.</li>
+<li><em>regular expression</em>: a notation for patterns in character strings.</li>
+<li><em>regular</em>: a type that behaves similarly to built-in types like <code>int</code> and can be compared with <code>==</code>. In particular, an object of a regular type can be copied and the result of a copy is a separate object that compares equal to the original. See also <em>semiregular type</em>.</li>
+<li><em>requirement</em>: (1) a description of the desired behavior of a program or part of a program; (2) a description of the assumptions a function or template makes of its arguments.</li>
+<li><em>resource</em>: something that is acquired and must later be released, such as a file handle, a lock, or memory. See also handle, owner.</li>
+<li><em>rounding</em>: conversion of a value to the mathematically nearest value of a less precise type.</li>
+<li><em>RTTI</em>: Run-Time Type Information. ???</li>
+<li><em>scope</em>: the region of program text (source code) in which a name can be referred to.</li>
+<li><em>semiregular</em>: a type that behaves roughly like an built-in type like <code>int</code>, but possibly without a <code>==</code> operator. See also <em>regular type</em>.</li>
+<li><em>sequence</em>: elements that can be visited in a linear order.</li>
+<li><em>software</em>: a collection of pieces of code and associated data; often used interchangeably with program.</li>
+<li><em>source code</em>: code as produced by a programmer and (in principle) readable by other programmers.</li>
+<li><em>source file</em>: a file containing source code.</li>
+<li><em>specification</em>: a description of what a piece of code should do.</li>
+<li><em>standard</em>: an officially agreed upon definition of something, such as a programming language.</li>
+<li><em>state</em>: a set of values.</li>
+<li><em>STL</em>: the containers, iterators, and algorithms part of the standard library.</li>
+<li><em>string</em>: a sequence of characters.</li>
+<li><em>style</em>: a set of techniques for programming leading to a consistent use of language features; sometimes used in a very restricted sense to refer just to low-level rules for naming and appearance of code.</li>
+<li><em>subtype</em>: derived type; a type that has all the properties of a type and possibly more.</li>
+<li><em>supertype</em>: base type; a type that has a subset of the properties of a type.</li>
+<li><em>system</em>: (1) a program or a set of programs for performing a task on a computer; (2) a shorthand for "operating system", that is, the fundamental execution environment and tools for a computer.</li>
+<li><em>TS</em>: <a href="https://www.iso.org/deliverables-all.html?type=ts">Technical Specification</a>, A Technical Specification addresses work still under technical development, or where it is believed that there will be a future, but not immediate, possibility of agreement on an International Standard. A Technical Specification is published for immediate use, but it also provides a means to obtain feedback. The aim is that it will eventually be transformed and republished as an International Standard.</li>
+<li><em>template</em>: a class or a function parameterized by one or more types or (compile-time) values; the basic C++ language construct supporting generic programming.</li>
+<li><em>testing</em>: a systematic search for errors in a program.</li>
+<li><em>trade-off</em>: the result of balancing several design and implementation criteria.</li>
+<li><em>truncation</em>: loss of information in a conversion from a type into another that cannot exactly represent the value to be converted.</li>
+<li><em>type</em>: something that defines a set of possible values and a set of operations for an object.</li>
+<li><em>uninitialized</em>: the (undefined) state of an object before it is initialized.</li>
+<li><em>unit</em>: (1) a standard measure that gives meaning to a value (e.g., km for a distance); (2) a distinguished (e.g., named) part of a larger whole.</li>
+<li><em>use case</em>: a specific (typically simple) use of a program meant to test its functionality and demonstrate its purpose.</li>
+<li><em>value</em>: a set of bits in memory interpreted according to a type.</li>
+<li><em>variable</em>: a named object of a given type; contains a value unless uninitialized.</li>
+<li><em>virtual function</em>: a member function that can be overridden in a derived class.</li>
+<li><em>word</em>: a basic unit of memory in a computer, often the unit used to hold an integer.</li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Functions/" title="Functions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Functions
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../GSL/" title="GSL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                GSL
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

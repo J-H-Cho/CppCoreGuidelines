@@ -1,0 +1,955 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/References/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>RF: 레퍼런스 - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                <a name="S-references"></a>RF: 레퍼런스
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="RF: 레퍼런스" class="md-nav__link md-nav__link--active">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/References.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="rf"><a name="S-references"></a>RF: 레퍼런스</h1>
+<p>C++을 보다 전문적으로 사용하기 위하여 많은 코딩 표준, 규칙들이 만들어 지고 있다.</p>
+<p>많은 규칙들이</p>
+<ul>
+<li>식별자들의 스펠링같이 사소한 사항들에 초점을 맞춘다</li>
+<li>C++에 미숙한 사람들 의해 작성되었다</li>
+<li>"개발자를 올바르게 인도하는"것을 기본 목표로 한다</li>
+<li>여러 컴파일러들(일부는 10년도 넘은) 간의 이식성을 위한 것이다</li>
+<li>수십년된 오래된 코드 베이스를 유지하기 위해 작성되었다</li>
+<li>하나의 분야에만 국한된다</li>
+<li>명백히 역효과를 낳는다</li>
+<li>무시된다 (그리고 프로그래머가 자신의 소임을 다하기 위해선 무시되어야만 한다)</li>
+</ul>
+<p>잘못된 코딩 표준은 차라리 없느니만 못하다. 그러나 적절한 가이드라인이라는 것은 표준이 없는것 보다 훨씬 낫다: "형식은 자유를 가져 오리라"</p>
+<p>우리가 원하는 대로 할 수 있고 원하지 않는 것은 허용되지 않는, 소위 "완벽한 언어"가 될 수 있을까? 기본적으로, 알맞은 언어는 (그리고 언어를 위한 툴 체인을 포함해서) 더 많은 요구사항을 충족시키고 기능을 제공해야 한다. 시간이 흐를수록 언어에 대한 요구사항은 변화하고, 이에 부응하기 위해서는 범용적인 언어가 필요하게 된다. 오늘은 이상적인 언어가 내일은 너무 제한적일 수 있다.</p>
+<p>코딩 가이드라인은 특정 요구에 맞게 언어를 사용하는 것이다. 그러므로, 모두를 위한 단일 코딩 스타일은 있을 수 없다. 각 개발조직 별로 제약사항을 추가하거나 확고한 규칙을 더해서 사용해야 한다.</p>
+<p>Reference sections:</p>
+<ul>
+<li><a href="#SS-rules">RF.rules: Coding rules</a></li>
+<li><a href="#SS-books">RF.books: Books with coding guidelines</a></li>
+<li><a href="#SS-Cplusplus">RF.C++: C++ Programming (C++11/C++14/C++17)</a></li>
+<li><a href="#SS-web">RF.web: Websites</a></li>
+<li><a href="#SS-vid">RS.video: Videos about "modern C++"</a></li>
+<li><a href="#SS-man">RF.man: Manuals</a></li>
+<li><a href="#SS-core">RF.core: Core Guidelines materials</a></li>
+</ul>
+<h2 id="rfrules"><a name="SS-rules"></a>RF.rules: 코딩 규칙</h2>
+<ul>
+<li><a href="http://www.boost.org/development/requirements.html">Boost Library Requirements and Guidelines</a>.
+  ???.</li>
+<li><a href="https://github.com/bloomberg/bde/wiki/CodingStandards.pdf">Bloomberg: BDE C++ Coding</a>.
+  코드 조직화와 배치에 중점을 두고 있다</li>
+<li>Facebook: ???</li>
+<li><a href="https://gcc.gnu.org/codingconventions.html">GCC Coding Conventions</a>.
+  C++03과 약간 올드 하지만 그럭저럭 괜찮다</li>
+<li><a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a>.
+  Geared toward C++03 and (also) older code bases. 구글 전문가들은 가이드라인을 개선하기 위해 활발히 협력하고 있고, 그들 또한 권할 수 있는 현대적이고 일반적인 규칙 집합이 될 수 있기를 기대한다</li>
+<li><a href="http://www.stroustrup.com/JSF-AV-rules.pdf">JSF++: JOINT STRIKE FIGHTER AIR VEHICLE C++ CODING STANDARDS</a>.
+  Document Number 2RDU00001 Rev C. December 2005.
+  비행 제어 소프트웨어, 제한시간 내에 반응을 보장해야 하는 경우에 사용된다. 이는 매우 제약이 강하다는 것을 의미한다.("프로그램이 실패하면 누군가 죽는다거나").
+  예를 들면, 비행기가 이륙한 이후로는 동적 할당이나 해제가 불가능하고 (메모리 오버플로우나 파편화가 허용되지 않는다), (예외가 고정된 짧은 시간 안에 처리된다는 것을 확실히 보장할 방법이 없기 때문에) 예외 기능이 사용되어선 안되는 것을 의미한다. 
+  라이브러리는 특수 목적 애플리케이션을 위해 승인을 받아야만 한다.
+  비야네 스트로스트롭은 JSF++의 저자이기 때문에 가이드라인들과의 유사성에 그다지 놀랍지 않다. 추천할만 하지만, 매우 특별한 상황에 대한 것임을 명심하라.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/C%2B%2B_Portability_Guide">Mozilla Portability Guide</a>.
+  이름에서 알 수 있듯, 많은 (오래된) 컴파일러에 대한 이식을 목표로 하고 있다. 따라서 한정적이다.</li>
+<li><a href="http://geosoft.no/development/cppstyle.html">Geosoft.no: C++ Programming Style Guidelines</a>.
+  ???.</li>
+<li><a href="http://www.possibility.com/Cpp/CppCodingStandard.html">Possibility.com: C++ Coding Standard</a>.
+  ???.</li>
+<li><a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=637">SEI CERT: Secure C++ Coding Standard</a>.
+  예제와 합리성이 곁들여진 규칙들이다. 보안에 민감한 코드를 위한 것이지만 대부분은 일반적으로 적용될 수 있다.</li>
+<li><a href="http://www.codingstandard.com/">High Integrity C++ Coding Standard</a>.</li>
+<li><a href="http://llvm.org/docs/CodingStandards.html">llvm</a>.
+  Somewhat brief, pre-C++11, and (not unreasonably) adjusted to its domain.</li>
+<li>???</li>
+</ul>
+<h2 id="rfbooks"><a name="SS-books"></a>RF.books: 코딩 가이드라인이 있는 문헌</h2>
+<ul>
+<li><a href="#Meyers96">Meyers96</a> Scott Meyers: <em>More Effective C++</em>. Addison-Wesley 1996.</li>
+<li><a href="#Meyers97">Meyers97</a> Scott Meyers: <em>Effective C++, Second Edition</em>. Addison-Wesley 1997.</li>
+<li><a href="#Meyers01">Meyers01</a> Scott Meyers: <em>Effective STL</em>. Addison-Wesley 2001.</li>
+<li><a href="#Meyers05">Meyers05</a> Scott Meyers: <em>Effective C++, Third Edition</em>. Addison-Wesley 2005.</li>
+<li><a href="#Meyers15">Meyers15</a> Scott Meyers: <em>Effective Modern C++</em>. O'Reilly 2015.</li>
+<li><a href="#SuttAlex05">SuttAlex05</a> Sutter and Alexandrescu: <em>C++ Coding Standards</em>. Addison-Wesley 2005. More a set of meta-rules than a set of rules. Pre-C++11.</li>
+<li><a href="#Stroustrup05">Stroustrup05</a> Bjarne Stroustrup: <a href="http://www.stroustrup.com/SELLrationale.pdf">A rationale for semantically enhanced library languages</a>.
+  LCSD05. October 2005.</li>
+<li><a href="#Stroustrup05">Stroustrup14</a> Stroustrup: <a href="http://www.stroustrup.com/Tour.html">A Tour of C++</a>.
+  Addison Wesley 2014.
+  Each chapter ends with an advice section consisting of a set of recommendations.</li>
+<li><a href="#Stroustrup13">Stroustrup13</a> Stroustrup: <a href="http://www.stroustrup.com/4th.html">The C++ Programming Language (4th Edition)</a>.
+  Addison Wesley 2013.
+  Each chapter ends with an advice section consisting of a set of recommendations.</li>
+<li>Stroustrup: <a href="http://www.stroustrup.com/Programming/PPP-style.pdf">Style Guide</a>
+  for <a href="http://www.stroustrup.com/programming.html">Programming: Principles and Practice using C++</a>.
+  Mostly low-level naming and layout rules.
+  Primarily a teaching tool.</li>
+</ul>
+<h2 id="rfc-c-c11c14"><a name="SS-Cplusplus"></a>RF.C++: C++ 프로그래밍 (C++11/C++14)</h2>
+<ul>
+<li><a href="http://www.stroustrup.com/4th.html">TC++PL4</a>: A thorough description of the C++ language and standard libraries for experienced programmers.</li>
+<li><a href="http://www.stroustrup.com/Tour.html">Tour++</a>: An overview of the C++ language and standard libraries for experienced programmers.</li>
+<li><a href="http://www.stroustrup.com/programming.html">Programming: Principles and Practice using C++</a>: A textbook for beginners and relative novices.</li>
+</ul>
+<h2 id="rfweb"><a name="SS-web"></a>RF.web: 웹사이트</h2>
+<ul>
+<li><a href="https://isocpp.org">isocpp.org</a></li>
+<li><a href="http://www.stroustrup.com">Bjarne Stroustrup's home pages</a></li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/">WG21</a></li>
+<li><a href="http://www.boost.org">Boost</a><a name="Boost"></a></li>
+<li><a href="http://www.adobe.com/open-source.html">Adobe open source</a></li>
+<li><a href="http://pocoproject.org/">Poco libraries</a></li>
+<li>Sutter's Mill?</li>
+<li>???</li>
+</ul>
+<h2 id="rsvideo-c"><a name="SS-vid"></a>RS.video: "모던 C++" 동영상</h2>
+<ul>
+<li>Bjarne Stroustrup: <a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style">C++11 Style</a>. 2012.</li>
+<li>Bjarne Stroustrup: <a href="http://channel9.msdn.com/Events/GoingNative/2013/Opening-Keynote-Bjarne-Stroustrup">The Essence of C++: With Examples in C++84, C++98, C++11, and C++14</a>. 2013</li>
+<li>All the talks from <a href="https://isocpp.org/blog/2014/11/cppcon-videos-c9">CppCon '14</a></li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=86xWVb4XIyE">The essence of C++</a> at the University of Edinburgh. 2014.</li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=_wzc7a3McOs">The Evolution of C++ Past, Present and Future</a>. CppCon 2016 keynote.</li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=nesCaocNjtQ">Make Simple Tasks Simple!</a>. CppCon 2014 keynote.</li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=1OEu9C51K2A">Writing Good C++14</a>. CppCon 2015 keynote about the Core Guidelines.</li>
+<li>Herb Sutter: <a href="https://www.youtube.com/watch?v=hEx5DNLWGgA">Writing Good C++14... By Default</a>. CppCon 2015 keynote about the Core Guidelines.</li>
+<li>CppCon 15</li>
+<li>??? C++ Next</li>
+<li>??? Meting C++</li>
+<li>??? more ???</li>
+</ul>
+<h2 id="rfman"><a name="SS-man"></a>RF.man: 매뉴얼</h2>
+<ul>
+<li>ISO C++ Standard C++11.</li>
+<li>ISO C++ Standard C++14.</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/n4606.pdf">ISO C++ Standard C++17</a>. Committee Draft.</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3351.pdf">Palo Alto "Concepts" TR</a>.</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf">ISO C++ Concepts TS</a>.</li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/n4569.pdf">WG21 Ranges report</a>. Draft.</li>
+</ul>
+<h2 id="rfcore"><a name="SS-core"></a>RF.core: 핵심 가이드라인 자료들</h2>
+<p>This section contains materials that has been useful for presenting the core guidelines and the ideas behind them:</p>
+<ul>
+<li><a href="https://github.com/isocpp/CppCoreGuidelines/tree/master/docs">Our documents directory</a></li>
+<li>Stroustrup, Sutter, and Dos Reis: <a href="http://www.stroustrup.com/resource-model.pdf">A brief introduction to C++'s model for type- and resource-safety</a>. A paper with lots of examples.</li>
+<li>Sergey Zubkov: <a href="https://www.youtube.com/watch?v=DyLwdl_6vmU">a Core Guidelines talk</a> and here are the <a href="http://2017.cppconf.ru/talks/sergey-zubkov">slides</a>. In Russian. 2017.</li>
+<li>Neil MacIntosh: <a href="https://www.youtube.com/watch?v=_GhNnCuaEjo">The Guideline Support Library: One Year Later</a>. CppCon 2016.</li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=1OEu9C51K2A">Writing Good C++14</a>. CppCon 2015 keynote.</li>
+<li>Herb Sutter: <a href="https://www.youtube.com/watch?v=hEx5DNLWGgA">Writing Good C++14... By Default</a>. CppCon 2015 keynote.</li>
+<li>Peter Sommerlad: <a href="https://www.youtube.com/watch?v=fQ926v4ZzAM">C++ Core Guidelines - Modernize your C++ Code Base</a>. ACCU 2017.</li>
+<li>Bjarne Stroustrup: <a href="https://www.youtube.com/watch?v=01zI9kV4h8c">No Littering!</a>. Bay Area ACCU 2016. It gives some idea of the ambition level for the Core Guidelines.</li>
+</ul>
+<p>Note that slides for CppCon presentations are available (links with the posted videos).</p>
+<p>Contributions to this list would be most welcome.</p>
+<h2 id="_1"><a name="SS-ack"></a> 감사의 말</h2>
+<p>규칙, 제안, 추가 정보, 참고사항 등 도움을 주신 분들에게 감사의 말씀을 전한다:</p>
+<ul>
+<li>Peter Juhl</li>
+<li>Neil MacIntosh</li>
+<li>Axel Naumann</li>
+<li>Andrew Pardoe</li>
+<li>Gabriel Dos Reis</li>
+<li>Zhuang, Jiangang (Jeff)</li>
+<li>Sergey Zubkov</li>
+</ul>
+<p>그리고 Github에 있는 기여자 목록도 함께 봐주기를.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Introduction/" title="In: 소개" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                <a name="S-introduction"></a>In: 소개
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Architecture
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

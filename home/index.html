@@ -1,0 +1,990 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/home/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Overview - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Overview
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/home.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="c"><a name="main"></a>C++ 핵심 가이드라인</h1>
+<blockquote>
+<p>2018년 9월 2일</p>
+</blockquote>
+<p>편집자:</p>
+<ul>
+<li><a href="http://www.stroustrup.com">Bjarne Stroustrup</a></li>
+<li><a href="http://herbsutter.com/">Herb Sutter</a></li>
+</ul>
+<p>이 문서는 오픈 소스 (코드) 프로젝트로, 지속적으로 개선되고 있으며 0.8 버전까지 배포되었다.
+이 프로젝트의 복사, 사용, 수정, 파생 성과물과 관련된 저작권은 MIT와 유사한 라이선스를 따른다. 프로젝트에 기여하기 위해서는 기여자 라이선스(Contributor License)에 동의해야 한다. 보다 자세한 사항은 <a href="../LICENSE">LICENSE</a>을 확인하라.
+오픈 소스 프로젝트에 익숙한 사용자들이 사용, 복사, 수정, 파생 성과물들을 통해 건설적인 정보를 제공해주기 바란다.</p>
+<p>개선 사항에 대한 의견과 제안은 대부분 환영한다. C++ 언어와 사용 가능한 라이브러리들이 발전하고, 이에 대한 이해가 깊어질수록 이 문서를 지속적으로 수정하고 확장할 것이다. 의견을 보내고 싶다면, <a href="#S-introduction">소개</a>에 있는 목적과 방법을 참고하기 바란다.
+기여자 목록은 <a href="#SS-ack">여기</a>를 참고하기 바란다.</p>
+<p>참고 사항:</p>
+<ul>
+<li>이하의 규칙들은 완성도, 일관성, 시행 가능성 등에 대해서 아직 철저하게 검증되지 않았다</li>
+<li>(???)로 표시되어 있는 부분은 아직 관련 정보를 기입하지 않았음을 의미한다</li>
+<li>참조(Reference) 부분은 갱신이 필요하다; C++11 이전의 오래된 소스 코드들이 아직 많이 있다.</li>
+<li>앞으로 해야 할 일에 대한 최신 목록은 <a href="../Unclassified/">To-do: 미분류 규칙 초안</a>에서 확인할 수 있다</li>
+</ul>
+<p><a href="#S-abstract">이 가이드의 범위와 구조</a>를 확인하거나, 읽고 싶은 부분을 클릭해 해당 내용으로 바로 이동할 수 있다.</p>
+<ul>
+<li><a href="../Introduction/">In: 소개</a></li>
+<li><a href="../Philosophy/">P: 철학</a></li>
+<li><a href="../Interfaces/">I: 인터페이스</a></li>
+<li><a href="../Functions/">F: 함수</a></li>
+<li><a href="../Class/">C: 클래스와 클래스 계층 구조</a></li>
+<li><a href="../Enum/">Enum: 열거형</a></li>
+<li><a href="../Resource/">R: 리소스 관리</a></li>
+<li><a href="../Expr/">ES: 표현식과 문장</a></li>
+<li><a href="../Performance/">Per: 성능</a></li>
+<li><a href="../Concurrency/">CP: 동시성과 병렬처리</a></li>
+<li><a href="../Errors/">E: 오류 처리</a></li>
+<li><a href="../Const/">Con: 상수와 불변성</a></li>
+<li><a href="../Templates/">T: 템플릿과 제너릭 프로그래밍</a></li>
+<li><a href="../CPL/">CPL: C 스타일 프로그래밍</a></li>
+<li><a href="../Source/">SF: 소스 파일</a></li>
+<li><a href="../SL/">SL: 표준 라이브러리</a></li>
+</ul>
+<p>참고할 만한 내용:</p>
+<ul>
+<li><a href="../Architecture/">A: 설계 아이디어</a></li>
+<li><a href="../Not/">NR: 규칙이 아닌 것들과 근거없는 이야기들</a></li>
+<li><a href="../References/">RF: 참고 자료들</a></li>
+<li><a href="../Profile/">Pro: 프로파일</a></li>
+<li><a href="../GSL/">GSL: 가이드라인 지원 라이브러리</a></li>
+<li><a href="../Naming/">NL: 이름과 만듦새 규칙들</a></li>
+<li><a href="../FAQ/">FAQ: 자주 묻는 질문에 대한 대답</a></li>
+<li><a href="../appendix/Libraries/">Appendix A: 라이브러리</a></li>
+<li><a href="../appendix/Modernizing/">Appendix B: 모던 C++ 코드</a></li>
+<li><a href="./appendix/Discussion.md">Appendix C: 토론</a></li>
+<li><a href="../appendix/Tools/">Appendix D: 유용한 도구들</a></li>
+<li><a href="../Glossary/">용어 해설</a></li>
+<li><a href="../Unclassified/">To-do: 미분류 규칙</a></li>
+</ul>
+<p>구체적인 언어 기능과 관련된 규칙들:</p>
+<ul>
+<li>assignment</li>
+<li><a href="../Class/#Rc-regular">regular types</a></li>
+<li><a href="../Class/#Rc-initialize">prefer initialization</a></li>
+<li><a href="../Class/#Rc-copy-semantic">copy</a></li>
+<li><a href="../Class/#Rc-move-semantic">move</a></li>
+<li><a href="../Class/#Rc-matched">other operations</a></li>
+<li><a href="../Class/#Rc-eqdefault">default</a></li>
+<li><code>class</code></li>
+<li><a href="../Class/#Rc-org">data</a></li>
+<li><a href="../Class/#Rc-struct">invariant</a></li>
+<li><a href="../Class/#Rc-member">members</a></li>
+<li><a href="../Class/#Rc-helper">helpers</a></li>
+<li><a href="../Class/#SS-concrete">concrete types</a></li>
+<li><a href="../Class/#S-ctor">ctors, =, and dtors</a></li>
+<li><a href="../Class/#SS-hier">hierarchy</a></li>
+<li><a href="../Class/#SS-overload">operators</a></li>
+<li><code>concept</code>:</li>
+<li><a href="#SS-concepts">rules</a></li>
+<li><a href="#Rt-raise">in generic programming</a></li>
+<li><a href="#Rt-concepts">template arguments</a></li>
+<li><a href="#Rt-low">semantics</a></li>
+<li>constructor:</li>
+<li><a href="../Class/#Rc-struct">invariant</a></li>
+<li><a href="../Class/#Rc-ctor">establish invariant</a></li>
+<li><a href="../Class/#Rc-throw"><code>throw</code></a></li>
+<li><a href="../Class/#Rc-default0">default</a></li>
+<li><a href="../Class/#Rc-default">not needed</a></li>
+<li><a href="../Class/#Rc-explicit"><code>explicit</code></a></li>
+<li><a href="../Class/#Rc-delegating">delegating</a></li>
+<li><a href="../Class/#Rc-ctor-virtual"><code>virtual</code></a></li>
+<li>derived <code>class</code>:</li>
+<li><a href="../Class/#Rh-domain">when to use</a></li>
+<li><a href="../Class/#Rh-abstract">as interface</a></li>
+<li><a href="../Class/#Rh-dtor">destructors</a></li>
+<li><a href="../Class/#Rh-copy">copy</a></li>
+<li><a href="../Class/#Rh-get">getters and setters</a></li>
+<li><a href="../Class/#Rh-mi-interface">multiple inheritance</a></li>
+<li><a href="../Class/#Rh-using">overloading</a></li>
+<li><a href="../Class/#Rc-copy-virtual">slicing</a></li>
+<li><a href="../Class/#Rh-dynamic_cast"><code>dynamic_cast</code></a></li>
+<li>destructor:</li>
+<li><a href="../Class/#Rc-matched">and constructors</a></li>
+<li><a href="../Class/#Rc-dtor">when needed?</a></li>
+<li><a href="../Class/#Rc-dtor-fail">may not fail</a></li>
+<li>exception:</li>
+<li><a href="#S-errors">errors</a></li>
+<li><a href="#Re-throw"><code>throw</code></a></li>
+<li><a href="#Re-errors">for errors only</a></li>
+<li><a href="#Re-noexcept"><code>noexcept</code></a></li>
+<li><a href="#Re-catch">minimize <code>try</code></a></li>
+<li><a href="#Re-no-throw-codes">what if no exceptions?</a></li>
+<li><code>for</code>:</li>
+<li><a href="#Res-for-range">range-for and for</a></li>
+<li><a href="#Res-for-while">for and while</a></li>
+<li><a href="#Res-for-init">for-initializer</a></li>
+<li><a href="#Res-empty">empty body</a></li>
+<li><a href="#Res-loop-counter">loop variable</a></li>
+<li><a href="#Res-???">loop variable type ???</a></li>
+<li>function:</li>
+<li><a href="#Rf-package">naming</a></li>
+<li><a href="#Rf-logical">single operation</a></li>
+<li><a href="#Rf-noexcept">no throw</a></li>
+<li><a href="#Rf-smart">arguments</a></li>
+<li><a href="#Rf-conventional">argument passing</a></li>
+<li><a href="#Rf-out-multi">multiple return values</a></li>
+<li><a href="#Rf-return-ptr">pointers</a></li>
+<li><a href="#Rf-capture-vs-overload">lambdas</a></li>
+<li><code>inline</code>:</li>
+<li><a href="#Rf-inline">small functions</a></li>
+<li><a href="#Rs-inline">in headers</a></li>
+<li>initialization:</li>
+<li><a href="#Res-always">always</a></li>
+<li><a href="#Res-list">prefer <code>{}</code></a></li>
+<li><a href="#Res-lambda-init">lambdas</a></li>
+<li><a href="#Rc-in-class-initializer">in-class initializers</a></li>
+<li><a href="#Rc-initialize">class members</a></li>
+<li><a href="#Rc-factory">factory functions</a></li>
+<li>lambda expression:</li>
+<li><a href="#SS-lambdas">when to use</a></li>
+<li>operator:</li>
+<li><a href="#Ro-conventional">conventional</a></li>
+<li><a href="../Class/#Ro-conversion">avoid conversion operators</a></li>
+<li><a href="#Ro-lambda">lambdas</a></li>
+<li><code>public</code>, <code>private</code>, and <code>protected</code>:</li>
+<li><a href="#Rc-private">information hiding</a></li>
+<li><a href="#Rh-public">consistency</a></li>
+<li><a href="#Rh-protected"><code>protected</code></a></li>
+<li><code>static_assert</code>:</li>
+<li><a href="#Rp-compile-time">compile-time checking</a></li>
+<li><a href="#Rt-check-class">concepts</a></li>
+<li><code>struct</code>:</li>
+<li><a href="#Rc-org">for organizing data</a></li>
+<li><a href="#Rc-struct">use if no invariant</a></li>
+<li><a href="#Rc-class">no private members</a></li>
+<li><code>template</code>:</li>
+<li><a href="#Rt-raise">abstraction</a></li>
+<li><a href="#Rt-cont">containers</a></li>
+<li><a href="#Rt-concepts">concepts</a></li>
+<li><code>unsigned</code>:</li>
+<li><a href="#Res-mix">signed</a></li>
+<li><a href="#Res-unsigned">bit manipulation</a></li>
+<li><code>virtual</code>:</li>
+<li><a href="#Ri-abstract">interfaces</a></li>
+<li><a href="#Rc-concrete">not <code>virtual</code></a></li>
+<li><a href="#Rc-dtor-virtual">destructor</a></li>
+<li><a href="#Rc-dtor-fail">never fail</a></li>
+</ul>
+<p>규칙들을 설명하는데 사용된 설계 개념들:</p>
+<ul>
+<li>Assertion: ???</li>
+<li>오류(Error): ???</li>
+<li>예외(Exception): 예외 보증(Exception Guarantee) (???)</li>
+<li>실패(Failure): ???</li>
+<li>불변 조건(invariant): ???</li>
+<li>누수(Leak): ???</li>
+<li>라이브러리(Library): ???</li>
+<li>사전 조건(Precondition): ???</li>
+<li>사후 조건(Postcondition): ???</li>
+<li>리소스(Resource): ???</li>
+</ul>
+<h2 id="_1"><a name="S-abstract"></a>요약</h2>
+<p>이 문서는 C++를 올바르게 사용하기 위한 가이드라인의 모음이며, 개발자들이 모던 C++를 효율적으로 사용할 수 있도록 돕기 위해 작성되었다.
+여기서 "모던 C++"는 실제로 사용되고 있는 ISO C++ 표준을 의미한다 (현재는 C++17을 의미하지만, 거의 모든 권장사항들은 C++14와 C++11에도 적용된다). 지금 개발중인 코드가 5년, 또는 10년 후에 어떤 모습이었으면 좋겠는가?</p>
+<p>C++ 핵심 가이드라인은 인터페이스, 리소스 관리, 메모리 관리, 동시성와 같이 상대적으로 고수준의 내용에 대한 것이며, 대체로 이런 규칙들은 어플리케이션의 구조나 라이브러리 설계에 영향을 미친다. 
+가이드라인에 나오는 규칙들을 준수하면 코드가 정적 타입 안정성을 가지도록 할 수 있으며, 리소스의 누수가 없고, 흔히 저지르는 수많은 프로그래밍 로직 오류를 잡아낼 수 있으며, 더욱 빠르게 수행되는 코드를 작성할 수 있을 것이다. 즉, 올바른 코드를 만들 수 있다.</p>
+<p>이름 지정 규칙이나 들여쓰기 스타일과 같이 세부적인 내용에 대해서는 크게 언급하지 않을 것이다. 하지만, 프로그래머에게 도움을 줄 수 있는 주제가 있다면 다루도록 하겠다.</p>
+<p>초기의 규칙들은 (다양한 형태의) 안정성과 간결함을 과도하게 강조한 측면이 있다.
+실용성을 위해 여러 예외 사항들이 도입되기를 바란다. 또한 더 많은 규칙들이 필요하다.</p>
+<p>규칙들 중에는 독자의 기대와 다르거나, 경험과는 정반대되는 것들도 있을 것이다.
+어떤 형태로든 여러분의 코딩 스타일에 변화를 주지 못한다면, 우리는 실패한 것이다! 올바른 규칙인지 확인해 보고, 문제가 있다면 반박해주길 바란다!
+특히, 측정 결과나 더 나은 예제들로 규칙들을 뒷받침해주길 바란다.</p>
+<p>명백하거나 당연해 보이는 규칙도 일부 있을 것이다.
+하지만 이 가이드라인은 숙련되지 않은 개발자들 또는 다른 배경 지식을 갖거나 다른 언어를 알고 있는 개발자들이 C++ 언어를 빨리 익힐 수 있도록 돕기 위한 문서임을 기억해 주었으면 한다.</p>
+<p>대부분의 규칙들을 분석 도구들을 통해 지원할 수 있도록 설계되었다. 참조(또는 링크)를 통해 어떤 규칙을 위반했는지 파악할 수 있다. 모든 규칙을 알고 코드를 작성할 수는 없는 노릇이다. 
+이러한 가이드라인은 무슨 문제가 발생했는지 파악할 수 있게 해주는 툴에 대한 명세라고 볼 수 있다.</p>
+<p>규칙들이 코드에 점진적으로 도입되길 바라며, 이를 위한 툴을 만들 계획을 갖고 있다.
+C++ 언어에 새로운 기능들이 추가되고 사용 가능한 라이브러리들이 많아지므로 이 문서를 지속적으로 수정하고 확장해 규칙들에 대한 이해를 돕고자 한다.</p>
+<p>규칙에 대한 의견과 제안은 언제든 환영한다. 
+C++ 언어와 사용 가능한 라이브러리들이 발전하고, 이에 대한 이해가 깊어질수록 이 문서를 지속적으로 수정하고 확장할 것이다.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="../Introduction/" title="In: 소개" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                <a name="S-introduction"></a>In: 소개
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

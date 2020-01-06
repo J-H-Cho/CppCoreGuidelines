@@ -1,0 +1,2246 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
+      
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Functions/">
+      
+      
+        <meta name="author" content="C++ Korea">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Functions - C++ 핵심 가이드라인</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
+        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#see-also" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              C++ 핵심 가이드라인
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Functions
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Introduction/" class="md-tabs__link">
+          Introduction
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../References/" class="md-tabs__link">
+          References
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
+          Sections
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../appendix/Modernizing/" class="md-tabs__link">
+          Appendix
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    C++ 핵심 가이드라인
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    CppKorea/CppCoreGuidelines
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
+      <a name="S-introduction"></a>In: 소개
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      References
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        References
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
+      <a name="S-references"></a>RF: 레퍼런스
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Sections
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Sections
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Class/" title="Class" class="md-nav__link">
+      Class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
+      Concurrency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Const/" title="Const" class="md-nav__link">
+      Const
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPL/" title="C-Style" class="md-nav__link">
+      C-Style
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Enum/" title="Enum" class="md-nav__link">
+      Enum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Errors/" title="Errors" class="md-nav__link">
+      Errors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Expr/" title="Expr" class="md-nav__link">
+      Expr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Functions" class="md-nav__link md-nav__link--active">
+      Functions
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GSL/" title="GSL" class="md-nav__link">
+      GSL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
+      Interfaces
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Naming/" title="Naming" class="md-nav__link">
+      Naming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Not/" title="Not-Rule" class="md-nav__link">
+      Not-Rule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Performance/" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
+      Philosophy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Profile/" title="Profile" class="md-nav__link">
+      Profile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resource/" title="Resource" class="md-nav__link">
+      Resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SL/" title="Standard Library" class="md-nav__link">
+      Standard Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Source/" title="Source" class="md-nav__link">
+      Source
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
+      Unclassified
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
+      Modernizing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Functions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="f"><a name="S-functions"></a>F: 함수</h1>
+<p>함수의 이름은 전달인자(argument)들의 요구사항을 드러내고, 인자들과 호출 결과간의 관계를 명확히 기술해야 한다.
+세부 구현은 명세가 아니다. 함수가 어떻게 작동하는지만큼이나 무엇을 하는지도 생각해 보라. 함수는 대부분 인터페이스에서 가장 중요한 부분이므로, 인터페이스 규칙도 살펴 보라.</p>
+<p>함수는 시스템이 모순없는(consistent) 어떤 상태에서 다음 상태로 이행하도록 하는 동작(action)이나 계산(computation)을 명세하는(specify) 것이다. 이는 프로그램의 기본 재료(building block)이다.</p>
+<blockquote>
+<p>역주:
+* Parameter: 매개변수
+* Argument: 전달인자
+</p>
+</blockquote>
+<p>함수 규칙 요약:</p>
+<p>함수 정의 규칙:</p>
+<ul>
+<li><a href="#Rf-package">F.1: 의미있는 동작들을 "묶어서" 함수로 만들고 신중하게 이름을 지어라</a></li>
+<li><a href="#Rf-logical">F.2: 함수는 하나의 논리적 동작만 수행해야 한다</a></li>
+<li><a href="#Rf-single">F.3: 함수는 간결하고 단순하게 유지하라</a></li>
+<li><a href="#Rf-constexpr">F.4: 함수가 컴파일 시간에 평가되어야 한다면 <code>constexpr</code>로 선언하라</a></li>
+<li><a href="#Rf-inline">F.5: 함수가 매우 짧고 수행시간이 중요하다면 <code>inline</code>으로 선언하라</a></li>
+<li><a href="#Rf-noexcept">F.6: 함수가 예외를 던지지 않는다면 <code>noexcept</code>로 선언하라</a></li>
+<li><a href="#Rf-smart">F.7: 보편성을 고려한다면, 스마트 포인터 대신에 <code>T*</code>나 <code>T&amp;</code> 타입의 인자를 사용하라</a></li>
+<li><a href="#Rf-pure">F.8: 순수 함수를 선호하라</a></li>
+<li><a href="#Rf-unused">F.9: 사용되지 않는 인자는 이름이 없어야 한다</a></li>
+</ul>
+<p>매개변수 전달 표현(parameter passing expression) 규칙:</p>
+<ul>
+<li><a href="#Rf-conventional">F.15: 정보를 전달 할 때 단순하고 관습적인 방법을 선호하라</a></li>
+<li><a href="#Rf-in">F.16: "입력(in)" 매개변수는 복사 비용이 적게 드는 타입의 경우 값으로 전달하고, 그 외에는 상수 참조형으로 전달하라</a></li>
+<li><a href="#Rf-inout">F.17: "입출력(in-out)" 매개변수는 비상수 참조형으로 전달하라</a></li>
+<li><a href="#Rf-consume">F.18: "넘겨주는(will-move-from)" 매개변수는 <code>X&amp;&amp;</code>타입과 <code>std::move</code>로 전달하라</a></li>
+<li><a href="#Rf-forward">F.19: "전달(forward)" 매개변수는 <code>TP&amp;&amp;</code>타입과 <code>std::forward</code>로만 전달하라</a></li>
+<li><a href="#Rf-out">F.20: "출력(out)"에는 매개변수보다는 값을 반환하는 방법을 선호하라</a></li>
+<li><a href="#Rf-out-multi">F.21: "출력"값 여러 개를 반환할 때는 튜플이나 구조체를 선호하라</a></li>
+</ul>
+<p>매개변수 전달 의미구조(parameter passing semantic) 규칙:</p>
+<ul>
+<li><a href="#Rf-ptr">F.22: T* 혹은 owner<T*>를 단일 개체를 지정하기 위해 사용하라</a></li>
+<li><a href="#Rf-nullptr">F.23: "null"이 허용되지 않는다면 <code>not_null&lt;T&gt;</code>를 사용해 표시하라</a></li>
+<li><a href="#Rf-range">F.24: 범위를 지정할 때는 <code>span&lt;T&gt;</code>혹은 <code>span_p&lt;T&gt;</code>를 사용하라</a></li>
+<li><a href="#Rf-zstring">F.25: C 스타일 문자열에는 <code>zstring</code> 혹은 <code>not_null&lt;zstring&gt;</code>을 사용하라</a></li>
+<li><a href="#Rf-unique_ptr">F.26: 포인터가 필요한 곳에 소유권을 전달할 때는 <code>unique_ptr&lt;T&gt;</code>를 사용하라</a></li>
+<li><a href="#Rf-shared_ptr">F.27: 소유권을 공유할 때는 <code>shared_ptr&lt;T&gt;</code>를 사용하라</a></li>
+<li><a href="#Rf-ptr-ref">F.60: "인자가 없을 경우"를 허용한다면 <code>T&amp;</code>보다는 <code>T*</code>를 선호하라</a></li>
+</ul>
+<p><a name="Rf-value-return"></a>값 반환 의미구조 규칙:</p>
+<ul>
+<li><a href="#Rf-return-ptr">F.42: 위치를 나타내는 경우에만 <code>T*</code>를 반환하라</a></li>
+<li><a href="#Rf-dangle">F.43: 절대로 (직접적이든 간접적이든) 지역 개체의 포인터나 참조를 반환하지 말아라</a></li>
+<li><a href="#Rf-return-ref">F.44: 복사를 권장하지 않거나 "개체를 항상 반환"한다면 <code>T&amp;</code>를 반환하라</a></li>
+<li><a href="#Rf-return-ref-ref">F.45: <code>T&amp;&amp;</code>를 반환하지 말아라</a></li>
+<li><a href="#Rf-main">F.46: <code>main()</code>는 <code>int</code>를 반환해야 한다</a></li>
+<li><a href="#Rf-assignment-op">F.47: 대입 연산자는 <code>T&amp;</code>를 반환하라</a></li>
+<li><a href="#Rf-return-move-local">F.48: <code>return std::move(local)</code>은 사용하지 말아라</a></li>
+</ul>
+<p>기타 함수 규칙:</p>
+<ul>
+<li><a href="#Rf-capture-vs-overload">F.50: 함수를 쓸 수 없을 때는 람다를 사용하라(지역 변수를 캡쳐하거나 지역 함수를 작성할 때)</a></li>
+<li><a href="#Rf-default-args">F.51: 선택할 수 있다면, 중복 정의보다는 기본 전달인자를 선호하라</a></li>
+<li><a href="#Rf-reference-capture">F.52: 지역적으로 사용된다면 람다의 참조 캡쳐를 선호하라</a></li>
+<li><a href="#Rf-value-capture">F.53: 지역적으로 사용되지 않는다면 참조 캡쳐를 피하라</a></li>
+<li><a href="#Rf-this-capture">F.54: <code>this</code>를 캡쳐할 때는, 모든 변수를 명시적으로 캡쳐하라(기본 캡쳐를 사용하지 않는다)</a></li>
+<li><a href="#F-varargs">F.55: <code>va_arg</code> 전달인자를 사용하지 말아라</a></li>
+</ul>
+<p>함수는 람다와 함수개체와 강한 연관성을 가지고 있다.</p>
+<h5 id="see-also">See also</h5>
+<p><a href="#SS-lambdas">C.lambdas: Function objects and lambdas</a></p>
+<h2 id="fdef-definition"><a name="SS-fct-def"></a>F.def: 함수 정의(definition)</h2>
+<p>함수 정의는 함수의 본문을 구현하면서 선언하는 것이다.</p>
+<h3 id="f1"><a name="Rf-package"></a>F.1: 의미있는 동작들을 "묶어서" 함수로 만들고 신중하게 이름을 지어라</h3>
+<h5 id="reason">Reason</h5>
+<p>공통된 코드를 묶어 내면 가독성이 높아지고, 재사용하기 좋아지고, 복잡한 코드에서 오류가 나타나는 범위를 제한한다. 잘 명세된 행동이라면 이를 주변 코드로부터 분리시키고 이름을 부여하라.</p>
+<h5 id="example-dont">Example, don't</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">read_and_print</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>    <span class="c1">// read and print an int</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;the int is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;no int on input</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>read_and_print</code> 함수의 거의 모든 부분이 잘못되었다. 이 함수는 어떤 값을 읽고, <code>ostream</code>에 쓰거나 오류 메시지를 쓰는데, 오로지 <code>int</code>만을 다룬다. 
+재사용 가능한 코드가 없고, 논리적으로 별개인 동작이 뒤섞여 있으며, 지역변수는 논리상 소용이 없어진 뒤에도 남아 있다. 
+작은 예에서라면 괜찮아 보이지만, 이 입력동작, 출력동작, 그리고 오류처리가 더 복잡했더라면 뒤엉킨 코드 덩어리가 이해하기 어려워졌을 것이다.</p>
+<h5 id="note">Note</h5>
+<p>만약 한 곳 이상에서 사용 될 중요한 람다 함수를 작성한다면 (비지역)변수에 할당하고 이름을 부여하라.</p>
+<h5 id="example">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">[](</span><span class="n">T</span> <span class="n">x</span><span class="p">,</span> <span class="n">T</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span><span class="p">.</span><span class="n">rank</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">.</span><span class="n">rank</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">value</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">.</span><span class="n">value</span><span class="p">();</span> <span class="p">});</span>
+</pre></div>
+
+
+<p>람다에 이름을 부여하면 표현식을 여러 개의 논리적 부분으로 나눌 수 있고, 그 람다가 하는 일을 짐작케 할 수 있다.</p>
+<div class="codehilite"><pre><span></span>    <span class="k">auto</span> <span class="n">lessT</span> <span class="o">=</span> <span class="p">[](</span><span class="n">T</span> <span class="n">x</span><span class="p">,</span> <span class="n">T</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span><span class="p">.</span><span class="n">rank</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">.</span><span class="n">rank</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">value</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">.</span><span class="n">value</span><span class="p">();</span> <span class="p">};</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">lessT</span><span class="p">);</span>
+    <span class="n">find_if</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">lessT</span><span class="p">);</span>
+</pre></div>
+
+
+<p>코드가 짧다고 성능이나 유지보수성이 항상 좋지만은 않다.</p>
+<h5 id="exception">Exception</h5>
+<p>반복문(loop bodies)은, 람다인 경우도 마찬가지인데, 이름을 지을 필요가 거의 없다. 
+하지만 수십 줄이나 수십 쪽에 걸친 거대한 반복문은 문제가 될 수 있다. <a href="#Rf-single">함수를 간결하게 유지하라</a> 규칙에는 "반복문을 짧게 유지하라"라는 뜻도 있다. 
+이와 유사하게, 콜백 인자로 사용되는 람다는 때로 한눈에 알아볼 수 없지만, 재사용될 가망이 거의 없다. (따라서 이름을 지어 줄 필요가 거의 없다.)</p>
+<h5 id="enforcement">Enforcement</h5>
+<ul>
+<li><a href="#Rf-single">함수를 간결하게 유지하라</a>를 참고하라</li>
+<li>동일하거나 매우 비슷한 람다가 여러 곳에서 사용되면 지적하라</li>
+</ul>
+<h3 id="f2"><a name="Rf-logical"></a>F.2: 함수는 하나의 논리적 동작만 수행해야 한다</h3>
+<h5 id="reason_1">Reason</h5>
+<p>하나의 작업만 수행하는 함수는 이해하기 쉽고, 테스트하기 쉽고, 재사용하기 쉽다.</p>
+<h5 id="example_1">Example</h5>
+<p>다음을 고려해 보자:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">read_and_print</span><span class="p">()</span>    <span class="c1">// bad</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+        <span class="c1">// check for errors</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이는 특정한 입력에 매여 있는 통짜로 된 함수로, 다른 쓰임새를 찾을 수 없다. 대신에 함수를 적절한 논리적 부분으로 쪼개고 cin, cout 등은 매개변수로 사용하라:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">read</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>    <span class="c1">// better</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+        <span class="c1">// check for errors</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>필요하다면 두 함수를 결합하면 된다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">read_and_print</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>또한 필요하다면 <code>read()</code>와 <code>print()</code>에서 사용하는 데이터 타입, 입력 메커니즘, 오류에 대한 응답 등을 템플릿화 할 수 있다.</p>
+<p>예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">auto</span> <span class="n">read</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">input</span><span class="p">,</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>    <span class="c1">// better</span>
+    <span class="p">{</span>
+        <span class="n">input</span> <span class="o">&gt;&gt;</span> <span class="n">value</span><span class="p">;</span>
+        <span class="c1">// check for errors</span>
+    <span class="p">};</span>
+
+    <span class="k">auto</span> <span class="nf">print</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">output</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">output</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_1">Enforcement</h5>
+<ul>
+<li>출력 매개변수가 2개 이상인 함수를 의심하라. 대신 반환값을 사용하라. 여러 반환값을 저장 할 수 있는 <code>tuple</code>을 사용해도 좋다.</li>
+<li>편집기 화면에 다 나오지 않을 만큼 큰 함수를 의심하라. 이런 함수는 세부 동작을 갖는 더 작은 함수들로 (이름을 잘 지어서) 나누도록 한다.</li>
+<li>7개 이상의 매개변수를 갖는 함수를 의심하라.</li>
+</ul>
+<h3 id="f3"><a name="Rf-single"></a>F.3: 함수는 간결하고 단순하게 유지하라</h3>
+<h5 id="reason_2">Reason</h5>
+<p>거대한 함수는 읽기 어려울 뿐더러, 복잡한 코드를 포함하거나, 필요한 유효범위 이상으로 존재하는 변수가 있을 가능성이 더 높다. 제어 구조가 복잡한 함수는 길이가 길기 마련이고, 논리 오류가 숨어있을 공산이 크다.</p>
+<h5 id="example_2">Example</h5>
+<p>다음의 예를 보라:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">double</span> <span class="nf">simple_func</span><span class="p">(</span><span class="kt">double</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag2</span><span class="p">)</span>
+        <span class="c1">// simple_func: takes a value and calculates the expected ASIC output,</span>
+        <span class="c1">// given the two mode flags.</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">intermediate</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">intermediate</span> <span class="o">=</span> <span class="n">func1</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">flag2</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+                 <span class="n">intermediate</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">intermediate</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">intermediate</span> <span class="o">=</span> <span class="n">func1</span><span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">flag2</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+                 <span class="n">intermediate</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">intermediate</span><span class="p">);</span>
+            <span class="n">flag1</span> <span class="o">=</span> <span class="o">-</span><span class="n">flag1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">flag2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">intermediate</span> <span class="o">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">intermediate</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">flag2</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">finalize</span><span class="p">(</span><span class="n">intermediate</span><span class="p">,</span> <span class="mf">1.171</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="k">return</span> <span class="n">finalize</span><span class="p">(</span><span class="n">intermediate</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">);</span>
+        <span class="k">default</span><span class="o">:</span> <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">finalize</span><span class="p">(</span><span class="n">intermediate</span><span class="p">,</span> <span class="mf">0.</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 함수는 너무 복잡하다. 가능한 모든 경우를 올바르게 다루었는지 어떻게 알겠는가? 게다가, 이 예는 다른 규칙도 어기고 있다.</p>
+<p>이렇게 바꿔쓸 수 있다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">double</span> <span class="nf">func1_muon</span><span class="p">(</span><span class="kt">double</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ???</span>
+    <span class="p">}</span>
+
+    <span class="kt">double</span> <span class="nf">func1_tau</span><span class="p">(</span><span class="kt">double</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ???</span>
+    <span class="p">}</span>
+
+    <span class="kt">double</span> <span class="nf">simple_func</span><span class="p">(</span><span class="kt">double</span> <span class="n">val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag2</span><span class="p">)</span>
+        <span class="c1">// simple_func: takes a value and calculates the expected ASIC output,</span>
+        <span class="c1">// given the two mode flags.</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">func1_muon</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">flag2</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">// handled by func1_tau: flag1 = -flag1;</span>
+            <span class="k">return</span> <span class="n">func1_tau</span><span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">,</span> <span class="n">flag1</span><span class="p">,</span> <span class="n">flag2</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mf">0.</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_1">Note</h5>
+<p>"한 화면에 맞추기"는 "너무 크게 하지 않기"에 대한 좋은 실용적인 규칙이다. 한줄에서 다섯줄 사이의 함수는 정상으로 간주한다.</p>
+<h5 id="note_2">Note</h5>
+<p>긴 함수는 응집성있고 의미있는 이름을 가진 작은 함수로 나누어야 한다. 작고 간결한 함수는 함수 호출 비용이 중요한 곳에서 <code>inline</code>처리될 수 있다.</p>
+<h5 id="enforcement_2">Enforcement</h5>
+<ul>
+<li>"한 화면에 맞지 않는" 함수는 지적한다.<br />
+  화면은 어느정도 크기로 할 것인가? 한 줄에 140자, 60줄 화면을 사용해보라; 이는 대략 책의 한 페이지에 맞는 최대 크기이다.</li>
+<li>너무 복잡한 함수는 지적한다.<br />
+  너무 복잡한은 어느정도를 의미하는가? 순환 복잡도(cyclomatic complexity)를 쓸 수도 있다. "10개의 논리적 경로"를 사용해보라. 단순한 switch는 하나로 세어도 좋다.</li>
+</ul>
+<h3 id="f4-constexpr"><a name="Rf-constexpr"></a>F.4: 함수가 컴파일 시간에 평가되어야 한다면 <code>constexpr</code>로 선언하라</h3>
+<h5 id="reason_3">Reason</h5>
+<p><code>constexpr</code>는 컴파일 시간에 평가하라고 컴파일러에게 지시하는데 사용된다.</p>
+<h5 id="example_3">Example</h5>
+<p>유명한 팩토리얼:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">fac</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">max_exp</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>      <span class="c1">// constexpr enables max_exp to be used in Expects</span>
+        <span class="n">Expects</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">max_exp</span><span class="p">);</span>  <span class="c1">// prevent silliness and overflow</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">x</span> <span class="o">*=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>C++14 에서는 이와 같이 작성할 수 있다. C++ 11 환경이라면, <code>fac()</code>를 재귀를 사용해 작성해야 한다.</p>
+<h5 id="note_3">Note</h5>
+<p><code>constexpr</code>은 컴파일 타임 평가를 보장하지 않는다; 단지 프로그래머가 요구하거나 컴파일러가 최적화를 하기로 결정했을 때 상수 표현 인자에 대해서 컴파일 타임에 평가 될 수 있다는 것만을 보장 할 뿐이다.</p>
+<div class="codehilite"><pre><span></span>    <span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">min</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">?</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">y</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">test</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>            <span class="c1">// probably compile-time evaluation</span>
+        <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// compile-time evaluation</span>
+        <span class="kt">int</span> <span class="n">m3</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>            <span class="c1">// run-time evaluation</span>
+        <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">m4</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>  <span class="c1">// error: cannot evaluate at compile time</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_4">Note</h5>
+<p><code>constexpr</code> 함수는 순수 함수들이며, 부수효과(side deffect)를 가지지 않는다.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">dcount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">constexpr</span> <span class="kt">int</span> <span class="nf">double</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">++</span><span class="n">dcount</span><span class="p">;</span>   <span class="c1">// error: attempted side effect from constexpr function</span>
+        <span class="k">return</span> <span class="n">v</span> <span class="o">+</span> <span class="n">v</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>대체적으로 좋은 특성이다.</p>
+<p>상수가 아닌 전달인자를 사용하면, <code>constexpr</code>는 예외를 던질 수도 있다. 
+부수효과를 남기면서 종료하는 것을 고려하고 있다면, <code>constexpr</code>는 완전히 순수한 함수는 아니게 된다; 그렇지 않다면 문제가 되지 않는다.</p>
+<p>??? A question for the committee: can a constructor for an exception thrown by a <code>constexpr</code> function modify state?<br />
+"No" would be a nice answer that matches most practice.</p>
+<h5 id="note_5">Note</h5>
+<p>모든 함수를 <code>constexpr</code>로 작성하지는 마라. 대부분의 계산은 실행시간에 최적으로 수행된다.</p>
+<h5 id="note_6">Note</h5>
+<p>어떤 API가 높은 수준의 실행시간 설정(configuration) 혹은 비즈니스 로직에 의존한다면 <code>constexpr</code>로 작성해선 안된다.
+그와 같은 경우는 컴파일러에 의해 평가될 수 없으며, 그 API에 의존하는 <code>constexpr</code> 함수들은 재구성(refactored)되거나 <code>constexpr</code>를 포기(drop)하게 될 것이다.</p>
+<h5 id="enforcement_3">Enforcement</h5>
+<p>불가능하며 불필요하다.<br />
+컴파일러가 상수가 필요한 곳에 <code>constexpr</code>가 아닌 함수들이 사용되면 오류로 처리할 것이다.</p>
+<h3 id="f5-inline"><a name="Rf-inline"></a>F.5: 함수가 매우 짧고 수행시간이 중요하다면 <code>inline</code>으로 선언하라</h3>
+<h5 id="reason_4">Reason</h5>
+<p>일부 최적화기(optimizer)는 별도로 힌트를 받지 않아도 함수 인라인화를 잘 하지만, 그에 의존해서는 안된다.
+측정하라! 지난 40년간 우리는 컴파일러가 아무런 힌트가 없어도 사람보다 더 인라인화를 잘 할거라고 약속해 왔다.
+그리고 그 약속은 아직 지켜지지 않았다. <code>inline</code>을 명시하는 것은 컴파일러가 더 나은 코드를 생성하도록 권장하는 것이다.</p>
+<h5 id="example_4">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kr">inline</span> <span class="n">string</span> <span class="nf">cat</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s2</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">s</span> <span class="o">+</span> <span class="n">s2</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="exception_1">Exception</h5>
+<p>함수가 변하지 않을 것이라고 확신하지 않는 한, <code>inline</code>을 안정된 인터페이스 함수에 사용해선 안된다.
+인라인 함수는 ABI의 일부이다.</p>
+<h5 id="note_7">Note</h5>
+<p><code>constexpr</code>은 <code>inline</code>을 내포하고 있다.</p>
+<h5 id="note_8">Note</h5>
+<p>클래스 내에 정의된 멤버 함수들은 기본적으로 <code>inline</code>이 적용된다.</p>
+<h5 id="exception_2">Exception</h5>
+<p>템플릿 함수(템플릿 멤버 함수 포함)들은 보통 헤더 파일에 정의되기 때문에 인라인 함수에 해당한다.</p>
+<h5 id="enforcement_4">Enforcement</h5>
+<p><code>inline</code>함수가 3 문장보다 길고 (클래스의 멤버 함수처럼) 다른 곳에 선언되었다면 지적한다.</p>
+<h3 id="f6-noexcept"><a name="Rf-noexcept"></a>F.6: 함수가 예외를 던지지 않는다면 <code>noexcept</code>로 선언하라</h3>
+<h5 id="reason_5">Reason</h5>
+<p>예외를 던지지 않는다면 프로그램이 오류에 대처하리라 생각할 수 없고, 이는 최대한 빠르게 종료되어야 마땅하다. 함수를 <code>noexcept</code>로 선언하면 대안적인 실행경로가 줄어듦으로 최적화가 쉬워진다. 오류가 난 뒤 종료할 때까지 시간도 짧아진다.</p>
+<h5 id="example_5">Example</h5>
+<p>온전히 C언어로 구현이 되었거나 예외를 지원하지 않는 모든 함수에 <code>noexcept</code>를 추가하라. C++ 표준 라이브러리는 C 표준 라이브러리에 대해서 암시적으로 그렇게하고 있다.</p>
+<h5 id="note_9">Note</h5>
+<p><code>constexpr</code> 함수가 실행시간에 평가된다면 예외가 발생할 수 있기 때문에, <code>noexcept</code>를 명시해야 할 수 있다</p>
+<h5 id="example_6">Example</h5>
+<p>예외를 던질 수 있는 함수에서 <code>noexcept</code>를 사용하는 것도 가능하다:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">collect</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span> <span class="k">noexcept</span>
+    <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;)</span>
+            <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>collect()</code> 함수가 메모리를 모두 사용해 버리면 프로그램은 비정상적으로 종료하게 된다. 프로그램이 메모리 고갈 상태를 해결할 수 없다면, 이는 당연한 결과라고 할 수 있다;
+<code>terminate()</code> 함수에서 적합한 오류 기록(error log)을 생성할 수 있다. (하지만 메모리 부족 상황에서는 제대로 할 수 있는 일이 거의 없다)</p>
+<h5 id="note_10">Note</h5>
+<p>어떤 함수에 <code>noexcept</code>를 붙일지 말지 결정할 때는 코드가 실행되는 환경을 알고 있어야 한다. 특히나 예외를 던지는 것이 메모리 할당 문제를 일으킬 수 있다. 표준 라이브러리나 <code>sort</code>같은 여타 유틸리티 코드처럼, 완전히 일반적으로 쓰일 것을 염두에 둔 코드는 <code>bad_alloc</code> 예외가 제대로 처리되는 환경을 지원할 필요가 있다. 
+하지만 대부분의 프로그램 및 실행환경은 메모리 할당 실패를 제대로 처리하지 못하는데, 그럴 때는 프로그램을 종료시켜 버리는 것이 가장 깔끔하고 간단한 처리방법이다. 
+당신이 짠 응용프로그램 코드가 메모리 할당 실패에 대처하지 못하리라는 점을 안다면, 메모리를 할당하는 함수에도 <code>noexcept</code>를 덧붙이는 것이 적절할 수도 있다.</p>
+<p>다르게 생각하면:<br />
+대부분의 프로그램에서는 함수들은 보통 예외를 던진다 (함수 안에서 <code>new</code>를 사용하거나 예외를 던지는 방식으로 실패를 알리는 함수/라이브러리를 사용하는 경우). 따라서 발생가능한 예외가 처리될 수 있는지 고민하지 않고 <code>noexcept</code>를 남발해서는 안된다.</p>
+<p><code>noexcept</code>는 빈번히 호출되는 저수준 함수들에 유용하다 (또한 정확하다).</p>
+<h5 id="note_11">Note</h5>
+<p>소멸자, <code>swap</code> 함수, move 연산 그리고 기본 생성자에서는 절대로 예외를 던지면 안된다.</p>
+<h5 id="enforcement_5">Enforcement</h5>
+<ul>
+<li>예외를 던질 수 없는데도 <code>noexcept</code>가 없는 함수가 있다면 지적한다</li>
+<li>예외를 던지는 <code>swap</code>, move 연산자, 소멸자 그리고 기본 생성자가 있다면 지적한다</li>
+</ul>
+<h3 id="f7-t-tamp"><a name="Rf-smart"></a>F.7: 보편성을 고려한다면, 스마트 포인터 대신에 <code>T*</code>나 <code>T&amp;</code> 타입의 인자를 사용하라</h3>
+<h5 id="reason_6">Reason</h5>
+<p>스마트 포인터를 인자로 사용하면 소유권이 이전되거나 공유된다. 이는 의도적인 경우에만 사용되어야 한다. (<a href="#Rr-smartptrparam">R.30</a> 참고).
+스마트 포인터를 인자로 사용하면 함수 호출 시 스마트 포인터를 사용해야한다는 제약이 생긴다.
+공유 스마트 포인터를 인자로 사용하는 것은 (예, <code>std::shared_ptr</code>) 런타임시 추가 비용을 발생시킨다.</p>
+<h5 id="example_7">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// accepts any int*</span>
+    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span>
+
+    <span class="c1">// can only accept ints for which you want to transfer ownership</span>
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>
+
+    <span class="c1">// can only accept ints for which you are willing to share ownership</span>
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>
+
+    <span class="c1">// doesn&#39;t change ownership, but requires a particular ownership of the caller</span>
+    <span class="kt">void</span> <span class="nf">h</span><span class="p">(</span><span class="k">const</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+    <span class="c1">// accepts any int</span>
+    <span class="kt">void</span> <span class="nf">h</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="example-bad">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// callee</span>
+    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span> <span class="n">w</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="n">use</span><span class="p">(</span><span class="o">*</span><span class="n">w</span><span class="p">);</span> <span class="c1">// only use of w -- the lifetime is not used at all</span>
+        <span class="c1">// ...</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<p><a href="#Rr-smartptrparam">R.30</a>에서 관련 내용을 기술하고 있다.</p>
+<h5 id="note_12">Note</h5>
+<p>허상 포인터(dangling pointer)는 정적으로 잡아낼 수 있다. 때문에 허상 포인터로 인한 자원 관리에 의존할 필요는 없다.</p>
+<h5 id="see-also_1">See also</h5>
+<ul>
+<li><a href="#Rf-ptr-ref">전달인자가 없는 경우가 허용된다면 <code>T&amp;</code>보다는 <code>T*</code>를 선호하라</a></li>
+<li><a href="#Rr-summary-smartptrs">스마트 포인터 규칙 요약</a></li>
+</ul>
+<h5 id="enforcement_6">Enforcement</h5>
+<p>소유권 의미구조를 사용하지 않는데 스마트 포인터 타입을 인자로 사용한다면 지적한다 (또는 <code>operator-&gt;</code>나 <code>operator*</code>를 중복정의한 타입). 이런 경우는</p>
+<ul>
+<li>복사 가능하지만 복사/이동이 발생하지 않는다 혹은 이동 가능하지만 이동하지 않는다</li>
+<li>값을 변경하지 않거나 변경하지 않는 다른 함수로 전달한다</li>
+</ul>
+<h3 id="f8"><a name="Rf-pure"></a>F.8: 순수 함수를 선호하라</h3>
+<h5 id="reason_7">Reason</h5>
+<p>순수 함수는 좀 더 파악하기 쉽다. 최적화하기 쉽고(병렬화를 포함한다), 메모이제이션하기 쉽다.</p>
+<h5 id="example_8">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">auto</span> <span class="n">square</span><span class="p">(</span><span class="n">T</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_13">Note</h5>
+<p><code>constexpr</code>는 순수 함수에 속한다.</p>
+<p>상수가 아닌 전달인자를 사용하면, <code>constexpr</code>는 예외를 던질 수도 있다. 
+부수효과를 남기면서 종료하는 것을 고려하고 있다면, <code>constexpr</code>는 완전히 순수한 함수는 아니게 된다; 그렇지 않다면 문제가 되지 않는다.</p>
+<p>??? A question for the committee: can a constructor for an exception thrown by a <code>constexpr</code> function modify state?
+"No" would be a nice answer that matches most practice.</p>
+<h5 id="enforcement_7">Enforcement</h5>
+<p>불가능하다.</p>
+<h3 id="f9"><a name="Rf-unused"></a>F.9: 사용되지 않는 인자는 이름이 없어야 한다</h3>
+<h5 id="reason_8">Reason</h5>
+<p>가독성. "사용되지 않는 인자" 경고가 발생하지 않게 한다.</p>
+<h5 id="example_9">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">X</span><span class="o">*</span> <span class="nf">find</span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&gt;&amp;</span> <span class="n">m</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">Hint</span><span class="p">);</span>   <span class="c1">// once upon a time, a hint was used</span>
+</pre></div>
+
+
+<h5 id="note_14">Note</h5>
+<p>이 문제를 다루기 위해 1980년대 초에 이름 없는 매개변수를 허용하게 되었다</p>
+<h5 id="enforcement_8">Enforcement</h5>
+<p>이름이 있지만 사용되지 않는 매개변수를 지적한다.</p>
+<h2 id="fcall-parameter-passing"><a name="SS-call"></a>F.call: 매개변수 전달(Parameter passing)</h2>
+<p>함수에 인자를 전달하고 반환값을 받는데는 다양한 방법이 있다.</p>
+<h3 id="f15"><a name="Rf-conventional"></a>F.15: 정보를 전달 할 때 단순하고 관습적인 방법을 선호하라</h3>
+<h5 id="reason_9">Reason</h5>
+<p>"별나면서 교묘한" 기법은 깜짝놀랄만한 버그를 만들어내거나, 다른 프로그래머가 코드를 이해하는데 어렵게 만든다.
+정말로 일반적인 기법을 넘어서는 방법으로 최적화를 해야 한다면 꼭 필요한 개선사항이라는것을 확신할 수 있어야하고, 이식성이 없을 수 있기 때문에 문서나 주석을 남겨야 한다.</p>
+<p>아래의 표는 핵심 가이드라인의 조언(F.16-21)을 요약한 것이다.</p>
+<p>매개변수 전달(Normal):</p>
+<p><img alt="Normal parameter passing table" src="../images/param-passing-normal.png" /></p>
+<p>매개변수 전달(Advanced):</p>
+<p><img alt="Advanced parameter passing table" src="../images/param-passing-advanced.png" /></p>
+<p>필요한 경우에만 고급 기술을 사용하고, 주석으로 문서화하라.</p>
+<h3 id="f16-in"><a name="Rf-in"></a>F.16: "입력(in)" 매개변수는 복사 비용이 적게 드는 타입의 경우 값으로 전달하고, 그 외에는 상수 참조형으로 전달하라</h3>
+<h5 id="reason_10">Reason</h5>
+<p>두 경우 모두 호출자가 전달인자를 변경하지 않는다는 것을 알 수 있다. 또한 r-value 초기화를 허용한다.</p>
+<p>"큰 비용 없이 복사" 한다는 것은 실행기(machine)의 구조(architecture)에 따라 다르다. 하지만 보통 2,3개의 워드(double, 포인터, 참조)를 값으로 전달할때 최적이다.</p>
+<p>비용이 적다면, 단순성과 안전성에서 복사보다 나은 방법은 없다. 또한 작은 개체(2,3개 워드까지)에 대해선 참조보다 복사가 빠른데 함수에서 간접(in-direct)접근없이 사용할 수 있기 때문이다.</p>
+<h5 id="example_10">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// OK: pass by reference to const; always cheap</span>
+
+    <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span>         <span class="c1">// bad: potentially expensive</span>
+
+    <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>            <span class="c1">// OK: Unbeatable</span>
+
+    <span class="kt">void</span> <span class="nf">f4</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">);</span>     <span class="c1">// bad: overhead on access in f4()</span>
+</pre></div>
+
+
+<p>"입력 전용" 매개변수로 전달된 r-value를 최적화하고자 한다면:</p>
+<ul>
+<li>함수에서 무조건적으로 전달인자를 이동(move)받는다면, <code>&amp;&amp;</code>를 사용하라. <a href="#Rf-consume">F.18</a> 참고</li>
+<li>인자의 복사본을 사용한다면, 매개변수에 (l-value인 경우) <code>const&amp;</code>를 사용하는 함수와 (r-value인 경우) <code>&amp;&amp;</code>를 받아 필요한 영역에 <code>std::move</code>하는 함수를 중복 정의하라. 원래 이는 "will-move-from"을 중복정의한 것이다. <a href="#Rf-consume">F.18</a> 참고</li>
+<li>"입력 + 복사"가 여럿 발생하는 특별한 경우에는, "perfect forwarding" 사용을 고려하라. <a href="#Rf-forward">F.19</a> 참고</li>
+</ul>
+<h5 id="example_11">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">multiply</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span> <span class="c1">// just input ints, pass by value</span>
+
+    <span class="c1">// suffix is input-only but not as cheap as an int, pass by const&amp;</span>
+    <span class="n">string</span><span class="o">&amp;</span> <span class="n">concatenate</span><span class="p">(</span><span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">suffix</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">sink</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>  <span class="c1">// input only, and moves ownership of the widget</span>
+</pre></div>
+
+
+<p>아래와 같은 "난해한 기술"은 지양하라:</p>
+<ul>
+<li>"효율적이라서" 인자를 <code>T&amp;&amp;</code>로 전달한다. <code>&amp;&amp;</code>로 전달함으로써 발생하는 성능 향상에 대한 루머는 잘못되었고 깨지기 쉽다(속단하지 말고 <a href="#Rf-consume">F.18</a>와 <a href="#Rf-forward">F.19</a>를 참고하라)</li>
+<li>대입에서 <code>const T&amp;</code>를 반환하거나 비슷한 연산을 수행한다 (<a href="#Rf-assignment-op">F.47</a> 참고)</li>
+</ul>
+<h5 id="example_12">Example</h5>
+<p><code>Matrix</code>가 이동 연산을 지원한다고 가정하자(아마도 원소들을 <code>std::vector</code>에 보관하고 있다):</p>
+<div class="codehilite"><pre><span></span>    <span class="n">Matrix</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Matrix</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Matrix</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Matrix</span> <span class="n">res</span><span class="p">;</span>
+        <span class="c1">// ... fill res with the sum ...</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Matrix</span> <span class="n">x</span> <span class="o">=</span> <span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">;</span>  <span class="c1">// move constructor</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">m3</span> <span class="o">+</span> <span class="n">m3</span><span class="p">;</span>         <span class="c1">// move assignment</span>
+</pre></div>
+
+
+<h5 id="notes">Notes</h5>
+<p>반환 값 최적화는 대입에 대해서는 동작하지 않지만, 이동 대입의 경우에는 적용된다.
+참조는 언어 규칙에 의해 유효한 개체를 가리킨다고 가정하기 때문에, null 참조는 발생하지 않는다.
+optional 값에 대해 알고 있다면, 포인터를 사용하거나, <code>std::optional</code> 혹은 "값이 없음"을 의미하는 특별한 값을 사용하라.</p>
+<h5 id="enforcement_9">Enforcement</h5>
+<ul>
+<li>(쉬움) (기본 사항) 인자의 크기가 <code>4 * sizeof(int)</code> 보다 크면 경고한다. <code>const</code> 참조를 전달하도록 제안한다</li>
+<li>(쉬움) (기본 사항) <code>const</code> 참조로 전달되는 인자의 크기가 <code>3 * sizeof(int)</code>보다 작다면 경고한다. 값 전달을 대신 사용하도록 제안한다</li>
+<li>(쉬움) (기본 사항) <code>const</code> 참조 매개변수가 <code>move</code>되면 경고한다</li>
+</ul>
+<h3 id="f17-in-out"><a name="Rf-inout"></a>F.17: "입출력(in-out)" 매개변수는 비상수 참조형으로 전달하라</h3>
+<h5 id="reason_11">Reason</h5>
+<p>호출자에게 값이 변경될 수 있다는 점을 분명히 할 수 있다.</p>
+<h5 id="example_13">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="n">Record</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">);</span>  <span class="c1">// assume that update writes to r</span>
+</pre></div>
+
+
+<h5 id="note_15">Note</h5>
+<p><code>T&amp;</code> 인자는 정보를 전달할 수도 있지만 받아올 수도 있다.
+때문에 <code>T&amp;</code>는 입출력 매개변수가 될 수 있다. 이로 인해 문제가 되거나 오류의 원인이 되기도 한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;New York&quot;</span><span class="p">;</span>  <span class="c1">// non-obvious error</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">string</span> <span class="n">buffer</span> <span class="o">=</span> <span class="s">&quot;.................................&quot;</span><span class="p">;</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>여기서, <code>g()</code> 작성자는  <code>f()</code>에게 버퍼를 제공하고 있지만,  <code>f()</code>는 참조를 변경해버린다 (이는 문자들을 단순히 복사하는 것보다 비용이 좀 더 발생한다).
+<code>g()</code>에서 <code>buffer</code>의 크기를 잘못 가정한다면 오류가 발생할 수 있다.</p>
+<h5 id="enforcement_10">Enforcement</h5>
+<ul>
+<li>(중간) (기본 사항) 함수 내에서 값을 변경하지 않는 비 <code>const</code> 참조를 경고한다</li>
+<li>(쉬움) (기본 사항) <code>const</code> 참조 매개변수가 <code>move</code>되면 경고한다</li>
+</ul>
+<h3 id="f18-will-move-from-xampamp-stdmove"><a name="Rf-consume"></a>F.18: "넘겨주는(will-move-from)" 매개변수는 <code>X&amp;&amp;</code>타입과 <code>std::move</code>로 전달하라</h3>
+<h5 id="reason_12">Reason</h5>
+<p>효율적이고 호출하는 지점에서 버그를 없앤다: <code>X&amp;&amp;</code>는 r-value에 연결되며(bind), l-value를 전달하는 경우 명시적으로 <code>std::move</code>를 호출해야 한다.</p>
+<h5 id="example_14">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">sink</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>   <span class="c1">// sink takes ownership of whatever the argument owned</span>
+        <span class="c1">// usually there might be const accesses of v here</span>
+        <span class="n">store_somewhere</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">));</span>
+        <span class="c1">// usually no more use of v here; it is moved-from</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>store_somewhere()</code>를 호출할 때 <code>std::move(v)</code>를 사용한 결과 <code>v</code>가 값을 넘겨준(moved-from) 상태로 만든다는 점에 주의하라. 
+<a href="#Rc-move-semantic">이는 위험할 수도 있다</a>.</p>
+<h5 id="exception_3">Exception</h5>
+<p><code>unique_ptr</code>와 같은 유일한 소유자 타입들은 이동만 가능(move-only)하며 쉽게 이동된다(cheap-to-move). 이 타입들은 쉽게 값 전달(pass by value) 코드를 작성하고 수행할 수 있다. 값 전달은 이동 연산이 한번 더 발생하지만, 분명함과 단순함을 우선하라.</p>
+<p>예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="kt">void</span> <span class="n">sink</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// use p ... possibly std::move(p) onward somewhere else</span>
+    <span class="p">}</span>   <span class="c1">// p gets destroyed</span>
+</pre></div>
+
+
+<h5 id="enforcement_11">Enforcement</h5>
+<ul>
+<li>모든 <code>std::move</code>없이 <code>X&amp;&amp;</code> 매개변수를 사용하면 지적한다 (이때 <code>X</code>는 템플릿 인자가 아니다)</li>
+<li>값을 넘겨준(moved-from) 개체에 접근하면 지적한다</li>
+<li>조건부로 개체를 이동시키지 말아라</li>
+</ul>
+<h3 id="f19-forward-tpampamp-stdforward"><a name="Rf-forward"></a>F.19: "전달(forward)" 매개변수는 <code>TP&amp;&amp;</code>타입과 <code>std::forward</code>로만 전달하라</h3>
+<h5 id="reason_13">Reason</h5>
+<p>만약 개체가 해당 함수에서 바로 사용되지 않고 다른 코드로 전달된다면, 그 함수는 전달인자가 상수(<code>const</code>)인 경우이거나 r-value인 경우에도 동작하도록 작성되어야 한다.</p>
+<p><code>TP</code>가 템플릿형 매개변수면 <code>TP&amp;&amp;</code>는 포워딩 참조가 된다 -- 이 때 상수 속성과 rvalue 속성은 <em>무시</em> 되기도하고 <em>보존</em> 되기도 한다. 그래서 <code>T&amp;&amp;</code>를 사용하는 코드는 변수의 상수 속성과 rvalue 속성에 게의치 않는다는 의미를 내포하지만 (어차피 무시되기 때문에), 값을 전달하는 코드에서는 상수 속성과 rvalue 속성을 신경쓴다 (보존이 되기 때문에). <code>TP&amp;&amp;</code>형 매개변수에 임시객체가 전달되면 함수가 실행되는 동안에는 유효하기 때문에 안전하다. <code>TP&amp;&amp;</code>형 매개변수는 항상 <code>std::forward</code>를 이용하여 함수의 몸체에서 전달되어야 한다.</p>
+<h5 id="example_15">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="p">,</span> <span class="n">class</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
+    <span class="kr">inline</span> <span class="k">auto</span> <span class="n">invoke</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">,</span> <span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...);</span>
+    <span class="p">}</span>
+
+    <span class="o">???</span> <span class="n">calls</span> <span class="o">???</span>
+</pre></div>
+
+
+<h5 id="enforcement_12">Enforcement</h5>
+<ul>
+<li>모든 정적 경로에 대해 단 한번 <code>std::forward</code>하는 경우를 제외하고 <code>TP&amp;&amp;</code> 매개변수를 받는 함수를 지적한다 (<code>TP</code>는 템플릿 인자의 이름이다). </li>
+</ul>
+<h3 id="f20-out"><a name="Rf-out"></a>F.20: "출력(out)"에는 매개변수보다는 값을 반환하는 방법을 선호하라</h3>
+<h5 id="reason_14">Reason</h5>
+<p>매개변수 타입으로 <code>&amp;</code>는 입/출력 혹은 출력으로만 쓰일 수 있는 반면, 반환 값은 잘못 사용되기 어려우며 함수의 결과라는 점을 명확히 한다.</p>
+<p>이는 성능 향상과 메모리 관리를 피하기 위해 암묵적으로 이동 연산을 사용하는 표준 컨테이너들 같은 큰 개체에도 적용된다. </p>
+<p>만약 다수의 값을 반환해야 한다면, <a href="#Rf-out-multi">tuple</a>이나 멤버를 가진 타입을 사용하라.</p>
+<h5 id="example_16">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// OK: return pointers to elements with the value x</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int</span><span class="o">*&gt;</span> <span class="n">find_all</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+
+    <span class="c1">// Bad: place pointers to elements with value x in-out</span>
+    <span class="kt">void</span> <span class="nf">find_all</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">int</span><span class="o">*&gt;&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="note_16">Note</h5>
+<p>(각각의 이동 비용이 크지 않은) 멤버를 많이 가진 <code>struct</code>는 전체적으로는 이동 비용이 클 수 있다.</p>
+<p><code>const</code> 값을 반환하는 것은 추천하지 않는다. 오래된 조언들은 무의미하다: 의미도 없고 이동 의미구조를 방해한다.</p>
+<div class="codehilite"><pre><span></span>    <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fct</span><span class="p">();</span>    <span class="c1">// bad: that &quot;const&quot; is more trouble than it is worth</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">vx</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="n">fct</span><span class="p">()</span> <span class="o">=</span> <span class="n">vx</span><span class="p">;</span>   <span class="c1">// prevented by the &quot;const&quot;</span>
+        <span class="c1">// ...</span>
+        <span class="k">return</span> <span class="nf">fct</span><span class="p">();</span> <span class="c1">// expensive copy: move semantics suppressed by the &quot;const&quot;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>반환 값에 <code>const</code>를 사용하는 것은 임시 변수에 대한 (굉장히 드문) 우발적 접근을 막기 위한 것이다.
+전달 인자에 <code>const</code>가 사용되면 (매우 자주 발생하는) 이동 의미구조를 막는다.</p>
+<h5 id="exceptions">Exceptions</h5>
+<ul>
+<li>상속 계층구조에 속한 타입처럼 값 타입이 아닌 경우, 개체를 <code>unique_ptr</code> 혹은 <code>shared_ptr</code>로 반환하라</li>
+<li>많약 값의 이동 비용이 크다면 (<code>array&lt;BigPOD&gt;</code> 같은 경우), 자유 저장소에 할당하고 그 핸들을 (<code>unique_ptr</code>와 같은) 반환하는 것을 고려하라. 또는 <code>const</code>가 아닌 참조(출력 매개변수)를 전달해 개체를 채워넣도록 하라</li>
+<li>최대 크기(capacity)를 가진 개체(예를 들어 <code>std::string</code>, <code>std::vector</code>)를 여러 함수 호출과정에서 재사용하고자 한다면, <a href="#Rf-out-multi">입출력 매개변수로 참조를 전달하라</a>.</li>
+</ul>
+<h5 id="example_17">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">Package</span> <span class="p">{</span>      <span class="c1">// exceptional case: expensive-to-move object</span>
+        <span class="kt">char</span> <span class="n">header</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+        <span class="kt">char</span> <span class="n">load</span><span class="p">[</span><span class="mi">2024</span> <span class="o">-</span> <span class="mi">16</span><span class="p">];</span>
+    <span class="p">};</span>
+
+    <span class="n">Package</span> <span class="nf">fill</span><span class="p">();</span>       <span class="c1">// Bad: large return value</span>
+    <span class="kt">void</span> <span class="nf">fill</span><span class="p">(</span><span class="n">Package</span><span class="o">&amp;</span><span class="p">);</span>  <span class="c1">// OK</span>
+
+    <span class="kt">int</span> <span class="nf">val</span><span class="p">();</span>            <span class="c1">// OK</span>
+    <span class="kt">void</span> <span class="nf">val</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">);</span>       <span class="c1">// Bad: Is val reading its argument</span>
+</pre></div>
+
+
+<h5 id="enforcement_13">Enforcement</h5>
+<ul>
+<li>큰 비용 없이 반환할 수 있으면서 값을 변경하기 전에 사용하는 비 <code>const</code> 참조 매개변수를 지적하라; 이들은 "출력" 반환 값이 적절하다.</li>
+<li><code>const</code> 반환 값을 지적한다. <code>const</code>를 제거하도록 권한다</li>
+</ul>
+<h3 id="f21"><a name="Rf-out-multi"></a>F.21: "출력"값 여러 개를 반환할 때는 튜플이나 구조체를 선호하라</h3>
+<h5 id="reason_15">Reason</h5>
+<p>반환 값은 그 자체로 문서가 필요하지 않고 "출력 전용"으로 사용된다.
+C++ 에서는 다수의 값을 반환할때는 <code>tuple</code>(<code>pair</code>를 포함해)를 쓴다는 것을 기억하라, 호출한 지점에서 <code>tie</code>를 사용해 받을 것이다.
+반환 값에 의미구조가 있다면 별도의 struct 타입을 사용하라. 그렇지 않다면 일반적인 코드에서는 (이름 없는) <code>tuple</code>이 유용하다.</p>
+<h5 id="example_18">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// BAD: output-only parameter documented in a comment</span>
+    <span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">input</span><span class="p">,</span> <span class="cm">/*output only*/</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">output_data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="n">output_data</span> <span class="o">=</span> <span class="n">something</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// GOOD: self-documenting</span>
+    <span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">input</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">return</span> <span class="n">make_tuple</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">something</span><span class="p">());</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>사실, C++98의 표준 라이브러리에서는 <code>pair</code>가 개체 2개를 묶은 <code>tuple</code>과 같기 때문에 이 기능을 편리하게 사용하고 있었다.</p>
+<p>예를 들어, <code>set&lt;string&gt; my_set</code>이 주어졌다고 가정하면:</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// C++98</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">my_set</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="n">do_something_with</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>    <span class="c1">// workaround</span>
+</pre></div>
+
+
+<p>C++11에서는 이렇게 작성할 수 있다, 결과값들을 이미 존재하는 지역변수에 대입한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">Sometype</span> <span class="n">iter</span><span class="p">;</span>                                <span class="c1">// default initialize if we haven&#39;t already</span>
+    <span class="n">Someothertype</span> <span class="n">success</span><span class="p">;</span>                        <span class="c1">// used these variables for some other purpose</span>
+
+    <span class="n">tie</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">success</span><span class="p">)</span> <span class="o">=</span> <span class="n">my_set</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>   <span class="c1">// normal return value</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="n">do_something_with</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+</pre></div>
+
+
+<p>C++ 17에서는 다수의 변수들을 선언과 동시에 초기화 할 수 있는 "structured bindings"을 지원한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span> <span class="n">iter</span><span class="p">,</span> <span class="n">success</span> <span class="p">]</span> <span class="o">=</span> <span class="n">my_set</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="n">success</span><span class="p">)</span> <span class="n">do_something_with</span><span class="p">(</span><span class="n">iter</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="exception_4">Exception</h5>
+<p>때에 따라서는 개체의 상태를 변경하기 위해 함수에 개체를 전달해야 할 수도 있다.
+그런 경우, 개체를 <a href="#Rf-inout"><code>T&amp;</code></a> 참조로 전달하는 것이 많은 경우 올바른 방법이다.
+반환 값으로 입출력 매개변수를 전달하는 것은 종종 불필요하다.</p>
+<p>예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">istream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>    <span class="c1">// much like std::operator&gt;&gt;()</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// do something with line</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>여기서 <code>s</code>와 <code>cin</code> 모두 입출력 매개변수로 사용되었다.
+<code>cin</code>은 참조로 전달되어 상태를 변경할 수 있다. <code>s</code>는 반복적으로 개체를 할당하는 것을 막으려고 전달한다.
+참조로 전달된 <code>s</code>를 재사용하는 것으로, <code>s</code>의 최대 크기(capacity)를 넘어서는 경우에만 새로운 메모리 할당이 발생한다.
+이런 방법은 보통 "호출자가 미리 할당해서 출력을 받는" 패턴이라고 불리는데, <code>string</code>이나 <code>vector</code> 같은 메모리 해제가 발생하는 타입들에 유용하다.</p>
+<p>비교를 위해, 값을 반환하는 방법으로 해결한다면 아래와 같이 작성하게 될 것이다:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">pair</span><span class="o">&lt;</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">get_string</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">);</span>  <span class="c1">// not recommended</span>
+    <span class="p">{</span>
+        <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">is</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">is</span><span class="p">,</span> <span class="n">s</span><span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">;</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// do something with p.second</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>생각보다 아름답지 않고 성능에도 좋지 않다.</p>
+<p>이는 사실 입출력 매개변수에 의존하기 때문에 엄밀하게는 규칙(F.21)에서 말하는 출력 매개변수의 예외가 아니다. 하지만, 가이드라인이 말하지 않아서 놓치는 것보다는 명시적으로 언급하는 것이 분명하기 때문에 작성되었다.</p>
+<h5 id="note_17">Note</h5>
+<p>특정한 사용자 정의 타입을 반환하는 것이 유용한 경우도 많이 있다.
+예를 들자면:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">Distance</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">unit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// 1 means meters</span>
+    <span class="p">};</span>
+
+    <span class="n">Distance</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">measure</span><span class="p">(</span><span class="n">obj1</span><span class="p">);</span>        <span class="c1">// access d1.value and d1.unit</span>
+    <span class="k">auto</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">measure</span><span class="p">(</span><span class="n">obj2</span><span class="p">);</span>            <span class="c1">// access d2.value and d2.unit</span>
+    <span class="k">auto</span> <span class="p">[</span><span class="n">value</span><span class="p">,</span> <span class="n">unit</span><span class="p">]</span> <span class="o">=</span> <span class="n">measure</span><span class="p">(</span><span class="n">obj3</span><span class="p">);</span> <span class="c1">// access value and unit; somewhat redundant</span>
+                                        <span class="c1">// to people who know measure()</span>
+    <span class="k">auto</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">measure</span><span class="p">(</span><span class="n">obj4</span><span class="p">);</span>        <span class="c1">// don&#39;t; it&#39;s likely to be confusing</span>
+</pre></div>
+
+
+<p>추상화가 아닌 독립적인 존재들(independent entities)을 표현할 때는 <code>pair</code>와 <code>tuple</code>은 필요 이상으로 범용적(overly-generic)일 수 있다.</p>
+<p>다른 예로는, <code>tuple</code>대신 특정 타입과 비슷한 <code>variant&lt;T, error_code&gt;</code>를 사용하라. </p>
+<h5 id="enforcement_14">Enforcement</h5>
+<ul>
+<li>출력 목적의 매개변수는 반환값으로 대체되어야 한다. 출력 매개변수는 함수(멤버함수 포함)에서 값을 변경하는 <code>const</code>가 아닌 매개변수를 의미한다.</li>
+</ul>
+<h3 id="f22-t-owner"><a name="Rf-ptr"></a>F.22: T* 혹은 owner<T*>를 단일 개체를 지정하기 위해 사용하라</h3>
+<h5 id="reason_16">Reason</h5>
+<p>가독성: 일반적인 포인터와 같다. 분석도구의 동작을 돕는다.</p>
+<h5 id="note_18">Note</h5>
+<p>전통적인 C와 C++ 코드에서는 <code>T*</code>는 서로 연관이 없는 목적들( weakly-related purposes)에 쓰여왔다:</p>
+<ul>
+<li>(단일) 개체의 확인(identify) (함수에 의해 소멸되지 않았다는 의미)</li>
+<li>자유 저장소에 할당된 개체의 주소(나중에 해제한다)</li>
+<li><code>nullptr</code>를 담기 위한 용도</li>
+<li>(0으로 끝나는 문자 배열) 전통적인 C 언어 문자열</li>
+<li>길이와 함께 전달되는 배열의 시작 지점</li>
+<li>배열 내의 위치를 표시</li>
+</ul>
+<p>이로 인해 코드가 어떤일을 하는지 이해하기 어려웠고, 도구에 의한 분석을 복잡하게 만들었다.</p>
+<h5 id="example_19">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">q</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">666</span><span class="p">;</span> <span class="c1">// Bad: we don&#39;t know if p points to n elements;</span>
+                        <span class="c1">// assume it does not or use span&lt;int&gt;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">;</span>      <span class="c1">// Bad: we don&#39;t know if that s points to a zero-terminated array of char;</span>
+                        <span class="c1">// assume it does not or use zstring</span>
+        <span class="k">delete</span> <span class="n">q</span><span class="p">;</span>       <span class="c1">// Bad: we don&#39;t know if *q is allocated on the free store;</span>
+                        <span class="c1">// assume it does not or use owner</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>아래 코드가 더 낫다</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">use2</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">,</span> <span class="n">zstring</span> <span class="n">s</span><span class="p">,</span> <span class="n">owner</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span> <span class="n">q</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">666</span><span class="p">;</span> <span class="c1">// OK, a range error can be caught</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// OK</span>
+        <span class="k">delete</span> <span class="n">q</span><span class="p">;</span>  <span class="c1">// OK</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_19">Note</h5>
+<p><code>owner&lt;T*&gt;</code>는 소유권을 표현한다. <code>zstring</code>은 C 언어 문자열을 의미한다.</p>
+<p><code>T*</code>가 <code>unique_ptr&lt;T&gt;</code>와 같은 스마트 포인터에서 획득되었다면 단일 개체를 의미한다.</p>
+<h5 id="see-also_2">See also</h5>
+<ul>
+<li><a href="#S-gsl">Support library</a></li>
+<li><a href="#Ri-array">배열을 포인터 하나로 전달하지 마라</a></li>
+</ul>
+<h5 id="enforcement_15">Enforcement</h5>
+<ul>
+<li>(쉬움) (범위 관련) 포인터 값을 반환하는 산술 연산에 대해 경고한다</li>
+</ul>
+<h3 id="f23-null-not_nulllttgt"><a name="Rf-nullptr"></a>F.23: "null"이 허용되지 않는다면 <code>not_null&lt;T&gt;</code>를 사용해 표시하라</h3>
+<h5 id="reason_17">Reason</h5>
+<p>명확성. 함수 호출자가 <code>nullptr</code> 검사를 해야 하는지를 명확히 한다.
+같은 맥락으로, <code>not_null&lt;T&gt;</code>을 반환한다면 함수 호출자는 반환 값이 <code>nullptr</code>인지 검사해야 할 필요가 없다.</p>
+<h5 id="example_20">Example</h5>
+<p><code>not_null&lt;T*&gt;</code>은 코드를 읽는 대상(기계와 사람 모두)이 <code>nullptr</code>를 검사할 필요가 없다는 것을 분명히한다. 추가적으로, 디버깅할 때, <code>owner&lt;T*&gt;</code>와 <code>not_null&lt;T&gt;</code>에서 정확성을 검사하는데 사용될 수 있다.</p>
+<p>다음의 사례를 고려해 보자:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">Record</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<p><code>length(p)</code>을 호출하기 전에 <code>p</code>가 <code>nullptr</code>인지 검사해야 하는가? <code>length()</code>의 구현에서 <code>p</code>가 <code>nullptr</code>인지 검사해야 하는가? </p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// it is the caller&#39;s job to make sure p != nullptr</span>
+    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">not_null</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">*&gt;</span> <span class="n">p</span><span class="p">);</span>
+
+    <span class="c1">// the implementor of length() must assume that p == nullptr is possible</span>
+    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">Record</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="note_20">Note</h5>
+<p><code>not_null&lt;T*&gt;</code>는 <code>nullptr</code>가 아니라고 전제한다; <code>T*</code>는 <code>nullptr</code>일 수 있다; 둘 모두 <code>T*</code>로 표현되므로 실행시간 오버헤드가 발생하지 않는다.</p>
+<h5 id="note_21">Note</h5>
+<p><code>not_null</code>는 내장 포인터 타입 뿐만 아니라, <code>unique_ptr</code>, <code>shared_ptr</code>, 혹은 다른 포인터처럼 동작하는 타입들에도 동작한다</p>
+<h5 id="enforcement_16">Enforcement</h5>
+<ul>
+<li>(단순) 원시 포인터(raw pointer)를 <code>nullptr</code>인지 검사하지 않고 사용하면 경고한다 <code>not_null</code>를 쓰도록 제안한다</li>
+<li>(단순) 포인터가 역참조 될 때 <code>nullptr</code>를 검사할 때도 있고 검사하지 않을 때도 있다면 오류로 처리한다</li>
+<li>(단순) <code>not_null</code>이 <code>nullptr</code>인지 검사하는 경우 경고한다</li>
+</ul>
+<h3 id="f24-spanlttgt-span_plttgt"><a name="Rf-range"></a>F.24: 범위를 지정할 때는 <code>span&lt;T&gt;</code>혹은 <code>span_p&lt;T&gt;</code>를 사용하라</h3>
+<h5 id="reason_18">Reason</h5>
+<p>명시적이지 않은 범위는 오류의 원인이 된다.</p>
+<h5 id="example_21">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">X</span><span class="o">*</span> <span class="nf">find</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">r</span><span class="p">,</span> <span class="k">const</span> <span class="n">X</span><span class="o">&amp;</span> <span class="n">v</span><span class="p">);</span>    <span class="c1">// find v in r</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+    <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">find</span><span class="p">({</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">()},</span> <span class="n">X</span><span class="p">{});</span>  <span class="c1">// find X{} in vec</span>
+</pre></div>
+
+
+<h5 id="note_22">Note</h5>
+<p>C++ 코드에서 범위를 사용하는 경우는 무척 흔하다. 보통 그런 범위들은 암묵적이고 정확한 사용을 확신하기 매우 어렵다. 
+특히, 배열 <code>[p:p+n)</code>를 대상으로한 <code>(p, n)</code> 전달인자가 주어졌을 때, 실제로 <code>*p</code> 뒤에 <code>n</code>개의 원소가 실재하는지 아는 것은 불가능하다.</p>
+<p><code>span&lt;T&gt;</code>와 <code>span_p&lt;T&gt;</code>는 <code>[p:q)</code>를 대상으로 앞서 언급한 명제가 사실임을 확인할 수 있도록 하는 단순한 보조(helper) 클래스이다. </p>
+<h5 id="example_22">Example</h5>
+<p><code>span</code>은 원소들의 범위를 표현한다. 그런데 그 범위의 원소들을 어떻게 변경할 수 있을까?</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// range traversal (guaranteed correct)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">s</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+        <span class="c1">// C-style traversal (potentially checked)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> 
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+        <span class="c1">// random access (potentially checked)</span>
+        <span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+        <span class="c1">// extract pointers (potentially checked)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_23">Note</h5>
+<p><code>span&lt;T&gt;</code>개체는 원소를 소유하지 않며 값에 의한 전달이 가능할 정도로 작다.</p>
+<p><code>span</code>을 인자로 전달하는 것은 포인터와 길이를 함께 전달하는 것보다 효율적이다.</p>
+<h5 id="see-also_3">See also</h5>
+<p><a href="#S-gsl">Support library</a></p>
+<h5 id="enforcement_17">Enforcement</h5>
+<p>(복잡함) 포인터와 정수를 사용해 범위가 매개변수로 전달되면 경고하고 <code>span</code>을 사용하도록 제안한다.</p>
+<h3 id="f25-c-zstring-not_nullltzstringgt"><a name="Rf-zstring"></a>F.25: C 스타일 문자열에는 <code>zstring</code> 혹은 <code>not_null&lt;zstring&gt;</code>을 사용하라</h3>
+<h5 id="reason_19">Reason</h5>
+<p>C언어 형식의 문자열은 광범위하게 사용되고 있다. 관례적으로, 이들은 <code>\0</code>으로 끝나는 <code>char</code>배열이라고 정의되어 있다.
+C 문자열은 <code>char</code> 1개에 대한 포인터와 구분되어야 한다.</p>
+<h5 id="example_23">Example</h5>
+<p>Consider:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<p><code>length(s)</code>를 호출 할 때 <code>s==nullptr</code>을 검사해야 하는가? <code>length()</code> 본문 안에서 <code>p</code>가 <code>nullptr</code>인지 검사해야 하는가?</p>
+<div class="codehilite"><pre><span></span>    <span class="c1">// the implementor of length() must assume that p == nullptr is possible</span>
+    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">zstring</span> <span class="n">p</span><span class="p">);</span>
+
+    <span class="c1">// it is the caller&#39;s job to make sure p != nullptr</span>
+    <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">not_null</span><span class="o">&lt;</span><span class="n">zstring</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="note_24">Note</h5>
+<p><code>zstring</code>은 소유권을 표현하지 않는다.</p>
+<h5 id="see-also_4">See also</h5>
+<p><a href="#S-gsl">Support library</a></p>
+<h3 id="f26-unique_ptrlttgt"><a name="Rf-unique_ptr"></a>F.26: 포인터가 필요한 곳에 소유권을 전달할 때는 <code>unique_ptr&lt;T&gt;</code>를 사용하라</h3>
+<h5 id="reason_20">Reason</h5>
+<p><code>unique_ptr</code>는 포인터를 안전하고 부담없이(cheap) 전달하는 가장 간단한 방법이다.</p>
+<h5 id="see-also_5">See also</h5>
+<p><a href="#Rc-factory">C.50</a>는 팩토리 함수에서 <code>shared_ptr</code>를 반환하는 경우를 다룬다</p>
+<h5 id="example_24">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Shape</span><span class="o">&gt;</span> <span class="n">get_shape</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">)</span>  <span class="c1">// assemble shape from input stream</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">kind</span> <span class="o">=</span> <span class="n">read_header</span><span class="p">(</span><span class="n">is</span><span class="p">);</span> <span class="c1">// read header and identify the next shape on input</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">kind</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">kCircle</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Circle</span><span class="o">&gt;</span><span class="p">(</span><span class="n">is</span><span class="p">);</span>
+        <span class="k">case</span> <span class="nl">kTriangle</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Triangle</span><span class="o">&gt;</span><span class="p">(</span><span class="n">is</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_25">Note</h5>
+<p>클래스 계층구조에 있는 개체라면 개체 그 자체보다는 인터페이스(상위 클래스)의 포인터를 전달해야 한다. </p>
+<h5 id="enforcement_18">Enforcement</h5>
+<p>(단순) 함수가 유효범위 내에서 할당한 포인터를 반환한다면 경고하라. <code>unique_ptr</code> 혹은 <code>shared_ptr</code>를 쓰도록 제안하라</p>
+<h3 id="f27-shared_ptrlttgt"><a name="Rf-shared_ptr"></a>F.27: 소유권을 공유할 때는 <code>shared_ptr&lt;T&gt;</code>를 사용하라</h3>
+<h5 id="reason_21">Reason</h5>
+<p><code>std::shared_ptr</code>로 소유권을 공유하는 것은 표준에서 사용하는 방법이다. 이를 사용하면, 마지막 소유자가 개체를 소멸시킨다.</p>
+<h5 id="example_25">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">Image</span><span class="o">&gt;</span> <span class="n">im</span> <span class="p">{</span> <span class="n">read_image</span><span class="p">(</span><span class="n">somewhere</span><span class="p">)</span> <span class="p">};</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t0</span> <span class="p">{</span><span class="n">shade</span><span class="p">,</span> <span class="n">args0</span><span class="p">,</span> <span class="n">top_left</span><span class="p">,</span> <span class="n">im</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t1</span> <span class="p">{</span><span class="n">shade</span><span class="p">,</span> <span class="n">args1</span><span class="p">,</span> <span class="n">top_right</span><span class="p">,</span> <span class="n">im</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t2</span> <span class="p">{</span><span class="n">shade</span><span class="p">,</span> <span class="n">args2</span><span class="p">,</span> <span class="n">bottom_left</span><span class="p">,</span> <span class="n">im</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">t3</span> <span class="p">{</span><span class="n">shade</span><span class="p">,</span> <span class="n">args3</span><span class="p">,</span> <span class="n">bottom_right</span><span class="p">,</span> <span class="n">im</span><span class="p">};</span>
+
+    <span class="c1">// detach threads</span>
+    <span class="c1">// last thread to finish deletes the image</span>
+</pre></div>
+
+
+<h5 id="note_26">Note</h5>
+<p>소유자가 하나 뿐이라면 <code>shared_ptr</code>보다는 <code>unique_ptr</code>을 사용하라. 
+<code>shared_ptr</code>는 소유권의 공유를 위한 것이다.</p>
+<p><code>shared_ptr</code>가 곳곳에서 사용되면 비용이 발생한다는 점에 주의하라(참조 카운트에 대한 원자적 연산 비용의 총합).</p>
+<h5 id="alternative">Alternative</h5>
+<p>특정 범위에서만 사용되는 개체 하나가 공유 개체를 소유하도록 하라. 모든 사용자가 사라졌을때(completed) 공유 개체를 파괴하도록 한다.</p>
+<h5 id="enforcement_19">Enforcement</h5>
+<p>(실행 불가) 제대로 탐지하기엔 너무 복잡한 패턴을 띄고 있다.</p>
+<h3 id="f60-tamp-t"><a name="Rf-ptr-ref"></a>F.60: "인자가 없을 경우"를 허용한다면 <code>T&amp;</code>보다는 <code>T*</code>를 선호하라</h3>
+<h5 id="reason_22">Reason</h5>
+<p>포인터(<code>T*</code>)는 <code>nullptr</code>일 수 있지만, 참조(<code>T&amp;</code>)는 그렇지 않다.
+경우에 따라서는 "개체 없음"을 표시하기 위해 <code>nullptr</code>를 사용하는 것이 유용할 수 있다. 그렇지 않다면, 참조가 더 간단하고 좋은 코드로 이어질 것이다.</p>
+<h5 id="example_26">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">string</span> <span class="nf">zstring_to_string</span><span class="p">(</span><span class="n">zstring</span> <span class="n">p</span><span class="p">)</span> <span class="o">//</span> <span class="n">zstring</span> <span class="n">is</span> <span class="n">a</span> <span class="kt">char</span><span class="o">*</span><span class="p">;</span> <span class="n">that</span> <span class="n">is</span> <span class="n">a</span> <span class="n">C</span><span class="o">-</span><span class="n">style</span> <span class="n">string</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span> <span class="k">return</span> <span class="n">string</span><span class="p">{};</span>    <span class="c1">// p might be nullptr; remember to check</span>
+        <span class="k">return</span> <span class="n">string</span><span class="p">{</span><span class="n">p</span><span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">r</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// r refers to a vector&lt;int&gt;; no check needed</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_27">Note</h5>
+<p>가능하기는 하지만, C++에서 <code>nullptr</code>인 개체를 생성하는 것은 정상적(valid)이지 않다(예를 들어, <code>T* p = nullptr; T&amp; r = (T&amp;)*p;</code>). 그런 오류는 굉장히 드물다(very uncommon).</p>
+<h5 id="note_28">Note</h5>
+<p>포인터 표기법을 선호한다면 (<code>.</code>보다는 <code>-&gt;</code> 혹은 <code>*</code>가 좋다면),  <code>not_null&lt;T*&gt;</code>이 <code>T&amp;</code>처럼 사용될 수 있다.</p>
+<h5 id="enforcement_20">Enforcement</h5>
+<p>???</p>
+<h3 id="f42-t"><a name="Rf-return-ptr"></a>F.42: 위치를 나타내는 경우에만 <code>T*</code>를 반환하라</h3>
+<h5 id="reason_23">Reason</h5>
+<p>포인터는 이를 표현하기에 적절하다. 
+소유권을 전달하기 위해 <code>T*</code>를 사용하는 것은 잘못된 방법이다.</p>
+<h5 id="example_27">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">Node</span><span class="o">*</span> <span class="nf">find</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>  <span class="c1">// find s in a binary tree of Nodes</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">t</span> <span class="o">||</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span> <span class="k">return</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">((</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">s</span><span class="p">)))</span> <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">((</span><span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">s</span><span class="p">)))</span> <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>nullptr</code>가 아니라면 <code>find</code>가 반환하는 포인터는 <code>s</code>를 가지는 <code>node</code>를 의미한다.
+중요한점은 개체를 가리키는 포인터로는 소유권이 호출자까지 전달되지 않는다는 것이다.</p>
+<h5 id="note_29">Note</h5>
+<p>위치는 반복자, 색인(indices), 참조를 사용해 전달할 수 있다.
+종종 참조가 포인터보다 우월한 방법이 되기도 한다. <a href="#Rf-ptr-ref"><code>nullptr</code>를 사용할 필요가 없는 경우</a> 혹은 <a href="???">개체가 변경되어선 안되는 경우</a>.</p>
+<h5 id="note_30">Note</h5>
+<p>Do not return a pointer to something that is not in the caller's scope; see <a href="#Rf-dangle">F.43</a>.</p>
+<h5 id="see-also_6">See also</h5>
+<p><a href="#???">허상 포인터 예방에 대한 토의</a> (링크 없음)</p>
+<h5 id="enforcement_21">Enforcement</h5>
+<ul>
+<li>단순한(plain) <code>T*</code>에 <code>delete</code>, <code>free()</code>등이 사용되면 지적한다. 소유권이 있을때만 delete되어야 한다.</li>
+<li>단순한(plain) <code>T*</code>에 <code>new</code>, <code>malloc()</code>등이 사용되면 지적한다. 소유권이 있을때만 delete의 책임이 발생한다.</li>
+</ul>
+<h3 id="f43"><a name="Rf-dangle"></a>F.43: 절대로 (직접적이든 간접적이든) 지역 개체의 포인터나 참조를 반환하지 말아라</h3>
+<h5 id="reason_24">Reason</h5>
+<p>허상 포인터(dangling pointer)로 인한 크래시와 데이터 손상(corruption)을 방지한다.</p>
+<h5 id="example-bad_1">Example, bad</h5>
+<p>함수가 반환하면 지역 개체들은 더이상 존재하지 않는다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span><span class="o">*</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">fx</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="n">fx</span><span class="p">;</span>  <span class="c1">// BAD</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>   <span class="c1">// looks innocent enough</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">gx</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*p == &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">999</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;gx == &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">gx</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">h</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>  <span class="c1">// read from abandoned stack frame (bad)</span>
+        <span class="n">g</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>        <span class="c1">// pass pointer to abandoned stack frame to function (bad)</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>위와 같은 코드에서 아래와 같은 출력을 확인할 수 있다:</p>
+<div class="codehilite"><pre><span></span>    *p == 999
+    gx == 999
+</pre></div>
+
+
+<p>이는 <code>g()</code>에서 <code>f()</code>에서 사용한 스택 영역을 재사용했기 때문인 것으로 생각된다. <code>*p</code>에서 <code>gx</code>가 점유한 메모리 영역을 참조한 것이다.</p>
+<ul>
+<li><code>fx</code>와 <code>gx</code>가 다른 타입인 경우를 상상해보라</li>
+<li><code>fx</code>와 <code>gx</code>에 불변조건이 있는 경우를 상상해보라</li>
+<li>저런 허상 포인터가 더 많은 함수들에서 사용되었을 경우를 상상해보라</li>
+<li>악의적인 사용자(cracker)가 허상 포인터로 무엇을 할 수 있을지 상상해보라</li>
+</ul>
+<p>다행스럽게도 대부분 (모든?) 최신(modern) 컴파일러들은 이런 단순한 오류를 잡아내고 경고할 수 있다.</p>
+<h5 id="note_31">Note</h5>
+<p>이 규칙은 참조에도 해당한다:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>  <span class="c1">// Bad: returns reference to object that is about to be destroyed</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_32">Note</h5>
+<p><code>static</code>이 아닌 지역 변수에만 적용된다. 모든 <code>static</code>변수는 (이름에서 드러나듯이) 정적으로 할당되므로, 그 개체를 가리키는 포인터는 허상 포인터가 아니다.</p>
+<h5 id="example-bad_2">Example, bad</h5>
+<p>지역 변수에 대한 포인터가 새어나오는 경우가 예시처럼 분명하지 않을 수 있다: </p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">glob</span><span class="p">;</span>       <span class="c1">// global variables are bad in so many ways</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="kt">void</span> <span class="n">steal</span><span class="p">(</span><span class="n">T</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">glob</span> <span class="o">=</span> <span class="n">x</span><span class="p">();</span>  <span class="c1">// BAD</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+        <span class="n">steal</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span> <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">f</span><span class="p">();</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">glob</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이 코드에서는 <code>f</code>의 호출 이후 버려진 메모리 영역에서 값을 읽어온다. <code>glob</code>에 저장된 포인터는 예상치 못한 방법으로 멀리(later) 있는 코드에서 사용되면서 문제를 일으킬 수 있다.</p>
+<h5 id="note_33">Note</h5>
+<p>지역변수의 주소는 return 구문이나 <code>T&amp;</code> 출력 매개변수를 통해서 반환되거나, 반환 개체의 멤버, 배열과 같은 형태로 새어나올 수 있다.</p>
+<h5 id="note_34">Note</h5>
+<p>유사하게 안쪽 유효범위에서 바깥 유효범위로 새어나오는 포인터의 예시들을 더 작성할 수도 있다; 그런 경우들은 함수로부터 새어나온 포인터를 처리하는 방법을 그대로 적용할 수 있다.</p>
+<p>이 문제의 파생으로는 컨테이너 안에 포인터를 보관하면서 개체보다 포인터가 더 오래 사용되는(outlives) 경우가 있다.</p>
+<h5 id="see-also_7">See also</h5>
+<p>허상 포인터에 대한 다른 방법으로는 <a href="#???">포인터 무효화(링크 없음)</a>를 생각할 수 있다. 이 역시 비슷한 방법으로 탐지되고 예방할 수 있다.</p>
+<h5 id="enforcement_22">Enforcement</h5>
+<ul>
+<li>컴파일러가 지역변수들에 대한 참조 혹은 포인터를 반환하는 것을 잡아낼 수 있다</li>
+<li>정적 분석에서 많은 일반적인 패턴을 잡아낼 수 있다 (그러므로 허상 포인터를 제거할 수 있다)</li>
+</ul>
+<h3 id="f44-tamp"><a name="Rf-return-ref"></a>F.44: 복사를 권장하지 않거나 "개체를 항상 반환"한다면 <code>T&amp;</code>를 반환하라</h3>
+<h5 id="reason_25">Reason</h5>
+<p>언어가 <code>T&amp;</code>는 객체를 가리키고 있다는 것을 보장하기 때문에 <code>nullptr</code>인지 시험하는 것은 필요없다.</p>
+<h5 id="see-also_8">See also</h5>
+<p>참조를 반환하는 것은 소유권 이전으로 사용되어선 안된다:
+<a href="#???">허상 포인터 예방에 대한 토의(discussion)</a> and <a href="#???">소유권에 대한 토의(discussion)</a>.</p>
+<h5 id="example_28">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">Car</span>
+    <span class="p">{</span>
+        <span class="n">array</span><span class="o">&lt;</span><span class="n">wheel</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">wheel</span><span class="o">&amp;</span> <span class="n">get_wheel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">Expects</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">size</span><span class="p">());</span> <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">};</span>
+
+    <span class="kt">void</span> <span class="nf">use</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Car</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">wheel</span><span class="o">&amp;</span> <span class="n">w0</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">get_wheel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// w0 has the same lifetime as c</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_23">Enforcement</h5>
+<p>반환이 없는 경우 <code>nullptr</code>가 될 수 있는 함수들을 지적한다</p>
+<h3 id="f45-tampamp"><a name="Rf-return-ref-ref"></a>F.45: <code>T&amp;&amp;</code>를 반환하지 말아라</h3>
+<h5 id="reason_26">Reason</h5>
+<p>이것은 소멸된 임시 개체에 대한 참조를 반환하는 것이다. <code>&amp;&amp;</code>는 임시 개체를 붙잡기 위한 것이다.</p>
+<h5 id="example_29">Example</h5>
+<p>r-value 참조는 반환한 표현식이 끝나면 유효범위에서 사라진다:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>   <span class="c1">// OK, so far</span>
+    <span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>                 <span class="c1">// Undefined behavior</span>
+</pre></div>
+
+
+<p>이런 종류의 사용은 버그의 원인이되고, 컴파일러 버그라고 잘못 보고된다. 함수를 구현할때 사용자가 이런 함정에 빠지지 않도록 해야 한다.</p>
+<p><a href="#SS-lifetime">수명주기 안전성 분석(profile)</a>에서 이런 문제를 잡아낼 것이다(완전히 구현된다면).</p>
+<h5 id="example_30">Example</h5>
+<p>r-value 참조를 반환하는 것은 해당 임시변수에 대한 참조가 피호출자로 "하향식 전달" 되된다면 문제없다; 그런 경우, 그 임시변수는 함수 호출보다 오래 지속될 수 있다(<a href="#Rf-consume">F.18</a>와 <a href="#Rf-forward">F.19</a>를 함께 보라).
+하지만, 호출자로 참조가 "상향식 전달"된다면 문제가 될 수 있다.</p>
+<p>(보통의 참조 혹은 perfect forwarding을 통해서) 함수 인자를 연속 전달(passthrough)하고자 한다면, (<code>auto&amp;&amp;</code>가 아니라) <code>auto</code>를 사용하라</p>
+<p><code>F</code>가 값으로 반환한다고 가정하면:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="o">&gt;</span>
+    <span class="k">auto</span><span class="o">&amp;&amp;</span> <span class="n">wrapper</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log_call</span><span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">f</span><span class="p">));</span> <span class="c1">// or whatever instrumentation</span>
+        <span class="k">return</span> <span class="nf">f</span><span class="p">();</span>          <span class="c1">// BAD: 임시변수에 대한 참조를 반환한다</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>이런 코드가 더 낫다:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">F</span><span class="o">&gt;</span>
+    <span class="k">auto</span> <span class="n">wrapper</span><span class="p">(</span><span class="n">F</span> <span class="n">f</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">log_call</span><span class="p">(</span><span class="k">typeid</span><span class="p">(</span><span class="n">f</span><span class="p">));</span> <span class="c1">// or whatever instrumentation</span>
+        <span class="k">return</span> <span class="nf">f</span><span class="p">();</span>          <span class="c1">// OK</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="exception_5">Exception</h5>
+<p><code>std::move</code> 와 <code>std::forward</code>는 <code>&amp;&amp;</code>를 반환하지만 이는 형변환일 뿐이다 -- 표현식 문맥내에서 임시 개체가 파괴되기 전에 같은 표현식 내에서 임시 개체에 대한 참조를 전달한다.<br />
+우리는 <code>&amp;&amp;</code>를 반환하는 것의 다른 좋은 형태를 알지 못한다.</p>
+<h5 id="enforcement_24">Enforcement</h5>
+<p><code>std::move</code> 와 <code>std::forward</code>를 제외하고 <code>&amp;&amp;</code>를 반환한다면 지적한다</p>
+<h3 id="f46-main-int"><a name="Rf-main"></a>F.46: <code>main()</code>는 <code>int</code>를 반환해야 한다</h3>
+<h5 id="reason_27">Reason</h5>
+<p>언어 규칙으로 정해져 있지만. "언어 확장"에 의해서 너무 자주 위반된다.
+<code>main</code>(해당 프로그램의 <code>main</code> 함수)에서 <code>void</code>를 반환하도록 선언하는 것은 이식성을 제한한다.</p>
+<h5 id="example_31">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>  <span class="c1">// bad, not C++</span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;This is the way to do it</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="note_35">Note</h5>
+<p>커뮤니티에 이 문제가 남아있기 때문에 가이드라인에서 명시한다.</p>
+<h5 id="enforcement_25">Enforcement</h5>
+<ul>
+<li>컴파일러에서 금지한다</li>
+<li>컴파일러가 금지하지 않는다면 분석 도구에서 이를 지적한다</li>
+</ul>
+<h3 id="f47-tamp"><a name="Rf-assignment-op"></a>F.47: 대입 연산자는 <code>T&amp;</code>를 반환하라</h3>
+<h5 id="reason_28">Reason</h5>
+<p>값 타입의 연산자 중복정의는 전통적으로 대입에 <code>operator=(const T&amp;)</code>를 사용하고 <code>*this</code>를 (<code>const</code>가 아닌 형태로) 반환하는 것이다. 
+이렇게 하는 것이 표준 라이브러리 타입들과 일관성을 유지하고 "int처럼 동작하는" 원칙을 따르는 것이다.</p>
+<h5 id="note_36">Note</h5>
+<p>과거에는 대입 연산에서 <code>const T&amp;</code>를 반환하도록 하는 가이드가 있었다.
+이는 <code>(a = b) = c</code>같은 형태의 코드를 예방하기 위한 목적이었다 -- 이런 코드는 표준 타입들과의 일관성을 해칠 정도로 빈번하지는 않다.</p>
+<h5 id="example_32">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">Foo</span>
+    <span class="p">{</span>
+      <span class="k">public</span><span class="o">:</span>
+        <span class="p">...</span>
+        <span class="n">Foo</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Foo</span><span class="o">&amp;</span> <span class="n">rhs</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Copy members.</span>
+          <span class="p">...</span>
+          <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="enforcement_26">Enforcement</h5>
+<p>이 규칙은 반환 타입(과 반환 값)을 검사하는 도구에 의해서 모든 대입 연산자에 대해 적용되어야 한다. </p>
+<h3 id="f48-return-stdmovelocal"><a name="Rf-return-move-local"></a>F.48: <code>return std::move(local)</code>은 사용하지 말아라</h3>
+<h5 id="reason_29">Reason</h5>
+<p>Guaranteed copy elision이 적용되면 <code>std::move</code>를 반환 구문에 사용할 필요가 없다.</p>
+<h5 id="example-bad_3">Example; bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">S</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">S</span> <span class="n">result</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="example-good">Example; good</h5>
+<div class="codehilite"><pre><span></span>    <span class="n">S</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">S</span> <span class="n">result</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<h5 id="enforcement_27">Enforcement</h5>
+<p>반환 구문을 검사하는 도구에 의해서 검사되어야 한다.</p>
+<h3 id="f50"><a name="Rf-capture-vs-overload"></a>F.50: 함수를 쓸 수 없을 때는 람다를 사용하라(지역 변수를 캡쳐하거나 지역 함수를 작성할 때)</h3>
+<h5 id="reason_30">Reason</h5>
+<p>함수는 지역변수를 캡쳐할 수 없고, 지역 유효범위로 선언될 수도 없다; 이런 기능이 필요하다면 람다를 사용하거나 직접 작성한 함수 개체를 사용해야 한다 (가능한 람다를 사용하라). 하지만, 람다와 함수개체는 오버로드가 되지 않는다; 오버로드가 필요하다면 함수를 사용하라. 두 방법 모두 가능하다면 함수를 선호하라; 단순한 방법을 사용하라.</p>
+<h5 id="example_33">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="c1">// writing a function that should only take an int or a string</span>
+    <span class="c1">// -- overloading is natural</span>
+    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+
+    <span class="c1">// writing a function object that needs to capture local state and appear</span>
+    <span class="c1">// at statement or expression scope -- a lambda is natural</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">work</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">lots_of_work</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">tasknum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">tasknum</span> <span class="o">&lt;</span> <span class="n">max</span><span class="p">;</span> <span class="o">++</span><span class="n">tasknum</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pool</span><span class="p">.</span><span class="n">run</span><span class="p">([</span><span class="o">=</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">]{</span>
+            <span class="cm">/*</span>
+<span class="cm">            ...</span>
+<span class="cm">            ... process 1 / max - th of v, the tasknum - th chunk</span>
+<span class="cm">            ...</span>
+<span class="cm">            */</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="n">pool</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</pre></div>
+
+
+<h5 id="exception_6">Exception</h5>
+<p>제네릭 람다는 함수 템플릿을 구현하는 간결한 방법을 제공하기 때문에 코드를 조금 더 작성하면 일반 함수 템플릿과 같은 기능을 사용할 수 있다.
+미래에 모든 함수들이 Concept 인자를 사용할 수 있게 되면 이 기능은 사라질지도 모른다.</p>
+<h5 id="enforcement_28">Enforcement</h5>
+<ul>
+<li>아무것도 캡쳐하지 않는 비-제네릭 람다가 전역 범위에 나타나면 경고한다(예를 들어, <code>auto x = [](int i){ /*...*/; };</code>와 같은 형태). 이런 경우 람다 대신 평범한 함수를 작성하도록 한다.</li>
+</ul>
+<h3 id="f51"><a name="Rf-default-args"></a>F.51: 선택할 수 있다면, 중복 정의보다는 기본 전달인자를 선호하라</h3>
+<h5 id="reason_31">Reason</h5>
+<p>기본 인자로 하나의 구현에 다른 인터페이스를 제공할 수 있다.
+모든 중복 정의가 같은 의미구조를 구현한다고 보장할 수 없다. 기본인자를 사용함으로써 코드 중복을 피할 수 있다.</p>
+<h5 id="note_37">Note</h5>
+<p>전달인자가 같은 타입일 때는 기본인자와 중복정의 중에서 선택해야 할 때가 있다: </p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">format</span> <span class="n">f</span> <span class="o">=</span> <span class="p">{});</span>
+</pre></div>
+
+
+<p>그 반대로는</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// use default format</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">format</span> <span class="n">f</span><span class="p">);</span>
+</pre></div>
+
+
+<p>의미구조적으로는 같은 연산이지만 전달인자의 타입이 다르다면 선택의 여지가 없다. 예를 들어:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">zstring</span><span class="p">);</span>
+</pre></div>
+
+
+<h5 id="see-also_9">See also</h5>
+<p><a href="#Rh-virtual-default-arg">가상 함수들의 기본 인자</a></p>
+<h5 id="enforcement_29">Enforcement</h5>
+<p>???</p>
+<h3 id="f52"><a name="Rf-reference-capture"></a>F.52: 지역적으로 사용된다면 람다의 참조 캡쳐를 선호하라</h3>
+<h5 id="reason_32">Reason</h5>
+<p>지역범위에서 람다를 사용할 때는 대부분의 경우 효율성과 정확성을 위해 참조캡쳐(capture by reference)를 선호할 것이다. 여기에는 함수가 반환하기 전에 병렬 알고리즘을 작성하거나 호출할때도 포함된다.</p>
+<h5 id="discussion">Discussion</h5>
+<p>효율적인 측면에서는 대부분의 타입들을 참조로 전달하는 것이 값으로 전달하는 것보다 효율적이다.</p>
+<p>정확성 측면에서는 연산들이 호출 지점에서 원래 개체에 부수효과를 만들길 원한다는 것을 고려해야 한다. 값으로 전달하면 이런 문제를 예방할 수 있다.</p>
+<h5 id="note_38">Note</h5>
+<p>불행하게도, 부수효과를 막기 위해 참조를 <code>const</code>로 받아올 방법이 없다</p>
+<h5 id="example_34">Example</h5>
+<p>이 예시에서는, 큰 개체(네트워크 메세지)가 반복 알고리즘에 전달된다. 이 개체가 복사 가능하더라도 복사하는 것은 효율적이지도, 정확하지도 않다:</p>
+<div class="codehilite"><pre><span></span>    <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">sockets</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">sockets</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">message</span><span class="p">](</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">socket</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">socket</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></div>
+
+
+<h5 id="example_35">Example</h5>
+<p>아래 예제는 간단한 3단계 병렬 파이프라인이다.
+각 <code>stage</code> 개체는 <code>process</code> 함수를 통해 작업을 전달하고 작업 큐가 소진될 때까지 소멸되지 않는 작업용 스레드들을 캡슐화 한 것이다.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">send_packets</span><span class="p">(</span><span class="n">buffers</span><span class="o">&amp;</span> <span class="n">bufs</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">stage</span> <span class="n">encryptor</span><span class="p">([]</span> <span class="p">(</span><span class="n">buffer</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span>   <span class="n">encrypt</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="p">});</span>
+        <span class="n">stage</span> <span class="n">compressor</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">buffer</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span> <span class="n">compress</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="n">encryptor</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="p">});</span>
+        <span class="n">stage</span> <span class="n">decorator</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">buffer</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span>  <span class="n">decorate</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="n">compressor</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> <span class="p">});</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">b</span> <span class="p">:</span> <span class="n">bufs</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="n">decorator</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>  <span class="c1">// automatically blocks waiting for pipeline to finish</span>
+</pre></div>
+
+
+<h5 id="enforcement_30">Enforcement</h5>
+<p>지역적으로 사용되지 않거나 참조로 전달되는데 참조로 캡쳐하는 람다를 지적한다.
+(주의: 이 규칙은 추정에 의한 것이다. 하지만 포인터로 전달된다면 피호출자에 저장되거나, 매개변수로 접근되거나, 람다에 의해서 반환되는 등으로 사용될 가능성이 높다. 수명주기 규칙들이 유효범위를 벗어나는 포인터나 람다를 통해 참조되는 경우를 지적하기 위한 규칙들을 제공한다.)</p>
+<h3 id="f53"><a name="Rf-value-capture"></a>F.53: 지역적으로 사용되지 않는다면 참조 캡쳐를 피하라</h3>
+<h5 id="reason_33">Reason</h5>
+<p>지역범위에 있는 포인터와 참조는 범위를 넘어서면 더 이상 존재하지 않는다.
+참조캡쳐를 가진 람다는 지역 개체를 참조하고 있을 뿐이며, 지역범위를 넘어서면 더 이상 참조해서는 않된다.</p>
+<h5 id="example-bad_4">Example, bad</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">local</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+
+    <span class="c1">// Want a reference to local.</span>
+    <span class="c1">// Note, that after program exits this scope,</span>
+    <span class="c1">// local no longer exists, therefore</span>
+    <span class="c1">// process() call will have undefined behavior!</span>
+    <span class="n">thread_pool</span><span class="p">.</span><span class="n">queue_work</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]{</span> <span class="n">process</span><span class="p">(</span><span class="n">local</span><span class="p">);</span> <span class="p">});</span>
+</pre></div>
+
+
+<h5 id="example-good_1">Example, good</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">local</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="c1">// Want a copy of local.</span>
+    <span class="c1">// Since a copy of local is made, it will</span>
+    <span class="c1">// always be available for the call.</span>
+    <span class="n">thread_pool</span><span class="p">.</span><span class="n">queue_work</span><span class="p">([</span><span class="o">=</span><span class="p">]{</span> <span class="n">process</span><span class="p">(</span><span class="n">local</span><span class="p">);</span> <span class="p">});</span>
+</pre></div>
+
+
+<h5 id="enforcement_31">Enforcement</h5>
+<ul>
+<li>(단순) 캡쳐 목록이 지역 변수를 참조하면 경고한다</li>
+<li>(복잡) 캡쳐 목록이 지역 변수를 참조하고 <code>const</code>가 아니거나 비-지역적 문맥으로 전달되면 지적한다</li>
+</ul>
+<h3 id="f54-this"><a name="Rf-this-capture"></a>F.54: <code>this</code>를 캡쳐할 때는, 모든 변수를 명시적으로 캡쳐하라(기본 캡쳐를 사용하지 않는다)</h3>
+<h5 id="reason_34">Reason</h5>
+<p>명시하지 않으면 혼란스럽다. 멤버 함수 안에서 <code>[=]</code>를 사용하는 것은 값으로 캡쳐하는 것이지만, 실제로는 보이지 않는 <code>this</code>를 복사하면서 데이터 멤버를 참조하는 방식으로 캡쳐하는 것이다.
+이것이 의도된 것이라면, <code>this</code>를 명시적으로 사용해야 한다.</p>
+<h5 id="example_36">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">My_class</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+
+        <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="c1">// ...</span>
+
+            <span class="k">auto</span> <span class="n">lambda</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">]{</span> <span class="n">use</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span> <span class="p">};</span>   <span class="c1">// BAD: &quot;looks like&quot; copy/value capture</span>
+            <span class="c1">// [&amp;] has identical semantics and copies the this pointer under the current rules</span>
+            <span class="c1">// [=,this] and [&amp;,this] are not much better, and confusing</span>
+
+            <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+            <span class="n">lambda</span><span class="p">();</span> <span class="c1">// calls use(0, 42);</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="mi">43</span><span class="p">;</span>
+            <span class="n">lambda</span><span class="p">();</span> <span class="c1">// calls use(0, 43);</span>
+
+            <span class="c1">// ...</span>
+
+            <span class="k">auto</span> <span class="n">lambda2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="k">this</span><span class="p">]{</span> <span class="n">use</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span> <span class="p">};</span> <span class="c1">// ok, most explicit and least confusing</span>
+
+            <span class="c1">// ...</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h5 id="note_39">Note</h5>
+<p>표준에서 이에 대해 계속 논의중이다. 이후 표준에서 새로운 캡쳐 방식이 도입되거나 <code>[=]</code>의 의미를 수정하는 형태로 조정될 수 있다. 
+지금은 명시적으로 코드를 작성하라.</p>
+<h5 id="enforcement_32">Enforcement</h5>
+<ul>
+<li>기본 캡쳐와 <code>this</code>가 캡쳐목록에 포함된 람다들을 지적한다 (명시적이든 기본 캡쳐한 것이든)</li>
+</ul>
+<h3 id="f55-va_arg"><a name="F-varargs"></a>F.55: <code>va_arg</code> 전달인자를 사용하지 말아라</h3>
+<h5 id="reason_35">Reason</h5>
+<p><code>va_arg</code>에서 값을 읽어올 때는 타입이 정확히 전달되었다고 가정한다. <code>va_arg</code>에 값을 전달할때는 타입이 정확히 읽힐 것이라고 가정한다.<br />
+이는 위태로운 방법인데 언어에 의존하지 않고 프로그래머가 기능을 정확히 사용해야 때문이다.</p>
+<h5 id="example_37">Example</h5>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">sum</span><span class="p">(...)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="k">while</span> <span class="p">(</span><span class="cm">/*...*/</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">va_arg</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span> <span class="c1">// BAD, assumes it will be passed ints</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="n">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// ok</span>
+    <span class="n">sum</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mf">2.71828</span><span class="p">);</span> <span class="c1">// BAD, undefined</span>
+
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="err">...</span><span class="nc">Args</span><span class="o">&gt;</span>
+    <span class="k">auto</span> <span class="n">sum</span><span class="p">(</span><span class="n">Args</span><span class="p">...</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// GOOD, and much more flexible</span>
+        <span class="k">return</span> <span class="p">(...</span> <span class="o">+</span> <span class="n">args</span><span class="p">);</span> <span class="c1">// note: C++17 &quot;fold expression&quot;</span>
+    <span class="p">}</span>
+
+    <span class="n">sum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// ok: 5</span>
+    <span class="n">sum</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mf">2.71828</span><span class="p">);</span> <span class="c1">// ok: ~5.85987</span>
+</pre></div>
+
+
+<h5 id="alternatives">Alternatives</h5>
+<ul>
+<li>중복 정의(overloading)</li>
+<li>가변 템플릿(variadic templates)</li>
+<li><code>variant</code> 전달인자(argument)</li>
+<li><code>initializer_list</code> (homogeneous)</li>
+</ul>
+<h5 id="note_40">Note</h5>
+<p><code>...</code> 매개변수를 선언하는 것은 실제 전달인자를 포함하지 않거나, 다른 중복 정의를 허용하지 않기 위해 "인자를 무엇이든" 처리하는 함수 혹은 템플릿 메타 프로그램에서 계산 외의 경우를 잡아내는데 유용하게 쓰이기도 한다.</p>
+<h5 id="enforcement_33">Enforcement</h5>
+<ul>
+<li><code>va_list</code>, <code>va_start</code>, <code>va_arg</code>를 사용하면 반대한다(Issue a diagnostic).</li>
+<li>함수의 가변 매개변수로 넘기는 전달인자에 대해 보다 구체적인 중복정의를 제공하지 않는다고 이의를 제기한다(Issue a diagnostic). 수정하려면 다른 함수를 쓰거나 <code>[[suppress(types)]]</code>를 사용하도록 한다.</li>
+</ul>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Expr/" title="Expr" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Expr
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Glossary/" title="Glossary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Glossary
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) Standard C++ Foundation and its contributors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
