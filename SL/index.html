@@ -1,14 +1,12 @@
 
 
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="C++ Korea">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -46,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -57,16 +36,13 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
-    
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
-        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+        <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -75,73 +51,75 @@
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#reason" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sl-the-standard-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.svg" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              C++ 핵심 가이드라인
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Standard Library
-              
-            </span>
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
+      
+  <img src="../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            C++ 핵심 가이드라인
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Standard Library
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -149,137 +127,55 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     CppKorea/CppCoreGuidelines
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
       
-        
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../Introduction/" class="md-tabs__link">
-          Introduction
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../References/" class="md-tabs__link">
-          References
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
-          Sections
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../appendix/Modernizing/" class="md-tabs__link">
-          Appendix
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
-        <img src="../images/logo.svg" width="48" height="48">
-      
+  <img src="../images/logo.svg" alt="logo">
+
     </a>
     C++ 핵심 가이드라인
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     CppKorea/CppCoreGuidelines
   </div>
@@ -307,13 +203,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Introduction
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Introduction
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -343,13 +245,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       References
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="References" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         References
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -381,13 +289,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Sections
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Sections" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Sections
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -618,14 +532,973 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Standard Library
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Standard Library" class="md-nav__link md-nav__link--active">
       Standard Library
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sl1" class="md-nav__link">
+    SL.1: 가능한 곳 어디에서든 라이브러리를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.1: 가능한 곳 어디에서든 라이브러리를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl2" class="md-nav__link">
+    SL.2: 다른 라이브러리보다는 표준 라이브러리를 우선적으로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.2: 다른 라이브러리보다는 표준 라이브러리를 우선적으로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_1" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl3-std" class="md-nav__link">
+    SL.3: 비표준 개체를 네임스페이스 std에 추가하지 말라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.3: 비표준 개체를 네임스페이스 std에 추가하지 말라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_2" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl4" class="md-nav__link">
+    SL.4: 타입 안전성을 지키면서 표준 라이브러리를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.4: 타입 안전성을 지키면서 표준 라이브러리를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_3" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slcon-containers" class="md-nav__link">
+    SL.con: Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con: Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slcon1-c-stl-array-vector" class="md-nav__link">
+    SL.con.1: C 배열을 사용하기보다 STL의 array나 vector를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.1: C 배열을 사용하기보다 STL의 array나 vector를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_4" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_1" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_2" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_1" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon2-stl-vector" class="md-nav__link">
+    SL.con.2: 다른 컨테이너를 사용할 이유가 있지 않다면 STL vector를 기본으로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.2: 다른 컨테이너를 사용할 이유가 있지 않다면 STL vector를 기본으로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_5" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_3" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_4" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_2" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon3" class="md-nav__link">
+    SL.con.3: 경계조건에서 발생하는 에러를 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.3: 경계조건에서 발생하는 에러를 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_6" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_5" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_3" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon4-trivially-copyable-memset-memcpy" class="md-nav__link">
+    SL.con.4: trivially-copyable하지 않은 객체들을 memset이나 memcpy의 인자로 사용하지 말라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.4: trivially-copyable하지 않은 객체들을 memset이나 memcpy의 인자로 사용하지 말라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_7" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_6" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_4" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slstr-string" class="md-nav__link">
+    SL.str: String
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str: String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slstr1-stdstring" class="md-nav__link">
+    SL.str.1: 문자열을 제대로 소유하기 위해서는 std::string을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.1: 문자열을 제대로 소유하기 위해서는 std::string을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_8" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_1" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_7" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_5" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr2-stdstring_view-gslstring_span" class="md-nav__link">
+    SL.str.2: 문자들의 나열을 참조하기 위해서는 std::string_view나 gsl::string_span을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.2: 문자들의 나열을 참조하기 위해서는 std::string_view나 gsl::string_span을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_9" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_8" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_6" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr3-0-c-zstring-czstring" class="md-nav__link">
+    SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 zstring나 czstring을 사용하라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 zstring나 czstring을 사용하라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_10" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_9" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_10" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_11" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_7" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr4-char" class="md-nav__link">
+    SL.str.4: 하나의 단일 문자에 대한 참조를 의도할 때 char*를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.4: 하나의 단일 문자에 대한 참조를 의도할 때 char*를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_11" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_2" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative" class="md-nav__link">
+    Alternative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_8" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr5-stdbyte" class="md-nav__link">
+    SL.str.5: 문자열을 표현할 필요없이 바이트 값을 참조하려면 std::byte를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.5: 문자열을 표현할 필요없이 바이트 값을 참조하려면 std::byte를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_12" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_12" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_9" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr10-stdstring" class="md-nav__link">
+    SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 std::string을 사용하라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 std::string을 사용하라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_13" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_13" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_10" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr11-stdstring_view-gslstring_span" class="md-nav__link">
+    SL.str.11: 문자열을 수정할 필요가 있을때는 std::string_view보다는 gsl::string_span을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.11: 문자열을 수정할 필요가 있을때는 std::string_view보다는 gsl::string_span을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_14" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_14" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_11" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr12-stdstring-s" class="md-nav__link">
+    SL.str.12: 표준 라이브러리 std::string을 의도할 때는 s 접미사를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.12: 표준 라이브러리 std::string을 의도할 때는 s 접미사를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_15" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_12" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slio-iostream" class="md-nav__link">
+    SL.io: Iostream
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io: Iostream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slio1" class="md-nav__link">
+    SL.io.1: 단일 문자 단위의 입력은 꼭 필요할때에만 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.1: 단일 문자 단위의 입력은 꼭 필요할때에만 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_16" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_13" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio2" class="md-nav__link">
+    SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_17" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_14" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio3-iostream" class="md-nav__link">
+    SL.io.3: 입출력을 위해서는 iostream을 선호하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.3: 입출력을 위해서는 iostream을 선호하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_18" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostream-printf" class="md-nav__link">
+    iostream과 printf() 계열에 대한 비교 논의
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_15" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio10-printf-ios_basesync_with_stdiofalse" class="md-nav__link">
+    SL.io.10: printf계열의 함수를 사용하지 않는다면 ios_base::sync_with_stdio(false)를 호출하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.10: printf계열의 함수를 사용하지 않는다면 ios_base::sync_with_stdio(false)를 호출하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_19" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_16" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio50-endl" class="md-nav__link">
+    SL.io.50: endl의 사용을 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.50: endl의 사용을 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_20" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_15" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_16" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slregex-regex" class="md-nav__link">
+    SL.regex: Regex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slchrono-time" class="md-nav__link">
+    SL.chrono: Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slc-c" class="md-nav__link">
+    SL.C: C 표준 라이브러리
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.C: C 표준 라이브러리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slc1-setjmplongjmp" class="md-nav__link">
+    SL.C.1: setjmp/longjmp를 사용하지 말라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.C.1: setjmp/longjmp를 사용하지 말라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_21" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_17" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -678,13 +1551,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Appendix
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Appendix
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -730,11 +1609,954 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sl1" class="md-nav__link">
+    SL.1: 가능한 곳 어디에서든 라이브러리를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.1: 가능한 곳 어디에서든 라이브러리를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl2" class="md-nav__link">
+    SL.2: 다른 라이브러리보다는 표준 라이브러리를 우선적으로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.2: 다른 라이브러리보다는 표준 라이브러리를 우선적으로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_1" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl3-std" class="md-nav__link">
+    SL.3: 비표준 개체를 네임스페이스 std에 추가하지 말라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.3: 비표준 개체를 네임스페이스 std에 추가하지 말라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_2" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sl4" class="md-nav__link">
+    SL.4: 타입 안전성을 지키면서 표준 라이브러리를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.4: 타입 안전성을 지키면서 표준 라이브러리를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_3" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slcon-containers" class="md-nav__link">
+    SL.con: Containers
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con: Containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slcon1-c-stl-array-vector" class="md-nav__link">
+    SL.con.1: C 배열을 사용하기보다 STL의 array나 vector를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.1: C 배열을 사용하기보다 STL의 array나 vector를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_4" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_1" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_2" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_1" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon2-stl-vector" class="md-nav__link">
+    SL.con.2: 다른 컨테이너를 사용할 이유가 있지 않다면 STL vector를 기본으로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.2: 다른 컨테이너를 사용할 이유가 있지 않다면 STL vector를 기본으로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_5" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_3" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_4" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_2" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon3" class="md-nav__link">
+    SL.con.3: 경계조건에서 발생하는 에러를 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.3: 경계조건에서 발생하는 에러를 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_6" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_5" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_3" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slcon4-trivially-copyable-memset-memcpy" class="md-nav__link">
+    SL.con.4: trivially-copyable하지 않은 객체들을 memset이나 memcpy의 인자로 사용하지 말라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.con.4: trivially-copyable하지 않은 객체들을 memset이나 memcpy의 인자로 사용하지 말라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_7" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_6" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_4" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slstr-string" class="md-nav__link">
+    SL.str: String
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str: String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slstr1-stdstring" class="md-nav__link">
+    SL.str.1: 문자열을 제대로 소유하기 위해서는 std::string을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.1: 문자열을 제대로 소유하기 위해서는 std::string을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_8" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_1" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_7" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_5" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr2-stdstring_view-gslstring_span" class="md-nav__link">
+    SL.str.2: 문자들의 나열을 참조하기 위해서는 std::string_view나 gsl::string_span을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.2: 문자들의 나열을 참조하기 위해서는 std::string_view나 gsl::string_span을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_9" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_8" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_6" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr3-0-c-zstring-czstring" class="md-nav__link">
+    SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 zstring나 czstring을 사용하라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 zstring나 czstring을 사용하라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_10" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_9" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_10" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_11" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_7" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr4-char" class="md-nav__link">
+    SL.str.4: 하나의 단일 문자에 대한 참조를 의도할 때 char*를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.4: 하나의 단일 문자에 대한 참조를 의도할 때 char*를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_11" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_2" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative" class="md-nav__link">
+    Alternative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_8" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr5-stdbyte" class="md-nav__link">
+    SL.str.5: 문자열을 표현할 필요없이 바이트 값을 참조하려면 std::byte를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.5: 문자열을 표현할 필요없이 바이트 값을 참조하려면 std::byte를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_12" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_12" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_9" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr10-stdstring" class="md-nav__link">
+    SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 std::string을 사용하라.
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 std::string을 사용하라.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_13" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_13" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_10" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr11-stdstring_view-gslstring_span" class="md-nav__link">
+    SL.str.11: 문자열을 수정할 필요가 있을때는 std::string_view보다는 gsl::string_span을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.11: 문자열을 수정할 필요가 있을때는 std::string_view보다는 gsl::string_span을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_14" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_14" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_11" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slstr12-stdstring-s" class="md-nav__link">
+    SL.str.12: 표준 라이브러리 std::string을 의도할 때는 s 접미사를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.str.12: 표준 라이브러리 std::string을 의도할 때는 s 접미사를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_15" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_12" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slio-iostream" class="md-nav__link">
+    SL.io: Iostream
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io: Iostream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slio1" class="md-nav__link">
+    SL.io.1: 단일 문자 단위의 입력은 꼭 필요할때에만 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.1: 단일 문자 단위의 입력은 꼭 필요할때에만 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_16" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_13" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio2" class="md-nav__link">
+    SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_17" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_14" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio3-iostream" class="md-nav__link">
+    SL.io.3: 입출력을 위해서는 iostream을 선호하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.3: 입출력을 위해서는 iostream을 선호하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_18" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostream-printf" class="md-nav__link">
+    iostream과 printf() 계열에 대한 비교 논의
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_15" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio10-printf-ios_basesync_with_stdiofalse" class="md-nav__link">
+    SL.io.10: printf계열의 함수를 사용하지 않는다면 ios_base::sync_with_stdio(false)를 호출하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.10: printf계열의 함수를 사용하지 않는다면 ios_base::sync_with_stdio(false)를 호출하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_19" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_16" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slio50-endl" class="md-nav__link">
+    SL.io.50: endl의 사용을 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.io.50: endl의 사용을 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_20" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_15" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_16" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slregex-regex" class="md-nav__link">
+    SL.regex: Regex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slchrono-time" class="md-nav__link">
+    SL.chrono: Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slc-c" class="md-nav__link">
+    SL.C: C 표준 라이브러리
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.C: C 표준 라이브러리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slc1-setjmplongjmp" class="md-nav__link">
+    SL.C.1: setjmp/longjmp를 사용하지 말라
+  </a>
+  
+    <nav class="md-nav" aria-label="SL.C.1: setjmp/longjmp를 사용하지 말라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_21" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_17" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -746,7 +2568,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/SL.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/SL.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
                 
                 
                 <h1 id="sl-the-standard-library"><a name="S-stdlib"></a>SL: The Standard Library</h1>
@@ -788,8 +2615,8 @@
 <p><code>std</code> 네임스페이스에 무언가를 추가하는 작업은 다른 표준을 따르는 코드의 의미를 변경할 수도 있으며
 <code>std</code>에 무언가를 추가하면 표준의 향후 버전에서 의도하지 않은 충돌을 일으킬 수 있다.</p>
 <h5 id="example">Example</h5>
-<div class="codehilite"><pre><span></span>???
-</pre></div>
+<div class="codehilite"><pre><span></span><code>???
+</code></pre></div>
 
 
 <h5 id="enforcement">Enforcement</h5>
@@ -811,7 +2638,7 @@
 <li><a href="#Rsl-arrays">SL.con.1: C 배열을 사용하기보다 STL의 <code>array</code>나 <code>vector</code>를 사용하라</a></li>
 <li><a href="#Rsl-vector">SL.con.2: 다른 컨테이너를 사용할 이유가 있지 않다면 STL <code>vector</code>를 기본으로 사용하라</a></li>
 <li><a href="#Rsl-bounds">SL.con.3: 경계조건에서 발생하는 에러를 피하라</a></li>
-<li>???</li>
+<li><a href="#Rsl-copy">SL.con.4: trivially-copyable하지 않은 객체들을 <code>memset</code>이나 <code>memcpy</code>의 인자로 사용하지 말라</a></li>
 </ul>
 <h3 id="slcon1-c-stl-array-vector"><a name="Rsl-arrays"></a>SL.con.1: C 배열을 사용하기보다 STL의 <code>array</code>나 <code>vector</code>를 사용하라</h3>
 <h5 id="reason_4">Reason</h5>
@@ -820,18 +2647,18 @@
 또한, 원래의 배열과 같이 스택에 할당되는 <code>std::array</code>는 자기 자신의 요소들 또한 스택에 보관한다.
 가변길이 배열의 경우, <code>std::vector</code>를 사용하라. 이는 자신의 크기를 변경할 수 있으며 메모리 할당을 자체적으로 관리해준다.</p>
 <h5 id="example_1">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">v</span><span class="p">[</span><span class="n">SIZE</span><span class="p">];</span>                        <span class="c1">// BAD</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">v</span><span class="p">[</span><span class="n">SIZE</span><span class="p">];</span>                        <span class="c1">// BAD</span>
 
     <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">SIZE</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">;</span>             <span class="c1">// ok</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example_2">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">initial_size</span><span class="p">];</span>     <span class="c1">// BAD, owning raw pointer</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">int</span><span class="o">*</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">initial_size</span><span class="p">];</span>     <span class="c1">// BAD, owning raw pointer</span>
     <span class="k">delete</span><span class="p">[]</span> <span class="n">v</span><span class="p">;</span>                         <span class="c1">// BAD, manual delete</span>
 
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">w</span><span class="p">(</span><span class="n">initial_size</span><span class="p">);</span>   <span class="c1">// ok</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note_1">Note</h5>
@@ -870,12 +2697,12 @@
 <h5 id="note_4">Note</h5>
 <p>vector 를 요소의 크기만큼 초기화하려면, <code>()</code> 초기화를 사용하라.
 vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 초기화를 사용하라.</p>
-<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>  <span class="c1">// v1 은 값이 0인 20개의 요소들을 갖는다. (vector&lt;int&gt;{})</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>  <span class="c1">// v1 은 값이 0인 20개의 요소들을 갖는다. (vector&lt;int&gt;{})</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span> <span class="p">{</span><span class="mi">20</span><span class="p">};</span> <span class="c1">// v2 는 값이 20인 한개의 요소를 갖는다.</span>
-</pre></div>
+</code></pre></div>
 
 
-<p><a href="#Res-list">{} 초기화 문법을 선호하라.</a>.</p>
+<p><a href="../Expr/#Res-list">{} 초기화 문법을 선호하라.</a>.</p>
 <h5 id="enforcement_2">Enforcement</h5>
 <ul>
 <li><code>vector</code> 생성 이후에 크기가 전혀 변경되지 않는 경우(예를 들면 컨테이너 변수가 <code>const</code>이거나 <code>const</code>가 아닌 함수가 하나도 호출되지 않는 경우)를 지적할 수 있다. 이를 수정하려면 <code>array</code>를 사용하라.</li>
@@ -903,18 +2730,18 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
 </ul>
 <p>이러한 반복문은 매번 요소에 접근할 때마다 경계 조건 검사를 하는 것 보다 훨씬 빠를 수 있다.</p>
 <h5 id="example-bad">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
         <span class="n">memset</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>         <span class="c1">// BAD, 배열의 길이를 넘어서는 에러 (length = 10 * sizeof(int))</span>
         <span class="n">memcmp</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="mi">10</span><span class="p">);</span>  <span class="c1">// BAD, 배열의 길이를 넘어서는 에러 (length = 10 * sizeof(int))</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>또한, <code>std::array&lt;&gt;::fill()</code>이나 <code>std::fill()</code> 또는 비어있는 초기화문이 <code>memset()</code>보다는 나은 후보이다.</p>
 <h5 id="example-good">Example, good</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">{};</span>       <span class="c1">// c is initialized to zero</span>
         <span class="n">a</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -925,14 +2752,14 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
           <span class="c1">// ...</span>
         <span class="p">}</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example_3">Example</h5>
 <p>만약 수정되지 않은 표준 라이브러리를 사용한다면, <code>std::array</code>와 <code>std::vector</code>를 경계 조건에 안전하게 사용할 수 있는 대략의 해결 방법이 있다.
 해당 코드는 <code>std::out_of_range</code>예외를 발생시킬 수 있는 각 class 의 <code>.at()</code> 멤버 함수를 호출 할 수 있다.
 아니면 경계조건 위반에 빠르게 실패하거나 사용자가 정의한 동작을 하는 <code>at()</code> 이외의 함수를 호출 할 수도 있다.</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">12</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">12</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>        <span class="c1">// BAD</span>
         <span class="n">v</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>     <span class="c1">// OK (alternative 1)</span>
@@ -942,7 +2769,7 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
         <span class="n">v</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>  <span class="c1">// OK (alternative 1)</span>
         <span class="n">v</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">at</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span> <span class="c1">// OK (alternative 2)</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_3">Enforcement</h5>
@@ -951,6 +2778,47 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
 ??? insert link to a list of banned functions</li>
 </ul>
 <p>이러한 규칙은 <a href="#SS-bounds">bounds profile</a>의 일부분이다.</p>
+<h3 id="slcon4-trivially-copyable-memset-memcpy"><a name="Rsl-copy"></a>SL.con.4: trivially-copyable하지 않은 객체들을 <code>memset</code>이나 <code>memcpy</code>의 인자로 사용하지 말라.</h3>
+<h5 id="reason_7">Reason</h5>
+<p>그렇게 하면 가상 함수 테이블을 저장하는 <code>vptr</code> 정보를 덮어쓰게 되어서 객체의 의미를 망칠 수 있다.</p>
+<h5 id="note_6">Note</h5>
+<p>(w)memset, (w)memcpy, (w)memmove, (w)memcmp도 유사한 문제가 있다.</p>
+<h5 id="example_4">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">base</span> <span class="p">{</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="nl">derived</span> <span class="p">:</span> <span class="k">public</span> <span class="n">base</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="n">update</span><span class="p">()</span> <span class="k">override</span> <span class="p">{}</span>
+    <span class="p">};</span>
+
+
+    <span class="kt">void</span> <span class="nf">f</span> <span class="p">(</span><span class="n">derived</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">derived</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// goodbye v-tables</span>
+    <span class="p">{</span>
+        <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">derived</span><span class="p">));</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">derived</span><span class="p">));</span>
+        <span class="n">memcmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">derived</span><span class="p">));</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+
+<p>대신 적절한 디폴트 초기화, 복사, 비교 함수를 정의하라.</p>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="n">derived</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">derived</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">{};</span>    <span class="c1">// default initialize</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>     <span class="c1">// copy</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="n">do_something</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+
+<h5 id="enforcement_4">Enforcement</h5>
+<ul>
+<li>trivially copyable하지 않은 타입에 위에서 언급했던 함수들((w)memset, (w)memcpy, (w)memmove, (w)memcmp)을 사용하면 지적하라.</li>
+</ul>
+<blockquote>
+<p>역주: <a href="https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable">trivially copyable</a>의 자세한 정보는 링크에서 확인할 수 있으며 해당 타입이 trivially copyable한 타입인지 여부는 <a href="https://en.cppreference.com/w/cpp/types/is_trivially_copyable">std::is_trivially_copyable</a>로 검사할 수 있다.</p>
+</blockquote>
 <h2 id="slstr-string"><a name="SS-string"></a>SL.str: String</h2>
 <p>텍스트 조작은 거대한 주제이고, <code>std::string</code>은 이들 전부를 다루지 못한다.
 이 섹션에서는 주로 <code>char*</code>, <code>zstring</code>, <code>string_view</code>, 그리고 <code>gsl::string_span</code>과 <code>std::string</code>의 관계에 대해 명확하게 하고자 한다.
@@ -973,46 +2841,46 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
 <li><a href="#Rf-zstring">F.25 zstring</a></li>
 </ul>
 <h3 id="slstr1-stdstring"><a name="Rstr-string"></a>SL.str.1: 문자열을 제대로 소유하기 위해서는 <code>std::string</code>을 사용하라</h3>
-<h5 id="reason_7">Reason</h5>
+<h5 id="reason_8">Reason</h5>
 <p><code>string</code>은 올바른 방식으로 메모리 할당 및 소유, 복사, 점진적인 확장을 지원하며, 그리고 다양하고 유용한 기능들을 제공한다.</p>
-<h5 id="example_4">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">terminator</span><span class="p">)</span>
+<h5 id="example_5">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">terminator</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">terminator</span><span class="p">;</span> <span class="p">)</span> <span class="c1">// 한 단어 읽기</span>
             <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
         <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>string</code>에서는 (유용한 기능들의 예로) <code>&gt;&gt;</code>와 <code>!=</code> 연산자들을 제공하고, 여기에는 어떠한 명시적인
 메모리 할당, 해제 또는 경계조건 검사 없이 <code>string</code>이 내부적으로 이들을 해결한다.</p>
 <p>C++17 에서는 함수 호출자에게 더 유연함을 제공하기 위해 <code>const string*</code> 대신에 <code>string_view</code>를 함수 인자로 사용할 수도 있다.</p>
-<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_view</span> <span class="n">terminator</span><span class="p">)</span>   <span class="c1">// C++17</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_view</span> <span class="n">terminator</span><span class="p">)</span>   <span class="c1">// C++17</span>
     <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">terminator</span><span class="p">;</span> <span class="p">)</span> <span class="c1">// 한 단어 읽기</span>
             <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
         <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>gsl::string_span</code>은 <code>std::string_view</code>의 대부분의 장점을 대체할 수 있는 현재 가능한 옵션일 수 있다. 간단한 예를 들면:</p>
-<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_span</span> <span class="n">terminator</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_span</span> <span class="n">terminator</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">terminator</span><span class="p">;</span> <span class="p">)</span> <span class="c1">// 한 단어 읽기</span>
             <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
         <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example-bad_1">Example, bad</h5>
 <p>trivial 하지 않은 메모리 관리가 필요한 동작에 대해서는 C 스타일의 문자열을 사용하지 말라.</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">char</span><span class="o">*</span> <span class="nf">cat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s2</span><span class="p">)</span>   <span class="c1">// beware!</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">char</span><span class="o">*</span> <span class="nf">cat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s2</span><span class="p">)</span>   <span class="c1">// beware!</span>
         <span class="c1">// return s1 + &#39;.&#39; + s2</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">l1</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span>
@@ -1024,23 +2892,23 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
         <span class="n">p</span><span class="p">[</span><span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>이 코드가 올바르게 문제를 해결했을까?
 함수 호출자가 반환된 포인터를 <code>free()</code> 해야 한다고 기억해야 할까?
 이 코드가 보안에 관한 리뷰를 통과할 수 있을까?</p>
-<h5 id="note_6">Note</h5>
+<h5 id="note_7">Note</h5>
 <p>직접적인 성능 측정 없이 <code>string</code>이 저수준의 기법보다 느리다고 단정하지도 말고, 모든 코드가 성능에 민감하다고 생각하지 말라.
 <a href="#Rper-Knuth">너무 이른 최적화를 하지 말라</a></p>
-<h5 id="enforcement_4">Enforcement</h5>
+<h5 id="enforcement_5">Enforcement</h5>
 <p>???</p>
 <h3 id="slstr2-stdstring_view-gslstring_span"><a name="Rstr-view"></a>SL.str.2: 문자들의 나열을 참조하기 위해서는 <code>std::string_view</code>나 <code>gsl::string_span</code>을 사용하라</h3>
-<h5 id="reason_8">Reason</h5>
+<h5 id="reason_9">Reason</h5>
 <p><code>std::string_view</code>나 <code>gsl::string_span</code>은 문자들의 나열에 대해 간단하고 (잠재적으로) 안전한 접근을 제공하며 이는
 이 문자들이 어떻게 메모리 공간에 할당되고 저장되었는지와 무관하다.</p>
-<h5 id="example_5">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_span</span> <span class="n">terminator</span><span class="p">);</span>
+<h5 id="example_6">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">read_until</span><span class="p">(</span><span class="n">string_span</span> <span class="n">terminator</span><span class="p">);</span>
 
     <span class="kt">void</span> <span class="nf">user</span><span class="p">(</span><span class="n">zstring</span> <span class="n">p</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">string_span</span> <span class="n">ss</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1049,50 +2917,50 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
         <span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">read_until</span><span class="p">(</span><span class="n">ss</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
-
-
-<h5 id="note_7">Note</h5>
-<p>C++17 에서 지원하는 <code>std::string_view</code>는 읽기 전용이다.</p>
-<h5 id="enforcement_5">Enforcement</h5>
-<p>???</p>
-<h3 id="slstr3-0-c-zstring-czstring"><a name="Rstr-zstring"></a>SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 <code>zstring</code>나 <code>czstring</code>을 사용하라.</h3>
-<h5 id="reason_9">Reason</h5>
-<p>이들을 사용하면 가독성과 의도에 대한 표현을 명확히 할 수 있다.
-단순 <code>char*</code>는 하나의 문자에 대한 포인터이거나 문자들의 배열에 대한 포인터, null 로 끝나는 C 스타일의 문자열 또는 작은 정수에 대한 포인터로 다양하게 표현될 수 있다.
-이러한 다양한 방식의 표현들을 잘 구분함으로서 불필요한 오해나 버그를 방지 할 수 있다.</p>
-<h5 id="example_6">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// s 는 아마도 문자열일 것이다.</span>
-</pre></div>
-
-
-<p>우리가 알 수 있는 것은 이것이 nullptr 이거나 최소한 하나의 문자에 대한 포인터라는 것이다.</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">zstring</span> <span class="n">s</span><span class="p">);</span>     <span class="c1">// s 는 C 스타일의 문자열이거나 nullptr 이다.</span>
-    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">czstring</span> <span class="n">s</span><span class="p">);</span>    <span class="c1">// s 는 C 스타일의 상수 문자열이거나 nullptr 이다.</span>
-    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">byte</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// s 는 하나의 바이트에 대한 포인터이다. (C++17)</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note_8">Note</h5>
-<p>특별한 이유가 있지 않다면 C 스타일의 문자열을 <code>string</code>으로 단순하게 변환하지 말라.</p>
+<p>C++17 에서 지원하는 <code>std::string_view</code>는 읽기 전용이다.</p>
+<h5 id="enforcement_6">Enforcement</h5>
+<p>???</p>
+<h3 id="slstr3-0-c-zstring-czstring"><a name="Rstr-zstring"></a>SL.str.3: 0으로 끝나는 문자들의 나열인 C 스타일의 문자열을 표현하려면 <code>zstring</code>나 <code>czstring</code>을 사용하라.</h3>
+<h5 id="reason_10">Reason</h5>
+<p>이들을 사용하면 가독성과 의도에 대한 표현을 명확히 할 수 있다.
+단순 <code>char*</code>는 하나의 문자에 대한 포인터이거나 문자들의 배열에 대한 포인터, null 로 끝나는 C 스타일의 문자열 또는 작은 정수에 대한 포인터로 다양하게 표현될 수 있다.
+이러한 다양한 방식의 표현들을 잘 구분함으로서 불필요한 오해나 버그를 방지 할 수 있다.</p>
+<h5 id="example_7">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// s 는 아마도 문자열일 것이다.</span>
+</code></pre></div>
+
+
+<p>우리가 알 수 있는 것은 이것이 nullptr 이거나 최소한 하나의 문자에 대한 포인터라는 것이다.</p>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">zstring</span> <span class="n">s</span><span class="p">);</span>     <span class="c1">// s 는 C 스타일의 문자열이거나 nullptr 이다.</span>
+    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">czstring</span> <span class="n">s</span><span class="p">);</span>    <span class="c1">// s 는 C 스타일의 상수 문자열이거나 nullptr 이다.</span>
+    <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">byte</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// s 는 하나의 바이트에 대한 포인터이다. (C++17)</span>
+</code></pre></div>
+
+
 <h5 id="note_9">Note</h5>
-<p>다른 일반적인 포인터와 같이 <code>zstring</code>은 소유권을 표현하면 안된다.</p>
+<p>특별한 이유가 있지 않다면 C 스타일의 문자열을 <code>string</code>으로 단순하게 변환하지 말라.</p>
 <h5 id="note_10">Note</h5>
+<p>다른 일반적인 포인터와 같이 <code>zstring</code>은 소유권을 표현하면 안된다.</p>
+<h5 id="note_11">Note</h5>
 <p>수많은 C++ 코드가 이미 <code>char*</code>와 <code>const char*</code>를 사용 의도에 대한 설명 없이 사용하고 있다.
 그들은 광범위하고 다양한 방식으로 사용되는데 이는 소유권에 대한 표현과 <code>void*</code>를 사용하는 대신 일반적인 메모리에 대한 포인터로 사용된다.
 이들에 대한 사용법을 구분하는 것이 어렵기 때문에 이러한 가이드라인을 따르는 것이 어렵다.
 이것이 C 와 C++ 프로그램에서 발생하는 가장 주요한 버그의 원인중에 하나이므로 가능한한 이 가이드라인을 따르는 것을 권장한다.</p>
-<h5 id="enforcement_6">Enforcement</h5>
+<h5 id="enforcement_7">Enforcement</h5>
 <ul>
 <li><code>char*</code>에 대한 <code>[]</code> 사용이 있으면 지적하라.</li>
 <li><code>char*</code>에 대해 <code>delete</code>를 사용하면 지적하라.</li>
 <li><code>char*</code>에 대해 <code>free()</code>를 사용하면 지적하라.</li>
 </ul>
 <h3 id="slstr4-char"><a name="Rstr-char*"></a>SL.str.4: 하나의 단일 문자에 대한 참조를 의도할 때 <code>char*</code>를 사용하라</h3>
-<h5 id="reason_10">Reason</h5>
+<h5 id="reason_11">Reason</h5>
 <p>현재 코드에서 다양한 방법의 <code>char*</code>의 사용은 주요한 에러의 원인이 된다.</p>
 <h5 id="example-bad_2">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">char</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">char</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1103,61 +2971,61 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
     <span class="p">{</span>
         <span class="n">print</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>   <span class="c1">// 런타임 에러; 잠재적으로 매우 안좋을 수 있다.</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>arr</code> 배열은 0 으로 끝나지 않으므로 C 스타일의 문자열이 아니다.</p>
 <h5 id="alternative">Alternative</h5>
 <p><a href="#Rstr-zstring"><code>zstring</code></a>, <a href="#Rstr-string"><code>string</code></a>, <a href="#Rstr-view"><code>string_span</code></a>을 함께 보라.</p>
-<h5 id="enforcement_7">Enforcement</h5>
+<h5 id="enforcement_8">Enforcement</h5>
 <ul>
 <li><code>char*</code> 타입에 대해서 <code>[]</code>의 사용이 있으면 지적하라.</li>
 </ul>
 <h3 id="slstr5-stdbyte"><a name="Rstr-byte"></a>SL.str.5: 문자열을 표현할 필요없이 바이트 값을 참조하려면 <code>std::byte</code>를 사용하라</h3>
-<h5 id="reason_11">Reason</h5>
-<p>단일 문자일 필요가 없는 것에 대한 포인터로 <code>char*</code>를 사용하는 것은 혼란을 유발하거나 일부 최적화를 불가능하게 만든다.</p>
-<h5 id="example_7">Example</h5>
-<div class="codehilite"><pre><span></span>???
-</pre></div>
-
-
-<h5 id="note_11">Note</h5>
-<p>C++17</p>
-<h5 id="enforcement_8">Enforcement</h5>
-<p>???</p>
-<h3 id="slstr10-stdstring"><a name="Rstr-locale"></a>SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 <code>std::string</code>을 사용하라.</h3>
 <h5 id="reason_12">Reason</h5>
-<p><code>std::string</code>은 표준 라이브러리인 <a href="#Rstr-locale"><code>locale</code> facilities</a>을 지원한다.</p>
+<p>단일 문자일 필요가 없는 것에 대한 포인터로 <code>char*</code>를 사용하는 것은 혼란을 유발하거나 일부 최적화를 불가능하게 만든다.</p>
 <h5 id="example_8">Example</h5>
-<div class="codehilite"><pre><span></span>???
-</pre></div>
+<div class="codehilite"><pre><span></span><code>???
+</code></pre></div>
 
 
 <h5 id="note_12">Note</h5>
-<p>???</p>
+<p>C++17</p>
 <h5 id="enforcement_9">Enforcement</h5>
 <p>???</p>
-<h3 id="slstr11-stdstring_view-gslstring_span"><a name="Rstr-span"></a>SL.str.11: 문자열을 수정할 필요가 있을때는 <code>std::string_view</code>보다는 <code>gsl::string_span</code>을 사용하라</h3>
+<h3 id="slstr10-stdstring"><a name="Rstr-locale"></a>SL.str.10: 지역 언어에 민감한 문자열에 대한 처리가 필요할 때에는 <code>std::string</code>을 사용하라.</h3>
 <h5 id="reason_13">Reason</h5>
-<p><code>std::string_view</code>는 읽기 전용이다.</p>
+<p><code>std::string</code>은 표준 라이브러리인 <a href="#Rstr-locale"><code>locale</code> facilities</a>을 지원한다.</p>
 <h5 id="example_9">Example</h5>
-<p>???</p>
+<div class="codehilite"><pre><span></span><code>???
+</code></pre></div>
+
+
 <h5 id="note_13">Note</h5>
 <p>???</p>
 <h5 id="enforcement_10">Enforcement</h5>
+<p>???</p>
+<h3 id="slstr11-stdstring_view-gslstring_span"><a name="Rstr-span"></a>SL.str.11: 문자열을 수정할 필요가 있을때는 <code>std::string_view</code>보다는 <code>gsl::string_span</code>을 사용하라</h3>
+<h5 id="reason_14">Reason</h5>
+<p><code>std::string_view</code>는 읽기 전용이다.</p>
+<h5 id="example_10">Example</h5>
+<p>???</p>
+<h5 id="note_14">Note</h5>
+<p>???</p>
+<h5 id="enforcement_11">Enforcement</h5>
 <p>컴파일러는 <code>string_view</code>에 대한 쓰기 시도가 있으면 알릴 것이다.</p>
 <h3 id="slstr12-stdstring-s"><a name="Rstr-s"></a>SL.str.12: 표준 라이브러리 <code>std::string</code>을 의도할 때는 <code>s</code> 접미사를 사용하라</h3>
-<h5 id="reason_14">Reason</h5>
+<h5 id="reason_15">Reason</h5>
 <p>원래 의도에 대한 직접적인 표현이 실수를 줄일 수 있다.</p>
-<h5 id="example_10">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="k">auto</span> <span class="n">pp1</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mf">9.00</span><span class="p">);</span>         <span class="c1">// {C-style string,double} intended?</span>
+<h5 id="example_11">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">pp1</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mf">9.00</span><span class="p">);</span>         <span class="c1">// {C-style string,double} intended?</span>
     <span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">pp2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="mf">9.00</span><span class="p">};</span>  <span class="c1">// a bit verbose</span>
     <span class="k">auto</span> <span class="n">pp3</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="s">&quot;Tokyo&quot;</span><span class="n">s</span><span class="p">,</span> <span class="mf">9.00</span><span class="p">);</span>        <span class="c1">// {std::string,double}    // C++14</span>
     <span class="n">pair</span> <span class="n">pp4</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Tokyo&quot;</span><span class="n">s</span><span class="p">,</span> <span class="mf">9.00</span><span class="p">};</span>                 <span class="c1">// {std::string,double}    // C++17</span>
-</pre></div>
+</code></pre></div>
 
 
-<h5 id="enforcement_11">Enforcement</h5>
+<h5 id="enforcement_12">Enforcement</h5>
 <p>???</p>
 <h2 id="slio-iostream"><a name="SS-io"></a>SL.io: Iostream</h2>
 <p><code>iostream</code>은 스트리밍 입출력을 위한 타입에 안전하고, 확장 가능하며, 포맷화되거나 되지 않은 입출력 라이브러리이다.
@@ -1174,11 +3042,11 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
 <li><a href="#???">???</a></li>
 </ul>
 <h3 id="slio1"><a name="Rio-low"></a>SL.io.1: 단일 문자 단위의 입력은 꼭 필요할때에만 사용하라</h3>
-<h5 id="reason_15">Reason</h5>
+<h5 id="reason_16">Reason</h5>
 <p>의도적으로 각각의 개별 문자를 다루려고 하지 않는 경우라면 단일 문자 단위 입력에 대한 사용은
 잠재적으로 에러가 발생하기 쉽고, 문자열을 비효율적인 토큰의 조합으로 만들뿐이다.</p>
-<h5 id="example_11">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+<h5 id="example_12">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
     <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
     <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isspace</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">128</span><span class="p">)</span>
@@ -1186,46 +3054,46 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">128</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ... handle too long string ....</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>위의 코드보다는 아래의 코드가 훨씬 간단하고 아마도 더 빠를 것이다.</p>
-<div class="codehilite"><pre><span></span>    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
     <span class="n">s</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>여기서 <code>reserve(128)</code>는 꼭 필요한 것이 아닐 수도 있다.</p>
-<h5 id="enforcement_12">Enforcement</h5>
-<p>???</p>
-<h3 id="slio2"><a name="Rio-validate"></a>SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라</h3>
-<h5 id="reason_16">Reason</h5>
-<p>일반적으로 에러는 가능한한 일찍 처리되는 것이 최상이다.
-만약 입력이 유효하지 않다면 (현실적이지 않게도) 모든 함수는 잘못된 데이터에 대응할 수 있도록 작성되어야 한다.</p>
-<h5 id="example_12">Example</h5>
-<div class="codehilite"><pre><span></span>???
-</pre></div>
-
-
 <h5 id="enforcement_13">Enforcement</h5>
 <p>???</p>
-<h3 id="slio3-iostream"><a name="Rio-streams"></a>SL.io.3: 입출력을 위해서는 <code>iostream</code>을 선호하라</h3>
+<h3 id="slio2"><a name="Rio-validate"></a>SL.io.2: 항상 읽을때에는 형식화되지 않은 입력을 고려하라</h3>
 <h5 id="reason_17">Reason</h5>
-<p><code>iostream</code>은 안전하고 유연하며 확장 가능하다.</p>
+<p>일반적으로 에러는 가능한한 일찍 처리되는 것이 최상이다.
+만약 입력이 유효하지 않다면 (현실적이지 않게도) 모든 함수는 잘못된 데이터에 대응할 수 있도록 작성되어야 한다.</p>
 <h5 id="example_13">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="c1">// write a complex number:</span>
+<div class="codehilite"><pre><span></span><code>???
+</code></pre></div>
+
+
+<h5 id="enforcement_14">Enforcement</h5>
+<p>???</p>
+<h3 id="slio3-iostream"><a name="Rio-streams"></a>SL.io.3: 입출력을 위해서는 <code>iostream</code>을 선호하라</h3>
+<h5 id="reason_18">Reason</h5>
+<p><code>iostream</code>은 안전하고 유연하며 확장 가능하다.</p>
+<h5 id="example_14">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// write a complex number:</span>
     <span class="n">complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">z</span><span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>complex</code>는 사용자 정의 타입이지만 <code>iostream</code> 라이브러리에 대한 수정 없이도 이에 대한 입출력이 구현된다.</p>
-<h5 id="example_14">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="c1">// read a file of complex numbers:</span>
+<h5 id="example_15">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// read a file of complex numbers:</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">z</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">z</span><span class="p">;</span> <span class="p">)</span>
         <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="exception">Exception</h5>
@@ -1238,40 +3106,40 @@ vector 를 요소의 리스트 내용으로 초기화하려면, <code>{}</code> 
 * 암묵적인 메모리 관리
 * <code>locale</code> 지역 언어 처리</p>
 <p>만약 I/O 성능이 필요하다면 거의 항상 <code>printf()</code> 보다는 더 잘할수 있다.</p>
-<p><code>s</code>를 사용하는 <code>gets()</code> <code>scanf()</code>와 <code>%s</code>를 사용하는 <code>printf()</code>는 (버퍼 오버플로우나 일반적인 에러를 발생시키기 취약한) 보안 위험이다.
+<p><code>%s</code>를 사용하는 <code>gets()</code>, <code>scanf()</code>와 <code>%s</code>를 사용하는 <code>printf()</code>는 (버퍼 오버플로우나 일반적인 에러를 발생시키기 취약한) 보안 위험이다.
 C11 에서는 더 안전한 대안으로 <code>gets_s()</code>, <code>scanf_s()</code>, 그리고 <code>printf_s()</code>로 이들을 대체했지만 아직도 타입에 안전하지 못하다.</p>
-<h5 id="enforcement_14">Enforcement</h5>
+<h5 id="enforcement_15">Enforcement</h5>
 <p><code>&lt;cstdio&gt;</code>과 <code>&lt;stdio.h&gt;</code>에 대한 사용을 선택적으로 지적하라.</p>
 <h3 id="slio10-printf-ios_basesync_with_stdiofalse"><a name="Rio-sync"></a>SL.io.10: <code>printf</code>계열의 함수를 사용하지 않는다면 <code>ios_base::sync_with_stdio(false)</code>를 호출하라</h3>
-<h5 id="reason_18">Reason</h5>
+<h5 id="reason_19">Reason</h5>
 <p><code>iostream</code>과 <code>printf</code> 스타일의 I/O 동기화는 부담이 많이 든다.
 <code>cin</code>과 <code>cout</code>은 기본적으로 <code>printf</code>와 동기화 된다.</p>
-<h5 id="example_15">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<h5 id="example_16">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">ios_base</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
         <span class="c1">// ... use iostreams ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
-<h5 id="enforcement_15">Enforcement</h5>
+<h5 id="enforcement_16">Enforcement</h5>
 <p>???</p>
 <h3 id="slio50-endl"><a name="Rio-endl"></a>SL.io.50: <code>endl</code>의 사용을 피하라</h3>
-<h5 id="reason_19">Reason</h5>
+<h5 id="reason_20">Reason</h5>
 <p><code>endl</code> 조정자는 대체로 <code>'\n'</code>이나 <code>"\n"</code>와 동일하다.
 이것은 일반적으로 많이 사용되는데 대부분의 경우에 중복되는 <code>flush()</code>명령을 수행하느라 출력을 느리게 만든다.
 이러한 성능 저하는 <code>printf</code> 스타일의 출력 성능과 뚜렷하게 비교된다.</p>
-<h5 id="example_16">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">// 두번의 출력 명령과 한번의 flush</span>
+<h5 id="example_17">Example</h5>
+<div class="codehilite"><pre><span></span><code>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">// 두번의 출력 명령과 한번의 flush</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>          <span class="c1">// flush 없는 단 한번의 출력 명령</span>
-</pre></div>
+</code></pre></div>
 
 
-<h5 id="note_14">Note</h5>
+<h5 id="note_15">Note</h5>
 <p><code>cin</code>/<code>cout</code>을 사용한 상호 작용에는 버퍼를 비우는 flush 를 할 이유가 없고, 이는 어차피 자동으로 이루어진다.
 파일에 쓰기를 하는 경우에는 <code>flush</code>를 할 필요가 거의 없다.</p>
-<h5 id="note_15">Note</h5>
+<h5 id="note_16">Note</h5>
 <p>(때때로 중요하지만) 성능 이슈를 논외로 하면, <code>'\n'</code>나 <code>endl</code>에 대한 선택은 거의 완전하게 미학적일 뿐이다.</p>
 <h2 id="slregex-regex"><a name="SS-regex"></a>SL.regex: Regex</h2>
 <p><code>&lt;regex&gt;</code>는 표준 C++ 정규 표현식 라이브러리이다.
@@ -1289,13 +3157,10 @@ C11 에서는 더 안전한 대안으로 <code>gets_s()</code>, <code>scanf_s()<
 <li><a href="#???">???</a></li>
 </ul>
 <h3 id="slc1-setjmplongjmp"><a name="Rclib-jmp"></a>SL.C.1: setjmp/longjmp를 사용하지 말라</h3>
-<h5 id="reason_20">Reason</h5>
+<h5 id="reason_21">Reason</h5>
 <p><code>longjmp</code>는 소멸자를 무시하게 하는데 이는 RAII 에 의존적인 모든 자원 관리 전략을 무효화시킨다.</p>
-<h5 id="enforcement_16">Enforcement</h5>
+<h5 id="enforcement_17">Enforcement</h5>
 <p><code>longjmp</code>와 <code>setjmp</code>이 있다면 전부 지적하라.</p>
-                
-                  
-                
                 
               
               
@@ -1312,34 +3177,34 @@ C11 에서는 더 안전한 대안으로 <code>gets_s()</code>, <code>scanf_s()<
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Resource/" title="Resource" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../Resource/" title="Resource" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 Resource
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../Source/" title="Source" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../Source/" title="Source" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 Source
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1354,11 +3219,10 @@ C11 에서는 더 안전한 대안으로 <code>gets_s()</code>, <code>scanf_s()<
             Copyright (c) Standard C++ Foundation and its contributors
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -1367,9 +3231,18 @@ C11 에서는 더 안전한 대안으로 <code>gets_s()</code>, <code>scanf_s()<
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>

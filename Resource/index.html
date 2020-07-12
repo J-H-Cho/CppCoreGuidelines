@@ -1,14 +1,12 @@
 
 
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="C++ Korea">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
     
     
       
@@ -46,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -57,16 +36,13 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
-    
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
-        <style>body,input{font-family:"Nanum Gothic","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding","Courier New",Courier,monospace}</style>
+        <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -75,73 +51,75 @@
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="blue">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#reason" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo">
-          
-            <img src="../images/logo.svg" width="24" height="24">
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              C++ 핵심 가이드라인
-            </span>
-            <span class="md-header-nav__topic">
-              
-                Resource
-              
-            </span>
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
+      
+  <img src="../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            C++ 핵심 가이드라인
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Resource
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -149,137 +127,55 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     CppKorea/CppCoreGuidelines
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
       
-        
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../Introduction/" class="md-tabs__link">
-          Introduction
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../References/" class="md-tabs__link">
-          References
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../Architecture/" class="md-tabs__link md-tabs__link--active">
-          Sections
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../appendix/Modernizing/" class="md-tabs__link">
-          Appendix
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
-        <img src="../images/logo.svg" width="48" height="48">
-      
+  <img src="../images/logo.svg" alt="logo">
+
     </a>
     C++ 핵심 가이드라인
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="http://github.com/CppKorea/CppCoreGuidelines/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     CppKorea/CppCoreGuidelines
   </div>
@@ -307,13 +203,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Introduction
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Introduction
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -343,13 +245,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       References
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="References" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         References
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -381,13 +289,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Sections
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Sections" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Sections
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -606,14 +520,1084 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Resource
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Resource" class="md-nav__link md-nav__link--active">
       Resource
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r1-raii" class="md-nav__link">
+    R.1: 자원 핸들과 RAII(자원 획득시 초기화)를 사용해서 자동적으로 관리되도록 하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.1: 자원 핸들과 RAII(자원 획득시 초기화)를 사용해서 자동적으로 관리되도록 하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r2" class="md-nav__link">
+    R.2: 인터페이스에서는, 포인터는 서로 다른 개체들을 표시하기 위해서만 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.2: 인터페이스에서는, 포인터는 서로 다른 개체들을 표시하기 위해서만 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_1" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_1" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_1" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r3-t" class="md-nav__link">
+    R.3: 원시 포인터는(T*) 소유를 의미하지 않는다
+  </a>
+  
+    <nav class="md-nav" aria-label="R.3: 원시 포인터는(T*) 소유를 의미하지 않는다">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_2" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_1" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_2" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_2" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_3" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_4" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_1" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r4-t" class="md-nav__link">
+    R.4: 참조는(T&amp;) 소유를 의미하지 않는다
+  </a>
+  
+    <nav class="md-nav" aria-label="R.4: 참조는(T&amp;) 소유를 의미하지 않는다">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_3" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also_1" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_2" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r5" class="md-nav__link">
+    R.5: 유효 범위 안의 개체를 선호하라. 불필요한 동적할당을 하지 마라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.5: 유효 범위 안의 개체를 선호하라. 불필요한 동적할당을 하지 마라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_4" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_3" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r6-const" class="md-nav__link">
+    R.6: const가 아닌 전역 변수를 지양하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.6: const가 아닌 전역 변수를 지양하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_5" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_2" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_3" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_4" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ralloc" class="md-nav__link">
+    R.alloc: 할당과 해제
+  </a>
+  
+    <nav class="md-nav" aria-label="R.alloc: 할당과 해제">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r10-malloc-free" class="md-nav__link">
+    R.10: malloc()과 free()의 사용을 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.10: malloc()과 free()의 사용을 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_6" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_4" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_5" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r11-new-delete" class="md-nav__link">
+    R.11: 명시적인 new와 delete 호출을 지양하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.11: 명시적인 new와 delete 호출을 지양하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_7" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_5" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_6" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r12" class="md-nav__link">
+    R.12: 명시적인 할당의 결과는 즉시 관리 개체에 전달하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.12: 명시적인 할당의 결과는 즉시 관리 개체에 전달하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_8" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_3" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_7" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r13" class="md-nav__link">
+    R.13: 하나의 표현식 구문에서 명시적 자원 할당은 최대 한번만 수행하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.13: 하나의 표현식 구문에서 명시적 자원 할당은 최대 한번만 수행하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_9" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_8" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r14-vs" class="md-nav__link">
+    R.14: ??? 배열 vs. 포인터 매개변수
+  </a>
+  
+    <nav class="md-nav" aria-label="R.14: ??? 배열 vs. 포인터 매개변수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_10" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative" class="md-nav__link">
+    Alternative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_9" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r15" class="md-nav__link">
+    R.15: 할당/해제가 짝을 이루도록 중복정의하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.15: 할당/해제가 짝을 이루도록 중복정의하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_11" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_6" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_10" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsmart" class="md-nav__link">
+    R.smart: 스마트 포인터
+  </a>
+  
+    <nav class="md-nav" aria-label="R.smart: 스마트 포인터">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r20-unique_ptr-shared_ptr" class="md-nav__link">
+    R.20: 소유권을 나타내기 위해 unique_ptr 혹은 shared_ptr를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.20: 소유권을 나타내기 위해 unique_ptr 혹은 shared_ptr를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_12" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_11" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r21-shared_ptr-unique_ptr" class="md-nav__link">
+    R.21: 소유권을 공유할 필요가 없다면 shared_ptr보다는 unique_ptr를 선호하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.21: 소유권을 공유할 필요가 없다면 shared_ptr보다는 unique_ptr를 선호하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_13" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_4" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_12" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r22-shared_ptr-make_shared" class="md-nav__link">
+    R.22: shared_ptr를 만들때는 make_shared()를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.22: shared_ptr를 만들때는 make_shared()를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_14" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_13" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r23-unique_ptr-make_unique" class="md-nav__link">
+    R.23: unique_ptr를 만들때는 make_unique()를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.23: unique_ptr를 만들때는 make_unique()를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_15" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_7" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_14" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r24-shared_ptr-weak_ptr" class="md-nav__link">
+    R.24: shared_ptr의 순환참조를 부수기 위해 weak_ptr를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.24: shared_ptr의 순환참조를 부수기 위해 weak_ptr를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_16" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_8" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_15" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r30" class="md-nav__link">
+    R.30: 수명주기 의미구조를 표현하기 위해서만 스마트 포인터를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.30: 수명주기 의미구조를 표현하기 위해서만 스마트 포인터를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_17" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_5" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_16" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r31" class="md-nav__link">
+    R.31: 표준 스마트 포인터를 사용하지 않고 있다면, 표준에서 사용하는 기본 패턴을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.31: 표준 스마트 포인터를 사용하지 않고 있다면, 표준에서 사용하는 기본 패턴을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_18" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r32-widget-unique_ptrwidget" class="md-nav__link">
+    R.32: 함수가 widget의 소유권을 맡는다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.32: 함수가 widget의 소유권을 맡는다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_19" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_6" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_17" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r33-widget-unique_ptrwidget" class="md-nav__link">
+    R.33: 함수가 widget을 새로 설정한다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;&amp;를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.33: 함수가 widget을 새로 설정한다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;&amp;를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_20" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_9" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_7" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_18" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r34-shared_ptrwidget" class="md-nav__link">
+    R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 shared_ptr&lt;widget&gt;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 shared_ptr&lt;widget&gt;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_21" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_1" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_19" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r35-shared_ptrwidget" class="md-nav__link">
+    R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 shared_ptr&lt;widget&gt;&amp;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 shared_ptr&lt;widget&gt;&amp;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_22" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_10" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_2" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_20" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r36-const-shared_ptrwidget" class="md-nav__link">
+    R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 const shared_ptr&lt;widget&gt;&amp;을 매개변수로 사용하라 ???
+  </a>
+  
+    <nav class="md-nav" aria-label="R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 const shared_ptr&lt;widget&gt;&amp;을 매개변수로 사용하라 ???">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_23" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_3" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_21" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r37-aliased" class="md-nav__link">
+    R.37: 재명명(aliased)된 스마트 포인터에서 획득한 포인터 혹은 참조를 전달하지 마라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.37: 재명명(aliased)된 스마트 포인터에서 획득한 포인터 혹은 참조를 전달하지 마라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_24" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_11" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_18" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_22" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -678,13 +1662,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Appendix
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Appendix
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -730,11 +1720,1065 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r1-raii" class="md-nav__link">
+    R.1: 자원 핸들과 RAII(자원 획득시 초기화)를 사용해서 자동적으로 관리되도록 하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.1: 자원 핸들과 RAII(자원 획득시 초기화)를 사용해서 자동적으로 관리되도록 하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r2" class="md-nav__link">
+    R.2: 인터페이스에서는, 포인터는 서로 다른 개체들을 표시하기 위해서만 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.2: 인터페이스에서는, 포인터는 서로 다른 개체들을 표시하기 위해서만 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_1" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_1" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_1" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r3-t" class="md-nav__link">
+    R.3: 원시 포인터는(T*) 소유를 의미하지 않는다
+  </a>
+  
+    <nav class="md-nav" aria-label="R.3: 원시 포인터는(T*) 소유를 의미하지 않는다">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_2" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_1" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_2" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_2" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_3" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_4" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_1" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r4-t" class="md-nav__link">
+    R.4: 참조는(T&amp;) 소유를 의미하지 않는다
+  </a>
+  
+    <nav class="md-nav" aria-label="R.4: 참조는(T&amp;) 소유를 의미하지 않는다">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_3" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_4" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-also_1" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_2" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r5" class="md-nav__link">
+    R.5: 유효 범위 안의 개체를 선호하라. 불필요한 동적할당을 하지 마라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.5: 유효 범위 안의 개체를 선호하라. 불필요한 동적할당을 하지 마라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_4" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_5" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_3" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r6-const" class="md-nav__link">
+    R.6: const가 아닌 전역 변수를 지양하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.6: const가 아닌 전역 변수를 지양하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_5" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_2" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_3" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_4" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ralloc" class="md-nav__link">
+    R.alloc: 할당과 해제
+  </a>
+  
+    <nav class="md-nav" aria-label="R.alloc: 할당과 해제">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r10-malloc-free" class="md-nav__link">
+    R.10: malloc()과 free()의 사용을 피하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.10: malloc()과 free()의 사용을 피하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_6" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_6" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception_4" class="md-nav__link">
+    Exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_5" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r11-new-delete" class="md-nav__link">
+    R.11: 명시적인 new와 delete 호출을 지양하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.11: 명시적인 new와 delete 호출을 지양하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_7" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_5" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_6" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r12" class="md-nav__link">
+    R.12: 명시적인 할당의 결과는 즉시 관리 개체에 전달하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.12: 명시적인 할당의 결과는 즉시 관리 개체에 전달하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_8" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_3" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_7" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_7" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r13" class="md-nav__link">
+    R.13: 하나의 표현식 구문에서 명시적 자원 할당은 최대 한번만 수행하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.13: 하나의 표현식 구문에서 명시적 자원 할당은 최대 한번만 수행하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_9" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_8" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_8" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r14-vs" class="md-nav__link">
+    R.14: ??? 배열 vs. 포인터 매개변수
+  </a>
+  
+    <nav class="md-nav" aria-label="R.14: ??? 배열 vs. 포인터 매개변수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_10" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_9" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative" class="md-nav__link">
+    Alternative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_9" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r15" class="md-nav__link">
+    R.15: 할당/해제가 짝을 이루도록 중복정의하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.15: 할당/해제가 짝을 이루도록 중복정의하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_11" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_10" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_6" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_10" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsmart" class="md-nav__link">
+    R.smart: 스마트 포인터
+  </a>
+  
+    <nav class="md-nav" aria-label="R.smart: 스마트 포인터">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#r20-unique_ptr-shared_ptr" class="md-nav__link">
+    R.20: 소유권을 나타내기 위해 unique_ptr 혹은 shared_ptr를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.20: 소유권을 나타내기 위해 unique_ptr 혹은 shared_ptr를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_12" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_11" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_11" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r21-shared_ptr-unique_ptr" class="md-nav__link">
+    R.21: 소유권을 공유할 필요가 없다면 shared_ptr보다는 unique_ptr를 선호하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.21: 소유권을 공유할 필요가 없다면 shared_ptr보다는 unique_ptr를 선호하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_13" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_4" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_12" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_12" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r22-shared_ptr-make_shared" class="md-nav__link">
+    R.22: shared_ptr를 만들때는 make_shared()를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.22: shared_ptr를 만들때는 make_shared()를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_14" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_13" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_13" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r23-unique_ptr-make_unique" class="md-nav__link">
+    R.23: unique_ptr를 만들때는 make_unique()를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.23: unique_ptr를 만들때는 make_unique()를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_15" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_7" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_14" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r24-shared_ptr-weak_ptr" class="md-nav__link">
+    R.24: shared_ptr의 순환참조를 부수기 위해 weak_ptr를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.24: shared_ptr의 순환참조를 부수기 위해 weak_ptr를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_16" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_14" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_8" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_15" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r30" class="md-nav__link">
+    R.30: 수명주기 의미구조를 표현하기 위해서만 스마트 포인터를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.30: 수명주기 의미구조를 표현하기 위해서만 스마트 포인터를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_17" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_5" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_16" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r31" class="md-nav__link">
+    R.31: 표준 스마트 포인터를 사용하지 않고 있다면, 표준에서 사용하는 기본 패턴을 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.31: 표준 스마트 포인터를 사용하지 않고 있다면, 표준에서 사용하는 기본 패턴을 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_18" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_15" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r32-widget-unique_ptrwidget" class="md-nav__link">
+    R.32: 함수가 widget의 소유권을 맡는다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.32: 함수가 widget의 소유권을 맡는다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_19" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_16" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_6" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_17" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r33-widget-unique_ptrwidget" class="md-nav__link">
+    R.33: 함수가 widget을 새로 설정한다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;&amp;를 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.33: 함수가 widget을 새로 설정한다는 것을 표현하기 위해 unique_ptr&lt;widget&gt;&amp;를 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_20" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_9" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_17" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-bad_7" class="md-nav__link">
+    Example, bad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_18" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r34-shared_ptrwidget" class="md-nav__link">
+    R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 shared_ptr&lt;widget&gt;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 shared_ptr&lt;widget&gt;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_21" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_1" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_19" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r35-shared_ptrwidget" class="md-nav__link">
+    R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 shared_ptr&lt;widget&gt;&amp;를 매개변수로 사용하라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 shared_ptr&lt;widget&gt;&amp;를 매개변수로 사용하라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_22" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_10" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_2" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_20" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r36-const-shared_ptrwidget" class="md-nav__link">
+    R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 const shared_ptr&lt;widget&gt;&amp;을 매개변수로 사용하라 ???
+  </a>
+  
+    <nav class="md-nav" aria-label="R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 const shared_ptr&lt;widget&gt;&amp;을 매개변수로 사용하라 ???">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_23" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-good_3" class="md-nav__link">
+    Example, good
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_21" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r37-aliased" class="md-nav__link">
+    R.37: 재명명(aliased)된 스마트 포인터에서 획득한 포인터 혹은 참조를 전달하지 마라
+  </a>
+  
+    <nav class="md-nav" aria-label="R.37: 재명명(aliased)된 스마트 포인터에서 획득한 포인터 혹은 참조를 전달하지 마라">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reason_24" class="md-nav__link">
+    Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note_11" class="md-nav__link">
+    Note
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_18" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcement_22" class="md-nav__link">
+    Enforcement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -746,7 +2790,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Resource.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="http://github.com/CppKorea/CppCoreGuidelines/edit/master/docs/Resource.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
                 
                 
                 <h1 id="r"><a name="S-resource"></a>R: 자원 관리</h1>
@@ -799,7 +2848,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <p>이 특징을 사용해서 자원의 획득/해체시 짝 함수 호출이 필요한 자원을 다룰 때는 생성자에서 자원을 획득하고 소멸자에서 해체가 강제되도록 개체로 리소스를 캡슐화해라.</p>
 <h5 id="example-bad">Example, bad</h5>
 <p>다음과 같은 경우를 생각해보라:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">send</span><span class="p">(</span><span class="n">X</span><span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">cstring_span</span> <span class="n">destination</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">send</span><span class="p">(</span><span class="n">X</span><span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">cstring_span</span> <span class="n">destination</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">auto</span> <span class="n">port</span> <span class="o">=</span> <span class="n">open_port</span><span class="p">(</span><span class="n">destination</span><span class="p">);</span>
         <span class="n">my_mutex</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
@@ -810,13 +2859,13 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="n">close_port</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>
         <span class="k">delete</span> <span class="n">x</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>이 코드에서는 모든 경우에 <code>unlock</code>, <code>close_port</code>, <code>delete</code>가 정확히 순서대로 호출되어야 한다는 점을 고려해야 한다. 만약 <code>...</code>로 표시된 코드에서 예외가 던져지면, 그로인해 <code>x</code>는 누출되고 <code>my_mutex</code>는 잠금을 해제하지 않게 된다.</p>
 <h5 id="example">Example</h5>
 <p>다음과 같은 경우를 생각해보라:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">send</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">cstring_span</span> <span class="n">destination</span><span class="p">)</span>  <span class="c1">// x owns the X</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">send</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">cstring_span</span> <span class="n">destination</span><span class="p">)</span>  <span class="c1">// x owns the X</span>
     <span class="p">{</span>
         <span class="n">Port</span> <span class="n">port</span><span class="p">{</span><span class="n">destination</span><span class="p">};</span>            <span class="c1">// port owns the PortHandle</span>
         <span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">guard</span><span class="p">{</span><span class="n">my_mutex</span><span class="p">};</span> <span class="c1">// guard owns the lock</span>
@@ -824,12 +2873,12 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="n">send</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">}</span> <span class="c1">// automatically unlocks my_mutex and deletes the pointer in x</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>모든 자원 관리가 자동화되었고 예외와 상관없이 모든 경로에서 한번 수행된다. 추가적으로 함수가 포인터 소유권을 가져간 것도 보여주고 있다.</p>
 <p><code>Port</code>는 어떻게 구현할 수 있을까? 자원을 캡슐화하는 간단한 래퍼로 구현할 수 있다:</p>
-<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">Port</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Port</span> <span class="p">{</span>
         <span class="n">PortHandle</span> <span class="n">port</span><span class="p">;</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">Port</span><span class="p">(</span><span class="n">cstring_span</span> <span class="n">destination</span><span class="p">)</span> <span class="o">:</span> <span class="n">port</span><span class="p">{</span><span class="n">open_port</span><span class="p">(</span><span class="n">destination</span><span class="p">)}</span> <span class="p">{</span> <span class="p">}</span>
@@ -840,7 +2889,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="n">Port</span><span class="p">(</span><span class="k">const</span> <span class="n">Port</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
         <span class="n">Port</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Port</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
     <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note">Note</h5>
@@ -851,23 +2900,23 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_1">Reason</h5>
 <p>배열은 컨테이너 타입(가령, <code>vector</code>(소유)이나 <code>span</code>(비 소유))으로 가장 잘 표현된다. 이런 컨테이너와 뷰는 범위 검사를 위한 충분한 정보를 가지고 있다.</p>
 <h5 id="example-bad_1">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>   <span class="c1">// n is the number of elements in p[]</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>   <span class="c1">// n is the number of elements in p[]</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
         <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>   <span class="c1">// bad: subscript raw pointer</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>컴파일러 주석을 읽지 않는다. 또한 다른 코드를 읽지 않고는 <code>p</code>가 정말로 <code>n</code> 만큼을 가르키는지 알 수 없다. 
 대신 <code>span</code>을 사용하라.</p>
 <h5 id="example_1">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fmt</span><span class="p">)</span>   <span class="c1">// print *p using format #fmt</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fmt</span><span class="p">)</span>   <span class="c1">// print *p using format #fmt</span>
     <span class="p">{</span>
         <span class="c1">// ... uses *p and p[0] only ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="exception">Exception</h5>
@@ -891,36 +2940,36 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <p>C++ 표준 뿐만 아니라 대부분의 경우 원시 포인터는 소유를 하지 않는다.
 신뢰할 수 있고 효과적인 방법으로 개체를 제거하기 위해서는 개체를 소유하는 포인터가 필요하다.</p>
 <h5 id="example_2">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="kt">int</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">};</span>           <span class="c1">// bad: raw owning pointer</span>
         <span class="k">auto</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>  <span class="c1">// OK: the int is owned by a unique pointer</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>unique_ptr</code>는 개체의 제거를 보장하기 때문에 메모리 누수를 차단해준다. (예외 발생에서도 마찬가지다.) <code>T*</code>는 그렇지 않다.</p>
 <h5 id="example_3">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>   <span class="c1">// bad: it is unclear whether p is owning or not</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">q</span><span class="p">;</span>   <span class="c1">// bad: it is unclear whether q is owning or not</span>
     <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>명시적인 소유권을 만들어 이 문제를 해결할 수 있다:</p>
-<div class="codehilite"><pre><span></span>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">X2</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">owner</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span> <span class="n">p</span><span class="p">;</span>  <span class="c1">// OK: p is owning</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">q</span><span class="p">;</span>         <span class="c1">// OK: q is not owning</span>
     <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="exception_1">Exception</h5>
@@ -937,7 +2986,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 예를 들어, <code>owner&lt;T*&gt;</code>가 어떤 클래스의 멤버라면, 그 클래스는 해당 멤버를 <code>delete</code>하는 소멸자를 가지는 것이 나을 것이다. </p>
 <h5 id="example-bad_2">Example, bad</h5>
 <p>원시 포인터를 반환하는것은 호출자에게 수명 관리에 불확실성을 심어준다; 다시 말해, 누가 포인터를 통해 개체를 제거해야 하는가?</p>
-<div class="codehilite"><pre><span></span>    <span class="n">Gadget</span><span class="o">*</span> <span class="nf">make_gadget</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">Gadget</span><span class="o">*</span> <span class="nf">make_gadget</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gadget</span><span class="p">{</span><span class="n">n</span><span class="p">};</span>
         <span class="c1">// ...</span>
@@ -950,18 +2999,18 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="c1">// ...</span>
         <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="#???">leak</a>으로 인한 고통뿐만 아니라 이는 쓸데없이 많고 미심쩍은 할당과 해제를 야기할 수 있다. 
 만약 Gadget을 함수 바깥으로 가져오는 비용이 크지 않다면, 단순히 값으로 반환하는 것도 한 방법이다. (<a href="#Rf-out">"out" 반환</a> 항목을 보라):</p>
-<div class="codehilite"><pre><span></span>    <span class="n">Gadget</span> <span class="nf">make_gadget</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">Gadget</span> <span class="nf">make_gadget</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">Gadget</span> <span class="n">g</span><span class="p">{</span><span class="n">n</span><span class="p">};</span>
         <span class="c1">// ...</span>
         <span class="k">return</span> <span class="n">g</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note_3">Note</h5>
@@ -975,18 +3024,18 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <li>(쉬움) <code>new</code>의 결과가 원시 포인터에 대입된다면 경고하라.</li>
 <li>(쉬움) 함수 안에서 이동 생성이 가능한 개체가 할당되는 경우 경고하라. 대신 값으로 반환하는 것을 고려하도록 제안하라</li>
 </ul>
-<h3 id="r4-tamp"><a name="Rr-ref"></a>R.4: 참조는(<code>T&amp;</code>) 소유를 의미하지 않는다</h3>
+<h3 id="r4-t"><a name="Rr-ref"></a>R.4: 참조는(<code>T&amp;</code>) 소유를 의미하지 않는다</h3>
 <h5 id="reason_3">Reason</h5>
 <p>C++ 표준뿐만 아니라 대부분의 경우 참조는 소유를 하지 않는다. 
 신뢰할 수 있고 효과적인 방법으로 개체를 제거하기 위해서는 개체를 소유하는 포인터가 필요하다.</p>
 <h5 id="example_4">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="kt">int</span><span class="o">&amp;</span> <span class="n">r</span> <span class="o">=</span> <span class="o">*</span><span class="k">new</span> <span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">};</span>  <span class="c1">// bad: raw owning reference</span>
         <span class="c1">// ...</span>
         <span class="k">delete</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">;</span>             <span class="c1">// bad: violated the rule against deleting raw pointers</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="see-also_1">See Also</h5>
@@ -999,22 +3048,22 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 유효범위 내 개체의 멤버들은 생성자와 소멸자에 의해 수명이 관리된다.</p>
 <h5 id="example_5">Example</h5>
 <p>다음 예는 불필요한 할당화 해제를 하기 떄문에 비효율적이고, 예외에 취약하며, <code>...</code> 부분에서는 누수가 발생할 수 있다:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gadget</span><span class="p">{</span><span class="n">n</span><span class="p">};</span>
         <span class="c1">// ...</span>
         <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>대신, 지역 변수를 사용하라:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">Gadget</span> <span class="n">g</span><span class="p">{</span><span class="n">n</span><span class="p">};</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_3">Enforcement</h5>
@@ -1037,7 +3086,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_6">Reason</h5>
 <p><code>malloc()</code>과 <code>free()</code>는 생성자와 소멸자를 지원하지 않는다. <code>new</code> 과 <code>delete</code>와 섞어서 사용하지 마라.</p>
 <h5 id="example_6">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">Record</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Record</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="c1">// ...</span>
@@ -1061,7 +3110,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="k">delete</span> <span class="n">p1</span><span class="p">;</span>    <span class="c1">// error: cannot delete object allocated by malloc()</span>
         <span class="n">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>    <span class="c1">// error: cannot free() object allocated by new</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>delete</code>나 <code>free()</code>가 동작할 수도 있지만, 실행시간 오류를 발생시킬수도 있다.</p>
@@ -1085,25 +3134,25 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_8">Reason</h5>
 <p>그렇지 않으면, 예외나 반환이 자원 누수를 야기할 수 있다.</p>
 <h5 id="example-bad_3">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>            <span class="c1">// open the file</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">buf</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
         <span class="k">auto</span> <span class="n">_</span> <span class="o">=</span> <span class="n">finally</span><span class="p">([</span><span class="n">f</span><span class="p">]</span> <span class="p">{</span> <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span> <span class="p">});</span>  <span class="c1">// remember to close the file</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>buf</code>에서의 할당은 실패할 수 있고 그 경우 파일 핸들의 누수가 발생한다.</p>
 <h5 id="example_7">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">ifstream</span> <span class="n">f</span><span class="p">{</span><span class="n">name</span><span class="p">};</span>   <span class="c1">// open the file</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">buf</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>이와 같은 (<code>ifstream</code> 내부의) 파일 핸들 사용은 단순하며, 효과적이고, 안전하다.</p>
@@ -1115,28 +3164,28 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_9">Reason</h5>
 <p>한 구문에서 두번의 명시적 자원 할당을 수행하면, 함수 인자를 포함해 하위 표현식의 불특정한 평가 순서에 따라 자원 누수가 발생할수도 있다. </p>
 <h5 id="example_8">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp1</span><span class="p">,</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp2</span><span class="p">);</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">fun</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp1</span><span class="p">,</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp2</span><span class="p">);</span>
+</code></pre></div>
 
 
 <p>이 <code>fun</code>호출은 아래와 같을 수 있다:</p>
-<div class="codehilite"><pre><span></span>    <span class="c1">// BAD: potential leak</span>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// BAD: potential leak</span>
     <span class="n">fun</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)),</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)));</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>이는 예외 안전하지 않은데, 컴파일러가 함수의 두 인자를 생성하면서 순서를 바꿀 수도 있기 때문이다.</p>
 <p>특히, 컴파일러는 두 표현식을 뒤섞어(interleave) 수행할수도 있다: (<code>operator new</code>를 호출함으로써) 두 개체의 메모리 할당이 먼저 수행되고, <code>Widget</code>의 생성자를 호출하려는 시도가 이어질 것이다. 만약 둘 중 하나가 예외를 던지면, 다른 한 개체는 해제되지 않는다!</p>
 <p>이 미묘한 문제의 해결책은 간단하다: 한 표현식 구문 내에서 명시적 자원 할당을 한번 이상 하지마라.</p>
 <p>예를 들어:</p>
-<div class="codehilite"><pre><span></span>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp1</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span> <span class="c1">// Better, but messy</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span> <span class="n">sp1</span><span class="p">(</span><span class="k">new</span> <span class="n">Widget</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span> <span class="c1">// Better, but messy</span>
     <span class="n">fun</span><span class="p">(</span><span class="n">sp1</span><span class="p">,</span> <span class="k">new</span> <span class="n">Widget</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">));</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>최상의 해결책은 소유하는 개체를 반환하는 팩토리 함수를 사용해서 명시적 할당을 완전히 피하는 것이다:</p>
-<div class="codehilite"><pre><span></span>    <span class="n">fun</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">));</span> <span class="c1">// Best</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    <span class="n">fun</span><span class="p">(</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">));</span> <span class="c1">// Best</span>
+</code></pre></div>
 
 
 <p>팩토리 함수를 사용하고 있지 않다면 새롭게 작성하라.</p>
@@ -1153,8 +3202,8 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_10">Reason</h5>
 <p>배열은 포인터로 축약(decay)되고, 그 결과 길이를 알 수 없게 된다. 이로 인해 범위 오류가 발생할 수 있다.</p>
 <h5 id="example_9">Example</h5>
-<div class="codehilite"><pre><span></span>    ??? what do we recommend: f(int*[]) or f(int**) ???
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    ??? what do we recommend: f(int*[]) or f(int**) ???
+</code></pre></div>
 
 
 <h5 id="alternative">Alternative</h5>
@@ -1165,13 +3214,13 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_11">Reason</h5>
 <p>연산이 불일치하면 혼돈을 겪게 될 것이다.</p>
 <h5 id="example_10">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="c1">// ...</span>
         <span class="kt">void</span><span class="o">*</span> <span class="k">operator</span> <span class="k">new</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">s</span><span class="p">);</span>
         <span class="kt">void</span> <span class="k">operator</span> <span class="nf">delete</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note_6">Note</h5>
@@ -1184,7 +3233,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <p>자원 누수를 막을 수 있다.</p>
 <h5 id="example_11">Example</h5>
 <p>다음과 같은 경우를 생각해보라:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">X</span> <span class="n">x</span><span class="p">;</span>
         <span class="n">X</span><span class="o">*</span> <span class="n">p1</span> <span class="p">{</span> <span class="k">new</span> <span class="n">X</span> <span class="p">};</span>              <span class="c1">// see also ???</span>
@@ -1193,7 +3242,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
         <span class="k">auto</span> <span class="n">p4</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">();</span>   <span class="c1">// unique_ownership, preferable to the explicit use &quot;new&quot;</span>
         <span class="k">auto</span> <span class="n">p5</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">();</span>   <span class="c1">// shared ownership, preferable to the explicit use &quot;new&quot;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>위 코드는 <code>p1</code>를 초기화하는데 사용된 개체에(만) 누수가 발생한다.</p>
@@ -1204,22 +3253,22 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <p><code>unique_ptr</code>는 개념적으로 단순하고 예측가능하며(파괴가 일어날 때를 알고) 빠르다 (사용 횟수를 암시적으로 관리하지 않는다).</p>
 <h5 id="example-bad_4">Example, bad</h5>
 <p>이 코드는 불필요하게 참조 횟수를 증가 및 유지하고 있다.</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Base</span><span class="o">&gt;</span> <span class="n">base</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">&gt;</span><span class="p">();</span>
         <span class="c1">// use base locally, without copying it -- refcount never exceeds 1</span>
     <span class="p">}</span> <span class="c1">// destroy base</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example_12">Example</h5>
 <p>이 코드가 더 효율적이다:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Base</span><span class="o">&gt;</span> <span class="n">base</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">&gt;</span><span class="p">();</span>
         <span class="c1">// use base locally</span>
     <span class="p">}</span> <span class="c1">// destroy base</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_12">Enforcement</h5>
@@ -1229,9 +3278,9 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <p>만약 개체를 처음 만들고 <code>shared_ptr</code>의 생성자에 전달하면, <code>make_shared()</code>를 사용할 때보다 (거의 확실히) 할당(그리고 나중의 해제)을 한번 더 하게 된다. 개체와는 독립적으로 참조 카운트를 할당해야 하기 때문이다.</p>
 <h5 id="example_13">Example</h5>
 <p>다음과 같은 경우를 생각해보라:</p>
-<div class="codehilite"><pre><span></span>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="p">{</span> <span class="k">new</span> <span class="n">X</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="p">};</span> <span class="c1">// bad</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">p1</span> <span class="p">{</span> <span class="k">new</span> <span class="n">X</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="p">};</span> <span class="c1">// bad</span>
     <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>    <span class="c1">// good</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>make_shared()</code> 버전은 <code>X</code>가 단 한 번만 사용되며, 그렇기에 명시적으로 <code>new</code>를 사용하는 버전보다 코드가 짧다(게다가 빠르다).</p>
@@ -1248,7 +3297,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <h5 id="reason_16">Reason</h5>
 <p><code>shared_ptr</code>은 참조 카운트를 사용하는데, 순환 구조에서 이는 절대로 0이 되지 않는다.  때문에 우리는 순환 구조를 파괴할 수 있는 방법이 필요하다.</p>
 <h5 id="example_14">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code>    <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 
     <span class="k">class</span> <span class="nc">bar</span><span class="p">;</span>
 
@@ -1277,7 +3326,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
     <span class="k">private</span><span class="o">:</span>
       <span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">foo</span><span class="o">&gt;</span> <span class="n">back_reference_</span><span class="p">;</span>
     <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="note_8">Note</h5>
@@ -1291,7 +3340,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 그런 함수는 특정한 종류의 스마트 포인터에 의해서 수명주기가 관리되는 <code>widget</code>이 아니라 어떤 <code>widget</code>개체라도 받을 수 있어야 한다. 
 수명주기에 영향을 주지 않는 함수는 원시 포인터 혹은 참조를 사용해야 한다.</p>
 <h5 id="example-bad_5">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="c1">// callee</span>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// callee</span>
     <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span> <span class="n">w</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -1305,11 +3354,11 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 
     <span class="n">widget</span> <span class="n">stack_widget</span><span class="p">;</span>
     <span class="n">f</span><span class="p">(</span><span class="n">stack_widget</span><span class="p">);</span> <span class="c1">// error</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example-good">Example, good</h5>
-<div class="codehilite"><pre><span></span>    <span class="c1">// callee</span>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// callee</span>
     <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">widget</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -1323,7 +3372,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 
     <span class="n">widget</span> <span class="n">stack_widget</span><span class="p">;</span>
     <span class="n">f</span><span class="p">(</span><span class="n">stack_widget</span><span class="p">);</span> <span class="c1">// ok -- now this works</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_16">Enforcement</h5>
@@ -1342,7 +3391,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 <li>복사할 수 없다면, 고유한 <code>unique_ptr</code>처럼 동작한다</li>
 </ul>
 <h5 id="example_15">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="c1">// use Boost&#39;s intrusive_ptr</span>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// use Boost&#39;s intrusive_ptr</span>
     <span class="cp">#include</span> <span class="cpf">&lt;boost/intrusive_ptr.hpp&gt;</span><span class="cp"></span>
     <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">boost</span><span class="o">::</span><span class="n">intrusive_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">)</span>  <span class="c1">// error under rule &#39;sharedptrparam&#39;</span>
     <span class="p">{</span>
@@ -1355,7 +3404,7 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
     <span class="p">{</span>
         <span class="n">p</span><span class="o">-&gt;</span><span class="n">foo</span><span class="p">();</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>두 경우 모두 <a href="#Rr-smartptrparam"><code>sharedptrparam</code> 가이드라인</a>에 맞지 않는다:<br />
@@ -1363,19 +3412,19 @@ C++ 언어적 강제인 생성자 소멸자 대칭은 <code>fopen</code>/<code>f
 이 함수들이 widget의 생명주기에 영향을 미친다면 스마트 포인터를 넘겨받아야만 한다. 
 widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘겨받아야 하고, 그게 아닌 이상적인 상황은 함수가 <code>widget&amp;</code>를 넘겨받아야 한다.</p>
 <p>이 스마트 포인터들은 <code>shared_ptr</code> 개념에 부합한다. 때문에 이 규칙은 고정관념과는 다르게 흔히 발생할 수 있는 비효율을 노출시킨다.</p>
-<h3 id="r32-widget-unique_ptrltwidgetgt"><a name="Rr-uniqueptrparam"></a>R.32: 함수가 <code>widget</code>의 소유권을 맡는다는 것을 표현하기 위해 <code>unique_ptr&lt;widget&gt;</code>를 매개변수로 사용하라</h3>
+<h3 id="r32-widget-unique_ptrwidget"><a name="Rr-uniqueptrparam"></a>R.32: 함수가 <code>widget</code>의 소유권을 맡는다는 것을 표현하기 위해 <code>unique_ptr&lt;widget&gt;</code>를 매개변수로 사용하라</h3>
 <h5 id="reason_19">Reason</h5>
 <p><code>unique_ptr</code>를 사용하는 것은 함수를 문서화하면서 호출할 때 소유권 전달을 강제한다.</p>
 <h5 id="example_16">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">sink</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span> <span class="c1">// takes ownership of the widget</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">sink</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span> <span class="c1">// takes ownership of the widget</span>
 
     <span class="kt">void</span> <span class="nf">uses</span><span class="p">(</span><span class="n">widget</span><span class="o">*</span><span class="p">);</span>            <span class="c1">// just uses the widget</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="example-bad_6">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">thinko</span><span class="p">(</span><span class="k">const</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// usually not what you want</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">thinko</span><span class="p">(</span><span class="k">const</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// usually not what you want</span>
+</code></pre></div>
 
 
 <h5 id="enforcement_17">Enforcement</h5>
@@ -1383,19 +3432,19 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <li>(단순) 함수가 <code>unique_ptr&lt;T&gt;</code> 매개변수를 lvalue 참조로 받아 새로운 개체를 대입하거나 최소 한 경로에서 <code>reset()</code>을 호출하지 않으면 경고하라. <code>T*</code>혹은 <code>T&amp;</code>의 사용을 제안하라</li>
 <li>(단순) ((기본사항)) 함수가 <code>unique_ptr&lt;T&gt;</code>의 <code>const</code> 참조를 매개변수로 받는다면 경고하라. <code>const T*</code> 혹은 <code>const T&amp;</code>를 대신 사용하도록 제안하라.</li>
 </ul>
-<h3 id="r33-widget-unique_ptrltwidgetgtamp"><a name="Rr-reseat"></a>R.33: 함수가 <code>widget</code>을 새로 설정한다는 것을 표현하기 위해 <code>unique_ptr&lt;widget&gt;&amp;</code>를 사용하라</h3>
+<h3 id="r33-widget-unique_ptrwidget"><a name="Rr-reseat"></a>R.33: 함수가 <code>widget</code>을 새로 설정한다는 것을 표현하기 위해 <code>unique_ptr&lt;widget&gt;&amp;</code>를 사용하라</h3>
 <h5 id="reason_20">Reason</h5>
 <p>이렇게 <code>unique_ptr</code>를 사용하는 것은 함수를 문서화하고 함수 호출의 재설정(reseating) 의미구조를 강제한다.</p>
 <h5 id="note_9">Note</h5>
 <p>재설정(reseat)은 "포인터 혹은 스마트 포인터가 다른 개체를 참조하도록 만드는 것"을 의미한다.</p>
 <h5 id="example_17">Example</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">reseat</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// &quot;will&quot; or &quot;might&quot; reseat pointer</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">reseat</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// &quot;will&quot; or &quot;might&quot; reseat pointer</span>
+</code></pre></div>
 
 
 <h5 id="example-bad_7">Example, bad</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">thinko</span><span class="p">(</span><span class="k">const</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// usually not what you want</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">thinko</span><span class="p">(</span><span class="k">const</span> <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// usually not what you want</span>
+</code></pre></div>
 
 
 <h5 id="enforcement_18">Enforcement</h5>
@@ -1403,16 +3452,16 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <li>(단순) 함수가 <code>unique_ptr&lt;T&gt;</code> 매개변수를 lvalue 참조로 받아 새로운 개체를 대입하거나 최소 한 경로에서 <code>reset()</code>을 호출하지 않으면 경고하라. <code>T*</code>혹은 <code>T&amp;</code>의 사용을 제안하라</li>
 <li>(단순) ((기본사항)) 함수가 <code>unique_ptr&lt;T&gt;</code>의 <code>const</code> 참조를 매개변수로 받는다면 경고하라. <code>const T*</code> 혹은 <code>const T&amp;</code>를 대신 사용하도록 제안하라.</li>
 </ul>
-<h3 id="r34-shared_ptrltwidgetgt"><a name="Rr-sharedptrparam-owner"></a>R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 <code>shared_ptr&lt;widget&gt;</code>를 매개변수로 사용하라</h3>
+<h3 id="r34-shared_ptrwidget"><a name="Rr-sharedptrparam-owner"></a>R.34: 함수가 소유자 중 하나라는 것을 표현하기 위해 <code>shared_ptr&lt;widget&gt;</code>를 매개변수로 사용하라</h3>
 <h5 id="reason_21">Reason</h5>
 <p>이는 함수가 소유권을 공유한다는 것을 명시적으로 만든다.</p>
 <h5 id="example-good_1">Example, good</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
 
     <span class="kt">void</span> <span class="nf">may_share</span><span class="p">(</span><span class="k">const</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// &quot;might&quot; retain refcount</span>
 
     <span class="kt">void</span> <span class="nf">reseat</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span>          <span class="c1">// &quot;might&quot; reseat ptr</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_19">Enforcement</h5>
@@ -1421,18 +3470,18 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <li>(쉬움) ((기본사항)) 함수가 <code>shared_ptr&lt;T&gt;</code>를 값 혹은 <code>const</code> 참조로 전달 받으면서 최소 한 경로에서 다른 <code>shared_ptr</code>에 복사하거나 이동하지 않으면 경고하라. 대신 <code>T*</code> 혹은 <code>T&amp;</code>를 사용하도록 제안하라.</li>
 <li>(쉬움) ((기본사항)) <code>shared_ptr&lt;T&gt;</code>을 rvalue 참조로 전달받으면 경고하라. 대신 값으로 전달받도록 제안하라.</li>
 </ul>
-<h3 id="r35-shared_ptrltwidgetgtamp"><a name="Rr-sharedptrparam"></a>R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 <code>shared_ptr&lt;widget&gt;&amp;</code>를 매개변수로 사용하라</h3>
+<h3 id="r35-shared_ptrwidget"><a name="Rr-sharedptrparam"></a>R.35: 함수가 공유 포인터를 재설정한다는 것을 표현하기 위해 <code>shared_ptr&lt;widget&gt;&amp;</code>를 매개변수로 사용하라</h3>
 <h5 id="reason_22">Reason</h5>
 <p>이는 함수가 값을 변경한다는 것을 명시적으로 드러낸다.</p>
 <h5 id="note_10">Note</h5>
 <p>재설정(reseat)은 "포인터 혹은 스마트 포인터가 다른 개체를 참조하도록 만드는 것"을 의미한다.</p>
 <h5 id="example-good_2">Example, good</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
 
     <span class="kt">void</span> <span class="nf">reseat</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span>          <span class="c1">// &quot;might&quot; reseat ptr</span>
 
     <span class="kt">void</span> <span class="nf">may_share</span><span class="p">(</span><span class="k">const</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// &quot;might&quot; retain refcount</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_20">Enforcement</h5>
@@ -1441,16 +3490,16 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <li>(쉬움) ((기본사항)) 함수가 <code>shared_ptr&lt;T&gt;</code>를 값 혹은 <code>const</code> 참조로 전달 받으면서 최소 한 경로에서 다른 <code>shared_ptr</code>에 복사하거나 이동하지 않으면 경고하라. 대신 <code>T*</code> 혹은 <code>T&amp;</code>를 사용하도록 제안하라.</li>
 <li>(쉬움) ((기본사항)) <code>shared_ptr&lt;T&gt;</code>을 rvalue 참조로 전달받으면 경고하라. 대신 값으로 전달받도록 제안하라.</li>
 </ul>
-<h3 id="r36-const-shared_ptrltwidgetgtamp"><a name="Rr-sharedptrparam-const"></a>R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 <code>const shared_ptr&lt;widget&gt;&amp;</code>을 매개변수로 사용하라 ???</h3>
+<h3 id="r36-const-shared_ptrwidget"><a name="Rr-sharedptrparam-const"></a>R.36: 함수가 개체에 대한 참조 카운트를 유지한다는 것을 표현하기 위해 <code>const shared_ptr&lt;widget&gt;&amp;</code>을 매개변수로 사용하라 ???</h3>
 <h5 id="reason_23">Reason</h5>
 <p>작성한 함수의 ???를 명시적으로 만든다.</p>
 <h5 id="example-good_3">Example, good</h5>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">share</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span><span class="p">);</span>            <span class="c1">// share -- &quot;will&quot; retain refcount</span>
 
     <span class="kt">void</span> <span class="nf">reseat</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span>          <span class="c1">// &quot;might&quot; reseat ptr</span>
 
     <span class="kt">void</span> <span class="nf">may_share</span><span class="p">(</span><span class="k">const</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;&amp;</span><span class="p">);</span> <span class="c1">// &quot;might&quot; retain refcount</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_21">Enforcement</h5>
@@ -1471,7 +3520,7 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <p>이를 위해서, 스마트 포인터의 지역 사본을 만들어야 할수도 있다. 이 스마트 포인터는 함수와 그 호출 트리가 지속되는 동안 개체가 살아있도록 만든다.</p>
 <h5 id="example_18">Example</h5>
 <p>다음과 같은 경우를 생각해보라:</p>
-<div class="codehilite"><pre><span></span>    <span class="c1">// global (static or heap), or aliased local ...</span>
+<div class="codehilite"><pre><span></span><code>    <span class="c1">// global (static or heap), or aliased local ...</span>
     <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span> <span class="n">g_p</span> <span class="o">=</span> <span class="p">...;</span>
 
     <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">widget</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span>
@@ -1484,11 +3533,11 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
     <span class="p">{</span>
         <span class="n">g_p</span> <span class="o">=</span> <span class="p">...;</span> <span class="c1">// oops, if this was the last shared_ptr to that widget, destroys the widget</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>다음과 같은 코드가 허용되어선 안된다:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">my_code</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">my_code</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// BAD: passing pointer or reference obtained from a nonlocal smart pointer</span>
         <span class="c1">//      that could be inadvertently reset somewhere inside f or it callees</span>
@@ -1497,11 +3546,11 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
         <span class="c1">// BAD: same reason, just passing it as a &quot;this&quot; pointer</span>
          <span class="n">g_p</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">();</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>이는 쉽게 수정할 수 있다 -- "참조 카운트를 유지하도록" 해당 포인터의 사본을 지역적으로 만드는 것이다:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">my_code</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">my_code</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// cheap: 1 increment covers this entire function and all the call trees below us</span>
         <span class="k">auto</span> <span class="n">pin</span> <span class="o">=</span> <span class="n">g_p</span><span class="p">;</span>
@@ -1512,16 +3561,13 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
         <span class="c1">// GOOD: same reason</span>
         <span class="n">pin</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">();</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h5 id="enforcement_22">Enforcement</h5>
 <ul>
 <li>(쉬움) 비지역 스마트 포인터 변수(<code>unique_ptr</code> 혹은 <code>shared_ptr</code>)로부터 포인터가 참조를 획득하면 경고하라. 혹은 스마트 포인터가 다른 개체에 연결(aliased)되었을 수 있을때 함수 호출에 사용되면 경고하라. <code>shared_ptr</code>라면 해당 포인터를 통해 참조하거나 그 포인터의 지역 사본을 만들도록 제안하라.</li>
 </ul>
-                
-                  
-                
                 
               
               
@@ -1538,34 +3584,34 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Profile/" title="Profile" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../Profile/" title="Profile" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 Profile
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../SL/" title="Standard Library" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../SL/" title="Standard Library" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 Standard Library
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1580,11 +3626,10 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
             Copyright (c) Standard C++ Foundation and its contributors
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -1593,9 +3638,18 @@ widget이 <code>nullptr</code>이 될 수 있다면 <code>widget*</code>를 넘�
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>
