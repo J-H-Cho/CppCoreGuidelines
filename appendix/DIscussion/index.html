@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/appendix/DIscussion/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/appendix/DIscussion/">
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               <a name="S-discussion"></a>Appendix C: Discussion
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,444 +200,451 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -635,7 +654,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -646,9 +666,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1086,9 +1104,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="appendix-c-discussion"><a name="S-discussion"></a>Appendix C: Discussion</h1>
 <p>This section contains follow-up material on rules and sets of rules.
 In particular, here we present further rationale, longer examples, and discussions of alternatives.</p>
@@ -1108,7 +1123,6 @@ In particular, here we present further rationale, longer examples, and discussio
         <span class="n">email</span><span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">last</span> <span class="o">+</span> <span class="s">&quot;@acme.com&quot;</span><span class="p">)</span>
     <span class="p">{}</span>
 </code></pre></div>
-
 
 <p>In this example, <code>email</code> will be constructed before <code>first</code> and <code>last</code> because it is declared first. That means its constructor will attempt to use <code>first</code> and <code>last</code> too soon -- not just before they are set to the desired values, but before they are constructed at all.</p>
 <p>If the class definition and the constructor body are in separate files, the long-distance influence that the order of member variable declarations has over the constructor's correctness will be even harder to spot.</p>
@@ -1174,7 +1188,6 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">D</span><span class="o">::</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">();</span>    <span class="c1">// creating a D object</span>
 </code></pre></div>
 
-
 <p>This design requires the following discipline:</p>
 <ul>
 <li>Derived classes such as <code>D</code> must not expose a public constructor. Otherwise, <code>D</code>'s users could create <code>D</code> objects that don't invoke <code>PostInitialize</code>.</li>
@@ -1211,7 +1224,6 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="p">}</span> <span class="c1">// ~pb invokes correct destructor only when ~Base is virtual</span>
 </code></pre></div>
 
-
 <p>In rarer cases, such as policy classes, the class is used as a base class for convenience, not for polymorphic behavior. It is recommended to make those destructors protected and nonvirtual:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">My_policy</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -1224,7 +1236,6 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">Policy</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">customizable</span> <span class="o">:</span> <span class="n">Policy</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span> <span class="c1">// note: private inheritance</span>
 </code></pre></div>
-
 
 <h5 id="note">Note</h5>
 <p>This simple guideline illustrates a subtle issue and reflects modern uses of inheritance and object-oriented design principles.</p>
@@ -1273,7 +1284,6 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="p">};</span>
 </code></pre></div>
 
-
 <ol>
 <li><code>Nefarious</code> objects are hard to use safely even as local variables:</li>
 </ol>
@@ -1283,7 +1293,6 @@ In particular, here we present further rationale, longer examples, and discussio
             <span class="n">string</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>      <span class="c1">// copy the string</span>
         <span class="p">}</span> <span class="c1">// destroy copy and then n</span>
 </code></pre></div>
-
 
 <p>Here, copying <code>s</code> could throw, and if that throws and if <code>n</code>'s destructor then also throws, the program will exit via <code>std::terminate</code> because two exceptions can't be propagated simultaneously.</p>
 <ol>
@@ -1301,14 +1310,12 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="p">}</span> <span class="c1">// destroy copy and then i</span>
 </code></pre></div>
 
-
 <p>Here, if constructing <code>copy2</code> throws, we have the same problem because <code>i</code>'s destructor now also can throw, and if so we'll invoke <code>std::terminate</code>.</p>
 <ol>
 <li>You can't reliably create global or static <code>Nefarious</code> objects either:</li>
 </ol>
 <div class="codehilite"><pre><span></span><code>    <span class="k">static</span> <span class="n">Nefarious</span> <span class="n">n</span><span class="p">;</span>       <span class="c1">// oops, any destructor exception can&#39;t be caught</span>
 </code></pre></div>
-
 
 <ol>
 <li>You can't reliably create arrays of <code>Nefarious</code>:</li>
@@ -1319,14 +1326,12 @@ In particular, here we present further rationale, longer examples, and discussio
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>The behavior of arrays is undefined in the presence of destructors that throw because there is no reasonable rollback behavior that could ever be devised. Just think: What code can the compiler generate for constructing an <code>arr</code> where, if the fourth object's constructor throws, the code has to give up and in its cleanup mode tries to call the destructors of the already-constructed objects ... and one or more of those destructors throws? There is no satisfactory answer.</p>
 <ol>
 <li>You can't use <code>Nefarious</code> objects in standard containers:</li>
 </ol>
 <div class="codehilite"><pre><span></span><code>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Nefarious</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>   <span class="c1">// this line can std::terminate()</span>
 </code></pre></div>
-
 
 <p>The standard library forbids all destructors used with it from throwing. You can't store <code>Nefarious</code> objects in standard containers or use them with any other part of the standard library.</p>
 <h5 id="note_1">Note</h5>
@@ -1344,7 +1349,6 @@ Besides destructors and deallocation functions, common error-safety techniques r
         <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>(See also Item 56. ???)</p>
 <p>Fortunately, when releasing a resource, the scope for failure is definitely smaller. If using exceptions as the error reporting mechanism, make sure such functions handle all exceptions and other errors that their internal processing might generate. (For exceptions, simply wrap everything sensitive that your destructor does in a <code>try/catch(...)</code> block.) This is particularly important because a destructor might be called in a crisis situation, such as failure to allocate a system resource (e.g., memory, files, locks, ports, windows, or other system objects).</p>
@@ -1375,7 +1379,6 @@ Besides destructors and deallocation functions, common error-safety techniques r
     <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span>   <span class="c1">// pitfall: either fails to compile, or does something suspicious</span>
 </code></pre></div>
 
-
 <p>If you define a destructor, you should not use the compiler-generated copy or move operation; you probably need to define or suppress copy and/or move.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">HANDLE</span> <span class="n">hnd</span><span class="p">;</span>
@@ -1389,7 +1392,6 @@ Besides destructors and deallocation functions, common error-safety techniques r
     <span class="n">X</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span> <span class="c1">// pitfall: either fails to compile, or does something suspicious</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="n">x1</span><span class="p">;</span>   <span class="c1">// pitfall: either fails to compile, or does something suspicious</span>
 </code></pre></div>
-
 
 <p>If you define copying, and any base or member has a type that defines a move operation, you should also define a move operation.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
@@ -1410,7 +1412,6 @@ Besides destructors and deallocation functions, common error-safety techniques r
         <span class="k">return</span> <span class="n">local</span><span class="p">;</span>  <span class="c1">// pitfall: will be inefficient and/or do the wrong thing</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>If you define any of the copy constructor, copy assignment operator, or destructor, you probably should define the others.</p>
 <h5 id="note_4">Note</h5>
@@ -1452,12 +1453,10 @@ Have every resource represented as an object of some class managing its lifetime
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>This class is a resource handle. It manages the lifetime of the <code>T</code>s. To do so, <code>Vector</code> must define or delete <a href="???">the set of special operations</a> (constructors, a destructor, etc.).</p>
 <h5 id="example_4">Example</h5>
 <div class="codehilite"><pre><span></span><code>??? &quot;odd&quot; non-memory resource ???
 </code></pre></div>
-
 
 <h5 id="enforcement">Enforcement</h5>
 <p>The basic technique for preventing leaks is to have every resource owned by a resource handle with a suitable destructor. A checker can find "naked <code>new</code>s". Given a list of C-style allocation functions (e.g., <code>fopen()</code>), a checker can also find uses that are not managed by a resource handle. In general, "naked pointers" can be viewed with suspicion, flagged, and/or analyzed. A complete list of resources cannot be generated without human input (the definition of "a resource" is necessarily too general), but a tool can be "parameterized" with a resource list.</p>
@@ -1476,7 +1475,6 @@ Have every resource represented as an object of some class managing its lifetime
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>If <code>i == 0</code> the file handle for <code>a file</code> is leaked. On the other hand, the <code>ifstream</code> for <code>another file</code> will correctly close its file (upon destruction). If you must use an explicit pointer, rather than a resource handle with specific semantics, use a <code>unique_ptr</code> or a <code>shared_ptr</code> with a custom deleter:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1487,7 +1485,6 @@ Have every resource represented as an object of some class managing its lifetime
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>Better:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1497,7 +1494,6 @@ Have every resource represented as an object of some class managing its lifetime
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_1">Enforcement</h5>
 <p>A checker must consider all "naked pointers" suspicious.
@@ -1531,7 +1527,6 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>The <code>string</code>s of <code>v</code> are destroyed upon exit from <code>bad()</code> and so is <code>v</code> itself. The returned pointer points to unallocated memory on the free store. This memory (pointed into by <code>p</code>) may have been reallocated by the time <code>*p</code> is executed. There may be no <code>string</code> to read and a write through <code>p</code> could easily corrupt objects of unrelated types.</p>
 <h5 id="enforcement_2">Enforcement</h5>
 <p>Most compilers already warn about simple cases and has the information to do more. Consider any pointer returned from a function suspect. Use containers, resource handles, and views (e.g., <code>span</code> known not to be resource handles) to lower the number of cases to be examined. For starters, consider every class with a destructor as resource handle.</p>
@@ -1539,13 +1534,12 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
 <h5 id="reason_5">Reason</h5>
 <p>To provide statically type-safe manipulation of elements.</p>
 <h5 id="example_7">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
         <span class="c1">// ...</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">elem</span><span class="p">;</span>   <span class="c1">// point to sz elements of type T</span>
         <span class="kt">int</span> <span class="n">sz</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h3 id="discussion-return-containers-by-value-relying-on-move-or-copy-elision-for-efficiency"><a name="Cr-value-return"></a>Discussion: Return containers by value (relying on move or copy elision for efficiency)</h3>
 <h5 id="reason_6">Reason</h5>
@@ -1560,7 +1554,6 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
     <span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">get_large_vector</span><span class="p">();</span> <span class="c1">//  return by value is ok, most modern compilers will do copy elision</span>
 </code></pre></div>
 
-
 <h5 id="exception_1">Exception</h5>
 <p>See the Exceptions in <a href="#Rf-out">F.20</a>.</p>
 <h5 id="enforcement_3">Enforcement</h5>
@@ -1572,15 +1565,13 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
 <div class="codehilite"><pre><span></span><code>??? Messing with pointers
 </code></pre></div>
 
-
 <h5 id="note_6">Note</h5>
 <p>If all members are resource handles, rely on the default special operations where possible.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">Named</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="nc">Named</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="n">T</span> <span class="n">value</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>Now <code>Named</code> has a default constructor, a destructor, and efficient copy and move operations, provided <code>T</code> has.</p>
 <h5 id="enforcement_4">Enforcement</h5>
@@ -1589,7 +1580,7 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
 <h5 id="reason_8">Reason</h5>
 <p>It is common to need an initial set of elements.</p>
 <h5 id="example_10">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">Vector</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">);</span>
         <span class="c1">// ...</span>
@@ -1597,7 +1588,6 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
 
     <span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vs</span> <span class="p">{</span> <span class="s">&quot;Nygaard&quot;</span><span class="p">,</span> <span class="s">&quot;Ritchie&quot;</span> <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_5">Enforcement</h5>
 <p>When is a class a container? ???</p>
@@ -1636,15 +1626,15 @@ The use of <code>span</code> and <code>string_span</code> should help a lot (the
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

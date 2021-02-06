@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Templates/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Templates/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Templates
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,294 +302,291 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Templates
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Templates" class="md-nav__link md-nav__link--active">
-      Templates
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -580,9 +594,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -3026,79 +3038,82 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
+
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -3108,7 +3123,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -3119,9 +3135,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -5579,9 +5593,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="t"><a name="S-templates"></a>T: 템플릿과 제네릭 프로그래밍</h1>
 <p>제네릭 프로그래밍(generic programming)은 <strong>타입, 값, 알고리즘을 매개변수로 사용하는 타입과 알고리즘</strong>을 사용한 프로그래밍을 말한다.
 C++에서는 제네릭 프로그래밍을 위한 언어적 장치로 <code>template</code>을 지원하고 있다.</p>
@@ -5687,7 +5698,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <p>일반화. 재사용성. 효율성. 사용자 타입의 일관된 정의를 장려한다.</p>
 <h5 id="example-bad">Example, bad</h5>
 <p>개념적으로, 아래 요구사항은 잘못됐다. 왜냐하면 우리가 원하는 <code>T</code>는 "증가될 수 있다"거나 "추가될 수 있다"는 하위레벨 컨셉 그 이상이다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// requires Incrementable&lt;T&gt;</span>
     <span class="n">T</span> <span class="n">sum1</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="n">T</span> <span class="n">s</span><span class="p">)</span>
     <span class="p">{</span>
@@ -5695,7 +5706,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// requires Simple_number&lt;T&gt;</span>
     <span class="n">T</span> <span class="n">sum2</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="n">T</span> <span class="n">s</span><span class="p">)</span>
     <span class="p">{</span>
@@ -5704,11 +5715,10 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>Incrementable</code>이 <code>+</code>를 지원하지 않고, <code>Simple_number</code>이 <code>+=</code>를 지원하지 않는다고 가정하면 <code>sum1</code>과 <code>sum2</code>의 구현을 과도하게 제약해왔다.
 그리고 이런 경우에는 일반화를 위해 기회를 놓친 것이다.</p>
 <h5 id="example">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// requires Arithmetic&lt;T&gt;</span>
     <span class="n">T</span> <span class="n">sum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="n">T</span> <span class="n">s</span><span class="p">)</span>
     <span class="p">{</span>
@@ -5717,7 +5727,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>Arithmetic</code> 컨셉이 <code>+</code>와 <code>+=</code>를 모두 요구한다고 가정하면, 우리는 <code>sum</code>의 사용자가 두 연산을 지원하는 산술 타입을 제공하도록 제약한 것이다.
 이는 연산을 구현에 필요한 만큼만 요구한 것은 아니다, 하지만 이는 알고리즘의 구현자에게 필요한 만큼의 자유를 부여하며 <code>Arithmetic</code> 타입이 알고리즘 전반에 사용될 수 있다는 것을 보증한다.</p>
@@ -5747,7 +5756,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <p>일반화. 소스 코드의 크기를 최소화한다. 상호운용성. 재사용.</p>
 <h5 id="example_1">Example</h5>
 <p>STL의 기본사항이다. <code>find</code> 알고리즘은 모든 종류의 입력 범위에서 문제없이 작동한다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Val</span><span class="o">&gt;</span>
         <span class="c1">// requires Input_iterator&lt;Iter&gt;</span>
         <span class="c1">//       &amp;&amp; Equality_comparable&lt;Value_type&lt;Iter&gt;, Val&gt;</span>
     <span class="n">Iter</span> <span class="n">find</span><span class="p">(</span><span class="n">Iter</span> <span class="n">b</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">e</span><span class="p">,</span> <span class="n">Val</span> <span class="n">v</span><span class="p">)</span>
@@ -5755,7 +5764,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_3">Note</h5>
 <p>한개 이상의 템플릿 인자타입에 대한 현실적인 필요가 없다면 템플릿을 사용하지 마라.
@@ -5768,7 +5776,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 이는 불안정하고 비효율적인 해결방법을 피한다.  </p>
 <p>STL은 이 접근법을 사용한다.</p>
 <h5 id="example_2">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// requires Regular&lt;T&gt;</span>
     <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -5780,7 +5788,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="n">v</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mf">9.9</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_1">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Container</span> <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -5791,7 +5798,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="n">Container</span> <span class="nf">c</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
     <span class="p">((</span><span class="kt">double</span><span class="o">*</span><span class="p">)</span> <span class="n">c</span><span class="p">.</span><span class="n">elem</span><span class="p">)[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mf">9.9</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>이 코드는 프로그래머의 의도를 직접적으로 표현하지 않는다. 또한 타입시스템과 최적화기(optimizer)가 프로그램의 구조를 알 수 없도록 한다.</p>
 <p>메크로 뒤에서 <code>void*</code>를 숨기는 것은 그저 문제를 어렵게 할 뿐이다. 새로운 혼란을 야기한다.</p>
@@ -5823,7 +5829,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="c1">// implement virtuals</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="example_5">Example</h5>
 <p>동적인 것은 정적인 것을 돕는다: 일반적이고, 편리하며, 정적으로 결합된(bound) 인터페이스를 제공하라. 내부적으로는 동적으로 구현하라. 그렇게 함으로써 일관적인 개체를 만들어라(offer a uniform object layout).  </p>
@@ -5871,7 +5876,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 컨셉은 문서화와 템플릿용 오류 처리를 경이적으로 개선시킨다.
 템플릿 인자에 적용되는 개념을 기술하는 것은 강력한 디자인 도구가 된다.</p>
 <h5 id="example_6">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Val</span><span class="o">&gt;</span>
     <span class="c1">//    requires Input_iterator&lt;Iter&gt;</span>
     <span class="c1">//             &amp;&amp; Equality_comparable&lt;Value_type&lt;Iter&gt;, Val&gt;</span>
     <span class="n">Iter</span> <span class="n">find</span><span class="p">(</span><span class="n">Iter</span> <span class="n">b</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">e</span><span class="p">,</span> <span class="n">Val</span> <span class="n">v</span><span class="p">)</span>
@@ -5880,9 +5885,8 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>위와 같은 의미를 가지지만, 좀 더 간결하게 하자면:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="n">Input_iterator</span> <span class="n">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="n">Input_iterator</span> <span class="n">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Val</span><span class="o">&gt;</span>
     <span class="c1">//    requires Equality_comparable&lt;Value_type&lt;Iter&gt;, Val&gt;</span>
     <span class="n">Iter</span> <span class="n">find</span><span class="p">(</span><span class="n">Iter</span> <span class="n">b</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">e</span><span class="p">,</span> <span class="n">Val</span> <span class="n">v</span><span class="p">)</span>
     <span class="p">{</span>
@@ -5890,13 +5894,12 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_5">Note</h5>
 <p>"컨셉(Concepts)"은 ISO TS에 정의되어 있다: <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4553.pdf">concepts</a>.
 표준 라이브러리 컨셉들의 초안은 다른 ISO TS에 있다: <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/n4569.pdf">ranges</a>
 컨셉은 GCC 6.1이후 버전에서 사용할 수 있다.
 그에 따라, 예시들에서 컨셉 부분은 정형화된 주석으로만 표기할 것이다. 당신이 GCC 6.1이후 버전을 사용한다면, 주석을 해제할 수 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Val</span><span class="o">&gt;</span>
         <span class="k">requires</span> <span class="n">Input_iterator</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;</span>
                <span class="o">&amp;&amp;</span> <span class="n">Equality_comparable</span><span class="o">&lt;</span><span class="n">Value_type</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">Val</span><span class="o">&gt;</span>
     <span class="n">Iter</span> <span class="n">find</span><span class="p">(</span><span class="n">Iter</span> <span class="n">b</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">e</span><span class="p">,</span> <span class="n">Val</span> <span class="n">v</span><span class="p">)</span>
@@ -5904,7 +5907,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_6">Note</h5>
 <p><code>typename</code>(또는 <code>auto</code>)는 가장 제약이 작은 컨셉이다.
@@ -5920,20 +5922,18 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <h5 id="note_7">Note</h5>
 <p>새로운 일반화 라이브러리를 만들지 않는 한 필요한 많은 컨셉이 이미 표준 라이브러리 안에 정의되어 있다.</p>
 <h5 id="example-using-ts-concepts">Example (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// 이런 컨셉을 정의할 필요 없다: GSL에 Sortable이 정의되어 있다</span>
-    <span class="k">concept</span> <span class="n">Ordered_container</span> <span class="o">=</span> <span class="n">Sequence</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Random_access</span><span class="o">&lt;</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Ordered</span><span class="o">&lt;</span><span class="n">Value_type</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+    <span class="k">concept</span> <span class="nc">Ordered_container</span> <span class="o">=</span> <span class="n">Sequence</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Random_access</span><span class="o">&lt;</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Ordered</span><span class="o">&lt;</span><span class="n">Value_type</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 
     <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="n">Ordered_container</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>이 <code>Ordered_container</code>는 아주 타당해 보인다. 그러나 GSL(그리고 Range TS)안에 있는 <code>Sortable</code> 컨셉과 아주 비슷하다.
 더 좋은가? 더 올바른가? <code>sort</code>에 대한 표준 요구사항을 정확하게 반영하고 있는가?
 <code>Sortable</code>을 사용하는 것이 더 좋고 단순하다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="n">Sortable</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>   <span class="c1">// 더 나은 방법</span>
 </code></pre></div>
-
 
 <h5 id="note_8">Note</h5>
 <p>"표준" 컨셉들은 ISO 표준화 과정에서 발전하고 있다.</p>
@@ -5954,7 +5954,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="n">String</span><span class="o">&amp;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>   <span class="c1">// good (String is a GSL concept)</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_6">Enforcement</h5>
 <ul>
 <li>???</li>
@@ -5967,7 +5966,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <p>가독성. 직접적인 아이디어의 표현.</p>
 <h5 id="example-using-ts-concepts_2">Example (using TS concepts)</h5>
 <p><code>T</code>는 <code>Sortable</code> 컨셉을 만족하기 위해서는:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>       <span class="c1">// Correct but verbose: &quot;The parameter is</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>       <span class="c1">// Correct but verbose: &quot;The parameter is</span>
     <span class="c1">//    requires Sortable&lt;T&gt;   // of type T which is the name of a type</span>
     <span class="kt">void</span> <span class="n">sort</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>             <span class="c1">// that is Sortable&quot;</span>
 
@@ -5976,7 +5975,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 
     <span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="n">Sortable</span><span class="o">&amp;</span><span class="p">);</span>      <span class="c1">// Best (assuming support for concepts): &quot;The parameter is Sortable&quot;</span>
 </code></pre></div>
-
 
 <p>짧은 버전이 우리가 말하는 방법과 더 잘 일치한다. 많은 템플릿은 <code>template</code> 키워드를 사용할 필요가 없다는 점에 주목하라.</p>
 <h5 id="note_10">Note</h5>
@@ -6001,8 +5999,8 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 단순한 제약조건, <code>+</code>연산자를 가진다거나, <code>&gt;</code>연산자를 가지는 것, 처럼 독자적으로 기술되어선 의미가 없다.
 유저 코드보다는 의미있는 개념을 위한 블록을 구성하는데 사용되어야 한다.</p>
 <h5 id="example-bad-using-ts-concepts">Example, bad (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="k">concept</span> <span class="n">Addable</span> <span class="o">=</span> <span class="n">has_plus</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>    <span class="c1">// bad; 불충분하다</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">concept</span> <span class="nc">Addable</span> <span class="o">=</span> <span class="n">has_plus</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>    <span class="c1">// bad; 불충분하다</span>
 
     <span class="k">template</span><span class="o">&lt;</span><span class="n">Addable</span> <span class="n">N</span><span class="o">&gt;</span> <span class="k">auto</span> <span class="n">algo</span><span class="p">(</span><span class="k">const</span> <span class="n">N</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">N</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// use two numbers</span>
     <span class="p">{</span>
@@ -6019,16 +6017,15 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="k">auto</span> <span class="n">zz</span> <span class="o">=</span> <span class="n">algo</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>   <span class="c1">// zz = &quot;79&quot;</span>
 </code></pre></div>
 
-
 <p>아마도 문자열 접합일 수도 있고, 실수였을 수도 있다. 여기서 뺄샘 연산을 지원하도록 한다면 완전히 다른 타입들로만 사용가능할 것이다.
 예시의 <code>Addable</code>은 교환법칙이 성립해야 한다는 수학적인 규칙에 위배된다: <code>a+b == b+a</code></p>
 <h5 id="note_11">Note</h5>
 <p>컨셉의 진정한 특징은 문법 제약과 달리 의미구조를 기술하는 능력이 있다는 것이다.</p>
 <h5 id="example-using-ts-concepts_3">Example (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="c1">// The operators +, -, *, and / for a number are assumed to </span>
     <span class="c1">//  follow the usual mathematical rules</span>
-    <span class="k">concept</span> <span class="n">Number</span> <span class="o">=</span> <span class="n">has_plus</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">concept</span> <span class="nc">Number</span> <span class="o">=</span> <span class="n">has_plus</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
                      <span class="o">&amp;&amp;</span> <span class="n">has_minus</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
                      <span class="o">&amp;&amp;</span> <span class="n">has_multiply</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
                      <span class="o">&amp;&amp;</span> <span class="n">has_divide</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
@@ -6048,7 +6045,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="k">auto</span> <span class="n">zz</span> <span class="o">=</span> <span class="n">algo</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">);</span>   <span class="c1">// error: string is not a Number</span>
 </code></pre></div>
 
-
 <h5 id="note_12">Note</h5>
 <p>다수의 연산으로 정의한 컨셉은 하나의 연산으로 정의한 컨셉보다 의도치 않은 타입을 허용할 가능성이 낮다.</p>
 <h5 id="enforcement_8">Enforcement</h5>
@@ -6065,9 +6061,8 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <h5 id="note_13">Note</h5>
 <p>이 규칙은 보다 일반적인 규칙인 <a href="#Rt-low">컨셉은 의미구조적으로 적절해야 한다</a>에서 파생된 것이다.</p>
 <h5 id="example-bad-using-ts-concepts_1">Example, bad (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="n">Subtractable</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="nc">Subtractable</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">;</span> <span class="p">};</span>
 </code></pre></div>
-
 
 <p>문맥적으로 무의미 하다. 
 최소한 <code>+</code>, <code>-</code> 정도는 있어야 쓸만하다.</p>
@@ -6102,7 +6097,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이는 아주 작은 예시지만, 사용자들의 기대에 어긋나고 코드를 제약한다(surprising and constraining).
 능률을 떨어뜨릴 수도 있다.</p>
 <p>이 규칙은 연산들이 수학적으로 일관성 있는 집합(coherent set of operations)을 반영해야 한다는 관점을 뒷받침한다.</p>
@@ -6131,7 +6125,6 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>모든 연산자를 정의해야 한다는 것이 번거로울 수는 있지만, 어려운 것은 아니다.
 이상적으로는, 언어가 비교 연산들을 기본적으로 제공함으로써 이 규칙을 지원해야 한다.</p>
 <h5 id="enforcement_9">Enforcement</h5>
@@ -6149,7 +6142,7 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 비형식적으로든 형식적으로든 의미구조를 표현하는 것은 컨셉을 이해할 수 있게 만든다. 동시에 개념적인 오류를 잡아내도록 한다.</p>
 <p>의미구조를 기술할 수 있다는 것은 강력한 디자인 도구이다.</p>
 <h5 id="example-using-ts-concepts_4">Example (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// 사칙연산은 기본적인 수학 규칙들을 따른다고 가정한다</span>
         <span class="c1">// axiom(T a, T b) { </span>
         <span class="c1">//      a + b == b + a; </span>
@@ -6157,14 +6150,13 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
         <span class="c1">//      a * (b + c) == a * b + a * c; </span>
         <span class="c1">//      /*...*/ </span>
         <span class="c1">// }</span>
-        <span class="k">concept</span> <span class="n">Number</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">concept</span> <span class="nc">Number</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
             <span class="p">{</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">;</span>   <span class="c1">// the result of a + b is convertible to T</span>
             <span class="p">{</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">;</span>
             <span class="p">{</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">;</span>
             <span class="p">{</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">;</span>
         <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_15">Note</h5>
 <p>이것은 수학적 공리를 표현한 것이다.
@@ -6181,13 +6173,12 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 좋은 의미구조는 노력과 시간이 필요하다.
 불완전한 제약조건이라도 유용할 수 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// balancer for a generic binary tree</span>
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Node</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="kt">bool</span> <span class="n">Balancer</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="nc">bool</span> <span class="n">Balancer</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">add_fixup</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
         <span class="n">touch</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
         <span class="n">detach</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>위에 따르면 <code>Balancer</code>는 최소한 트리의 <code>Node</code>에 대한 3개 연산을 지원해야 한다.
 하지만 우리는 더 자세한 의미구조를 명시할 준비가 되지 않았는데, 새로운 형태의 균형 트리(balanced tree)가 더 많은 연산을 필요로 하거나 초기 디자인에서 모든 노드에 적용할 정확한 의미구조를 확정하기 어려울 수 있기 때문이다.</p>
@@ -6202,13 +6193,12 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <h5 id="reason_12">Reason</h5>
 <p>그렇지 않으면 컴파일러가 자동으로 구분할 수 없다.</p>
 <h5 id="example-using-ts-concepts_5">Example (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="k">concept</span> <span class="kt">bool</span> <span class="n">Input_iter</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">I</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span> <span class="o">++</span><span class="n">iter</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span>
+    <span class="k">concept</span> <span class="nc">bool</span> <span class="n">Input_iter</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">I</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span> <span class="o">++</span><span class="n">iter</span><span class="p">;</span> <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="k">concept</span> <span class="kt">bool</span> <span class="n">Fwd_iter</span> <span class="o">=</span> <span class="n">Input_iter</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="k">requires</span><span class="p">(</span><span class="n">I</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span> <span class="n">iter</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span>
+    <span class="k">concept</span> <span class="nc">bool</span> <span class="n">Fwd_iter</span> <span class="o">=</span> <span class="n">Input_iter</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="k">requires</span><span class="p">(</span><span class="n">I</span> <span class="n">iter</span><span class="p">)</span> <span class="p">{</span> <span class="n">iter</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <p>컴파일러는 요구된 연산들에 기반해서 어떤것이 필요한 연산인지 결정(determine refinement)할 수 있다. (예제에서는 <code>++</code>에 해당한다)
 이는 타입을 구현하는 측의 부담을 줄여주는데, "컨셉을 만족하도록" 특별한 선언을 작성할 필요가 없기 때문이다.
@@ -6221,23 +6211,21 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <h5 id="reason_13">Reason</h5>
 <p>프로그래머가 차별화하지 않는다면, 동일한 문법을 요구하지만 의미구조가 다른 두 컨셉은 모호함을 낳는다.</p>
 <h5 id="example-using-ts-concepts_6">Example (using TS concepts)</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span>    <span class="c1">// iterator providing random access</span>
-    <span class="k">concept</span> <span class="kt">bool</span> <span class="n">RA_iter</span> <span class="o">=</span> <span class="p">...;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span>    <span class="c1">// iterator providing random access</span>
+    <span class="k">concept</span> <span class="nc">bool</span> <span class="n">RA_iter</span> <span class="o">=</span> <span class="p">...;</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span>    <span class="c1">// iterator providing random access to contiguous data</span>
-    <span class="k">concept</span> <span class="kt">bool</span> <span class="n">Contiguous_iter</span> <span class="o">=</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span>    <span class="c1">// iterator providing random access to contiguous data</span>
+    <span class="k">concept</span> <span class="nc">bool</span> <span class="n">Contiguous_iter</span> <span class="o">=</span>
         <span class="n">RA_iter</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">is_contiguous</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span>  <span class="c1">// using is_contiguous trait</span>
 </code></pre></div>
 
-
 <p>라이브러리 프로그래머가 <code>is_contiguous</code>를 적절하게 정의해야 한다.</p>
 <p>컨셉으로 Tag 클래스를 감싸면 비슷한 표현이 된다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="n">Contiguous</span> <span class="o">=</span> <span class="n">is_contiguous</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="nc">Contiguous</span> <span class="o">=</span> <span class="n">is_contiguous</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">;</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">I</span><span class="o">&gt;</span>
-    <span class="k">concept</span> <span class="kt">bool</span> <span class="n">Contiguous_iter</span> <span class="o">=</span> <span class="n">RA_iter</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Contiguous</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">I</span><span class="o">&gt;</span>
+    <span class="k">concept</span> <span class="nc">bool</span> <span class="n">Contiguous_iter</span> <span class="o">=</span> <span class="n">RA_iter</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">Contiguous</span><span class="o">&lt;</span><span class="n">I</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>이렇게 하면 라이브러리 프로그래머가 <code>is_contiguous</code> 특성(trait)을 적절히 정의해야만 한다.</p>
 <h5 id="note_18">Note</h5>
@@ -6257,45 +6245,41 @@ C++에서는 이런 요구사항을 컨셉(concepts)이라는 컴파일 시간 �
 <p>부정(negation)을 사용해 서로 대비되는 요구사항을 가지는 함수들은 믿고 쓰기 어렵다(brittle).</p>
 <h5 id="example-using-ts-concepts_7">Example (using TS concepts)</h5>
 <p>처음에는, 사람들이 보완적인 요구사항을 가진 함수를 정의하려고 할 것이다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="k">requires</span> <span class="o">!</span><span class="n">C</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>    <span class="c1">// bad</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="k">requires</span> <span class="n">C</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
 </code></pre></div>
-
 
 <p>아래 코드가 더 낫다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>   <span class="c1">// general template</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>   <span class="c1">// general template</span>
         <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>   <span class="c1">// specialization by concept</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>   <span class="c1">// specialization by concept</span>
         <span class="k">requires</span> <span class="n">C</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
 </code></pre></div>
-
 
 <p><code>C&lt;T&gt;</code>가 만족되지 않을 때만 컴파일러는 제한조건이 없는 템플릿을 선택할 것이다.
 제약조건이 없는 <code>f()</code>를 정의하고 싶지 않다면 그냥 없애라.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">()</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>컴파일러는 오버로드된 함수를 선택할 것이고 적당한 에러를 낼 것이다.</p>
 <h5 id="note_19">Note</h5>
 <p>불행하게도 <code>enable_if</code>를 사용하는 코드에서 서로 대비되는 제약을 자주 확인할 수 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="n">enable_if</span><span class="o">&lt;!</span><span class="n">C</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>   <span class="c1">// bad</span>
     <span class="n">f</span><span class="p">();</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">C</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>
     <span class="n">f</span><span class="p">();</span>
 </code></pre></div>
-
 
 <h5 id="note_20">Note</h5>
 <p>Complementary requirements on one requirements is sometimes (wrongly) considered manageable.
@@ -6305,7 +6289,6 @@ However, for two or more requirements the number of definitions needs can go up 
     C1&lt;T&gt; &amp;&amp; !C2&lt;T&gt;
     !C1&lt;T&gt; &amp;&amp; !C2&lt;T&gt;
 </code></pre></div>
-
 
 <p>Now the opportunities for errors multiply.</p>
 <h5 id="enforcement_13">Enforcement</h5>
@@ -6319,19 +6302,17 @@ However, for two or more requirements the number of definitions needs can go up 
 형변환도 고려해야 한다. 모든 타입특성의 이름을 기억할 필요가 없다.</p>
 <h5 id="example-using-ts-concepts_8">Example (using TS concepts)</h5>
 <p><code>Equality</code>를 아래처럼 정의하고 싶을 것이다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="n">Equality</span> <span class="o">=</span> <span class="n">has_equal</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">has_not_equal</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="nc">Equality</span> <span class="o">=</span> <span class="n">has_equal</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="n">has_not_equal</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>표준에서 <code>EqualityComparable</code>을 지원하는게 더 낫고 쉬울 것이라는 점은 명백하다. 하지만 - 예를 들어 - 그런 컨셉을 정의해야 한다면:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="n">Equality</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">concept</span> <span class="nc">Equality</span> <span class="o">=</span> <span class="k">requires</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">bool</span> <span class="o">==</span> <span class="p">{</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="p">}</span>
         <span class="kt">bool</span> <span class="o">==</span> <span class="p">{</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span> <span class="p">}</span>
         <span class="c1">// axiom { !(a == b) == (a != b) }</span>
         <span class="c1">// axiom { a = b; =&gt; a == b }  // =&gt; means &quot;implies&quot;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>Equality</code>의 정의 안에 무의미한 컨셉인 <code>has_equal</code>와 <code>has_not_equal</code> 2개를 정의하는 것 대신에, 위와 같은 형태를 지향하라.
 여기서 "무의미한"이란 <code>has_equal</code>의 의미구조를 독럽적으로(in isolation) 정의할 수 없다는 것을 의미한다.</p>
@@ -6356,12 +6337,10 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="k">auto</span> <span class="n">z</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Greater_than</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>        <span class="c1">// function object: carries the needed data</span>
 </code></pre></div>
 
-
 <p>물론 저런 함수들을 <code>auto</code> 또는 컨셉을 사용해서 일반화 할 수 있다. 예를 들어:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">[](</span><span class="n">Ordered</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">;</span> <span class="p">});</span> <span class="c1">// Ordered 컨셉을 만족하는 타입</span>
     <span class="k">auto</span> <span class="n">z1</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">;</span> <span class="p">});</span>    <span class="c1">// 해당 타입이 &gt; 연산자를 지원하기를 기대한다</span>
 </code></pre></div>
-
 
 <h5 id="note_21">Note</h5>
 <p>람다 표현식은 함수개체를 생성한다.</p>
@@ -6385,7 +6364,6 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>아래처럼 다시 작성되어야 한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="n">Sortable</span> <span class="n">S</span><span class="o">&gt;</span>
         <span class="k">requires</span> <span class="n">Streamable</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span>
@@ -6396,7 +6374,6 @@ However, for two or more requirements the number of definitions needs can go up 
         <span class="k">if</span> <span class="p">(</span><span class="n">debug</span><span class="p">)</span> <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;exit sort( &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span>  <span class="s">&quot;)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>결론적으로 <code>Sortable</code>에는 <code>iostream</code>을 지원한다는 요구사항이 전혀 없다는 것이다.
 반대로 말해, 정렬이라는 개념은 디버깅과는 완전히 무관하다.</p>
@@ -6419,32 +6396,30 @@ However, for two or more requirements the number of definitions needs can go up 
 템플릿 별칭은 타입을 계산하기 위한 많은 특성(traits)을 사용하는 것을 대체해준다.
 타입 특성을 숨기기 위해 쓰일 수도 있다.</p>
 <h5 id="example_8">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">N</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">N</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Matrix</span> <span class="p">{</span>
         <span class="c1">// ...</span>
-        <span class="k">using</span> <span class="n">Iterator</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="p">;</span>
+        <span class="k">using</span> <span class="n">Iterator</span> <span class="o">=</span> <span class="k">typename</span> <span class="nc">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="p">;</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>Matrix</code> 사용자들이 그 요소가 <code>vector</code>에 저장되는 점을 알 필요가 없게 한다. 반복적으로 <code>typename std::vector&lt;T&gt;::</code>를 타이핑하는 것을 줄여준다.</p>
 <h5 id="example_9">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">user</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">c</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
-        <span class="k">typename</span> <span class="n">container_traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value_type</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// bad, verbose</span>
+        <span class="k">typename</span> <span class="nc">container_traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value_type</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// bad, verbose</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="k">typename</span> <span class="n">container_traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="k">typename</span> <span class="nc">container_traits</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">value_type</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>이것은 <code>value_type</code>을 쓰는 사용자가 <code>value_type</code>의 구현을 알 필요가 없게 한다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">user2</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">c</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
@@ -6452,7 +6427,6 @@ However, for two or more requirements the number of definitions needs can go up 
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_25">Note</h5>
 <p>간단하고 일반적인 사용은 "특성(traits)으로 감싸라!"라고 할 수 있겠다</p>
@@ -6471,13 +6445,12 @@ However, for two or more requirements the number of definitions needs can go up 
 
     <span class="k">using</span> <span class="n">PFI2</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>   <span class="c1">// OK, preferred</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">typedef</span> <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">PFT</span><span class="p">)(</span><span class="n">T</span><span class="p">);</span>      <span class="c1">// error</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">using</span> <span class="n">PFT2</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="n">T</span><span class="p">);</span>   <span class="c1">// OK</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_18">Enforcement</h5>
 <ul>
@@ -6491,7 +6464,6 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="k">auto</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Ophelia&quot;</span><span class="n">s</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">);</span>         <span class="c1">// better; deduced type</span>
 </code></pre></div>
 
-
 <p>문자열이 C 스타일이 아니라 <code>std::string</code>이라는 것을 보장하기 위해 <code>s</code>를 뒤쪽에 붙인 것에 주목하라.</p>
 <h5 id="note_26">Note</h5>
 <p>당신이 간단한 <code>make_T</code> 함수를 작성하듯이 컴파일러도 그렇게 할 수 있다. 아마 미래에는 <code>make_T</code> 함수가 불필요해질 것이다.</p>
@@ -6501,14 +6473,12 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="n">list</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">*&gt;</span> <span class="n">lst</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h5 id="note_27">Note</h5>
 <p>C++ 17 에서는 이 규칙처럼 템플릿 인자들을 생성자의 실행 인자들로부터 바로 유도할 수 있도록 하고 있다.
 <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0091r1.html">Template parameter deduction for constructors (Rev. 3)</a>.</p>
 <p>예를 들어:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">tuple</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Hamlet&quot;</span><span class="n">s</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">};</span> <span class="c1">// deduced: tuple&lt;int, string, double&gt;</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_19">Enforcement</h5>
 <p>명시적으로 특수화된 타입이 사용된 인자들의 타입과 정확히 일치하는 부분을 지적하라.</p>
@@ -6533,7 +6503,6 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// error: no default constructor</span>
 </code></pre></div>
 
-
 <h5 id="note_28">Note</h5>
 <p><code>SemiRegular</code> 타입은 기본생성이 가능하다.</p>
 <h5 id="enforcement_20">Enforcement</h5>
@@ -6546,8 +6515,8 @@ However, for two or more requirements the number of definitions needs can go up 
 이는 ADL(Argument Dependent Lookup)이 사용되었을때 특히 짜증나고 위험한 코드가 된다. 일반적인 이름(common name)이 사용되면 이 문제가 더 자주 발생할 수 있다.</p>
 <h5 id="example_13">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">namespace</span> <span class="n">Bad</span> <span class="p">{</span>
-        <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">m</span><span class="p">;</span> <span class="p">};</span>
-        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+        <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">m</span><span class="p">;</span> <span class="p">};</span>
+        <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">)</span> <span class="p">{</span> 
             <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Bad</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> 
             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> 
@@ -6570,7 +6539,6 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 코드는 <code>T0</code>와 <code>Bad</code>를 출력한다.</p>
 <p>여기서 <code>Bad</code>에 있는 <code>==</code> 중복정의가 문제를 일으키고 있다, 실제 코드에서 문제를 눈치챌 수 있었는가?
 문제는 <code>v.size()</code>가 <code>unsigned</code> 정수를 반환하고, 이것이 타입 변환을 필요로하는 지역 <code>==</code> 대신 타입변환이 필요 없는 <code>Bad</code>의 <code>==</code>를 선택하도록 한다는 것이다.
@@ -6591,7 +6559,6 @@ However, for two or more requirements the number of definitions needs can go up 
 <div class="codehilite"><pre><span></span><code>    enable_if&lt;???&gt;
 </code></pre></div>
 
-
 <h5 id="note_31">Note</h5>
 <p><a href="#T.25">complementary constraints</a>에 유의하라.
 컨셉 오버로딩을 <code>enable_if</code>로 꾸미는(fake) 것은 오류에 취약한 설계 기법을 쓰도록 할 수도 있다.</p>
@@ -6606,7 +6573,6 @@ However, for two or more requirements the number of definitions needs can go up 
 <h5 id="example_15">Example</h5>
 <div class="codehilite"><pre><span></span><code>???
 </code></pre></div>
-
 
 <h5 id="exception_1">Exception</h5>
 <p><code>std::function</code>와 같은 경우처럼 때로는 타입제거가 적절할 수 있다.</p>
@@ -6623,13 +6589,13 @@ However, for two or more requirements the number of definitions needs can go up 
 예상치 못한 의존성 오류 발생을 최소화.
 툴 작성을 쉽게 한다.</p>
 <h5 id="example_16">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">C</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">C</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">sort</span><span class="p">(</span><span class="n">C</span><span class="o">&amp;</span> <span class="n">c</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">c</span><span class="p">));</span> <span class="c1">// 필요하고 실용적인 의존성</span>
     <span class="p">}</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="o">&gt;</span>
     <span class="n">Iter</span> <span class="n">algo</span><span class="p">(</span><span class="n">Iter</span> <span class="n">first</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">last</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(;</span> <span class="n">first</span> <span class="o">!=</span> <span class="n">last</span><span class="p">;</span> <span class="o">++</span><span class="n">first</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">*</span><span class="n">first</span><span class="p">);</span> <span class="c1">// 잠재적 의존성: 어떤 sqrt를 의미하는 것인가?</span>
@@ -6639,7 +6605,6 @@ However, for two or more requirements the number of definitions needs can go up 
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_33">Note</h5>
 <p>템플릿들은 일반적으로 헤더 파일들에 정의되기 때문에 <code>.cpp</code>파일에서 <code>#include</code>순서의 영향을 받을 소지가 더 크다(more vulnerable).</p>
@@ -6655,11 +6620,11 @@ However, for two or more requirements the number of definitions needs can go up 
 <p>템플릿 매개변수로 쓰이지 않는 멤버는 구체적인 템플릿 매개변수를 제외하고 사용될 수 없다.
 이는 보통 템플릿 사용을 제한하고 코드 사이즈를 증가시킨다.</p>
 <h5 id="example-bad_2">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">A</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="p">{}</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">A</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="p">{}</span><span class="o">&gt;</span>
         <span class="c1">// requires Regular&lt;T&gt; &amp;&amp; Allocator&lt;A&gt;</span>
     <span class="k">class</span> <span class="nc">List</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
-        <span class="k">struct</span> <span class="n">Link</span> <span class="p">{</span>   <span class="c1">// does not depend on A</span>
+        <span class="k">struct</span> <span class="nc">Link</span> <span class="p">{</span>   <span class="c1">// does not depend on A</span>
             <span class="n">T</span> <span class="n">elem</span><span class="p">;</span>
             <span class="n">T</span><span class="o">*</span> <span class="n">pre</span><span class="p">;</span>
             <span class="n">T</span><span class="o">*</span> <span class="n">suc</span><span class="p">;</span>
@@ -6678,19 +6643,18 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">My_allocator</span><span class="o">&gt;</span> <span class="n">lst2</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>아무 문제 없어 보인다.
 하지만 이 코드에서 <code>Link</code>는 allocator에 종속적이다(비록 allocator를 사용하지 않더라도).
 이런 코드는 중복적인 실체화(instantiation)가 발생하도록 강제하고, 실제 사례에서는 생각 이상의 비용을 발생시킬 수 있다.
 일반적으로, 이에 대한 해결책은 최소한의 템플릿 매개변수로 내포된 클래스(nested class)를 분리하는 것이다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">Link</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">Link</span> <span class="p">{</span>
         <span class="n">T</span> <span class="n">elem</span><span class="p">;</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">pre</span><span class="p">;</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">suc</span><span class="p">;</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">A</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="p">{}</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">A</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">allocator</span><span class="p">{}</span><span class="o">&gt;</span>
         <span class="c1">// requires Regular&lt;T&gt; &amp;&amp; Allocator&lt;A&gt;</span>
     <span class="k">class</span> <span class="nc">List2</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -6707,7 +6671,6 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">My_allocator</span><span class="o">&gt;</span> <span class="n">lst2</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>어떤 이들은 <code>Link</code> 타입이 <code>List</code>안에 숨겨지지 않음으로써 템플릿 매개변수 충돌로 인한 오류가 생길 것 같지만 실제로는 제대로 구현된다는 것을 알게 되었다. 이런 기교(technique)를 
 <a href="http://www.open-std.org/jtc1/sc22/WG21/docs/papers/2009/n2911.pdf">SCARY</a>라 한다.</p>
 <p>해당 문서에 따르면:
@@ -6721,7 +6684,7 @@ However, for two or more requirements the number of definitions needs can go up 
 <h5 id="reason_27">Reason</h5>
 <p>템플릿 매개변수를 명시하거나 템플릿을 실체화시키지 않고도 상위 클래스의 멤버를 사용하게 한다. </p>
 <h5 id="example_17">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="k">enum</span> <span class="p">{</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="p">};</span>
@@ -6729,20 +6692,18 @@ However, for two or more requirements the number of definitions needs can go up 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>???</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Foo_base</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Foo_base</span> <span class="p">{</span>
         <span class="k">enum</span> <span class="p">{</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="p">};</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Foo</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo_base</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="note_35">Note</h5>
 <p>이 규칙을 좀 더 일반화 하자면 </p>
@@ -6763,7 +6724,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     ??? representation specialization ?
 </code></pre></div>
 
-
 <h5 id="note_36">Note</h5>
 <p>???</p>
 <h5 id="enforcement_27">Enforcement</h5>
@@ -6777,12 +6737,12 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 </ul>
 <h5 id="example_19">Example</h5>
 <p><code>std::copy</code>를 단순화 하면 다음과 같다 (메모리 상에서 인접하지 않을 가능성을 배제하였다).</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">pod_tag</span> <span class="p">{};</span>
-    <span class="k">struct</span> <span class="n">non_pod_tag</span> <span class="p">{};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">pod_tag</span> <span class="p">{};</span>
+    <span class="k">struct</span> <span class="nc">non_pod_tag</span> <span class="p">{};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="n">copy_trait</span> <span class="p">{</span> <span class="k">using</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">non_pod_tag</span><span class="p">;</span> <span class="p">};</span>   <span class="c1">// T is not &quot;plain old data&quot;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">struct</span> <span class="nc">copy_trait</span> <span class="p">{</span> <span class="k">using</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">non_pod_tag</span><span class="p">;</span> <span class="p">};</span>   <span class="c1">// T is not &quot;plain old data&quot;</span>
 
-    <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="n">copy_trait</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">using</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">pod_tag</span><span class="p">;</span> <span class="p">};</span>         <span class="c1">// int is &quot;plain old data&quot;</span>
+    <span class="k">template</span><span class="o">&lt;&gt;</span> <span class="k">struct</span> <span class="nc">copy_trait</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">using</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">pod_tag</span><span class="p">;</span> <span class="p">};</span>         <span class="c1">// int is &quot;plain old data&quot;</span>
 
     <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">Iter</span><span class="o">&gt;</span>
     <span class="n">Out</span> <span class="n">copy_helper</span><span class="p">(</span><span class="n">Iter</span> <span class="n">first</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">last</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">out</span><span class="p">,</span> <span class="n">pod_tag</span><span class="p">)</span>
@@ -6799,7 +6759,7 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">Itert</span><span class="o">&gt;</span>
     <span class="n">Out</span> <span class="n">copy</span><span class="p">(</span><span class="n">Iter</span> <span class="n">first</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">last</span><span class="p">,</span> <span class="n">Iter</span> <span class="n">out</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="n">copy_helper</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="k">typename</span> <span class="n">copy_trait</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;::</span><span class="n">tag</span><span class="p">{})</span>
+        <span class="k">return</span> <span class="nf">copy_helper</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">copy_trait</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;::</span><span class="n">tag</span><span class="p">{})</span>
     <span class="p">}</span>
 
     <span class="kt">void</span> <span class="n">use</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">vi</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">vi2</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">vs</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">vs2</span><span class="p">)</span>
@@ -6808,7 +6768,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
         <span class="n">copy</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">vs2</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span> <span class="c1">// uses a loop calling copy constructors</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>위 코드는 컴파일 시간에 알고리즘을 선택하는 일반적이고 강력한 방법을 보여준다.</p>
 <h5 id="note_37">Note</h5>
@@ -6827,7 +6786,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_28">Enforcement</h5>
 <p>???</p>
 <h3 id="t67-irregular-types"><a name="Rt-specialization2"></a>T.67: 정규적이지 않은 타입(irregular types)들의 대안적 구현을 제공할 때는 특수화를 사용하라</h3>
@@ -6841,17 +6799,16 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="reason_31">Reason</h5>
 <p><code>()</code> 는 문법적으로 모호한 경우가 발생한다(vulnerable to grammar ambiguities).</p>
 <h5 id="example_21">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">U</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="n">T</span> <span class="n">t</span><span class="p">,</span> <span class="n">U</span> <span class="n">u</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">T</span> <span class="n">v1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>    <span class="c1">// v1은 변수를 사용하는 함수인가?</span>
+        <span class="n">T</span> <span class="nf">v1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>    <span class="c1">// v1은 변수를 사용하는 함수인가?</span>
         <span class="n">T</span> <span class="n">v2</span> <span class="p">{</span><span class="n">x</span><span class="p">};</span>   <span class="c1">// v2가 변수라는 것을 바로 알 수 있다</span>
         <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="n">T</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>  <span class="c1">// 개체 생성인가? 타입 변환인가?</span>
     <span class="p">}</span>
 
     <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;asdf&quot;</span><span class="p">);</span> <span class="c1">// bad: cast from const char* to int</span>
 </code></pre></div>
-
 
 <blockquote>
 <p>참고: <a href="https://youtu.be/ltCgzYcpFUI?t=350">Why C++ Sails When the Vasa Sank</a></p>
@@ -6895,7 +6852,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>trait은 보통 타입을 계산하기 위한 타입이거나, 값을 계산하는 <code>constexpr</code> 함수이거나, 사용자의 타입으로 특수화되는 전통적인 traits 템플릿을 의미한다.</p>
 <h5 id="note_38">Note</h5>
 <p><code>t</code>값으로 템플릿 타입 매개변수로 된 <code>helper(t)</code>함수를 호출하려고 한다면, <code>::detail</code> 네임스페이스에 함수를 두고 <code>detail::helper(t);</code>로 호출하라.
@@ -6911,15 +6867,15 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="reason_33">Reason</h5>
 <p>함수도 많고 가상함수도 많은 클래스 계층구조를 템플릿화하면 코드가 폭발적으로 증가할 수 있다.</p>
 <h5 id="example-bad_3">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">Container</span> <span class="p">{</span>         <span class="c1">// an interface</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">Container</span> <span class="p">{</span>         <span class="c1">// an interface</span>
         <span class="k">virtual</span> <span class="n">T</span><span class="o">*</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
-        <span class="k">virtual</span> <span class="n">T</span><span class="o">*</span> <span class="nf">first</span><span class="p">();</span>
-        <span class="k">virtual</span> <span class="n">T</span><span class="o">*</span> <span class="nf">next</span><span class="p">();</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="n">T</span><span class="o">*</span> <span class="n">first</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="n">T</span><span class="o">*</span> <span class="n">next</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">sort</span><span class="p">();</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Vector</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Container</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// ...</span>
@@ -6928,7 +6884,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi</span><span class="p">;</span>
     <span class="n">Vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vs</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>컨테이너의 멤버함수로 <code>sort</code>를 정의하는 건 별로 좋은 생각이 아니다.
 들어 본 적이 없는건 아니지만 하지 말아야 할 좋은 본보기가 될 것이다.</p>
@@ -6960,7 +6915,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="n">Apple</span><span class="o">&amp;</span> <span class="n">a1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">aa</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>   <span class="c1">// a Pear?</span>
 </code></pre></div>
 
-
 <p>형변환을 사용하진 않았지만, <code>aa[0]</code>는 <code>Pear</code>일 것이다.
 <code>sizeof(Apple) != sizeof(Pear)</code>이므로 <code>aa[1]</code>에 접근하면 배열에서 오브젝트의 올바른 시작위치로 정렬될 수 없을 것이다.
 따라서 타입 위반이 되고, 메모리값이 망가지게 된다.</p>
@@ -6980,7 +6934,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 
     <span class="n">Apple</span><span class="o">&amp;</span> <span class="n">a0</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">va</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>   <span class="c1">// a Pear?</span>
 </code></pre></div>
-
 
 <p><code>maul2()</code>에서의 대입은 복사 손실이 없도록 하라는 <a href="#Res-slice">규칙</a>을 위반한다는 점에 유의하라.</p>
 <h5 id="enforcement_33">Enforcement</h5>
@@ -7006,7 +6959,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="note_40">Note</h5>
 <p>사람들이 이와 관련해 계속 물어보고 있다. 규칙이 필요하다.</p>
 <h5 id="alternative_1">Alternative</h5>
@@ -7019,24 +6971,24 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 코드가 급증하는 것을 막아준다.</p>
 <h5 id="example_25">Example</h5>
 <p>기본 클래스로 만들수도 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Link_base</span> <span class="p">{</span>   <span class="c1">// stable</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Link_base</span> <span class="p">{</span>   <span class="c1">// stable</span>
         <span class="n">Link_base</span><span class="o">*</span> <span class="n">suc</span><span class="p">;</span>
         <span class="n">Link_base</span><span class="o">*</span> <span class="n">pre</span><span class="p">;</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>   <span class="c1">// templated wrapper to add type safety</span>
-    <span class="k">struct</span> <span class="nl">Link</span> <span class="p">:</span> <span class="n">Link_base</span> <span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>   <span class="c1">// templated wrapper to add type safety</span>
+    <span class="k">struct</span> <span class="nc">Link</span> <span class="o">:</span> <span class="n">Link_base</span> <span class="p">{</span>
         <span class="n">T</span> <span class="n">val</span><span class="p">;</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="n">List_base</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">List_base</span> <span class="p">{</span>
         <span class="n">Link_base</span><span class="o">*</span> <span class="n">first</span><span class="p">;</span>   <span class="c1">// first element (if any)</span>
         <span class="kt">int</span> <span class="n">sz</span><span class="p">;</span>             <span class="c1">// number of elements</span>
         <span class="kt">void</span> <span class="nf">add_front</span><span class="p">(</span><span class="n">Link_base</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">List</span> <span class="o">:</span> <span class="n">List_base</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="kt">void</span> <span class="n">put_front</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="n">add_front</span><span class="p">(</span><span class="k">new</span> <span class="n">Link</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{</span><span class="n">e</span><span class="p">});</span> <span class="p">}</span>   <span class="c1">// implicit cast to Link_base</span>
@@ -7047,7 +6999,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">li</span><span class="p">;</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ls</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>여기는 <code>List</code>의 요소를 연결하고 해제하는 함수가 한벌(one copy)만 있다.
 <code>Link</code>, <code>List</code> 클래스는 타입 조작만 한다.</p>
@@ -7065,7 +7016,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ??? printf
 </code></pre></div>
 
-
 <h5 id="enforcement_37">Enforcement</h5>
 <ul>
 <li>코드에 <code>va_arg</code>이 있다면 지적한다</li>
@@ -7077,7 +7027,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ??? 이동만 가능하거나 인자 참조에 주의하라
 </code></pre></div>
 
-
 <h5 id="enforcement_38">Enforcement</h5>
 <p>???</p>
 <h3 id="t102-how-to-process-arguments-to-a-variadic-template"><a name="Rt-variadic-process"></a>T.102: ??? How to process arguments to a variadic template ???</h3>
@@ -7087,7 +7036,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ??? forwarding, type checking, references
 </code></pre></div>
 
-
 <h5 id="enforcement_39">Enforcement</h5>
 <p>???</p>
 <h3 id="t103"><a name="Rt-variadic-not"></a>T.103: 동일 타입의 실행인자들을 위해서 가변템플릿을 사용하지 마라</h3>
@@ -7096,7 +7044,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="example_29">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="enforcement_40">Enforcement</h5>
 <p>???</p>
@@ -7114,17 +7061,14 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <h5 id="example-bad_5">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    enable_if
 </code></pre></div>
-
 
 <p>대안으로, 컨셉을 사용하라. <a href="#Rt-emulate">언어가 지원하지 않는 컨셉을 사용하는 방법</a>을 참고하라.</p>
 <h5 id="example_30">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ??? 좋은 예제가 필요하다
 </code></pre></div>
-
 
 <h5 id="alternative_3">Alternative</h5>
 <p>만약 결과가 타입이 아니라 값이라면 <a href="#Rt-fct"><code>constexpr</code> 함수</a>를 사용하라.</p>
@@ -7138,15 +7082,14 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <p>컨셉 개념이 널리 사용될때까지 TMP를 사용해서 에뮬레이트해야 할 것이다.
 (컨셉에 기반한 중복정의와 같이) 컨셉이 필요한 경우(usecase)들은 보통 TMP를 사용하고 있다. </p>
 <h5 id="example_31">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="o">&gt;</span>
         <span class="cm">/*requires*/</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">random_access_iterator</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>
     <span class="n">advance</span><span class="p">(</span><span class="n">Iter</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">p</span> <span class="o">+=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Iter</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Iter</span><span class="o">&gt;</span>
         <span class="cm">/*requires*/</span> <span class="n">enable_if</span><span class="o">&lt;</span><span class="n">forward_iterator</span><span class="o">&lt;</span><span class="n">Iter</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">void</span><span class="o">&gt;</span>
     <span class="n">advance</span><span class="p">(</span><span class="n">Iter</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">assert</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span> <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span> <span class="o">++</span><span class="n">p</span><span class="p">;}</span>
 </code></pre></div>
-
 
 <h5 id="note_42">Note</h5>
 <p>아래 코드는 컨셉을 사용하면 엄청 쉬워진다:</p>
@@ -7154,7 +7097,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 
     <span class="kt">void</span> <span class="nf">advance</span><span class="p">(</span><span class="n">ForwardIterator</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">assert</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span> <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span> <span class="o">++</span><span class="n">p</span><span class="p">;}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_41">Enforcement</h5>
 <p>???</p>
@@ -7167,7 +7109,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ??? big object / small object optimization
 </code></pre></div>
 
-
 <h5 id="enforcement_42">Enforcement</h5>
 <p>???</p>
 <h3 id="t123-constexpr"><a name="Rt-fct"></a>T.123: 컴파일 시간에 값을 계산한다면 <code>constexpr</code> 함수를 사용하라</h3>
@@ -7177,7 +7118,7 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="note_44">Note</h5>
 <p>"특성(Traits)" 사용방법은 대부분 템플릿 별칭이나 <code>constexpr</code>함수로 대체되었다.</p>
 <h5 id="example_33">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
         <span class="c1">// requires Number&lt;T&gt;</span>
     <span class="k">constexpr</span> <span class="n">T</span> <span class="n">pow</span><span class="p">(</span><span class="n">T</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>   <span class="c1">// power/exponential</span>
     <span class="p">{</span>
@@ -7190,7 +7131,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">f7</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_43">Enforcement</h5>
 <ul>
 <li>값을 계산해내는 템플릿 메타프로그램들을 지적하라. 이들은 <code>constexpr</code> 함수로 대체되어야 한다.</li>
@@ -7202,7 +7142,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <h5 id="enforcement_44">Enforcement</h5>
 <p>???</p>
 <h3 id="t125-tmp"><a name="Rt-lib"></a>T.125: 만약 표준 라이브러리의 TMP 기능으로 충분하지 않다면, 가능한 이미 존재하는 라이브러리를 사용하라</h3>
@@ -7213,7 +7152,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <h5 id="enforcement_45">Enforcement</h5>
 <p>???</p>
 <h2 id="_1"><a name="SS-temp-other"></a> 기타 템플릿 규칙</h2>
@@ -7221,7 +7159,7 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="reason_48">Reason</h5>
 <p>문서화, 가독성, 재사용 가능성.</p>
 <h5 id="example_36">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Rec</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Rec</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="n">string</span> <span class="n">addr</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>         <span class="c1">// unique identifier</span>
@@ -7246,7 +7184,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">);</span>
 </code></pre></div>
 
-
 <p>이 코드에는 유용한 함수(대소문자 구분이 없는 문자열 비교)가 숨어있다. 람다의 실행인자(argument)들이 많아지면 이런일이 생긴다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">bool</span> <span class="nf">compare_insensitive</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7263,15 +7200,13 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">);</span>
 </code></pre></div>
 
-
 <p>혹은, (<code>n</code>에 묵시적으로 이름이 묶이는(binding) 것을 피하고 싶다면) 아래처럼 작성할수도 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">cmp_to_n</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">n</span><span class="p">](</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">compare_insensitive</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">cmp_to_n</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">n</span><span class="p">](</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nf">compare_insensitive</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="p">};</span>
 
     <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="n">find_if</span><span class="p">(</span><span class="n">vr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
-        <span class="p">[](</span><span class="k">const</span> <span class="n">Rec</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">cmp_to_n</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
+        <span class="p">[](</span><span class="k">const</span> <span class="n">Rec</span><span class="o">&amp;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nf">cmp_to_n</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">name</span><span class="p">);</span> <span class="p">}</span>
     <span class="p">);</span>
 </code></pre></div>
-
 
 <h5 id="note_45">Note</h5>
 <p>함수, 람다, 연산자. 모든 것에 적용된다.</p>
@@ -7293,7 +7228,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
                                         <span class="p">[](</span><span class="k">const</span> <span class="n">User</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">id</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">;</span> <span class="p">});</span>
 </code></pre></div>
 
-
 <h5 id="exception_3">Exception</h5>
 <p>한번만 사용한다고 해도 람다에 이름을 붙이면 분명해 보인다.</p>
 <h5 id="enforcement_47">Enforcement</h5>
@@ -7306,7 +7240,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="example_38">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="enforcement_48">Enforcement</h5>
 <p>???</p>
@@ -7326,7 +7259,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>물론, 범위기반-<code>for</code>문이 쓰기가 더 좋다.</p>
 <h5 id="example_40">Example</h5>
@@ -7362,7 +7294,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_49">Enforcement</h5>
 <ul>
 <li>반복자 비교에 <code>!=</code> 대신에 <code>&lt;</code>를 쓴다면 지적하라</li>
@@ -7377,7 +7308,6 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
 <h5 id="example_41">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="exceptions_2">Exceptions</h5>
 <p>함수 템플릿을 특수화할 타당한 이유가 있다면 클래스 템플릿을 사용하는 함수 템플릿을 하나만 작성하라.
@@ -7400,12 +7330,10 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>구현파일 안의 어디선가 컴파일러가 <code>X</code>가 의도한 속성(desired properties)을 검사할 수 있도록 하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">static_assert</span><span class="p">(</span><span class="n">default_constructible</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">);</span>    <span class="c1">// error: X 는 기본 생성자가 없다.</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="n">copyable</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">);</span>                 <span class="c1">// error: X의 이동 생성자를 정의하지 않았다.</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_51">Enforcement</h5>
 <p>마땅히 검사할 방법이 없다(Not feasible).</p>
@@ -7427,7 +7355,7 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Source/" title="Source" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Source/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -7442,7 +7370,7 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
           </a>
         
         
-          <a href="../Unclassified/" title="Unclassified" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Unclassified/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -7479,15 +7407,15 @@ N이 1일때는 <a href="#Rt-scary">T.61</a>규칙을 충족하는 클래스 중
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

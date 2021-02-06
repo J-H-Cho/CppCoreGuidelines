@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Expr/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Expr/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Expr
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,138 +302,135 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Expr
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Expr
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Expr" class="md-nav__link md-nav__link--active">
-      Expr
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -424,9 +438,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -3641,235 +3653,238 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -3879,7 +3894,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -3890,9 +3906,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -7121,9 +7135,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="es"><a name="S-expr"></a>ES: 표현식과 구문</h1>
 <p>표현식(expression)과 구문(statement)은 행위와 연산에 대해 표현하는 가장 직접적인 방법들이다. 지역 유효범위 내에서의 선언 역시 구문에 포함된다.</p>
 <p>이름 짓기와 주석, 들여쓰기 규칙에 대해서는, <a href="../Naming/#S-naming">NL: Naming and layout</a>을 참고하라.</p>
@@ -7216,11 +7227,9 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">);</span>   <span class="c1">// good</span>
 </code></pre></div>
 
-
 <p><code>accumulate</code>의 Ranges 버전이 더 낫다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span> <span class="c1">// better</span>
 </code></pre></div>
-
 
 <p>잘 알려진 알고리즘을 직접 만들 필요는 없다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>   <span class="c1">// bad: verbose, 목적이 적혀있지 않다</span>
@@ -7228,7 +7237,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
         <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </code></pre></div>
-
 
 <h5 id="exception">Exception</h5>
 <p>표준 라이브러리의 대다수가 동적 할당(자유 저장소)에 의존한다.
@@ -7251,7 +7259,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>아래와 같은 전통적인 코드, 시스템 레벨과 거의 동등한 저수준(low-level) 코드는 길고, 지저분하고, 이해하기도 어렵고, 느리게 돌아간다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">char</span><span class="o">**</span> <span class="nf">read2</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span> <span class="n">is</span><span class="p">,</span> <span class="kt">int</span> <span class="n">maxelem</span><span class="p">,</span> 
                  <span class="kt">int</span> <span class="n">maxstring</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">nread</span><span class="p">)</span> <span class="c1">// bad: verbose and incomplete</span>
@@ -7267,7 +7274,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>오버플로우나 오류처리 코드가 한 번 들어가게 되면, 코드는 급격히 지저분해진다. 
 그리고, 반환하는 포인터와 배열로 구현되는 C 스타일의 문자열을 <code>delete</code>를 꼭 해줘야하는 문제도 있다.</p>
@@ -7304,7 +7310,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-bad">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7315,7 +7320,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="c1">// ... 여기에는 fn과 is를 쓰면 안되는 200 줄짜리 코드가 들어간다 ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 코드는 길다는 문제점이 있지만, <code>fn</code>의 값과 <code>is</code>가 갖고 있는 파일 핸들이 필요 이상으로 훨씬 길게 유지된다는 게 문제다.
 이러면 함수의 뒷부분에서 <code>is</code>와 <code>fn</code>을 실수로 사용해버릴 수 있다.</p>
@@ -7335,7 +7339,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="c1">// ... 200 줄 코드 ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_2">Enforcement</h5>
 <ul>
@@ -7366,7 +7369,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_3">Enforcement</h5>
 <ul>
 <li>루프 바깥에서 루프 변수가 선언되고 이후에는 사용되지 않을 때 지적하라</li>
@@ -7383,7 +7385,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span> <span class="c1">// result 는 이 시점에 파괴된다</span>
 </code></pre></div>
 
-
 <h5 id="c17-enforcement-if-using-a-c17-compiler">C++17 enforcement (if using a C++17 compiler)</h5>
 <ul>
 <li>선택/반복 구문의 변수가 미리 선언되고 구문 이후에는 사용되지 않으면 지적하라</li>
@@ -7394,7 +7395,7 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
 <p>가독성. 관계없는 비-지역(non-local) 변수 간의 충돌 확률을 낮춘다.</p>
 <h5 id="example_4">Example</h5>
 <p>관습적으로 쓰이는 짧은 지역변수명은 가독성을 향상시킨다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>    <span class="c1">// good</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>    <span class="c1">// good</span>
     <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -7402,10 +7403,9 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>인덱스는 관습적으로 <code>i</code>를 사용하고, 이 일반 함수에는 벡터의 의미를 알만한 힌트가 없으므로, <code>v</code>가 어떤 경우에든지 맞는 이름이다.</p>
 <p>비교:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Element_type</span><span class="o">&gt;</span>   <span class="c1">// bad: 읽기 어렵다</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Element_type</span><span class="o">&gt;</span>   <span class="c1">// bad: 읽기 어렵다</span>
     <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">target_stream</span><span class="p">,</span> 
                <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Element_type</span><span class="o">&gt;&amp;</span> <span class="n">current_vector</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7416,7 +7416,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="n">target_stream</span> <span class="o">&lt;&lt;</span> <span class="n">current_vector</span><span class="p">[</span><span class="n">current_element_index</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>과장해서 표현하긴 했지만, 이것보다 더 심한 것도 본적이 있다.</p>
 <h5 id="example_5">Example</h5>
@@ -7429,7 +7428,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>비지역 개체들에는 좀 더 가독성 있는 이름을 쓰면 나아진다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">use1</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7438,7 +7436,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이렇게 하면, 코드를 읽는 사람이 <code>trim_tail</code>의 의미를 알 수 있게 되고, 기억할 수 있게 된다.</p>
 <h5 id="example-bad_1">Example, bad</h5>
@@ -7454,7 +7451,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>함수는 짧게 유지하는 것을 권장하지만, 이 규칙을 모두 적용시키긴 힘들 때가 있다.
 그럴 경우엔 변수에 이름을 적절히 부여해야 한다.</p>
 <h5 id="enforcement_4">Enforcement</h5>
@@ -7468,17 +7464,15 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="n">surprise</span><span class="p">();</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_3">Example; bad</h5>
 <p>같은 유효범위에서 타입이 아닌 것을 타입의 이름과 같은 이름으로 선언하지마라.
 이러면 <code>struct</code> 혹은 <code>enum</code>을 사용해서 이름의 의미을 구분할 필요가 없게 된다.</p>
 <p><code>struct X</code> 같은 코드는 이름 탐색(lookup)이 실패하면 암묵적으로 <code>X</code>로 간주되기 때문에 오류의 원인을 제거하는 효과도 얻을 수 있다. </p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">foo</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">foo</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="n">foo</span> <span class="nf">foo</span><span class="p">();</span>       <span class="c1">// BAD, foo는 이미 타입의 이름으로 쓰이고 있다</span>
-    <span class="k">struct</span> <span class="n">foo</span> <span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">();</span>   <span class="c1">// 설명이 필요하다</span>
+    <span class="k">struct</span> <span class="nc">foo</span> <span class="n">foo</span><span class="p">();</span>       <span class="c1">// BAD, foo는 이미 타입의 이름으로 쓰이고 있다</span>
+    <span class="k">struct</span> <span class="nc">foo</span> <span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">();</span>   <span class="c1">// 설명이 필요하다</span>
 </code></pre></div>
-
 
 <h5 id="exception_1">Exception</h5>
 <p>좀 오래된(antique) 헤더 파일들은 타입이 아닌 것에 타입과 같은 이름을 붙여놓았을 수도 있다.</p>
@@ -7495,7 +7489,7 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="cp">#define NE !=</span>
 
     <span class="c1">// 다른 어떤 헤더파일의 어느 지점:</span>
-    <span class="k">enum</span> <span class="n">Coord</span> <span class="p">{</span> <span class="n">N</span><span class="p">,</span> <span class="n">NE</span><span class="p">,</span> <span class="n">NW</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">SE</span><span class="p">,</span> <span class="n">SW</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">W</span> <span class="p">};</span>
+    <span class="k">enum</span> <span class="nc">Coord</span> <span class="p">{</span> <span class="n">N</span><span class="p">,</span> <span class="n">NE</span><span class="p">,</span> <span class="n">NW</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">SE</span><span class="p">,</span> <span class="n">SW</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">W</span> <span class="p">};</span>
 
     <span class="c1">// 어느 불쌍한 프로그래머의 .cpp 파일 어느 지점:</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">direction</span><span class="p">)</span> <span class="p">{</span>
@@ -7506,7 +7500,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note">Note</h5>
 <p>단지 상수가 매크로처럼 쓰인다는 이유로 상수에 <code>ALL_CAPS</code> 형태의 이름을 사용하면 안된다</p>
@@ -7520,7 +7513,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
 <div class="codehilite"><pre><span></span><code>    <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="o">*</span><span class="n">pp</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="o">**</span><span class="n">aa</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>   <span class="c1">// 윽 이게뭐야!</span>
 </code></pre></div>
 
-
 <h5 id="exception_2">Exception</h5>
 <p>함수 선언은 다수의 함수 인자 선언을 포함할 수 있다.</p>
 <h5 id="exception_3">Exception</h5>
@@ -7531,22 +7523,18 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_7">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">InputIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Predicate</span><span class="o">&gt;</span>
     <span class="kt">bool</span> <span class="n">any_of</span><span class="p">(</span><span class="n">InputIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">InputIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Predicate</span> <span class="n">pred</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>컨셉(concepts)를 사용하면 이렇게 된다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">bool</span> <span class="nf">any_of</span><span class="p">(</span><span class="n">InputIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">InputIterator</span> <span class="n">last</span><span class="p">,</span> <span class="n">Predicate</span> <span class="n">pred</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="example_8">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">double</span> <span class="nf">scalbn</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">);</span>   <span class="c1">// OK: x * pow(FLT_RADIX, n); FLT_RADIX is usually 2</span>
 </code></pre></div>
-
 
 <p>또는:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">double</span> <span class="nf">scalbn</span><span class="p">(</span>    <span class="o">//</span> <span class="nl">better</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">FLT_RADIX</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="n">FLT_RADIX</span> <span class="n">is</span> <span class="n">usually</span> <span class="mi">2</span>
@@ -7555,17 +7543,14 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">);</span>
 </code></pre></div>
 
-
 <p>또는:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// better: base * pow(FLT_RADIX, exponent); FLT_RADIX is usually 2</span>
     <span class="kt">double</span> <span class="nf">scalbn</span><span class="p">(</span><span class="kt">double</span> <span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">exponent</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="example_9">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>여러 변수들을 한번에 선언하는 것은 초기화되지 않은 변수를 간과하기 쉽다.</p>
 <h5 id="enforcement_7">Enforcement</h5>
@@ -7585,13 +7570,11 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span> <span class="p">};</span>
 </code></pre></div>
 
-
 <p>각각의 경우, 타입들을 컴파일러가 이미 알고 있지만, 프로그래머가 기억하기 힘든 긴 이름의 타입을 작성할 필요가 없게 된다.</p>
 <h5 id="example_11">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">auto</span> <span class="n">Container</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">first</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">;</span>   <span class="c1">// Container&lt;T&gt;::Iterator</span>
 </code></pre></div>
-
 
 <h5 id="exception_4">Exception</h5>
 <p>초기화 리스트(initializer list), 그리고 초기화가 당신이 의도한(그리고 정확히 알고있는) 타입으로 변환되어야 하는 경우에는 <code>auto</code>의 사용을 피하라.</p>
@@ -7602,18 +7585,15 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
                 <span class="c1">// C++ 11에서는 initializer_list로 처리된다</span>
 </code></pre></div>
 
-
 <h5 id="note_1">Note</h5>
 <p>컨셉(concepts)을 사용할 수 있게되면, 추론되는 타입을 좀 더 분명하게 표기할 수 있다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// ...</span>
     <span class="n">ForwardIterator</span> <span class="n">p</span> <span class="o">=</span> <span class="n">algo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="example-c17">Example (C++17)</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="p">[</span> <span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span> <span class="p">]</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="mi">123456</span><span class="p">,</span> <span class="mi">73</span><span class="p">);</span>   <span class="c1">// 반환되는 div_t 타입의 멤버들을 분리해서 선언하게 된다</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_8">Enforcement</h5>
 <p>선언에서 장황한(redundant) 타입 이름이 반복되면 지적한다</p>
@@ -7640,7 +7620,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="k">return</span> <span class="n">d</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>예시가 아주 큰 <code>if</code> 구문이었다면, 구문 안에서 새로운 <code>d</code>가 선언되는 것을 보지 못했을 수도 있다.
 이런 코드는 버그의 원인으로 알려져있다.</p>
 <p>보통 이렇게 더 깊은 유효범위에서 같은 이름을 사용하는 것을 "shadowing"이라고도 한다.</p>
@@ -7659,10 +7638,9 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_6">Example, bad</h5>
 <p>멤버의 이름을 지역 변수로 사용하는 것 또한 문제가 된다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
         <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
     <span class="p">};</span>
@@ -7679,19 +7657,17 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="exception_5">Exception</h5>
 <p>상위 클래스의 함수 이름을 하위 클래스에서 재사용하기도 한다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
-        <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>
-        <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
         <span class="k">using</span> <span class="n">B</span><span class="o">::</span><span class="n">f</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>이는 오류에 취약하다.
 예를 들어, using 선언을 하지 않았다면, <code>d.f(1)</code>의 호출은 <code>f(int)</code>를 찾지 못할 것이다.</p>
@@ -7717,7 +7693,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 코드는 좋지 않다. <code>i = 7</code>는 <code>i</code>를 초기화하는 것이 아니다; 변수에 값을 대입을 하는 것이다.
 또한, <code>i</code>는 <code>...</code>부분에서 값을 읽을 수 있다. 이렇게 작성하는 것이 더 좋다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="kt">int</span> <span class="n">arg</span><span class="p">)</span>   <span class="c1">// OK</span>
@@ -7727,7 +7702,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_3">Note</h5>
 <p><em>언제나 초기화하라</em>는 규칙은 <em>개체는 사용되기 전에 값을 가져야 한다</em>는 언어 규칙보다 (의도적으로) 엄격하다.
@@ -7755,7 +7729,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 코드는 <code>i</code>와 <code>j</code>를 초기화 하는 형태로 다시 작성하기 어렵다.
 기본 생성자를 가지는 타입들에 대해서는, 초기화를 지연하는 코드는 기본 초기화를 하고 대입이 따라오는 구조가 된다.
 이런 예시처럼 작성되는 이유는 보통 "효율적이기" 때문이다. 하지만 컴파일러가 값을 설정하지 않고 사용하는 오류를 찾을 수 있다면 초기화의 중복을 제거할수도 있다.</p>
@@ -7767,7 +7740,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
 
     <span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_related_widgets</span><span class="p">(</span><span class="n">cond</span><span class="p">);</span>    <span class="c1">// C++17</span>
 </code></pre></div>
-
 
 <h5 id="note_4">Note</h5>
 <p>복잡한 초기화는 수십년간 똑똑한 프로그래머들이 자주 사용해왔다.
@@ -7791,7 +7763,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>컴파일러가 <code>cm3</code>가 <code>const</code>인데도 초기화되지 않은 것을 지적할 것이다. 하지만 이는 <code>m3</code>이 초기화되지 않은 것을 잡아내지는 않는다.</p>
 <p>보통, 가짜(spurious) 멤버 초기화는 초기화 하지 않음으로써 오류를 만들지 않기에 그만한 가치가 있다.
 또 경우에 따라 최적화기에서 불필요한(redundant) 초기화를 제거할수도 있다.
@@ -7804,7 +7775,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">max</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>상황에 따라 배열을 초기화하는 비용이 막대할수도 있다.
 하지만, 그런 경우는 초기화되지 않은 부분에 접근할 수 있도록 의도한 것이며, 초기화되지 않았다는 사실을 고려하면서 사용한다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span>
@@ -7813,12 +7783,10 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">max</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>할 수 있다면 오버플로우가 발생하지 않는 라이브러리 함수를 사용하라. 예를 들어:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>   <span class="c1">// s는 기본값 &quot;&quot;로 초기화된다</span>
     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>   <span class="c1">// s가 입력 문자열을 담기 위해 확장된다</span>
 </code></pre></div>
-
 
 <p>입력 처리의 대상이 되는 변수들도 예외는 아니다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>   <span class="c1">// bad</span>
@@ -7826,13 +7794,11 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>보통 입력의 대상과 입력 처리가 분리되는 경우 (그러면 안되지만) used-before-set의 가능성이 발생한다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// 좀 더 나은 코드, 0이 i2에 허용되는 값이라고 가정한다</span>
     <span class="c1">// ...</span>
     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">i2</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>좋은 최적화기는 입력 처리(operation)에 대해 알고있어야 하며, 중복되는 부분을 제거해야 한다</p>
 <h5 id="example_17">Example</h5>
@@ -7854,7 +7820,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 코드는 이제 컴파일러가 used-before-set을 쉽게 탐지할 수 없게 되었다.
 더욱이 widget의 상태 공간을 더 복잡하게 만들었다: <code>uninit</code> 값을 가진 widget에는 어떤 처리가 허용(valid)되고 어떤 처리가 허용되지 않을까?</p>
 <h5 id="note_5">Note</h5>
@@ -7867,7 +7832,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="p">}();</span>
 </code></pre></div>
 
-
 <p>또는 이렇게 할수도 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">Value</span> <span class="n">v</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span>
         <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">get_value</span><span class="p">();</span>   <span class="c1">// get_value()에서 pair&lt;error_code, Value&gt;를 반환한다</span>
@@ -7876,7 +7840,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
         <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
     <span class="p">}();</span>
 </code></pre></div>
-
 
 <h5 id="see-also">See also</h5>
 <p><a href="#Res-lambda-init">ES.28</a></p>
@@ -7897,7 +7860,6 @@ ISO C++ 표준 라이브러리는 널리 알려져있으며 테스트가 잘된 
     <span class="o">++</span><span class="n">x</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_11">Enforcement</h5>
 <p>개체의 선언과 처음 사용되는 곳이 떨어져 있으면(distant from) 지적한다</p>
 <h3 id="es22"><a name="Res-init"></a>ES.22: 변수를 초기화할 값이 생길 때까지 선언하지 마라</h3>
@@ -7910,7 +7872,6 @@ used-before-set의 위험을 감수하지 마라.
     <span class="c1">// ... s 를 사용하지 않는 부분 ...</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;what a waste&quot;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="example-bad_8">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="n">SomeLargeType</span> <span class="n">var</span><span class="p">;</span>  <span class="c1">// ugly CaMeLcAsEvArIaBlE </span>
@@ -7931,7 +7892,6 @@ used-before-set의 위험을 감수하지 마라.
     <span class="c1">// 제어 흐름을 검파일 시간에 검사하는 방법으로 var를 너무 일찍 사용하지 않았다는 것을 알 수 있다</span>
 </code></pre></div>
 
-
 <p><code>SomeLargeType</code>의 기본 초기화 비용이 크다면 이 코드는 괜찮다고 할 수 있다.
 그렇지 않다면, 어떤 프로그래머는 저 복잡한 조건 속에서 모든 경우가 고려되었는지 의심할 것이다. 만약 허점이 있다면, "use before set" 버그가 된다. 유지보수의 함정인 것이다.</p>
 <p>중간정도 복잡한 초기화에 대해서는, <code>const</code> 변수를 포함해서, 초기화에 람다를 사용하는 것을 고려해보라; <a href="#Res-lambda-init">ES.28</a>를 참고하라.</p>
@@ -7948,13 +7908,11 @@ used-before-set의 위험을 감수하지 마라.
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="exception_7">Exception</h5>
 <p>컨테이너 타입들에 대해서는, <code>{...}</code>를 원소들을 나열하기 위해 사용하고 <code>(...)</code>는 크기를 나타내는데 사용한다는 전통(tradition)이 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>    <span class="c1">// vector of 10 elements with the default value 0</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span> <span class="p">{</span><span class="mi">10</span><span class="p">};</span>   <span class="c1">// vector of 1 element with the value 10</span>
 </code></pre></div>
-
 
 <h5 id="note_6">Note</h5>
 <p><code>{}</code> 초기화는 값의 범위가 줄어드는 타입변환(narrowing conversion)을 허용하지 않는다.</p>
@@ -7962,7 +7920,6 @@ used-before-set의 위험을 감수하지 마라.
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">x</span> <span class="p">{</span><span class="mf">7.9</span><span class="p">};</span>   <span class="c1">// error: narrowing</span>
     <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">7.9</span><span class="p">;</span>   <span class="c1">// OK: y becomes 7. Hope for a compiler warning</span>
 </code></pre></div>
-
 
 <h5 id="note_7">Note</h5>
 <p><code>{}</code> 초기화는 다른 형태의 초기화와 달리 모든 경우의 초기화에 사용될 수 있다:</p>
@@ -7973,12 +7930,11 @@ used-before-set의 위험을 감수하지 마라.
         <span class="c1">// ...</span>
     <span class="p">};</span>
     <span class="n">X</span> <span class="n">var</span> <span class="p">{};</span>   <span class="c1">// initialize var to be empty</span>
-    <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">m</span> <span class="p">{</span><span class="mi">7</span><span class="p">};</span>   <span class="c1">// default initializer for a member</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="note_8">Note</h5>
 <p><code>auto</code>로 선언한 변수를 하나의 값으로 초기화 하는것, 예를 들어, <code>{v}</code>형태는 C++ 17 이전까지는 예상밖의 결과를 낳는다.
@@ -7990,19 +7946,17 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="k">auto</span> <span class="n">x22</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>  <span class="c1">// x2 is an initializer_list&lt;int&gt; with elements 7 and 8</span>
 </code></pre></div>
 
-
 <p>따라서 <code>initializer_list&lt;T&gt;</code>를 의도했다면 <code>={...}</code>를 사용하라.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">fib10</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">};</span>   <span class="c1">// fib10 is a list</span>
 </code></pre></div>
 
-
 <h5 id="note_9">Note</h5>
 <p>오래된 습관은 지우기 어렵다는 것을 생각하면, 이 규칙은 꾸준히 적용하기는 어렵다. 특히 <code>=</code>에 문제가 없는 경우가 너무나도 많다.</p>
 <h5 id="example_21">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="kt">void</span> <span class="n">f</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="n">T</span> <span class="n">x1</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">// T initialized with 1</span>
+        <span class="n">T</span> <span class="nf">x1</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">// T initialized with 1</span>
         <span class="n">T</span> <span class="nf">x0</span><span class="p">();</span>     <span class="c1">// bad: function declaration (often a mistake)</span>
 
         <span class="n">T</span> <span class="n">y1</span> <span class="p">{</span><span class="mi">1</span><span class="p">};</span>   <span class="c1">// T initialized with 1</span>
@@ -8010,7 +7964,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_13">Enforcement</h5>
 <p>까다롭다(Tricky).</p>
@@ -8040,7 +7993,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>만약 <code>leak</code>이 <code>true</code>값을 가진다면 <code>p2</code>가 가리키는 개체가 누수된다. 하지만 <code>p1</code>이 가리키는 개체는 그렇지 않다.
 <code>at()</code>이 예외를 던지는 경우에도 그렇다.</p>
 <h5 id="enforcement_14">Enforcement</h5>
@@ -8057,7 +8009,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_15">Enforcement</h5>
 <p>변수가 실제로 값이 바뀌는지 안 바뀌는지 보고 바뀐다면 지적한다.
@@ -8077,7 +8028,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_10">Note</h5>
 <p>초기화를 위해서, buffer를 재사용하고 싶을수도 있다.
@@ -8100,7 +8050,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_16">Enforcement</h5>
 <p>재활용되는 변수가 있다면 지적한다.</p>
 <h3 id="es27-stdarray-stack_array"><a name="Res-stack"></a>ES.27: 스택에서 사용되는 배열은 <code>std::array</code>나 <code>stack_array</code>를 사용하라</h3>
@@ -8119,7 +8068,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_11">Note</h5>
 <p><code>a1</code> 변수선언은 C++에서는 적법하다. 이 방법을 사용한 코드가 많이 있다.
 다만 이는 길이 값이 비지역 변수인 경우 잘못 사용하기 쉽다. 버퍼 오버플로우, 배열을 포인터로 변환하는 등의 "유명한" 오류 원인이 된다.</p>
@@ -8135,7 +8083,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_17">Enforcement</h5>
 <ul>
@@ -8156,7 +8103,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="c1">// 하지만 이런 코딩 스타일에서는 그렇게 만들 수가 없다.</span>
 </code></pre></div>
 
-
 <h5 id="example-good">Example, good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">const</span> <span class="n">widget</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]{</span>
         <span class="n">widget</span> <span class="n">val</span><span class="p">;</span> <span class="c1">// widget이 기본 생성자를 가진다고 가정하자</span>
@@ -8167,7 +8113,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}();</span>
 </code></pre></div>
 
-
 <h5 id="example_25">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="n">string</span> <span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]{</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">in</span><span class="p">)</span> <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span>   <span class="c1">// default</span>
@@ -8177,7 +8122,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
     <span class="p">}();</span> <span class="c1">// note ()</span>
 </code></pre></div>
-
 
 <p>가능하다면 <code>enum</code>같은 쉬운 방법으로 조건을 줄여라. 분기 선택과 초기화를 뒤섞어선 안된다.</p>
 <h5 id="enforcement_18">Enforcement</h5>
@@ -8192,7 +8136,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
 <h5 id="example-bad_12">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="cp">#define Case break; case   </span><span class="cm">/* BAD */</span><span class="cp"></span>
 </code></pre></div>
-
 
 <p>이 문제 없어 보이는 매크로는 <code>C</code>대신 <code>c</code>가 사용되면 악질적인(bad) 제어흐름 버그로 이어진다.</p>
 <h5 id="note_12">Note</h5>
@@ -8214,12 +8157,11 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>매크로없이 문자열을 조작하기 위한 방법(workaround)이 있다.
 예를 들자면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;asdf&quot;</span> <span class="s">&quot;lkjh&quot;</span><span class="p">;</span>   <span class="c1">// 평범한 문자열 리터럴 접합 (literal concatenation)</span>
 
-    <span class="k">enum</span> <span class="n">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">};</span>
+    <span class="k">enum</span> <span class="nc">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="p">};</span>
 
     <span class="k">template</span><span class="o">&lt;</span><span class="kt">int</span> <span class="n">x</span><span class="o">&gt;</span>
     <span class="k">constexpr</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">stringify</span><span class="p">()</span>
@@ -8237,7 +8179,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>매크로만큼 편리한 것은 아니지만, 쉽게 사용할 수 있고, 오버헤드를 발생시키지 않으며, 타입과 유효범위의 영향을 받는다.</p>
 <p>미래에는 정적 리플렉션(static reflection)이 전처리기를 사용해 문자열을 다루는 것을 없애게 될 것이다.</p>
 <h5 id="enforcement_19">Enforcement</h5>
@@ -8253,15 +8194,13 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="cp">#define SQUARE(a, b) (a * b)</span>
 </code></pre></div>
 
-
 <p><code>SQUARE</code>에 잘 알려진 버그가 없다고 하더라도 더 잘 동작하는 대안이 있다.</p>
 <p>예를 들면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">constexpr</span> <span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> 
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> 
     <span class="n">T</span> <span class="n">square</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_20">Enforcement</h5>
 <p>소스제어(<code>#ifdef</code>같은)에 사용하지 않는 매크로를 본다면 소리를 질러라.</p>
@@ -8274,7 +8213,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="cp">#define FOREVER for (;;)   </span><span class="cm">/* 여전히 사악하지만, 최소한 사람은 매크로라는걸 알 수 있다 */</span><span class="cp"></span>
 </code></pre></div>
 
-
 <h5 id="enforcement_21">Enforcement</h5>
 <p>소문자로 작성된 매크로를 본다면 소리를 질러라.</p>
 <h3 id="es33"><a name="Res-MACROS"></a>ES.33: 매크로를 사용해야만 한다면, 고유한 이름을 사용하라</h3>
@@ -8285,7 +8223,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
 
     <span class="cp">#define ZCORP_CHAR    </span><span class="cm">/* Still evil, but less likely to clash */</span><span class="cp"></span>
 </code></pre></div>
-
 
 <h5 id="note_14">Note</h5>
 <p>가능하다면 매크로는 사용하지 마라: <a href="#Res-macros">ES.30</a>, <a href="#Res-macros2">ES.31</a>, 그리고 <a href="#Res-ALL_CAPS">ES.32</a>를 참고하라.</p>
@@ -8330,7 +8267,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="alternative">Alternative</h5>
 <p>중복 정의, 템플릿, 가변 템플릿을 사용하라</p>
 <div class="codehilite"><pre><span></span><code>    <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
@@ -8341,7 +8277,7 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="n">severity</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
     <span class="k">constexpr</span> <span class="kt">void</span> <span class="n">error</span><span class="p">(</span><span class="kt">int</span> <span class="n">severity</span><span class="p">,</span> <span class="n">T</span> <span class="n">head</span><span class="p">,</span> <span class="n">Ts</span><span class="p">...</span> <span class="n">tail</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">head</span><span class="p">;</span>
@@ -8360,7 +8296,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_15">Note</h5>
 <p>이 방법으로 <code>printf</code>가 구현되어있다.</p>
 <h5 id="enforcement_23">Enforcement</h5>
@@ -8375,7 +8310,7 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
 <p>표현식이 복잡하면 오류가 발생하기 쉽다.</p>
 <h5 id="example_29">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// bad: assignment hidden in subexpression</span>
-    <span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">getc</span><span class="p">())</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">getc</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">-1</span><span class="p">)</span>
 
     <span class="c1">// bad: two non-local variables assigned in a sub-expressions</span>
     <span class="k">while</span> <span class="p">((</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c1</span><span class="p">,</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">c2</span><span class="p">),</span> <span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>
@@ -8399,7 +8334,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">++</span> <span class="o">+</span> <span class="n">x</span><span class="o">++</span> <span class="o">+</span> <span class="o">++</span><span class="n">x</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>위의 연산식 중 몇은 의심의 여지없이 나쁘다. (정의되지 않은 행동이 일어나게 한다)
 나머지는 꽤 복잡하거나 특이한 편이고, 심지어 능력있는 프로그래머도 잘못 이해하거나 문제를 간과해 버릴 만한 것도 있다.</p>
 <h5 id="note_16">Note</h5>
@@ -8422,7 +8356,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">t1</span> <span class="o">&amp;&amp;</span> <span class="n">t2</span><span class="p">)</span>            <span class="c1">// ...</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_24">Enforcement</h5>
 <p>까다롭다. "표현식이 얼마나 복잡한가"를 어떻게 판단할 것인가? 어떻게 고려할 것인가? 
 계산을 하나의 연산으로만 구성된 문장들로 구성하기는 힘들다.</p>
@@ -8444,13 +8377,11 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">flag</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">// bad: a &amp; (flag != 0)를 의도했다</span>
 </code></pre></div>
 
-
 <h5 id="note_18">Note</h5>
 <p>프로그래머는 산술 연산, 논리 연산에 대해서 우선순위 테이블을 알고 있을 것을 기대한다.
 다른 연산과 비트 연산을 섞어 사용할 때는 소괄호(parentheses)를 사용하기를 권한다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">if</span> <span class="p">((</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">flag</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">// OK: 의도대로 동작한다</span>
 </code></pre></div>
-
 
 <h5 id="note_19">Note</h5>
 <p>아래에 대해서는 소괄호가 필요없다는 정도는 알고 있을 것이다:</p>
@@ -8458,7 +8389,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_25">Enforcement</h5>
 <ul>
@@ -8501,7 +8431,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-good_1">Example, good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// BETTER: 함수 선언에서 span을 사용해버린다</span>
     <span class="p">{</span>
@@ -8523,7 +8452,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_21">Note</h5>
 <p>변수를 사용해 배열에 접근하는 코드가 안전한지 평가하는 것은 도구와 사람 모두에게 어렵다.
 <code>span</code>은 실행 시간에 경계를 검사하기 때문에, 배열의 데이터에 접근할때 안전하다.
@@ -8534,11 +8462,10 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">{</span>
         <span class="n">a</span><span class="p">[</span><span class="n">pos</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// BAD</span>
         <span class="n">a</span><span class="p">[</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// BAD</span>
-        <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// BAD (다만 도구에서 잡아낼 수 있다) -- 다른 방법이 없다. 그냥 이런 코드를 작성하지 마라</span>
+        <span class="n">a</span><span class="p">[</span><span class="mi">-1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// BAD (다만 도구에서 잡아낼 수 있다) -- 다른 방법이 없다. 그냥 이런 코드를 작성하지 마라</span>
         <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// BAD (다만 도구에서 잡아낼 수 있다) -- 다른 방법이 없다. 그냥 이런 코드를 작성하지 마라</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example-good_2">Example, good</h5>
 <p><code>span</code>을 사용하면 이렇다:</p>
@@ -8558,7 +8485,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>at()</code>을 사용하면 이렇다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// ALTERNATIVE B: 원소에 접근할때 at()을 사용한다</span>
     <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="p">)</span> 
@@ -8568,7 +8494,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_16">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
@@ -8577,7 +8502,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
             <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// BAD, cannot use non-constant indexer</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example-good_3">Example, good</h5>
 <p><code>span</code>을 사용하면 이렇다:</p>
@@ -8590,7 +8514,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>범위 기반 <code>for</code>문에 <code>span</code>을 사용하면 이렇다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f1a</span><span class="p">()</span>
     <span class="p">{</span>
@@ -8602,7 +8525,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>접근할 때 <code>at()</code>를 사용하면 이렇다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f2</span><span class="p">()</span>
     <span class="p">{</span>
@@ -8612,7 +8534,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>범위기반 <code>for</code>문은 이렇다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f3</span><span class="p">()</span>
     <span class="p">{</span>
@@ -8621,7 +8542,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
              <span class="n">e</span> <span class="o">=</span> <span class="n">i</span><span class="o">++</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_22">Note</h5>
 <p>도구에서 실행시간에 결정되는 인덱스로 배열에 접근하는 표현식을 <code>at()</code>을 사용해 다시 작성하도록 할수도 있다:</p>
@@ -8634,7 +8554,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_32">Example</h5>
 <p>(그동안 언어에서 해왔던 것처럼) 배열을 포인터로 바꾸는 것은 경계 검사의 기회를 없애버린다. 지양하라.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
@@ -8646,7 +8565,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="n">g</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>    <span class="c1">// OK: 개체를 넘기고 있다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>배열을 전달하고 싶다면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">);</span>  <span class="c1">// 오래된 (위험한) 코드</span>
@@ -8663,7 +8581,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
                                     <span class="c1">// 대신 span을 생성한다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_26">Enforcement</h5>
 <ul>
@@ -8686,7 +8603,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">i</span><span class="p">;</span>   <span class="c1">// 결과는 알 수 없다(undefined)</span>
 </code></pre></div>
 
-
 <p>가장 좋은 규칙은 값을 변경하는 표현식에서 값을 읽지 않는 것이다.</p>
 <h5 id="enforcement_27">Enforcement</h5>
 <p>좋은 분석기를 사용해 찾을 수 있다.</p>
@@ -8702,7 +8618,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="n">f</span><span class="p">(</span><span class="o">++</span><span class="n">i</span><span class="p">,</span> <span class="o">++</span><span class="n">i</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>이 함수 호출은 <code>f(0, 1)</code>혹은 <code>f(1, 0)</code>일 것이다. 하지만 어떤 것이 될지는 알 수 없다.
 기술적으로는, 어떻게 처리해야 하는지 정의되어 있지 않다.</p>
 <p>C++ 17에서는 이 코드가 미정의 행동이 아니다. 하지만 여전히 어떤 인자가 먼저 평가되는지 분명하지 않다.</p>
@@ -8712,13 +8627,11 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f1</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">f2</span><span class="p">();</span>   <span class="c1">// operator&lt;&lt;( operator&lt;&lt;( cout, f1() ), f2() )</span>
 </code></pre></div>
 
-
 <p>C++ 17에서 이 예시는 기대한 대로 동작한다 (왼쪽에서 오른쪽으로 평가된다).
 그리고 <code>=</code>의 바인딩이 오른쪽에서 왼쪽으로 수행되는 것처럼 대입은 오른쪽에서 왼쪽으로 평가된다. </p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">f1</span><span class="p">()</span> <span class="o">=</span> <span class="n">f2</span><span class="p">();</span>    <span class="c1">// C++14 에서는 미정의 행동; </span>
                     <span class="c1">// C++17 에서는 f2()가 f1()보다 먼저 평가된다</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_28">Enforcement</h5>
 <p>좋은 분석기를 사용해 찾을 수 있다.</p>
@@ -8730,7 +8643,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">month</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>1년에 12달이 숫자로만 되어 있다면 이해가 잘 안될 것이다. </p>
 <p>더 좋게 고치면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// 1..12를 사용해서 12개월을 표현한다</span>
@@ -8741,12 +8653,10 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">month</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>아예 상수를 사용하지 않으면 더 낫다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">m</span> <span class="p">:</span> <span class="n">month</span><span class="p">)</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_29">Enforcement</h5>
 <p>코드에 리터럴이 있다면 지적한다. <code>0</code>, <code>1</code>, <code>nullptr</code>, <code>\n</code>, <code>""</code> 등 가능한 목록은 허용하라.</p>
@@ -8766,23 +8676,20 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_25">Note</h5>
 <p>gsl은 narrowing을 허용하는 <code>narrow_cast</code>와 변환시 값이 바뀌면 예외를 던지는 <code>narrow</code>("narrow if")를 제공한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">i</span> <span class="o">=</span> <span class="n">narrow_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>   <span class="c1">// OK (you asked for it): narrowing: i becomes 7</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">narrow</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>        <span class="c1">// OK: throws narrowing_error</span>
 </code></pre></div>
 
-
 <p>이 규칙은 부동 소수점 타입의 음수를 부호 없는 정수타입으로 변환하는 등의 손실있는 형변환까지도 포함한다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mf">7.9</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">-7.9</span><span class="p">;</span>
     <span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
     <span class="n">u</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>                          <span class="c1">// BAD</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">narrow_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>   <span class="c1">// OK (you asked for it): u becomes 0</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">narrow</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>        <span class="c1">// OK: throws narrowing_error</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_30">Enforcement</h5>
 <p>좋은 분석기는 범위가 축소되는 변환을 탐지할 수 있다.
@@ -8806,7 +8713,6 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="n">f</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>   <span class="c1">// f(char*)</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_31">Enforcement</h5>
 <p>포인터에 <code>0</code>, <code>NULL</code>을 사용한다면 지적한다. 프로그램으로 간단하게 변환할 수 있으면 도움이 될 것이다.</p>
 <h3 id="es48-cast"><a name="Res-casts"></a>ES.48: 타입 변환(cast)을 피하라</h3>
@@ -8819,24 +8725,20 @@ C++ 17의 규칙은 상대적으로 덜 놀랍다:</p>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">q</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>이 코드는 어떤 값을 출력할까?
 The result is at best implementation defined. 
 필자의 환경에서는 이런 결과가 나온다</p>
 <div class="codehilite"><pre><span></span><code>    2 0 4611686018427387904
 </code></pre></div>
 
-
 <p>아래의 내용을 더하면,</p>
 <div class="codehilite"><pre><span></span><code>    <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="mi">666</span><span class="p">;</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">q</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>이런 결과가 나온다</p>
 <div class="codehilite"><pre><span></span><code>    3.29048e-321 666 666
 </code></pre></div>
-
 
 <p>놀라운가? 프로그램에서 크래시나 생기지 않은게 다행이다.</p>
 <h5 id="note_26">Note</h5>
@@ -8892,7 +8794,7 @@ Named cast들은 C 스타일이나 함수형 형변환보다 더 구체적이며
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
     <span class="k">class</span> <span class="nc">D</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">D</span><span class="o">&gt;</span> 
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">D</span><span class="o">&gt;</span> 
     <span class="n">D</span><span class="o">*</span> <span class="n">upcast</span><span class="p">(</span><span class="n">B</span><span class="o">*</span> <span class="n">pb</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">D</span><span class="o">*</span> <span class="n">pd0</span> <span class="o">=</span> <span class="n">pb</span><span class="p">;</span>        <span class="c1">// error: B* 에서 D*로 묵시적 변환할 수 없다</span>
@@ -8904,7 +8806,6 @@ Named cast들은 C 스타일이나 함수형 형변환보다 더 구체적이며
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 예시는 <code>D</code>가 <code>B</code>의 하위 타입이면서, 누군가 계층 구조를 리팩토링 했을때 발생한 실제 버그들을 종합한 것이다.
 C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 수행할 수 있기 때문이다. 이는 실수로부터 우리를 보호해주지 않는다 (지금도, 앞으로도). </p>
 <h5 id="note_29">Note</h5>
@@ -8913,14 +8814,12 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="kt">int64_t</span> <span class="n">i</span> <span class="p">{</span><span class="n">some_int32</span><span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 코드는 타입 변환을 의도했다는 것이 분명히 드러나고 정확도를 잃을 수 있는 변환을 예방한다.
 (예를 들자면 이런 코드에서 <code>float</code>를 <code>double</code>로 초기화 하는 것은 컴파일 오류가 된다)</p>
 <h5 id="note_30">Note</h5>
 <p><code>reinterpret_cast</code>가 필수적일 수 있다. 하지만 본질적으로 타입 안전하지는 않다 (기계 주소를 포인터로 바꾼다던가):</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">Device_register</span><span class="o">&gt;</span><span class="p">(</span><span class="mh">0x800</span><span class="p">);</span>  <span class="c1">// 필연적으로 위험하다</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_33">Enforcement</h5>
 <ul>
@@ -8944,7 +8843,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="n">f</span><span class="p">(</span><span class="n">j</span><span class="p">);</span> <span class="c1">// undefined behavior</span>
 </code></pre></div>
 
-
 <h5 id="example_39">Example</h5>
 <p>경우에 따라서는 코드 중복을 피하고자 <code>const_cast</code>에 의존하고 싶을수도 있다.
 이때는 두 함수가 구현은 유사하지만 오직 <code>const</code> 부분만 다를 것이다. 예를 들어:</p>
@@ -8965,7 +8863,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>대신, 구현 코드를 공유하도록 하라. 보통의 경우, 비-<code>const</code> 함수에서 <code>const</code> 함수를 호출할 수 있다.
 하지만 그 구현에 복잡한 로직이 있다면 여전히 <code>const_cast</code>를 사용하는 다음과 같은 패턴을 쓰게 될 것이다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
@@ -8982,13 +8879,12 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 패턴은 정확하게 사용되었을 때는 호출자가 비-<code>const</code> 개체를 통해 호출하기 때문에 안전하지만, 안전성이 검사기의 규칙만큼 자연스럽게 강제되기는 어렵기 때문에 이상적인 코드는 아니다.</p>
 <p>이런 패턴 대신, 공통되는 코드는 공통된 보조 함수(helper function)에 배치하라 -- 그리고 <code>const</code>를 타입 추론에서 찾아내도록 템플릿으로 만들어라. 이는 <code>const_cast</code>이 완전히 필요없게 만든다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>                 <span class="c1">// good</span>
-              <span class="n">Bar</span><span class="o">&amp;</span> <span class="n">get_bar</span><span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="n">get_bar_impl</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">const</span> <span class="n">Bar</span><span class="o">&amp;</span> <span class="n">get_bar</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">get_bar_impl</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
+              <span class="n">Bar</span><span class="o">&amp;</span> <span class="n">get_bar</span><span class="p">()</span>       <span class="p">{</span> <span class="k">return</span> <span class="nf">get_bar_impl</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">const</span> <span class="n">Bar</span><span class="o">&amp;</span> <span class="n">get_bar</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="nf">get_bar_impl</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
     <span class="k">private</span><span class="o">:</span>
         <span class="n">Bar</span> <span class="n">my_bar</span><span class="p">;</span>
 
@@ -8999,7 +8895,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
         <span class="p">}</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="exception_9">Exception</h5>
 <p><code>const</code>-부정확(incorrect)한 함수를 호출할때 <code>const</code>를 제거해야 할수도 있다.
@@ -9039,7 +8934,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>여기서 <code>get_val()</code>는 논리적으로는 상수이다. 따라서 <code>const</code>멤버로 만들 수 있을 것이다.
 이렇게 하려면 여전히 <code>cache</code>를 변경해야 한다. 일부는 그러지 않고 <code>const_cast</code>를 사용한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>   <span class="c1">// 타입 변환을 사용한 의심스러운 해결방법</span>
@@ -9058,7 +8952,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
         <span class="n">Cache</span> <span class="n">cache</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>다행히, 더 나은 해결책이 있다:
 <code>cache</code>가 <code>const</code> 개체여도 변경 가능하다고 표기(state)하는 것이다:</p>
@@ -9080,7 +8973,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>다른 방법은 <code>cache</code>에 대한 포인터를 보관하는 것이다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>   <span class="c1">// OK, 하지만 조금 지저분하다</span>
     <span class="k">public</span><span class="o">:</span>
@@ -9100,7 +8992,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 해결책은 굉장히 유연하지만, <code>cache</code>로 가리키는 개체의 명시적인 생성과 소멸을 필요로 한다.
 (아마 그 코드는 <code>X</code>의 생성자와 소멸자에 위치할 것이다).</p>
 <p>멀티스레드 코드에서 <code>cache</code>에 데이터 경쟁이 발생하면 <code>std::mutex</code>를 사용해 보호해야 한다.</p>
@@ -9118,7 +9009,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
 
     <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>   <span class="c1">// find x in v</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_35">Enforcement</h5>
 <p>명시적인 범위검사를 찾아서 적절한 대안을 제시한다.</p>
@@ -9150,7 +9040,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>대부분의 경우 <code>std::move()</code>는 <code>&amp;&amp;</code>를 사용하는 매개변수에 실행인자를 넘길때 사용한다.
 그리고 그 뒤에는 대상 개체가 이동했다고 가정하며 (<a href="../Class/#Rc-move-semantic">C.64</a>를 함께 보라), 새로운 값을 그 개체에 쓰기 전까지는 상태를 읽어서는 안된다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
@@ -9167,7 +9056,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_42">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">sink</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">widget</span><span class="o">&gt;</span> <span class="n">p</span><span class="p">);</span>  <span class="c1">// p의 소유권을 sink()에 전달한다</span>
 
@@ -9179,7 +9067,6 @@ C 스타일 타입변환이 위험한 이유는 어떤 형태로의 변환도 �
         <span class="n">sink</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>    <span class="c1">// Error: unique_ptr는 복사할 수 없도록 세심하게 설계되었다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="notes_1">Notes</h5>
 <p><code>std::move()</code>는 실제로는 <code>&amp;&amp;</code>로 형변환하는 것이다; 단순히 이 함수를 호출하는 것 만으로는 아무것도 이동시키지 않는다. 대신 인자로 전달된 개체를 이동할수 있도록 만든다.
@@ -9195,14 +9082,12 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>return move(local_variable);</code>와 같은 코드는 절대로 작성하지 마라, 언어차원에서 이미 그 변수가 이동의 대상이 된다는 것을 알고 있다.
 코드에 <code>move</code>를 써놓는 것은 도움이 되지 않으며, 지역 변수에 대한 추가적인 참조를 만들어서 일부 컴파일러들의 반환값 최적화(RVO: Return Value Optimization)를 방해(detrimental)한다.</p>
 <h5 id="example-bad_22">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// bad; move를 작성하지 않아도 이동 의미구조가 적용된다</span>
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">make_vector</span><span class="p">());</span>
 </code></pre></div>
-
 
 <p><code>f</code>가 값(by value)을 반환한다면, 절대로 <code>x = move(f());</code>처럼 반환되는 값에 <code>move</code>를 사용하지 마라.
 언어차원에서 반환 값이 임시 개체이며, 이 개체가 이동할 수 있다는 것을 이미 알고 있다.</p>
@@ -9220,7 +9105,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
         <span class="n">call_something</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>  <span class="c1">// suspicious, why not std::forward?</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_36">Enforcement</h5>
 <ul>
@@ -9251,7 +9135,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>...</code>에 <code>delete</code>가 발생하지 않게 만드는 코드가 있을 수도 있다.</p>
 <h5 id="see-also_1">See also</h5>
 <p><a href="../Resource/">R: 리소스 관리</a></p>
@@ -9268,7 +9151,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
         <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>   <span class="c1">// error: p[] 배열이 아니라 p의 대상이 되는 첫번째 개체만 파괴한다, </span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_32">Note</h5>
 <p>이 예제는 <a href="#Res-new">no naked <code>new</code> rule</a>를 위반할 뿐만 아니라 많은 다른 문제를 야기한다.</p>
@@ -9289,7 +9171,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
         <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="o">&amp;</span><span class="n">a1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">-</span> <span class="o">&amp;</span><span class="n">a2</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span> <span class="p">{}</span>   <span class="c1">// bad: undefined</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_33">Note</h5>
 <p>더 많은 문제가 내포되어 있다.</p>
@@ -9314,7 +9195,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="n">Shape</span> <span class="n">s</span> <span class="p">{</span><span class="n">c</span><span class="p">};</span>    <span class="c1">// Circle의 Shape부분을 복사한다</span>
 </code></pre></div>
 
-
 <p>복사한 결과는 <code>c</code>의 중심점과 반지름이 <code>s</code>로 복사되지 않았기 때문에 무의미할 것이다. 
 이 문제를 막는 방법은 <a href="../Class/#Rc-copy-virtual">상위 클래스 <code>Shape</code>가 이런 동작을 허용하지 않도록 작성하는 것이다</a>.</p>
 <h5 id="alternative_1">Alternative</h5>
@@ -9331,7 +9211,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="n">Circle</span> <span class="n">c1</span> <span class="p">{</span><span class="n">sm</span><span class="p">};</span>  <span class="c1">// 이상적으로는 Circle의 정의에 의해 금지(prevent)되어야 한다.</span>
     <span class="n">Circle</span> <span class="n">c2</span> <span class="p">{</span><span class="n">sm</span><span class="p">.</span><span class="n">copy_circle</span><span class="p">()};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_40">Enforcement</h5>
 <p>복사 손실은 경고하라.</p>
@@ -9362,7 +9241,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>정수와 포인터 사이의 변환에 <code>T(e)</code>혹은 <code>(T)e</code>표기를 사용하면 구현에따라 달라질 수 있기 때문에, 
 정수와 포인터의 크기가 다른 플랫폼에서는 쓸수 없는(non-portable) 코드가 된다</p>
 <h5 id="note_34">Note</h5>
@@ -9374,7 +9252,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="k">auto</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="p">({</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1</span><span class="p">});</span>
 </code></pre></div>
 
-
 <h5 id="note_36">Note</h5>
 <p>개체 생성 표기법은 가장 범용적인 <a href="#Res-list">초기화 표기법이다</a>.</p>
 <h5 id="exception_10">Exception</h5>
@@ -9385,20 +9262,18 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vi2</span> <span class="p">{</span><span class="mi">10</span><span class="p">};</span>                             <span class="c1">// one element with the value 10</span>
 </code></pre></div>
 
-
 <p>어떻게 하면 <code>vector</code>가 10개의 기본 초기화된 <code>int</code>를 가지도록 할 수 있을까?</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v3</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// ten elements with value 0</span>
 </code></pre></div>
-
 
 <p>원소의 수를 생성자에 전달하기 위해 <code>{}</code>대신 <code>()</code>를 사용하는 것은 전통적인 코드를 따른 것이다 (1980년대 초반으로 거슬러 올라간다). 
 이는 바꾸기 어렵지만, 설계 오류라는 것은 여전하다: for a container where the element type can be confused with the number of elements, we have an ambiguity that must be resolved.
 전통적인 코드를 따라서 <code>{10}</code>를 해석하면 하나의 원소로 만들어진 리스트이고, <code>(10)</code>는 컨테이너의 크기를 의미한다.</p>
 <p>새로운 코드에서 이런 실수가 반복되어선 안된다.
 원소의 개수를 표현하는 타입을 정의하는 것도 가능하다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Count</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Count</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span> <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">Vector</span><span class="p">(</span><span class="n">Count</span> <span class="n">n</span><span class="p">);</span>                     <span class="c1">// n default-initialized elements</span>
@@ -9410,7 +9285,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="n">Vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">{</span><span class="n">Count</span><span class="p">{</span><span class="mi">10</span><span class="p">}};</span>
     <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Count</span><span class="o">&gt;</span> <span class="n">v3</span><span class="p">{</span><span class="n">Count</span><span class="p">{</span><span class="mi">10</span><span class="p">}};</span>    <span class="c1">// yes, there is still a very minor problem</span>
 </code></pre></div>
-
 
 <p>남은 문제는 <code>Count</code>에 알맞는 이름을 찾는 것이다.</p>
 <h5 id="enforcement_41">Enforcement</h5>
@@ -9446,7 +9320,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 문제를 해결하기 위해, 참조되는 개체의 수명을 늘리거나, 참조하는 포인터의 수명을 줄이는 방법이 있다. (역참조하는 시점을 참조되는 개체의 수명이 끝나기 전으로 앞당긴다)</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f1</span><span class="p">()</span>
     <span class="p">{</span>
@@ -9462,7 +9335,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>불행하게도, 대부분의 유효하지 않은 포인터 문제는 찾아내기도, 고치기도 어렵다.</p>
 <h5 id="example_47">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
@@ -9470,7 +9342,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span> <span class="c1">// BAD: how do we know that p is valid?</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이런 코드가 엄청나게 많이 있다.</p>
 <p>대부분 제대로 동작하지만 -- 수많은 테스트를 거친 후에야 -- 저 코드만 놓고 보면 <code>p</code>가 <code>nullptr</code>가 될 수 있는지에 대해 확답할 수 없다.
@@ -9486,7 +9357,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>nullptr</code>를 검사하는데는 두가지 잠재적 문제가 있다:</p>
 <ul>
 <li>매번 <code>nullptr</code>를 찾은 후에 무엇을 해야하는지 분명한 것은 아니다</li>
@@ -9500,7 +9370,6 @@ C++ 언어는 함수로부터의 반환처럼 개체를 이동시킬 수 있는 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>위 방법은 단정문(assertion)이 활성화될 때만 비용이 발생하고 컴파일러, 분석기에 유용한 정보를 제공할 것이다. 
 C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span> <span class="c1">// state that p is not supposed to be nullptr</span>
@@ -9510,14 +9379,12 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>다른 방법으로는, <code>p</code>가 <code>nullptr</code>가 되지 않는다는 것을 분명히 하기위해 <code>gsl::not_null</code>를 사용할수도 있다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">not_null</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span> <span class="n">p</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이런 방편들은 <code>nullptr</code>인 경우 만을 다룬다.
 유효하지 않은 포인터가 <code>nullptr</code>가 아닌 경우도 있다는 것을 기억하라.</p>
@@ -9535,7 +9402,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_49">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
     <span class="p">{</span>
@@ -9545,7 +9411,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span> <span class="c1">// BAD: dereferences potentially invalid pointer</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_42">Enforcement</h5>
 <p>이 규칙은 <a href="../Profile/#SS-lifetime">수명주기 안전성 분석</a>의 일부분이다.</p>
@@ -9583,7 +9448,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>위의 예제가 더 좋다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">use2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
@@ -9593,7 +9457,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
             <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_43">Enforcement</h5>
 <p>상수값에 대해서 비교하는 if-then-else가 연속되면 지적한다. (이 경우에만)</p>
@@ -9627,7 +9490,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>프로그래머나 좋은 정적 분석기는 <code>f(&amp;v[i])</code>에서 <code>v</code>에 대해서 부수효과(side effect)가 일어나지 않는다고 판단할지도 모른다. 이 경우 루프를 최적화할 수 있다.</p>
 <p>루프문 내에서 "루프변수를 변경"하는 경우가 없어야 한다.</p>
 <h5 id="note_38">Note</h5>
@@ -9636,18 +9498,15 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="c1">// ...</span>
 </code></pre></div>
 
-
 <p>위 코드는 <code>vs</code>의 원소를 <code>s</code>로 복사한다. 개선하면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="n">string</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">vs</span><span class="p">)</span>
         <span class="c1">// ...</span>
 </code></pre></div>
 
-
 <p>만약 루프 변수(<code>s</code>)가 변경되거나 복사되지 않는다면 이렇게 작성하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">s</span> <span class="p">:</span> <span class="n">vs</span><span class="p">)</span>
         <span class="c1">// ...</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_44">Enforcement</h5>
 <p>루프를 보고 개별 요소들을 일렬로 참조하고 있고 부수효과(side effect)가 없어 보이면 <code>for</code>문으로 재작성한다.</p>
@@ -9661,7 +9520,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_26">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
@@ -9669,7 +9527,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="n">i</span><span class="o">++</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_45">Enforcement</h5>
 <p>???</p>
@@ -9683,7 +9540,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 "이벤트 루프"는 잘못된 코드인데, <code>events</code> 카운터 변수가 반복 조건에 전혀 영향을 주지 않기 때문이다 (<code>wait_for_event()</code>). </p>
 <p>이런 코드가 더 좋다</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">events</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -9692,7 +9548,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_46">Enforcement</h5>
 <p>Flag actions in <code>for</code>-initializers and <code>for</code>-increments that do not relate to the <code>for</code>-condition.</p>
@@ -9707,7 +9562,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-dont">Example, don't</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// BAD: j is visible outside the loop</span>
     <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
@@ -9717,7 +9571,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="c1">// j is still visible here and isn&#39;t needed</span>
 </code></pre></div>
 
-
 <h5 id="see-also_3">See also</h5>
 <p><a href="#Res-recycle">Don't use a variable for two unrelated purposes</a></p>
 <h5 id="example_55">Example</h5>
@@ -9725,7 +9578,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_47">Enforcement</h5>
 <p><code>for</code>문 안에서만 변하는 변수가 루프 밖에 선언되어 있지만 루프 밖에서 사용되지 않고 있다면 경고한다.</p>
@@ -9750,7 +9602,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="note_39">Note</h5>
 <p>물론 <code>do</code>-구문이 깔끔한 해결방법이 되는 예시도 존재한다. 하지만 동시에 많은 버그를 발생시키기도 한다.</p>
 <h5 id="enforcement_48">Enforcement</h5>
@@ -9772,7 +9623,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="c1">// ...</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_27">Example, bad</h5>
 <p>C 에서는 goto-exit 형태(idiom)를 꽤 많이 사용한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span>
@@ -9786,7 +9636,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="c1">// ... common cleanup code ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이건 소멸자를 시뮬레이션한 것이다. 리소스를 해제하는 소멸자를 가진 핸들로 선언하라.</p>
 <p>사용된 변수들의 소멸자로 모든 정리 작업(cleanup)을 다룰 수 없다면, 
@@ -9803,17 +9652,14 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <h5 id="alternative_2">Alternative</h5>
 <p>때때로, <code>break</code>를 필요로 하는 반복문은 함수(알고리즘)의 후보가 되기도 한다. 이 경우 <code>break</code>는 그 함수의 <code>return</code>이 된다.</p>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <p>경우에 따라서는 <code>continue</code>를 사용하는 반복문은 <code>if</code> 구문을 사용해 논리적으로 동일하게 표현할 수 있다.</p>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="note_40">Note</h5>
 <p>정말로 반복문 중간에서 탈출해야 한다면, <code>break</code>는 보통 <a href="#Res-loop-counter">루프 변수를 조작</a>하거나 <a href="#Res-goto"><code>goto</code></a>를 쓰는 방법보다 더 나은 방법이다.</p>
@@ -9837,7 +9683,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>break</code>로 안 끝나는 사항은 간과하기 쉽다. 명확하게 하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">switch</span> <span class="p">(</span><span class="n">eventType</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="nl">Information</span><span class="p">:</span>
@@ -9851,7 +9696,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>C++17에서는, <code>[[fallthrough]]</code>를 사용하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">switch</span> <span class="p">(</span><span class="n">eventType</span><span class="p">)</span> <span class="p">{</span>
@@ -9867,7 +9711,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_41">Note</h5>
 <p>단일문으로 모이는 여러개의 케이스 조건은 허용된다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
@@ -9879,7 +9722,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_51">Enforcement</h5>
 <p>빈 <code>case</code>문이 아닌데 break로 끝나지 않는다면 지적한다.</p>
 <h3 id="es79-default"><a name="Res-default"></a>ES.79: (오직) 일반적인 경우를 처리하기 위해서 <code>default</code>를 사용하라</h3>
@@ -9887,7 +9729,7 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
 <p>코드의 명확성.
 오류를 탐지할 기회를 늘려준다.</p>
 <h5 id="example_59">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="n">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">,</span> <span class="n">d</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="nc">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">,</span> <span class="n">d</span> <span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="n">E</span> <span class="n">x</span><span class="p">)</span>
     <span class="p">{</span>
@@ -9904,7 +9746,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 예시에는 기본 행동과 <code>a</code>와 <code>b</code>라는 특별한 경우를 처리한다는 것이 분명하게 나타난다.</p>
 <h5 id="example_60">Example</h5>
@@ -9926,9 +9767,8 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>default</code>를 넣지 않았다면, 그 코드를 유지보수 하는 사람 혹은 컴파일러는 당신이 당연히(reasonably) 모든 경우를 도려했다고 가정할 것이다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="n">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">,</span> <span class="n">d</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="nc">E</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">,</span> <span class="n">d</span> <span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="n">E</span> <span class="n">x</span><span class="p">)</span>
     <span class="p">{</span>
@@ -9943,7 +9783,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>d</code>를 처리하는 것을 깜빡한 것일까? 아니면 의도적으로 제외한 것일까?
 특정한 경우가 누락되는 것은 보통 열거형의 값이 추가되면서 사람이 모든 <code>switch</code>를 갱신하지 않았을 때 발생한다.</p>
@@ -9962,7 +9801,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 구문은 이름 없는 <code>lock</code>개체를 선언하고 세미콜론 이후 즉시 사라지도록 한 것이다.</p>
 <p>이는 흔치 않은 실수가 아니다. 특히, 이 예시는 찾기 어려운 경쟁 조건으로 이어질수도 있다.
@@ -9983,7 +9821,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
     <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_54">Enforcement</h5>
 <p>블록이 아니면서 주석문을 포함하지 않는 빈 문장이 있다면 지적한다.</p>
@@ -10011,7 +9848,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_55">Enforcement</h5>
 <p>루프 제어의 반복 표현식이나 반복문 안에서 잠재적으로 변수를 갱신하면 (비-<code>const</code> 형태로 사용하면) 지적하라</p>
 <h3 id="es87"><a name="Res-if"></a>ES.87: 조건에 불필요한 <code>==</code>나 <code>!=</code>를 사용하지 마라</h3>
@@ -10027,7 +9863,6 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// redundant `!=nullptr`, not recommended</span>
 </code></pre></div>
 
-
 <p><code>if (p)</code>가 "만약 <code>p</code>가 유효하다면"이라는 프로그래머의 의도를 그대로 반영한 의미로 읽히는 반면에, <code>if (p != nullptr)</code>는 더 많은 말(long-winded workaround)이 필요할 수 있다.</p>
 <h5 id="example_64">Example</h5>
 <p>이 규칙은 조건문에서 선언이 사용되는 경우 특히 유용하다.</p>
@@ -10036,14 +9871,12 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">pc</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Circle</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ps</span><span class="p">);</span> <span class="n">pc</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// not recommended</span>
 </code></pre></div>
 
-
 <h5 id="example_65">Example</h5>
 <p>조건문에서는 bool 타입으로의 암묵적 형변환이 발생한다는 점에 유의하라.
 예를 들어:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span> <span class="p">)</span> 
         <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>이 코드는 <code>istream</code>의 <code>operator bool()</code>을 호출한다.</p>
 <h5 id="note_43">Note</h5>
@@ -10060,20 +9893,17 @@ C++이 Contract를 지원하게 되면 좀 더 나은 코드가 될 것이다.</
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>정수가 2개 이상의 값을 가진다는 점을 항상 기억하라.</p>
 <h5 id="example-bad_29">Example, bad</h5>
 <p>알려진 코드 중 이런게 있다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>   <span class="c1">// 두 C-스타일 문자열들이 같은가? (mistake!)</span>
 </code></pre></div>
 
-
 <p>흔히 볼 수 있는 초심자 오류다.
 C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수들을 잘 알아야 한다.</p>
 <p>장황하게 아래처럼 작성하는 것은</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>   <span class="c1">// 두 C-스타일 문자열들이 같은가? (mistake!)</span>
 </code></pre></div>
-
 
 <p>당신을 구해주지 않는다.</p>
 <h5 id="note_44">Note</h5>
@@ -10084,7 +9914,6 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// redundant `== nullptr`, not recommended</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_56">Enforcement</h5>
 <p>쉽다, 조건문에서 <code>!=</code>와 <code>==</code>이 중복적으로 사용되는지 검사한다.</p>
 <h2 id="arithmetic"><a name="SS-numbers"></a>산술연산(Arithmetic)</h2>
@@ -10092,14 +9921,13 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
 <h5 id="reason_57">Reason</h5>
 <p>결과가 잘못될 수 있다.</p>
 <h5 id="example_66">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">-3</span><span class="p">;</span>
     <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
 
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">// unsigned result, possibly 4294967286</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">// unsigned result: 4</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">// unsigned result, possibly 4294967275</span>
 </code></pre></div>
-
 
 <p>실제 코드에서는 문제를 찾아내기 어렵다.</p>
 <h5 id="note_45">Note</h5>
@@ -10114,10 +9942,9 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
 <h5 id="reason_58">Reason</h5>
 <p>부호없는 타입은 부호비트까지 포함해서 비트 연산할 수 있도록 지원하기 때문에 의도한 대로 동작한다.</p>
 <h5 id="example_67">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b1010</span><span class="err">&#39;</span><span class="mi">1010</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="mb">0b1010&#39;1010</span><span class="p">;</span>
     <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">y</span> <span class="o">=</span> <span class="o">~</span><span class="n">x</span><span class="p">;</span>   <span class="c1">// y == 0b0101&#39;0101;</span>
 </code></pre></div>
-
 
 <h5 id="note_46">Note</h5>
 <p>모듈러 연산에서 부호없는 타입은 유용하다.
@@ -10134,7 +9961,7 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
 <h5 id="example_68">Example</h5>
 <p>부호없는 타입을 사용한 산술연산은 기대밖의 결과를 낳는다 (그걸 의도하지 않았다면).
 부호 있는 타입과 부호 없는 타입이 섞여서 산술연산에 사용되는 코드 역시 마찬가지다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">T2</span><span class="o">&gt;</span>
     <span class="n">T</span> <span class="n">subtract</span><span class="p">(</span><span class="n">T</span> <span class="n">x</span><span class="p">,</span> <span class="n">T2</span> <span class="n">y</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span>
@@ -10153,7 +9980,6 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 코드로 어떤 일이 일어나는지 분명히 알 수 있다.
 하지만 당신이 <code>us - (s + 2)</code> 혹은 <code>s += 2; ...; us - s</code>같은 코드를 봤다면, 그 결과가 <code>4294967294</code>라고 확신할 수 있었겠는가?</p>
 <h5 id="exception_12">Exception</h5>
@@ -10171,12 +9997,11 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
         <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 
-    <span class="kt">int</span> <span class="n">a2</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">];</span>         <span class="c1">// error: negative size</span>
+    <span class="kt">int</span> <span class="n">a2</span><span class="p">[</span><span class="mi">-2</span><span class="p">];</span>         <span class="c1">// error: negative size</span>
 
     <span class="c1">// OK, but the number of ints (4294967294) is so large that we should get an exception</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">(</span><span class="mi">-2</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>배열 접근(subscript)에는 <code>gsl::index</code>를 사용하라; <a href="#Res-subscripts">ES.107를 참고하라</a></p>
 <h5 id="enforcement_59">Enforcement</h5>
@@ -10199,19 +10024,16 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
         <span class="n">a</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span> <span class="c1">// bad (twice)</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_31">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
     <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// bad</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_32">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="nf">area</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span><span class="p">;</span> <span class="p">}</span>
 
-    <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="mi">10</span><span class="err">&#39;</span><span class="mo">000</span><span class="err">&#39;</span><span class="mo">000</span><span class="p">,</span> <span class="mi">100</span><span class="err">&#39;</span><span class="mo">000</span><span class="err">&#39;</span><span class="mo">000</span><span class="p">);</span>   <span class="c1">// bad</span>
+    <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="mi">10&#39;000&#39;000</span><span class="p">,</span> <span class="mi">100&#39;000&#39;000</span><span class="p">);</span>   <span class="c1">// bad</span>
 </code></pre></div>
-
 
 <h5 id="exception_13">Exception</h5>
 <p>모듈러 연산(modulo arithmetic)을 사용한다면 부호없는 타입을 사용하라.</p>
@@ -10224,13 +10046,12 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
 <p>최소값 이하로 값이 내려가면 메모리 값이 망가지고 비정상적으로 작동한다.</p>
 <h5 id="example-bad_33">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-    <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>   <span class="c1">// bad</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">-2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>   <span class="c1">// bad</span>
 
     <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">101</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">)</span>
         <span class="n">a</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>   <span class="c1">// bad (twice)</span>
 </code></pre></div>
-
 
 <h5 id="exception_14">Exception</h5>
 <p>모듈러 연산(modulo arithmetic)을 사용한다면 부호없는 타입을 사용하라.</p>
@@ -10248,7 +10069,6 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-good_4">Example; good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">double</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// good, address via precondition (and replace with contracts once C++ gets them)</span>
@@ -10262,7 +10082,6 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="alternative_4">Alternative</h5>
 <p>어느 정도의 오버헤드를 감수할 수 있는 대단히 중요한 프로그램에서는 범위 검사를 수행하거나 부동소수점 타입을 사용하라.</p>
 <h5 id="enforcement_62">Enforcement</h5>
@@ -10274,12 +10093,11 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
 <p><code>unsigned</code>를 선택하는 것은 정수들의 동작이 달라지게 만든다. 여기에는 모듈러 연산, Overflow 경고, 부호 유무에 의한 오류의 가능성이 포함된다.
 <code>unsigned</code>를 사용하는것 자체는 음수가 생길 가능성을 원천봉쇄하지 않는다.</p>
 <h5 id="example_70">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>   <span class="c1">// Valid: the value of u1 is 4294967294</span>
-    <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u1</span> <span class="o">=</span> <span class="mi">-2</span><span class="p">;</span>   <span class="c1">// Valid: the value of u1 is 4294967294</span>
+    <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">-2</span><span class="p">;</span>
     <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u2</span> <span class="o">=</span> <span class="n">i1</span><span class="p">;</span>   <span class="c1">// Valid: the value of u2 is 4294967294</span>
     <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">u2</span><span class="p">;</span>            <span class="c1">// Valid: the value of i2 is -2</span>
 </code></pre></div>
-
 
 <p>예시와 같은 (완전히 합법인) 생성 코드는 실제로는 찾아내기 어렵고 많은 오류의 원인이다.</p>
 <p>다음과 같은 코드를 고려해보라:</p>
@@ -10292,7 +10110,6 @@ C 스타일 문자열을 사용한다면 <code>&lt;cstring&gt;</code>의 함수�
     <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>   <span class="c1">// if the input is -2 a becomes 4294967292</span>
 </code></pre></div>
 
-
 <p><code>-1</code>이 <code>unsigned int</code>에서는 최대값으로 사용된다는 것을 기억하라.
 Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't overflow, it wrapped around.</p>
 <h5 id="example_71">Example</h5>
@@ -10301,7 +10118,6 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
     <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">max</span><span class="p">)</span> 
         <span class="n">x</span> <span class="o">+=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// infinite loop</span>
 </code></pre></div>
-
 
 <p><code>x</code>가 부호 있는 <code>short</code> 였다면, Overflow에 의한 미정의 행동을 컴파일러가 경고했을 것이다.</p>
 <h5 id="alternatives_1">Alternatives</h5>
@@ -10312,7 +10128,7 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
 <li><code>Assert(-1 &lt; x)</code></li>
 </ul>
 <p>예를 들자면</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Positive</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Positive</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
         <span class="n">Positive</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">:</span><span class="n">val</span><span class="p">{</span><span class="n">x</span><span class="p">}</span> <span class="p">{</span>
             <span class="n">Assert</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">);</span>
@@ -10325,9 +10141,8 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
     <span class="p">}</span>
 
     <span class="kt">int</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>  <span class="c1">// throws</span>
+    <span class="kt">int</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">-2</span><span class="p">);</span>  <span class="c1">// throws</span>
 </code></pre></div>
-
 
 <h5 id="note_48">Note</h5>
 <p>???</p>
@@ -10359,14 +10174,13 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 
     <span class="c1">// bug</span>
-    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 
     <span class="c1">// may not be big enough</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="example-good_5">Example, good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span> <span class="o">=</span> <span class="cm">/*...*/</span><span class="p">;</span>
@@ -10374,10 +10188,9 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
     <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span>             <span class="c1">// ok</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1">// ok</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1">// ok</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="note_49">Note</h5>
 <p>기본 배열(built-in array) 타입은 부호 있는 정수를 배열 접근에 사용한다.
@@ -10385,8 +10198,8 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
 이로 인해 완벽하게 호환되는 해결책은 없다 (표준 라이브러리 컨테이너들이 미래에 부호 있는 정수로 배열 접근을 하지 않는 한).
 이와 관련된 문제들로 인해, 충분한 크기를 가진다고 보장하는 <code>gsl::index</code>를 쓰는 것이 더 낫다.</p>
 <h5 id="example_72">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">My_container</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">My_container</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// ...</span>
         <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="n">gsl</span><span class="o">::</span><span class="n">index</span> <span class="n">i</span><span class="p">);</span>    <span class="c1">// not unsigned</span>
@@ -10394,11 +10207,9 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example_73">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ??? demonstrate improved code generation and potential for error detection ???
 </code></pre></div>
-
 
 <h5 id="alternatives_2">Alternatives</h5>
 <p>사용자를 위한 대안들</p>
@@ -10430,7 +10241,7 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Errors/" title="Errors" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Errors/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -10445,7 +10256,7 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
           </a>
         
         
-          <a href="../Functions/" title="Functions" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Functions/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -10482,15 +10293,15 @@ Also, since unsigned arithmetic is modulo arithmetic the multiplication didn't o
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

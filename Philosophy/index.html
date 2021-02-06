@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Philosophy/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Philosophy/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Philosophy
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,234 +302,231 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Philosophy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Philosophy
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Philosophy" class="md-nav__link md-nav__link--active">
-      Philosophy
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -520,9 +534,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1133,139 +1145,142 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1275,7 +1290,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1286,9 +1302,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1913,9 +1927,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="p"><a name="S-philosophy"></a>P: 철학</h1>
 <p>이 장의 규칙들은 매우 일반적이다.</p>
 <p>철학 규칙 요약:</p>
@@ -1951,7 +1962,6 @@
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>첫번째 <code>month</code> 함수는 명확히 <code>Month</code>를 반환하도록 선언되어 있으며, <code>Date</code> 개체의 상태를 변경하지 않을 것처럼 보인다.
 두번째 버전은 코드를 읽는 개발자들을 고민하게 만들며, 발견하기 어려운 버그를 유발할 가능성이 있다.</p>
 <h5 id="example-bad">Example; bad</h5>
@@ -1961,7 +1971,7 @@
         <span class="n">string</span> <span class="n">val</span><span class="p">;</span>
         <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
         <span class="c1">// ...</span>
-        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>                    <span class="c1">// bad, plus should use gsl::index</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">-1</span><span class="p">;</span>                    <span class="c1">// bad, plus should use gsl::index</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
@@ -1971,7 +1981,6 @@
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example-good">Example; good</h5>
 <p>의도를 더 명확하게 드러내기 위해 아래와 같이 코드를 바꿀 수 있다:</p>
@@ -1985,7 +1994,6 @@
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>언어가 제공하는 기능을 직접 사용하기보다 잘 설계된 라이브러리를 사용해 그 의도(어떻게 수행되는지보다 무엇이 수행되는지를) 표현하는 것이 훨씬 낫다.</p>
 <p>C++ 프로그래머는 표준 라이브러리의 기본 내용을 반드시 이해하고 올바른 곳에 사용해야 한다.
 어떤 프로그래머든 프로젝트에 기반하고 있는 핵심 라이브러리의 기본 내용을 반드시 이해하고 있어야 하며, 올바르게 사용할 줄 알아야 한다.
@@ -1996,14 +2004,12 @@
     <span class="n">change_speed</span><span class="p">(</span><span class="mf">2.3</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>더 좋은 접근법은 <code>double</code>의 의미와 단위(새로운 속도 값인지, 혹은 이전 속도에서의 증분을 의미하는지)를 명확히 하는 것이다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">change_speed</span><span class="p">(</span><span class="n">Speed</span> <span class="n">s</span><span class="p">);</span>    <span class="c1">// better: the meaning of s is specified</span>
     <span class="c1">// ...</span>
     <span class="n">change_speed</span><span class="p">(</span><span class="mf">2.3</span><span class="p">);</span>        <span class="c1">// error: no unit</span>
     <span class="n">change_speed</span><span class="p">(</span><span class="mi">23</span><span class="n">m</span> <span class="o">/</span> <span class="mi">10</span><span class="n">s</span><span class="p">);</span>  <span class="c1">// meters per second</span>
 </code></pre></div>
-
 
 <p>(단위가 없는) 단순한 <code>double</code>을 변화량(속도의 차)으로 받아들일 수도 있겠지만, 아무래도 오류가 발생하기 쉽다.
 속도와 변화량 둘 다 필요하다면, <code>Delta</code> 타입을 정의해야 할 것이다.</p>
@@ -2045,25 +2051,21 @@ and be aware of constructs with implementation defined meaning (e.g., <code>size
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>위 코드만 보았을 때는 <code>v</code>의 각 요소를 순회하겠다는 의도가 드러나지 않는다.
 인덱스에 대한 세부적인 구현부가 노출된다 (따라서 잘못 사용될 지도 모른다). 그리고 의도적인지는 알 수 없지만 <code>i</code>를 반복문 밖에서도 여전히 사용할 수 있다. 이 부분의 코드만 읽어서는 그 의도를 알지 못한다.</p>
 <p>개선:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* do something with the value of x */</span> <span class="p">}</span>
 </code></pre></div>
 
-
 <p>위 코드를 보면 v에 대한 순회 메커니즘을 명시적으로 언급하지 않는다. 그리고 순회하는 동안 v의 각 <code>const</code> 요소의 레퍼런스에 대해 동작이 일어나기 때문에 각 요소를 수정할 수 없다. 만약 수정이 필요한 경우라면 아래와 같이 코드를 작성해야 한다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* modify x */</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <p>For more details about for-statements, see <a href="../Expr/#Res-for-range">ES.71</a>.
 Sometimes better still, use a named algorithm. This example uses the <code>for_each</code> from the Ranges TS because it directly expresses the intent:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">for_each</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* do something with the value of x */</span> <span class="p">});</span>
     <span class="n">for_each</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* do something with the value of x */</span> <span class="p">});</span>
 </code></pre></div>
-
 
 <p>마지막 예는 <code>v</code>의 각 요소가 처리되는 순서에 관심이 없다는 점을 명확히 하고 있다.</p>
 <p>프로그래머라면 다음에 익숙해져야 한다.</p>
@@ -2081,7 +2083,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
 <div class="codehilite"><pre><span></span><code>    <span class="n">draw_line</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="c1">// obscure</span>
     <span class="n">draw_line</span><span class="p">(</span><span class="n">Point</span><span class="p">,</span> <span class="n">Point</span><span class="p">);</span>        <span class="c1">// clearer</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_2">Enforcement</h5>
 <p>좀 더 나은 대안이 있는 범용적인 패턴을 찾아보라.</p>
@@ -2131,12 +2132,10 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
         <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Int too small</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>This example fails to achieve what it is trying to achieve (because overflow is undefined) and should be replaced with a simple <code>static_assert</code>:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// Int is an alias used for integers</span>
     <span class="k">static_assert</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Int</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">);</span>    <span class="c1">// do: compile-time check</span>
 </code></pre></div>
-
 
 <p>Or better still just use the type system and replace <code>Int</code> with <code>int32_t</code>.</p>
 <h5 id="example_5">Example</h5>
@@ -2146,14 +2145,12 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>    <span class="c1">// bad, off the end</span>
 </code></pre></div>
 
-
 <p>better</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">r</span><span class="p">);</span> <span class="c1">// read into the range of integers r</span>
 
     <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
     <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>        <span class="c1">// better: let the compiler figure out the number of elements</span>
 </code></pre></div>
-
 
 <p><strong>Alternative formulation</strong>: 컴파일 타임에 할 수 있는 것을 런타임으로 연기하지 마라.</p>
 <h5 id="enforcement_4">Enforcement</h5>
@@ -2170,7 +2167,7 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
 그러나 충분한 리소스를 준다면 원론적으로 검사 가능한 프로그램을 작성하려고 노력해야 한다. (분석 프로그램, 런타임 검사, 컴퓨터 리소스, 시간)</p>
 <h5 id="example-bad_1">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// separately compiled, possibly dynamically loaded</span>
-    <span class="k">extern</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
+    <span class="k">extern</span> <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">);</span>
 
     <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2179,21 +2176,19 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>여기서 결정적인 정보(요소의 갯수)가 아주 철저하게 숨겨져 있어서, <code>f()</code>가 ABI의 일부일 때 정적 분석은 아마도 불가능해 보이고 동적 검사는 매우 어려울 수 있다. 따라서 해당 포인터를 "측정"할 수 없다.
 도움이 될만한 정보를 남은 공간에 넣을 수 있지만, 이는 시스템이나 컴파일러에게 전반적인 변경을 요구한다.
 예제에 있는 코드는 오류 발견을 아주 어렵게 만드는 디자인이다.</p>
 <h5 id="example-bad_2">Example, bad</h5>
 <p>We can of course pass the number of elements along with the pointer:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// separately compiled, possibly dynamically loaded</span>
-    <span class="k">extern</span> <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">extern</span> <span class="kt">void</span> <span class="n">f2</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
 
     <span class="kt">void</span> <span class="nf">g2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">f2</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">m</span><span class="p">);</span>  <span class="c1">// bad: a wrong number of elements can be passed to f()</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>인자로 요소의 갯수를 전달하는 것은 포인터를 전달하면서 관례에 따라 요소의 갯수를 구하는 것보다 낫다.
 그러나, 단순히 철자 하나만 틀려도 심각한 오류를 야기한다. <code>f2()</code>에서 두 인자간의 연결은 구체적이지 않고 관례에 따른 것이다.</p>
@@ -2203,7 +2198,7 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// separately compiled, possibly dynamically loaded</span>
     <span class="c1">// NB: this assumes the calling code is ABI-compatible, using a</span>
     <span class="c1">// compatible C++ compiler and the same stdlib implementation</span>
-    <span class="k">extern</span> <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">extern</span> <span class="kt">void</span> <span class="n">f3</span><span class="p">(</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
 
     <span class="kt">void</span> <span class="nf">g3</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2211,11 +2206,10 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_6">Example</h5>
 <p>포인터와 요소의 갯수를 하나의 개체로 합쳐서 전달해야 한다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">extern</span> <span class="kt">void</span> <span class="nf">f4</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">);</span>   <span class="c1">// separately compiled, possibly dynamically loaded</span>
-    <span class="k">extern</span> <span class="kt">void</span> <span class="nf">f4</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>      <span class="c1">// separately compiled, possibly dynamically loaded</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">extern</span> <span class="kt">void</span> <span class="n">f4</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">);</span>   <span class="c1">// separately compiled, possibly dynamically loaded</span>
+    <span class="k">extern</span> <span class="kt">void</span> <span class="n">f4</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>      <span class="c1">// separately compiled, possibly dynamically loaded</span>
                                     <span class="c1">// NB: this assumes the calling code is ABI-compatible, using a</span>
                                     <span class="c1">// compatible C++ compiler and the same stdlib implementation</span>
 
@@ -2226,7 +2220,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
         <span class="n">f4</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="n">v</span><span class="p">});</span>          <span class="c1">// pass a view, retain ownership</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 디자인은 개체의 필수 부분으로 요소의 갯수를 전달하므로 오류가 발생하지 않고 항상 저렴하지는 않지만 동적(런타임) 검사를 할 수 있다.</p>
 <h5 id="example_7">Example</h5>
@@ -2252,7 +2245,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
         <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example_8">Example</h5>
 <ul>
@@ -2286,7 +2278,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>여기서 우리는 <code>use1</code>에 데이터가 손실되거나 크래시를 야기할 수 있는 작은 오류를 범했다.
 (포인터, 크기)-스타일 인터페이스는 범위 오류에 대해 <code>increment1()</code>에서 방어할 수 있는 현실적인 방안을 없애버린다.
 배열 첨자가 범위를 벗어나는지 검사한다고 가정하면, <code>p[10]</code>까지 오류가 발견되지 않을 것이다.
@@ -2306,7 +2297,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이제 <code>m&lt;=n</code>은 호출 시점에서 (일찍) 확인할 수 있다.
 우리가 가진 모든 것이 오타이므로 <code>n</code>을 범위로 사용한다면, 코드를 더 단순하게 만들 수 있다. (오류의 가능성 제거)</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">use3</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span>
@@ -2318,7 +2308,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example-bad_4">Example, bad</h5>
 <p>동일한 값을 반복적으로 검사하지 마라. 구조화된 데이터를 문자열로 넘기지 마라:</p>
@@ -2341,7 +2330,6 @@ Sometimes better still, use a named algorithm. This example uses the <code>for_e
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>(<code>Date</code> 생성자에 의해) 날짜가 두 번 계산되고 (비구조화된 데이터인) 문자열로 전달된다.</p>
 <h5 id="example_10">Example</h5>
 <p>지나친 검사는 비용이 많이 든다.
@@ -2362,13 +2350,12 @@ Similarly, don't add validity checks that change the asymptotic behavior of your
         <span class="kt">float</span> <span class="n">m</span><span class="p">()</span> <span class="k">const</span>
         <span class="p">{</span>
             <span class="c1">// Should I handle the degenerate case here?</span>
-            <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span> <span class="o">-</span> <span class="n">e</span> <span class="o">*</span> <span class="n">e</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span> <span class="o">-</span> <span class="n">e</span> <span class="o">*</span> <span class="n">e</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="o">???</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>제트기에 대한 물리적 법칙(<code>e * e &lt; x * x + y * y + z * z</code>)은 측정 오류의 가능성 때문에 값이 바뀔 수 있다.</p>
 <p>???</p>
@@ -2395,7 +2382,6 @@ This is particularly important for long-running programs, but is an essential pi
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><a href="../Resource/#Rr-raii">RAII</a>를 사용한 개선:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2405,7 +2391,6 @@ This is particularly important for long-running programs, but is an essential pi
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><strong>See also</strong>: <a href="../Resource/#S-resource">리소스 관리</a></p>
 <h5 id="note_7">Note</h5>
@@ -2436,7 +2421,7 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
 <p>"효율성을 위해 노력할 때 얻을 수 있는 또다른 이점은 그러한 행위가 문제를 더 깊이 이해할 수 있도록 강제한다는 겁니다." - Alex Stepanov</p>
 </blockquote>
 <h5 id="example-bad_6">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
@@ -2469,7 +2454,6 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>그렇다. 풍자를 위한 예제이기는 하지만, 실제 코드에서 이보다 심각한 실수도 본 적이 있다.
 <code>X</code>의 레이아웃에 (더 많을지도 모르지만) 적어도 6바이트의 낭비가 있다는 점을 주목하라.
 복사 연산을 그럴싸하게 정의해 두다 보니 이동 연산이 비활성화 됨으로써 반환 연산이 느려졌다(여기에선 반환값 최적화(Return Value Optimization, RVO)가 보장되지 않음에 주목하라).
@@ -2481,7 +2465,6 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>그렇다, 이것은 실제 코드로부터 가져온 예제이다.
 우리는 이 예제를 독자가 직접 무엇이 낭비되는지 찾게 하기 위해 남겨둔다.</p>
@@ -2520,7 +2503,6 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 것은 저수준이고, 장황하며, 에러가 발생하기 쉽다.
 예를 들어, 우리는 메모리 소모를 테스트하는 것을 잊었다.
 대신, 우리는 <code>vector</code>를 사용할 수 있었다:</p>
@@ -2532,7 +2514,6 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
         <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_11">Note</h5>
 <p>표준 라이브러리와 GSL은 이런 철학의 예들 이다.
@@ -2577,7 +2558,6 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
 <div class="codehilite"><pre><span></span><code>    <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;&gt;</span><span class="p">());</span>
 </code></pre></div>
 
-
 <p>당신이 정렬 알고리즘들에 대한 전문가이거나 시간이 많이 있지 않은 이상,
 이 코드는 당신이 특정한 응용을 위해 작성한 그 어떤 것보다 더 정확하고 빠르게 동작할 것이다.
 당신이 직접 작성한 코드를 사용하려면, 표준 라이브러리(또는 당신의 어플리케이션이 사용하는 그 어떤 기본 라이브러리들)를 사용하지 않을 이유가 필요하다.</p>
@@ -2608,7 +2588,7 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Performance/" title="Performance" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Performance/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2623,7 +2603,7 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
           </a>
         
         
-          <a href="../Profile/" title="Profile" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Profile/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -2660,15 +2640,15 @@ Combine this with enforcement of <a href="../Profile/#SS-force">the type and bou
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Errors/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Errors/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Errors
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,126 +302,123 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Errors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Errors
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Errors" class="md-nav__link md-nav__link--active">
-      Errors
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -412,9 +426,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1310,247 +1322,250 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1560,7 +1575,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1571,9 +1587,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -2483,9 +2497,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="e"><a name="S-errors"></a>E: 오류 처리</h1>
 <p>오류 처리는 다음을 포함한다:</p>
 <ul>
@@ -2536,7 +2547,7 @@
 <h5 id="reason_1">Reason</h5>
 <p>오류 처리가 체계적이고, 견고하며, 반복적이지 않게 된다.</p>
 <h5 id="example">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Foo</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Foo</span> <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">Thing</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
         <span class="n">File_handle</span> <span class="n">f</span><span class="p">;</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
@@ -2548,7 +2559,6 @@
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>여기서, <code>vector</code> 와 <code>string</code>의 생성자는 엘리먼트들이 필요로 하는 충분한 메모리를 할당받지 못할 수 있으며, <code>vector</code>의 생성자는 초기화 목록의 <code>Thing</code>을 복사할 수 없을 수 있고, <code>File_handle</code>은 필요한 파일을 열지 못할 수 있다.
 각각의 경우, <code>use()</code>의 호출자가 처리할 수 있도록 예외를 발생시킨다.
@@ -2563,7 +2573,6 @@
             <span class="k">throw</span> <span class="n">runtime_error</span><span class="p">{</span><span class="s">&quot;File_handle: could not open &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; as &quot;</span> <span class="o">+</span> <span class="n">mode</span><span class="p">};</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note">Note</h5>
 <p>예외의 의도는 예외적인 사건이나 실패를 알리는데 있다.
@@ -2600,10 +2609,9 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>   <span class="c1">// not found</span>
+        <span class="k">return</span> <span class="mi">-1</span><span class="p">;</span>   <span class="c1">// not found</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이런 코드는 복잡하고 일반적인 for문 보다 훨씬 느릴 것이다. 
 <code>vector</code>에서 값을 찾는데 예외적인 상황은 없다.</p>
@@ -2637,7 +2645,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>주석으로 표기된 이 클래스의 불변조건은 생성자에서 설정된다.
 <code>new</code>는 요구받은 메모리를 할당하지 못할 경우 예외를 던진다.
 여기서 <code>operator []</code>는 불변조건에 의존하게 된다.</p>
@@ -2657,7 +2664,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>예외를 발생시키기 전에 메모리를 해제할 수도 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>   <span class="c1">// Clumsy and error-prone: explicit release</span>
     <span class="p">{</span>
@@ -2671,7 +2677,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 코드는 지저분하다. 다수의 <code>throw</code>가 가능한 경우, 명시적인 해제는 반복적이고, 오류에 취약하다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>   <span class="c1">// OK: resource management done by a handle (but see below)</span>
     <span class="p">{</span>
@@ -2681,7 +2686,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>RAII는 호출받은 함수에서 묵시적으로 <code>throw</code>하는 상황에서도 동작한다는 점에 주의하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f4</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>   <span class="c1">// OK: resource management done by a handle (but see below)</span>
@@ -2693,7 +2697,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>포인터가 반드시 필요하지 않다면, 지역 변수로 처리하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f5</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>   <span class="c1">// OK: resource management done by local object</span>
     <span class="p">{</span>
@@ -2703,7 +2706,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>더 간단하고 안전하다. 경우에 따라선 더 효율적이기도 하다.</p>
 <h5 id="note_4">Note</h5>
@@ -2737,7 +2739,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span> <span class="c1">// destructors clean up as usual</span>
 </code></pre></div>
 
-
 <p>이런 방법은 코드의 길이가 늘어나지만, "exception"이 전파되는 것을 <code>valid()</code> 검사를 통해서 방지한다.
 <code>valid()</code> 검사가 실수로 잊혀질 수 있으니 가능하다면 예외를 선호하라.</p>
 <p><strong>See also</strong>: <a href="#Se-noexcept"><code>noexcept</code>의 사용</a></p>
@@ -2761,7 +2762,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 코드에서는 <code>compute</code> 함수가 예외를 던지지 않도록 작성되었단 사실을 알수 있다. 
 <code>noexcept</code>로 선언함으로써, 우리는 컴파일러와 다른 이들에게 <code>compute</code>함수를 이해하고 변경하는데 도움을 줄 수 있다.</p>
 <h5 id="note_6">Note</h5>
@@ -2773,7 +2773,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ... do something ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 코드에서 <code>noexcept</code>는 지역변수 <code>vector</code>의 생성이 실패하는 상황을 처리하지 않는다고 표현하고 있다. 이 말인 즉, 메모리 고갈을 (하드웨어 실패와 같은)심각한 설계 오류로 간주한다는 것이다. 따라서 예외가 발생한다면 프로그램에서 크래시를 일으킬 것이다.</p>
 <h5 id="note_7">Note</h5>
@@ -2793,7 +2792,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 문제를 해결하기 위해서 일관적으로 자원 핸들(resource handle)을 사용할 수도 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">no_leak</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2804,7 +2802,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>다른 (더 나은) 해결책은 포인터를 대신해 지역 변수를 사용하는 것이다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">no_leak_simplified</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
     <span class="p">{</span>
@@ -2812,7 +2809,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_8">Note</h5>
 <p>정리 작업이 필요하지만 소멸자가 없는 지역 변수들이 있다면, 그 작업들은 <code>throw</code>에 앞서 수행되어야 한다. 
@@ -2841,7 +2837,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-dont_1">Example, don't</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">my_code</span><span class="p">()</span>     <span class="c1">// Don&#39;t</span>
     <span class="p">{</span>
@@ -2862,7 +2857,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_9">Note</h5>
 <p>표준 라이브러리의 예외 클래스들은 <code>std::exception</code>을 상속하고 있다. 이들에 대한 오류 처리는 <code>std::exception</code> 또는 "일반적인" 처리를 사용하여야 한다. 내장 타입들을 예외 개체로 사용하는 것은 다른 사용자들의 코드와 충돌을 발생시킬 수 있다.</p>
@@ -2887,7 +2881,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><strong>See also</strong>: <a href="#Sd-???">Discussion</a></p>
 <h5 id="enforcement_4">Enforcement</h5>
 <p>내장 타입을 사용하는 <code>throw</code>와 <code>catch</code>를 잡아내라. 표준 라이브러리에서 사용하는 <code>std::exception</code>기반의 계층구조에 포함된 예외 클래스를 사용하는 것이 더 낫다.</p>
@@ -2906,16 +2899,13 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>대신 참조를 사용하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>const</code> 참조를 사용하면 더 좋다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
 </code></pre></div>
-
 
 <p>Most handlers do not modify their exception and in general we <a href="#Res-const">recommend use of <code>const</code></a>.</p>
 <h5 id="note_10">Note</h5>
@@ -2936,7 +2926,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="p">}</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="note_11">Note</h5>
 <p>예시에 나온 "close를 거부하는" 네트워크 연결 클래스처럼, 많은 이들이 이 규칙을 위반하면서 신뢰할 수 있는 코드를 작성하려고 시도해왔다. 
@@ -2971,7 +2960,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_7">Enforcement</h5>
 <ul>
 <li>중첩된 <code>try</code> 구문들을 지적하라</li>
@@ -2997,7 +2985,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>지저분한 코드다.
 <code>try</code> 블록 내에 있는 포인터 <code>p</code>에서 누수가 발상할 수 있다.
 모든 예외를 처리하지 않는다. 온전히 생성되지 않은 개체를 <code>delete</code>하는 것은 잘못된 사용법이다.</p>
@@ -3007,7 +2994,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="n">Gadget</span> <span class="n">g</span> <span class="p">{</span><span class="n">s</span><span class="p">};</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="alternatives">Alternatives</h5>
 <ul>
@@ -3027,7 +3013,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_14">Note</h5>
 <p><code>finally</code>는 <code>try</code>/<code>catch</code>만큼 지저분하지는 않지만, 임시적인(ad-hoc) 방법이다. <a href="#Re-raii">적합한 리소스 관리 개체</a>를 사용하라.
@@ -3062,7 +3047,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>gadget</code>이 제대로 생성되지 않았다면, <code>func</code>는 예외를 던지며 종료한다. 예외를 던질 수 없다면, <code>gadget</code>에 <code>valid()</code>멤버 함수를 추가함으로써 RAII처럼 자원을 처리할 수도 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">error_indicator</span> <span class="nf">func</span><span class="p">(</span><span class="n">zstring</span> <span class="n">arg</span><span class="p">)</span>
     <span class="p">{</span>
@@ -3072,7 +3056,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// zero indicates &quot;good&quot;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 경우 호출자(caller)는 당연히 반환값 검사가 필요하다는 것을 알고 있어야 한다.</p>
 <p><strong>See also</strong>: <a href="#Sd-???">Discussion</a></p>
@@ -3095,7 +3078,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>대부분의 프로그램은 메모리 고갈을 아름답게 해결하기 어렵다. 이는 다음 코드에서도 동일하다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
@@ -3104,7 +3086,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>일반적으로, "크래시"가 발생해서 종료하기 전 발생 원인에 대해 로그를 남기는 것은 현명한 생각이다.</p>
 <h5 id="enforcement_11">Enforcement</h5>
@@ -3138,7 +3119,6 @@ C++에서는 예외가 드물게 발생하다는 전제 하에 최적화를 적�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 접근법은 <a href="#Re-no-throw-raii">RAII처럼 자원을 관리하라</a> 항목에 부합한다.
 This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource management</a>. <code>valid()</code>함수는 <code>error_indicator</code>를 반환할수도 있다. (예컨대, <code>error_indicator</code> 열거형 중에서 하나의 값을 반환한다).</p>
 <h5 id="example_12">Example</h5>
@@ -3160,7 +3140,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이처럼, <code>std::pair</code>가 반환타입으로 사용 가능하다. 일부는 특별한 타입을 선호하기도 한다.</p>
 <p>예를 들면:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">Gval</span> <span class="nf">make_gadget</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
@@ -3178,7 +3157,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>특별한 타입을 선호하는 이유중의 하나로는 <code>first</code>나 <code>second</code>같은 비밀스러운 이름보다는 멤버처럼 사용할 수 있기 때문이다. 이런 방법은 <code>std::pair</code>의 다른 사용법과 혼동되는 것을 방지한다.</p>
 <h5 id="example_13">Example</h5>
@@ -3209,7 +3187,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
         <span class="k">return</span> <span class="p">{</span><span class="n">res</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>RAII처럼 동작하도록 하는 것은 함수 내에서 다수의 자원과 다양한 오류가 발생할 수 있을 경우 더욱 중요하다. 드물게 사용되는 해법 중 하나는 반복을 피하기 위해 함수의 끝부분에 정리 작업을 모아놓는 것이다 (<code>goto</code>가 컴파일 되려면 <code>g2</code> 근처에서  불가피하게 추가로 유효 범위를 지정해야 한다):</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">error_indicator</span><span class="o">&gt;</span> <span class="n">user</span><span class="p">()</span>
@@ -3243,7 +3220,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>함수가 꽤 크다면, 이런 방법을 사용하게 될 가능성이 크다. <code>finally</code>를 사용하는 것이 <a href="#Re-finally">좀 더 쉬울 수 있다</a>. 또한, 프로그램이 커질수록 체계적으로 오류 지표(error indicator)를 사용한 오류 처리 전략을 체계적으로 적용하기 어려울 수 있다.</p>
 <p><a href="#Re-throw">예외 기반 오류 처리</a>를 선호하며, <a href="#Rf-single">함수는 짧게</a>작성하기를 권한다.</p>
 <p><strong>See also</strong>: <a href="#Sd-???">Discussion</a></p>
@@ -3257,7 +3233,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
 <h5 id="example-bad_1">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>???
 </code></pre></div>
-
 
 <h5 id="note_19">Note</h5>
 <p>C 스타일 오류처리는 전역 변수 <code>errno</code>에 의존한다, 때문에 이 가이드를 따르는 것이 필연적으로 불가할수도 있다.</p>
@@ -3275,7 +3250,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>f()</code>가 <code>X</code>나 <code>Y</code>가 아닌 다른 예외를 던진다면 엉뚱한 오류 처리 루틴이 호출된다. 만약 아무것도 없다면 프로그램은 종료된다.
 이런 종료 자체는 괜찮지만 <code>f()</code>가 새로운 예외 <code>Z</code>를 던지도록 변경되었다고 가정해보자, <code>use()</code>를 변경하지 않는 한 계속 프로그램이 강제로 종료될 것이다 (결국 모두 새로 테스트 해봐야 한다).
@@ -3309,7 +3283,6 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>Derived</code>가 <code>Base</code>를 상속받은 경우, <code>Derived</code>를 처리하는 부분은 절대로 호출되지 않는다. 
 마찬가지로 "모든 것"을 잡는 핸들러로 인해 <code>std::exception</code>는 호출되지 않게 된다.</p>
 <h5 id="enforcement_15">Enforcement</h5>
@@ -3332,7 +3305,7 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Enum/" title="Enum" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Enum/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3347,7 +3320,7 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
           </a>
         
         
-          <a href="../Expr/" title="Expr" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Expr/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -3384,15 +3357,15 @@ This approach fits with <a href="#Re-no-throw-raii">simulated RAII resource mana
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

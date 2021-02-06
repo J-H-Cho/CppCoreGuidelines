@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Naming/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Naming/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Naming
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,198 +302,195 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Class/" title="Class" class="md-nav__link">
-      Class
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Class/" class="md-nav__link">
+        Class
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Naming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Naming
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Naming" class="md-nav__link md-nav__link--active">
-      Naming
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -484,9 +498,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1287,175 +1299,178 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1465,7 +1480,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1476,9 +1492,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -2293,9 +2307,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="nl"><a name="S-naming"></a>NL: 이름과 코드 배치</h1>
 <p>별다른 이유없이 "내 스타일이 당신 것보다 더 좋다"는 논란을 줄이기 위해서라면 일관성있는 이름짓기와 레이아웃은 도움이 된다.
 굉장히 많고 많은 스타일이 존재하고 사람들은 그 스타일에 대해 열렬하게 관심(찬성 혹은 반대)을 보인다.</p>
@@ -2341,7 +2352,6 @@ written in support of Stroustrup's <a href="http://www.stroustrup.com/programmin
 <div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">vv</span><span class="p">;</span>   <span class="c1">// multiply m with v1 and add the result to vv</span>
 </code></pre></div>
 
-
 <h5 id="enforcement">Enforcement</h5>
 <p>구어체 문장을 번역하는 인공지능 프로그램을 만들고 C++로 잘 표현할 수 있는지 검사한다.</p>
 <h3 id="nl2"><a name="Rl-comments-intent"></a>NL.2: 주석에는 의도를 기술하라</h3>
@@ -2355,7 +2365,6 @@ written in support of Stroustrup's <a href="http://www.stroustrup.com/programmin
         <span class="c1">// ... quite a few lines of non-trivial code ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note">Note</h5>
 <p>주석과 코드가 다르다면 둘다 틀렸을거다.</p>
@@ -2379,7 +2388,6 @@ Aim for professionalism, not "cool."</p>
         <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h5 id="note_2">Note</h5>
 <p>Always indenting the statement after <code>if (...)</code>, <code>for (...)</code>, and <code>while (...)</code> is usually a good idea:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">error</span><span class="p">(</span><span class="s">&quot;negative argument&quot;</span><span class="p">);</span>
@@ -2387,7 +2395,6 @@ Aim for professionalism, not "cool."</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">error</span><span class="p">(</span><span class="s">&quot;negative argument&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_2">Enforcement</h5>
 <p>툴을 사용하라.</p>
@@ -2403,7 +2410,6 @@ Aim for professionalism, not "cool."</p>
     <span class="n">print_string</span><span class="p">(</span><span class="s">&quot;xyzzy&quot;</span><span class="p">);</span> <span class="c1">// repetitive, manual type matching</span>
 </code></pre></div>
 
-
 <h5 id="example-good">Example, good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
     <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">string_view</span><span class="p">);</span>    <span class="c1">// also works on any string-like sequence</span>
@@ -2412,14 +2418,12 @@ Aim for professionalism, not "cool."</p>
     <span class="n">print</span><span class="p">(</span><span class="s">&quot;xyzzy&quot;</span><span class="p">);</span>        <span class="c1">// clear, automatic type matching</span>
 </code></pre></div>
 
-
 <h5 id="note_3">Note</h5>
 <p>Names with types encoded are either verbose or cryptic.</p>
 <div class="codehilite"><pre><span></span><code>    printS  // print a std::string
     prints  // print a C-style string
     printi  // print an int
 </code></pre></div>
-
 
 <p>Requiring techniques like Hungarian notation to encode a type in a name is needed in C, but is generally unnecessary and actively harmful in a strongly statically-typed language like C++, because the annotations get out of date (the warts are just like comments and rot just like them) and they interfere with good use of the language (use the same name and overload resolution instead).</p>
 <h5 id="note_4">Note</h5>
@@ -2434,29 +2438,26 @@ Aim for professionalism, not "cool."</p>
     <span class="c1">//       just generally to say &quot;this is a count of something&quot;</span>
 </code></pre></div>
 
-
 <p>This is not harmful and does not fall under this guideline because it does not encode type information.</p>
 <h5 id="note_5">Note</h5>
 <p>어떤 스타일은 지역변수와 멤버변수를 구분하거나 전역변수를 구분하려고 한다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">m_</span><span class="p">;</span>
         <span class="n">S</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="o">:</span><span class="n">m_</span><span class="p">{</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">)}</span> <span class="p">{</span> <span class="p">}</span>
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이는 유해하지 않고 타입 정보를 포함하지 않기 때문에 가이드라인에도 위배되지 않는다.</p>
 <h5 id="note_6">Note</h5>
 <p>어떤 스타일은 타입과 비타입을 구분하려고 한다.
 For example, by capitalizing type names, but not the names of functions and variables.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">typename</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">typename</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">HashTable</span> <span class="p">{</span>   <span class="c1">// maps string to T</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
     <span class="n">HashTable</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">index</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>이는 유해하지 않고 타입 정보를 포함하지 않기 때문에 가이드라인에도 위배되지 않는다.</p>
 <h3 id="nl7-make-the-length-of-a-name-roughly-proportional-to-the-length-of-its-scope"><a name="Rl-name-length"></a>NL.7: Make the length of a name roughly proportional to the length of its scope</h3>
@@ -2472,7 +2473,6 @@ For example, by capitalizing type names, but not the names of functions and vari
 
     <span class="kt">int</span> <span class="n">open</span><span class="p">;</span>   <span class="c1">// bad: global variable with a short, popular name</span>
 </code></pre></div>
-
 
 <p>The use of <code>p</code> for pointer and <code>x</code> for a floating-point variable is conventional and non-confusing in a restricted scope.</p>
 <h5 id="enforcement_3">Enforcement</h5>
@@ -2513,7 +2513,6 @@ ISO Standard, but with upper case used for your own types and concepts:</p>
     <span class="kt">int</span> <span class="n">mean_time_between_failures</span> <span class="p">{</span><span class="mi">12</span><span class="p">};</span> <span class="c1">// make up your mind</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_4">Enforcement</h5>
 <p>스타일이 다른 라이브러리를 사용할 때를 뻬고는 시행이 가능할 것이다.</p>
 <h3 id="nl9"><a name="Rl-all-caps"></a>NL.9: 매크로 명칭에만 전체 대문자를 사용하라</h3>
@@ -2527,12 +2526,10 @@ ISO Standard, but with upper case used for your own types and concepts:</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_9">Note</h5>
 <p>이 규칙은 매크로가 아닌 상수에도 적용된다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="n">bad</span> <span class="p">{</span> <span class="n">BAD</span><span class="p">,</span> <span class="n">WORSE</span><span class="p">,</span> <span class="n">HORRIBLE</span> <span class="p">};</span> <span class="c1">// BAD</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">enum</span> <span class="nc">bad</span> <span class="p">{</span> <span class="n">BAD</span><span class="p">,</span> <span class="n">WORSE</span><span class="p">,</span> <span class="n">HORRIBLE</span> <span class="p">};</span> <span class="c1">// BAD</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_5">Enforcement</h5>
 <ul>
@@ -2569,7 +2566,6 @@ Thus rule was added after many requests for guidance.</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example_7">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
 
@@ -2578,7 +2574,6 @@ Thus rule was added after many requests for guidance.</p>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_11">Note</h5>
 <p>몇몇 IDE는 그들만의 확신에 따라 추가적인 스페이스를 사용한다.</p>
@@ -2591,11 +2586,10 @@ Thus rule was added after many requests for guidance.</p>
 <p>Readability.</p>
 <h5 id="example_8">Example</h5>
 <p>Use digit separators to avoid long strings of digits</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">299</span><span class="err">&#39;</span><span class="mi">792</span><span class="err">&#39;</span><span class="mi">458</span><span class="p">;</span> <span class="c1">// m/s2</span>
-    <span class="k">auto</span> <span class="n">q2</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b0000</span><span class="err">&#39;</span><span class="mi">1111</span><span class="err">&#39;</span><span class="mo">0000</span><span class="err">&#39;</span><span class="mo">0000</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">ss_number</span> <span class="o">=</span> <span class="mi">123</span><span class="err">&#39;</span><span class="mi">456</span><span class="err">&#39;</span><span class="mi">7890</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">299&#39;792&#39;458</span><span class="p">;</span> <span class="c1">// m/s2</span>
+    <span class="k">auto</span> <span class="n">q2</span> <span class="o">=</span> <span class="mb">0b0000&#39;1111&#39;0000&#39;0000</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">ss_number</span> <span class="o">=</span> <span class="mi">123&#39;456&#39;7890</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="example_9">Example</h5>
 <p>Use literal suffixes where clarification is needed</p>
@@ -2603,7 +2597,6 @@ Thus rule was added after many requests for guidance.</p>
     <span class="k">auto</span> <span class="n">world</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>   <span class="c1">// a C-style string</span>
     <span class="k">auto</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">100</span><span class="n">ms</span><span class="p">;</span>  <span class="c1">// using &lt;chrono&gt;</span>
 </code></pre></div>
-
 
 <h5 id="note_13">Note</h5>
 <p>Literals should not be sprinkled all over the code as <a href="#Res-magic">"magic constants"</a>,
@@ -2635,7 +2628,6 @@ It is easy to make a typo in a long string of integers.</p>
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example_11">Example</h5>
 <p>Sometimes, the default order of members conflicts with a desire to separate the public interface from implementation details.
 In such cases, private types and functions can be placed with private data.</p>
@@ -2649,7 +2641,6 @@ In such cases, private types and functions can be placed with private data.</p>
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_4">Example, bad</h5>
 <p>Avoid multiple blocks of declarations of one access (e.g., <code>public</code>) dispersed among blocks of declarations with different access (e.g. <code>private</code>).</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>   <span class="c1">// bad</span>
@@ -2660,7 +2651,6 @@ In such cases, private types and functions can be placed with private data.</p>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>The use of macros to declare groups of members often leads to violation of any ordering rules.
 However, macros obscures what is being expressed anyway.</p>
@@ -2674,7 +2664,7 @@ However, macros obscures what is being expressed anyway.</p>
 <p>This is a recommendation for <a href="#S-naming">when you have no constraints or better ideas</a>.
 Thus rule was added after many requests for guidance.</p>
 <h5 id="example_12">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Cable</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Cable</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
@@ -2709,7 +2699,6 @@ Thus rule was added after many requests for guidance.</p>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>if</code>와 <code>(</code>사이에 스페이스를 한칸 넣는다는 점에 유의하라.</p>
 <h5 id="note_15">Note</h5>
 <p>Use separate lines for each statement, the branches of an <code>if</code>, and the body of a <code>for</code>.</p>
@@ -2731,7 +2720,6 @@ Thus rule was added after many requests for guidance.</p>
     <span class="n">T</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">size_t</span><span class="p">);</span>  <span class="c1">// undecided</span>
 </code></pre></div>
 
-
 <h5 id="note_19">Note</h5>
 <p>This is a recommendation for <a href="#S-naming">when you have no constraints or better ideas</a>.
 Thus rule was added after many requests for guidance.</p>
@@ -2749,7 +2737,6 @@ We easily confuse similarly spelled and slightly misspelled words.</p>
     <span class="kt">int</span> <span class="n">splonk</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// bad: splunk and splonk are easily confused</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_11">Enforcement</h5>
 <p>???</p>
 <h3 id="nl20-dont-place-two-statements-on-the-same-line"><a name="Rl-stmt"></a>NL.20: Don't place two statements on the same line</h3>
@@ -2760,7 +2747,6 @@ It is really easy to overlook a statement when there is more on a line.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">29</span><span class="p">;</span>    <span class="c1">// don&#39;t</span>
     <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>  <span class="o">++</span><span class="n">x</span><span class="p">;</span>      <span class="c1">// don&#39;t</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_12">Enforcement</h5>
 <p>Easy.</p>
@@ -2779,14 +2765,12 @@ Minimizing confusion with the declarator syntax.</p>
     <span class="kt">void</span> <span class="nf">g</span><span class="p">();</span>       <span class="c1">// better</span>
 </code></pre></div>
 
-
 <h5 id="note_21">Note</h5>
 <p>데니스 리치도 <code>void f(void)</code>는 싫어한다고 말했다.
 함수 인터페이스가 드물게 금지될 경우 C에서 그런 abomination에 대해서 인자를 추가할 수 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">int</span> <span class="nf">f</span><span class="p">();</span>
     <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;weird but valid C89&quot;</span><span class="p">);</span>   <span class="c1">// hope that f() is defined int f(a, b, c) char* c; { /* ... */ }</span>
 </code></pre></div>
-
 
 <p>중요한 문제를 야기할 것인데 21세기의 C나 C++에는 전혀 문제되지 않는다.</p>
 <h3 id="nl26-use-conventional-const-notation"><a name="Rl-const"></a>NL.26: Use conventional <code>const</code> notation</h3>
@@ -2800,7 +2784,6 @@ Consistency in large code bases.</p>
     <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>   <span class="c1">// OK, constant pointer to constant int</span>
     <span class="kt">int</span> <span class="k">const</span> <span class="o">*</span><span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>   <span class="c1">// bad, constant pointer to constant int</span>
 </code></pre></div>
-
 
 <h5 id="note_22">Note</h5>
 <p>We are well aware that you could claim the "bad" examples more logical than the ones marked "OK",
@@ -2828,7 +2811,7 @@ Thus rule was added after many requests for guidance.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Interfaces/" title="Interfaces" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Interfaces/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2843,7 +2826,7 @@ Thus rule was added after many requests for guidance.</p>
           </a>
         
         
-          <a href="../Not/" title="Not-Rule" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Not/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -2880,15 +2863,15 @@ Thus rule was added after many requests for guidance.</p>
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

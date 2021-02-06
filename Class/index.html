@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,14 @@
         <meta name="description" content="C++ 핵심 가이드라인 한글화 프로젝트">
       
       
-        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Class/">
-      
       
         <meta name="author" content="C++ Korea">
       
+      
+        <link rel="canonical" href="http://www.cppkorea.org/CppCoreGuidelines/Class/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -25,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#3f51b5">
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,400,400i,700%7CNanum+Gothic+Coding&display=fallback">
         <style>body,input{font-family:"Nanum Gothic",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Nanum Gothic Coding",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -55,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -73,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-header-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -84,18 +90,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             C++ 핵심 가이드라인
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Class
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -106,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -147,8 +155,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -156,10 +162,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://www.cppkorea.org/CppCoreGuidelines" title="C++ 핵심 가이드라인" class="md-nav__button md-logo" aria-label="C++ 핵심 가이드라인">
       
@@ -188,96 +200,101 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../home/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../home/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Introduction
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Introduction" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
         Introduction
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Introduction" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction/" class="md-nav__link">
+        <a name="S-introduction"></a>In: 소개
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Introduction/" title="In: 소개" class="md-nav__link">
-      <a name="S-introduction"></a>In: 소개
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      References
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="References" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
         References
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="References" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../References/" class="md-nav__link">
+        <a name="S-references"></a>RF: 레퍼런스
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../References/" title="RF: 레퍼런스" class="md-nav__link">
-      <a name="S-references"></a>RF: 레퍼런스
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
@@ -285,66 +302,63 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-4">
-      Sections
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Sections" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
         Sections
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Sections" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Sections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
   
 
-
-  <li class="md-nav__item md-nav__item--active">
+          
+            
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Class
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Class
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Class" class="md-nav__link md-nav__link--active">
-      Class
-    </a>
-    
+      </a>
       
+        
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -352,9 +366,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -4904,307 +4916,310 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concurrency/" class="md-nav__link">
+        Concurrency
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Const/" class="md-nav__link">
+        Const
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CPL/" class="md-nav__link">
+        C-Style
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Concurrency/" title="Concurrency" class="md-nav__link">
-      Concurrency
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enum/" class="md-nav__link">
+        Enum
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Errors/" class="md-nav__link">
+        Errors
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expr/" class="md-nav__link">
+        Expr
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Const/" title="Const" class="md-nav__link">
-      Const
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GSL/" class="md-nav__link">
+        GSL
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../CPL/" title="C-Style" class="md-nav__link">
-      C-Style
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Naming/" class="md-nav__link">
+        Naming
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Not/" class="md-nav__link">
+        Not-Rule
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Enum/" title="Enum" class="md-nav__link">
-      Enum
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Performance/" class="md-nav__link">
+        Performance
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Philosophy/" class="md-nav__link">
+        Philosophy
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile/" class="md-nav__link">
+        Profile
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resource/" class="md-nav__link">
+        Resource
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SL/" class="md-nav__link">
+        Standard Library
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Source/" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../Expr/" title="Expr" class="md-nav__link">
-      Expr
-    </a>
-  </li>
-
-        
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Unclassified/" class="md-nav__link">
+        Unclassified
+      </a>
+    </li>
+  
+
           
-
-
-  <li class="md-nav__item">
-    <a href="../Functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../GSL/" title="GSL" class="md-nav__link">
-      GSL
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Interfaces/" title="Interfaces" class="md-nav__link">
-      Interfaces
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Naming/" title="Naming" class="md-nav__link">
-      Naming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Not/" title="Not-Rule" class="md-nav__link">
-      Not-Rule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Performance/" title="Performance" class="md-nav__link">
-      Performance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Philosophy/" title="Philosophy" class="md-nav__link">
-      Philosophy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Profile/" title="Profile" class="md-nav__link">
-      Profile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Resource/" title="Resource" class="md-nav__link">
-      Resource
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../SL/" title="Standard Library" class="md-nav__link">
-      Standard Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Source/" title="Source" class="md-nav__link">
-      Source
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Unclassified/" title="Unclassified" class="md-nav__link">
-      Unclassified
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Appendix
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Appendix" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
         Appendix
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="Appendix" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Modernizing/" class="md-nav__link">
+        Modernizing
+      </a>
+    </li>
+  
+
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/Tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../appendix/Modernizing/" title="Modernizing" class="md-nav__link">
-      Modernizing
-    </a>
-  </li>
-
-        
           
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../appendix/Tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -5214,7 +5229,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -5225,9 +5241,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -9791,9 +9805,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="c"><a name="S-class"></a>C: 클래스와 클래스 계층 구조</h1>
 <p>클래스는 사용자 정의 타입으로써, 타입의 표현과 연산, 인터페이스를 프로그래머가  정의할 수 있다.
 클래스 계층 구조는 관련된 클래스들을 계층적으로 구조화 할 때 사용된다.</p>
@@ -9826,7 +9837,6 @@
     <span class="kt">void</span> <span class="nf">draw</span><span class="p">(</span><span class="n">Point</span> <span class="n">from</span><span class="p">,</span> <span class="n">Point</span> <span class="n">to</span><span class="p">);</span>          <span class="c1">// better</span>
 </code></pre></div>
 
-
 <h5 id="note">Note</h5>
 <p>가상 함수가 없는 간단한 클래스는 공간, 시간적인 오버헤드가 없다.</p>
 <h5 id="note_1">Note</h5>
@@ -9843,12 +9853,11 @@
 invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 있으며, 더 형식을 갖춘다면 <code>Expects</code> 를 사용할 수 있다.</p>
 <p>만약 모든 데이터 멤버들이 상호독립적이라면, 불변조건은 존재할 수 없다.</p>
 <h5 id="example_1">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Pair</span> <span class="p">{</span>  <span class="c1">// the members can vary independently</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Pair</span> <span class="p">{</span>  <span class="c1">// the members can vary independently</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">volume</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>하지만:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Date</span> <span class="p">{</span>
@@ -9862,7 +9871,6 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
         <span class="kt">char</span> <span class="n">d</span><span class="p">;</span>    <span class="c1">// day</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="note_3">Note</h5>
 <p>클래스가 어떤 <code>private</code> 데이터를 가지고 있으면, 사용자는 생성자 호출 없이 개체를 초기화할 수 없다. 
@@ -9894,7 +9902,6 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이러한 경우, 이제 사용자에게 영향을 주지 않고 <code>Date</code> 에 대한 representation을 변경할 수 있다. (비록 다시 컴파일 해야 하겠지만)</p>
 <h5 id="note_4">Note</h5>
 <p>인터페이스와 구현간의 구분을 표현하기 위해 클래스를 사용하는 것이 유일한 방법은 아니다.
@@ -9916,7 +9923,6 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
     <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">Date</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>"helper functions"으로 표시된 함수들은 <code>Date</code>의 내부에 접근할 필요가 없다.</p>
 <h5 id="note_5">Note</h5>
 <p><a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0251r0.pdf">"uniform function call"</a>이 가능해지면 더 좋아질 것이다.</p>
@@ -9937,11 +9943,9 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>유사하게, 어떤 함수들은 연속적으로 호출하도록 설계되었을 수 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">x</span><span class="p">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.5</span><span class="p">).</span><span class="n">rotate</span><span class="p">(</span><span class="mi">45</span><span class="p">).</span><span class="n">set_color</span><span class="p">(</span><span class="n">Color</span><span class="o">::</span><span class="n">red</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>일반적으로, 이런 함수들 중 일부는 <code>private</code> 데이터에 접근한다.</p>
 <h5 id="enforcement_3">Enforcement</h5>
@@ -9968,7 +9972,6 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_6">Note</h5>
 <p>이는 <a href="#Ro-namespace">연산자 오버로딩</a>을 위해서 매우 중요하다.</p>
 <h5 id="enforcement_4">Enforcement</h5>
@@ -9979,15 +9982,13 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
 <h5 id="reason_5">Reason</h5>
 <p>타입에 대한 정의와 다른 개체(entitiy)에 대한 정의를 같은 구문(statement)에 넣는 것은 혼동을 일으킬 수 있고, 불필요하다.</p>
 <h5 id="example-bad">Example; bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Data</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">}</span> <span class="n">data</span><span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Data</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">}</span> <span class="n">data</span><span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="example-good">Example; good</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Data</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Data</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
     <span class="n">Data</span> <span class="n">data</span><span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_5">Enforcement</h5>
 <ul>
@@ -9999,7 +10000,7 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
 무엇인가 숨겨져 있거나, 추상화되었다는 것을 분명하게 한다.<br />
 유익한 관습이다.</p>
 <h5 id="example-bad_1">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Date</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Date</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
 
         <span class="n">Date</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">Month</span> <span class="n">m</span><span class="p">);</span>
@@ -10008,7 +10009,6 @@ invariant는 형식에 구애받지 않고 (가령, 주석으로) 기술될 수 
         <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>  <span class="c1">// year</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>C++ 언어 규칙을 고려했을 때 이 코드엔 잘못된 것이 없다.<br />
 하지만 디자인 관점에서는 모든게 잘못되었다.
@@ -10022,14 +10022,13 @@ private 데이터가 public 데이터와 멀리 떨어져 숨어있고, 클래�
 <h5 id="reason_7">Reason</h5>
 <p>캡슐화. 정보 은닉. 의도치 않은 접근을 최소화 하고, 유지보수를 쉽게 한다.</p>
 <h5 id="example_5">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">pair</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">U</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">pair</span> <span class="p">{</span>
         <span class="n">T</span> <span class="n">a</span><span class="p">;</span>
         <span class="n">U</span> <span class="n">b</span><span class="p">;</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>//</code> 부분에 어떤 코드가 작성되건, <code>pair</code>의 사용자는 <code>a</code>와 <code>b</code>를 독립적으로 변경할 수 있다.
 코드 규모가 큰 경우, <code>pair</code>의 멤버에 어떤 일이 일어나는지 찾기 어렵다.</p>
@@ -10052,7 +10051,6 @@ private 데이터가 public 데이터와 멀리 떨어져 숨어있고, 클래�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="note_8">Note</h5>
 <p>만약 변수들에 접근하는 코드를 쉽게 결정할 수 없다면, 그 타입이나 사용을 (쉽게) 변경하거나 개선하기 어렵다.
 <code>public</code>과 <code>protected</code>데이터는 보통 이 경우에 해당한다.</p>
@@ -10072,7 +10070,7 @@ private 데이터가 public 데이터와 멀리 떨어져 숨어있고, 클래�
 
     <span class="k">class</span> <span class="nc">Dir</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Foo</span> <span class="p">{</span>
         <span class="c1">//...</span>
-        <span class="kt">int</span> <span class="n">mem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+        <span class="kt">int</span> <span class="nf">mem</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="cm">/* ... do something ... */</span>
             <span class="k">return</span> <span class="n">do_bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span> <span class="c1">// OK: derived class can bypass check</span>
@@ -10086,7 +10084,6 @@ private 데이터가 public 데이터와 멀리 떨어져 숨어있고, 클래�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_9">Note</h5>
 <p><a href="#Rh-protected"><code>protected</code> 데이터는 좋은 생각이 아니다</a>.</p>
@@ -10148,7 +10145,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>클래스가 계층구조의 일부가 될 수 있다면, 반드시 포인터나 레퍼런스로 개체를 다루어야 한다.
 이는 간접 처리를 위해 더 많은 메모리를 사용하게 되고, 더 많은 할당과 해제, 실행시간 오버헤드가 발생하게 된다는 것을 의미한다.</p>
 <h5 id="note_11">Note</h5>
@@ -10165,7 +10161,7 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <p>일반적인(regular) 타입은 이해하고 추론(reason)하기 쉽다.
 (일반적이지 않은 타입들은 이해하고 사용하는데 추가적인 노력을 필요로 한다.)</p>
 <h5 id="example_8">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Bundle</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Bundle</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="n">vr</span><span class="p">;</span>
     <span class="p">};</span>
@@ -10181,7 +10177,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">b2</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;the other bundle&quot;</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">b1</span> <span class="o">==</span> <span class="n">b2</span><span class="p">)</span> <span class="n">error</span><span class="p">(</span><span class="s">&quot;No!&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>일반적인 경우, 만약 concrete type이 대입연산(<code>a = b</code>)을 지원한다면, 비교 연산(<code>a == b</code>)도 지원한다.</p>
 <h5 id="enforcement_9">Enforcement</h5>
@@ -10264,7 +10259,7 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <h5 id="reason_10">Reason</h5>
 <p>가장 단순하고, 명료한 의미를 준다.</p>
 <h5 id="example_9">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Named_map</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Named_map</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// ... no default operations declared ...</span>
     <span class="k">private</span><span class="o">:</span>
@@ -10275,7 +10270,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">Named_map</span> <span class="n">nm</span><span class="p">;</span>        <span class="c1">// default construct</span>
     <span class="n">Named_map</span> <span class="n">nm2</span> <span class="p">{</span><span class="n">nm</span><span class="p">};</span>  <span class="c1">// copy construct</span>
 </code></pre></div>
-
 
 <p><code>std::map</code> 과 <code>string</code> 은 모든 특수한 함수들을 갖고 있다, 추가로 코드를 작성할 필요가 없다.</p>
 <h5 id="note_13">Note</h5>
@@ -10291,7 +10285,7 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 이동 생성자 또는 이동 대입 연산자를 선언하는 경우, 복사 생성자와 복사 대입 연산자가 이를 따른다. 이동 연산이 <code>=default</code>로 선언된 경우 복사 연산이 자동으로 정의되며, 이동 연산이 <code>=delete</code>로 선언된 경우 복사 연산도 <code>=delete</code>가 적용된다.
 따라서, 이 특별 함수들 중 하나라도 선언되었다면, 의도치 않은 복사와 이동연산을 피하기 위해 나머지 함수들도 선언되어야 한다.</p>
 <h5 id="example-bad_2">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">M2</span> <span class="p">{</span>   <span class="c1">// bad: incomplete set of default operations</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">M2</span> <span class="p">{</span>   <span class="c1">// bad: incomplete set of default operations</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// ...</span>
         <span class="c1">// ... no copy or move operations ...</span>
@@ -10309,7 +10303,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>여기서는, 소멸자에 대한 "특별한 주의"가 필요하다고 한다면, 복사와 이동 할당(둘 다 묵시적으로 개체를 소멸할 것이다)이 정확하게 동작할 가능성은 적다. (여기서는, 두번 <code>delete</code>를 시도할 것이다)</p>
 <h5 id="note_14">Note</h5>
@@ -10330,7 +10323,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><a href="#Rc-copy-virtual">C.67</a>을 고려해서 복사 절단(slicing) 문제를 예방하기 위해 복사와 이동연산을 제한할 수도 있다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">ClonableBase</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -10342,7 +10334,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
       <span class="n">ClonableBase</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ClonableBase</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>복사를 지원하지 않는다면 이동 연산들을 <code>=delete</code>로 정의하거나 복사연산을 <code>=delete</code>하는 경우 모두 같은 효과를 가진다. 하지만 타입의 의도를 분명히 전달하기 위해서는 모든 특별 함수들을 정의하는 것이 좋다.</p>
 <h5 id="note_16">Note</h5>
@@ -10361,7 +10352,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="n">X</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">X</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>       <span class="c1">// move assignment</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>스펠링을 잘못 적거나, <code>const</code>를 빠뜨리거나, <code>&amp;&amp;</code>대신 <code>&amp;</code>을 사용하거나, 하나를 빠뜨리는 것 같은 사소한 실수가 오류나 경고로 이어질 수 있다.
 이런 (지루한 코드로 인해 발생하는) 오류를 피하고자 한다면 <a href="#Rc-zero">The rule of zero</a>를 따르는 것을 권한다.</p>
@@ -10384,7 +10374,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 연산들은 복사 연산에 대한 의미가 일치하지 않는다. 이런 동작은 혼란을 야기하고 버그를 만들 것이다.</p>
 <h5 id="enforcement_12">Enforcement</h5>
 <ul>
@@ -10404,14 +10393,14 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 기본 소멸자로 충분하다면 그것을 사용하라.
 단순하게 멤버의 소멸자를 호출하는 것이 아닌 코드가 필요할 경우 소멸자를 정의하라.</p>
 <h5 id="example_10">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">A</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">final_action</span> <span class="p">{</span>   <span class="c1">// slightly simplified</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">A</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">final_action</span> <span class="p">{</span>   <span class="c1">// slightly simplified</span>
         <span class="n">A</span> <span class="n">act</span><span class="p">;</span>
         <span class="n">final_action</span><span class="p">(</span><span class="n">A</span> <span class="n">a</span><span class="p">)</span> <span class="o">:</span><span class="n">act</span><span class="p">{</span><span class="n">a</span><span class="p">}</span> <span class="p">{}</span>
         <span class="o">~</span><span class="n">final_action</span><span class="p">()</span> <span class="p">{</span> <span class="n">act</span><span class="p">();</span> <span class="p">}</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">A</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">A</span><span class="o">&gt;</span>
     <span class="n">final_action</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span> <span class="n">finally</span><span class="p">(</span><span class="n">A</span> <span class="n">act</span><span class="p">)</span>   <span class="c1">// deduce action type</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="n">final_action</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">{</span><span class="n">act</span><span class="p">};</span>
@@ -10425,7 +10414,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">}</span> <span class="c1">// act done here</span>
 </code></pre></div>
-
 
 <p><code>final_action</code> 의 목적은 소멸할 때 실행할 코드(보통 람다 표현식을 쓴다)를 얻는 것이다.</p>
 <h5 id="note_19">Note</h5>
@@ -10446,7 +10434,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>기본 소멸자가 더 잘 동작하고, 더 효과적이며, 틀리지 않는다.</p>
 <h5 id="note_20">Note</h5>
 <p>기본 소멸자가 필요하지만, 생성되지 않도록 되어 있다면 (예, 이동 생성자를 정의한 경우), <code>=default</code> 를 사용하라.</p>
@@ -10465,7 +10452,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>X</code>의 <code>ifstream</code> 은 <code>X</code>가 소멸될 때 묵시적으로 열었을 수 있는 파일을 닫는다.  </p>
 <h5 id="example-bad_5">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X2</span> <span class="p">{</span>     <span class="c1">// bad</span>
@@ -10473,7 +10459,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ... no default operations defined or =deleted ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>X2</code> 에서는 파일 핸들 누수가 생길 것이다.  </p>
 <h5 id="note_22">Note</h5>
@@ -10492,7 +10477,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">Type_checker</span> <span class="n">tc</span> <span class="p">{</span> <span class="n">p</span><span class="p">,</span> <span class="cm">/* ... */</span> <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>p</code>는 <code>pp</code>를 참조하지만, 소유하고 있지 않다.</p>
 <h5 id="enforcement_14">Enforcement</h5>
 <ul>
@@ -10506,7 +10490,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
 
-
 <h5 id="note_24">Note</h5>
 <p><code>T*</code> 혹은 <code>T&amp;</code> 가 소유를 의미한다면, <strong>소유한다는</strong> 표시를 하라. <code>T*</code> 에 소유의 의미가 없다면 <code>ptr</code> 로 표시하는 것을 고려하라.
 이것은 문서화와 분석에 도움이 될 것이다.</p>
@@ -10518,7 +10501,7 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <h5 id="example_13">Example</h5>
 <p>포인터 멤버는 리소스일 것이다. <a href="../Resource/#Rr-ptr"><code>T*</code>는 리소스가 아니어야 한다</a>, 이는 오래된 코드에서는 일반적이다.
 가능한 <code>T*</code>를 소유자라고 고려하고, 의심해보라.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Smart_ptr</span> <span class="p">{</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>   <span class="c1">// BAD: *p 의 소유가 불분명하다</span>
         <span class="c1">// ...</span>
@@ -10533,9 +10516,8 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>소멸자를 정의 한다면, <a href="#Rc-five">모든 기본 연산들</a>을 정의하거나 삭제해야 한다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Smart_ptr2</span> <span class="p">{</span>
         <span class="n">T</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>   <span class="c1">// BAD: *p 의 소유가 불분명하다</span>
         <span class="c1">// ...</span>
@@ -10550,9 +10532,8 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>기본 복사 연산은 단지 <code>p1.p</code> 를 <code>p2.p</code> 로 복사하고, <code>p1.p</code> 가 두번 소멸되게 만들 것이다. 소유권을 명시하라:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Smart_ptr3</span> <span class="p">{</span>
         <span class="n">owner</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span> <span class="n">p</span><span class="p">;</span>  <span class="c1">// OK: 명시적으로 *p 의 소유권을 가진다. </span>
         <span class="c1">// ...</span>
@@ -10567,7 +10548,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="k">auto</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_25">Note</h5>
 <p>보통 소멸자를 사용하는 가장 단순한 방법은 포인터를 스마트 포인터(가령, <code>std::unique_ptr</code>)로 교체하고, 컴파일러가
@@ -10589,11 +10569,11 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <h5 id="discussion">Discussion</h5>
 <p><a href="./appendix/Discussion.md#Sd-dtor">토론</a>을 함께 읽어보라.</p>
 <h5 id="example-bad_6">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Base</span> <span class="p">{</span>  <span class="c1">// BAD: virtual 소멸자가 없다</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Base</span> <span class="p">{</span>  <span class="c1">// BAD: virtual 소멸자가 없다</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">Base</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">Base</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span> <span class="p">{</span><span class="s">&quot;a resource needing cleanup&quot;</span><span class="p">};</span>
         <span class="o">~</span><span class="n">D</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... 정리 작업을 한다 ... */</span> <span class="p">}</span>
         <span class="c1">// ...</span>
@@ -10607,7 +10587,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="c1">// p 의 소멸은 ~Base()를 호출하지만, ~D() 는 호출하지 않는다.</span>
     <span class="c1">// 따라서 D::s 에 누수가 발생하고, 다른 자원들도 누수될 것이다.</span>
 </code></pre></div>
-
 
 <h5 id="note_27">Note</h5>
 <p>가상(<code>virtual</code>) 함수는 파생 클래스에 대한 인터페이스를 제공한다. 이 인터페이스를 통해 파생 클래스에 대해 신경을 쓰지 않게 된다. <br />
@@ -10625,7 +10604,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">X</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// error: 소멸시킬 수 없다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="exception_3">Exception</h5>
 <p>protected virtual 소멸자를 원하지 않는 경우를 상상해볼 수 있다. 파생 타입의 개체가 기본 타입 포인터를 통해 (그 자신이 아닌) <em>다른</em> 개체의 소멸을 하도록 허용해야 하는 경우가 그러하다. 하지만 아직까지 그런 사례를 볼 수 없었다.</p>
@@ -10651,7 +10629,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="note_29">Note</h5>
 <p>소멸자에서의 실패를 다루기 위해 실패할 염려가 없는 방법(scheme)을 많이 고안해 왔다. 이에 대해선 일반적인 방법으로 성공한 예가 없다.</p>
@@ -10683,13 +10660,12 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 명시적으로 소멸자를 <code>noexcept</code>로 표기함으로써, 그 코드의 작성자는 나중에 멤버가 추가되거나 변경되면서 소멸자가 <code>noexcept(false)</code>로 변하는 것을 차단할 수 있다.</p>
 <h5 id="example_15">Example</h5>
 <p>모든 소멸자가 <code>noexcept</code>를 기본으로 하지는 않는다; 예외를 던지는 하나의 멤버가 모든 클래스 계층구조에 영향을 줄 수 있다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">Details</span> <span class="n">x</span><span class="p">;</span>  <span class="c1">// happens to have a throwing destructor</span>
         <span class="c1">// ...</span>
         <span class="o">~</span><span class="n">X</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>    <span class="c1">// implicitly noexcept(false); aka can throw</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>만약 의심이 생긴다면, 소멸자는 <code>noexcept</code>로 선언하라.</p>
 <h5 id="note_34">Note</h5>
@@ -10716,11 +10692,10 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>생성자에서 <code>Ensures</code>로 불변조건을 표현하는 것도 좋은 생각이다.</p>
 <h5 id="note_35">Note</h5>
 <p>생성자는 클래스가 불변조건이 아니더라도 편의를 위해 사용될 수 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Rec</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Rec</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
         <span class="n">Rec</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">ss</span><span class="p">)</span> <span class="o">:</span> <span class="n">s</span><span class="p">{</span><span class="n">ss</span><span class="p">}</span> <span class="p">{}</span>
@@ -10731,10 +10706,9 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">Rec</span> <span class="n">r2</span> <span class="p">{</span><span class="s">&quot;Foo bar&quot;</span><span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="note_36">Note</h5>
 <p>C++11 초기화 리스트 규칙은 많은 생성자의 필요성을 제거한다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Rec2</span><span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Rec2</span><span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
         <span class="n">Rec2</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">ss</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">:</span><span class="n">s</span><span class="p">{</span><span class="n">ss</span><span class="p">},</span> <span class="n">i</span><span class="p">{</span><span class="n">ii</span><span class="p">}</span> <span class="p">{}</span>   <span class="c1">// redundant</span>
@@ -10743,7 +10717,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">Rec2</span> <span class="n">r1</span> <span class="p">{</span><span class="s">&quot;Foo&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
     <span class="n">Rec2</span> <span class="n">r2</span> <span class="p">{</span><span class="s">&quot;Bar&quot;</span><span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>Rec2</code> 생성자는 중복적이다. 그리고, <code>int</code>에 대한 기본값은 <a href="#Rc-in-class-initializer">member initializer</a>를 사용하는 편이 낫다.</p>
 <h5 id="see-also_1">See also:</h5>
@@ -10778,7 +10751,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>컴파일러는 주석을 읽지 않는다.</p>
 <h5 id="exception_4">Exception</h5>
@@ -10818,7 +10790,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_8">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X3</span> <span class="p">{</span>     <span class="c1">// bad: 생성자가 유효하지 않은 개체를 남겨놓을 수 있다</span>
         <span class="kt">FILE</span><span class="o">*</span> <span class="n">f</span><span class="p">;</span>   <span class="c1">// call is_valid() before any other function</span>
@@ -10853,7 +10824,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_38">Note</h5>
 <p>변수를 정의할 때는 (가령, 스택에 혹은 다른 개체의 멤버로써) 오류코드가 리턴되는 명시적인 함수 호출은 없다.
 유효하지 않은 개체를 남겨두고 사용하기 전에 지속적으로 <code>is_valid()</code> 함수를 호출해야 하는 것은 번거롭고, 오류가 발생하기 쉬우며, 비효율적 이다.</p>
@@ -10887,7 +10857,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">Date</span><span class="o">&gt;</span> <span class="n">vd2</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">Date</span><span class="p">{</span><span class="n">Month</span><span class="o">::</span><span class="n">October</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1885</span><span class="p">});</span>   <span class="c1">// 대안</span>
 </code></pre></div>
 
-
 <p>기본 생성자는 다른 사용자 정의 생성자가 없을 때만 자동으로 생성된다. 때문에 이런 코드와 같은 경우엔 <code>vd1</code>을 초기화 하는 것은 불가능하다.
 기본값이 없다는 것은 사용자에게는 날벼락 같은 상황일 수 있으며 타입의 사용을 어렵게 한다. 때문에 하나라도 의미있게 정의할 수 있다면, 정의되어야 한다.</p>
 <p><code>Date</code>를 바탕으로 생각해보자:<br />
@@ -10909,10 +10878,9 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">vector</span><span class="o">&lt;</span><span class="n">Date</span><span class="o">&gt;</span> <span class="n">vd1</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="note_41">Note</h5>
 <p>클래스의 모든 멤버들이 기본 생성자들을 가지고 있을 경우 묵시적으로 기본 생성자를 가진다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
     <span class="p">};</span>
@@ -10920,9 +10888,8 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">X</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// means X{{}, {}}; that is the empty string and the empty vector</span>
 </code></pre></div>
 
-
 <p>기본(built-in) 타입들은 적절하게 기본 생성(default construct)되지 않을 수도 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
     <span class="p">};</span>
@@ -10936,30 +10903,27 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>정적으로 할당된 내장 타입 개체들은 <code>0</code>으로 초기화 된다. 하지만 지역 변수들은 그렇지 않다.<br />
 컴파일러의 최적화 빌드는 내장 타입 지역 변수들을 초기화하지 않을 수 있다는 점에 주의하라. 따라서, 위의 예시와 같은 코드가 나타난다면, 미정의 동작을 일으킬 수 있다.
 초기화를 하고자 한다면, 명시적 기본 생성이 도움이 될 것이다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span> <span class="p">{};</span>   <span class="c1">// 기본 초기화 (i는 0 이 된다)</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="notes">Notes</h5>
 <p>적절한 기본 생성을 가지지 않는 클래스들은 보통 복사 또한 불가하다. 때문에 이런 경우는 이 가이드라인에서 다루지 않는다.</p>
 <p>예를 들어, 상위 클래스가 값 타입이 아니라면 (상위 클래스들은 복사되어선 안된다) 기본 생성자가 필수적이지 않다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// Shape is an abstract base class, not a copyable value type.</span>
     <span class="c1">// It may or may not need a default constructor.</span>
-    <span class="k">struct</span> <span class="n">Shape</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">Shape</span> <span class="p">{</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// =delete copy/move functions</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>호출자가 제공하는 자원을 생성 과정에서 사용하는 경우라면 기본 생성자를 가질 수 없다. 이 경우도 가이드라인에 해당하지 않는데 보통 이런 클래스들은 복사가 불가능하기 때문이다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// std::lock_guard is not a copyable value type.</span>
@@ -10967,7 +10931,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">lock_guard</span> <span class="n">g</span> <span class="p">{</span><span class="n">mx</span><span class="p">};</span>  <span class="c1">// guard the mutex mx</span>
     <span class="n">lock_guard</span> <span class="n">g2</span><span class="p">;</span>      <span class="c1">// error: guarding nothing</span>
 </code></pre></div>
-
 
 <p>다른 상태들과 다른 방식으로 처리되어야 하는 "특별한 상태"를 가지는 클래스들은 사용자가 더 많은 작업을 하게 만든다 (그 때문에 더 많은 오류를 만들기도 한다). 그런 타입은 (복사와 무관하게) 특별한 상태를 기본 생성 직후의 상태로 사용할 수도 있다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// std::ofstream is not a copyable value type.</span>
@@ -10977,7 +10940,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="c1">// ...</span>
     <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="n">log</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">transaction</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>복사 가능한 특별한 상태를 가진 타입의 예시로는, 복사 가능한 스마트 포인터를 들 수 있다. 여기서 기본 생성 상태(특별한 상태)는 <code>nullptr</code>를 들고있는 상태가 된다.</p>
 <p>하지만, 기본 생성자를 지원하고 생성 후 유의미한 상태를 가지는 것이 권장된다. 이런 예로는 <code>std::string</code>이 <code>""</code>로 초기화되거나, <code>std::vector</code>가 공백상태(<code>{}</code>)를 가지는 것을 들 수 있다.</p>
@@ -10990,7 +10952,7 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 <h5 id="reason_24">Reason</h5>
 <p>실패할 수 있는 연산없이 "기본"적인 값을 설정할 수 있다는 것은 오류 처리를 단순화 하고, 이동 연산을 추측 할 수 있도록 한다.</p>
 <h5 id="example-problematic">Example, problematic</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="c1">// elem은 공간에 대한 포인터다 - new를 사용해 원소들이 할당된다.</span>
     <span class="k">class</span> <span class="nc">Vector0</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -11004,12 +10966,11 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>일반적이지만, 오류 이후 <code>Vector0</code> 를 공백으로 만드는 것은 할당과 관련이 있고, 실패할 수 있다.
 또, 기본 <code>Vector</code> 를 <code>{ new T[0], 0, 0}</code> 으로 표현하는 것 역시 낭비처럼 보인다
 예를 들면, <code>Vector0&lt;int&gt; v(100)</code>은 100 만큼 할당하는 비용이 든다.</p>
 <h5 id="example_19">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="c1">// elem은 nullptr이거나, new를 사용해 할당된 공간을 가리킨다.</span>
     <span class="k">class</span> <span class="nc">Vector1</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -11023,7 +10984,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="n">T</span><span class="o">*</span> <span class="n">last</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>{nullptr, nullptr, nullptr}</code>는 <code>Vector1{}</code> 를 만드는 비용을 줄여준다(cheap). 하지만 이는 특별한 경우이고 실행시간 평가가 필요하다.
 오류를 발견하고 <code>Vector1</code>를 비우는 것은 간단하다.</p>
@@ -11044,7 +11004,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example_20">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X2</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;default&quot;</span><span class="p">;</span>
@@ -11054,7 +11013,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_25">Enforcement</h5>
 <p>(쉬움) 명시적인 기본 생성자는 초기화 이외의 동작을 해야할 때 쓰는 것이 좋다.</p>
@@ -11072,7 +11030,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>   <span class="c1">// 놀랍게도... 길이가 10인 문자열이 된다</span>
 </code></pre></div>
 
-
 <h5 id="exception_6">Exception</h5>
 <p>생성 인자 타입으로부터의 묵시적인 변환을 허용한다면 <code>explicit</code>을 사용하지 않아야 한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Complex</span> <span class="p">{</span>
@@ -11084,7 +11041,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
 
     <span class="n">Complex</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">10.7</span><span class="p">;</span>   <span class="c1">// 전혀 어색하지 않다</span>
 </code></pre></div>
-
 
 <h5 id="see-also_2">See also</h5>
 <p><a href="#Ro-conversion">Discussion of implicit conversions</a></p>
@@ -11107,7 +11063,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="n">Foo</span> <span class="nf">x</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// surprise: x.m1 == x.m2 == 2</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_27">Enforcement</h5>
 <p>(단순) 멤버 초기화 리스트는 선언과 같은 순서로 진행되어야 한다.</p>
 <h5 id="see-also_3">See also</h5>
@@ -11127,7 +11082,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>코드를 유지보수하는 사람이 <code>j</code>가 의도적으로 초기화되지 않았다고 생각할 수 있다 (꽤 이상한 생각이지만). 또 어떤 의도로 <code>s</code>의 기본값으로 <code>""</code>와 <code>qqq</code>를 사용하는지 알 수 있을까? <code>j</code>와 같이 멤버 초기화가 생략되는 문제는 이미 있는 클래스에 새로운 멤버가 추가될 때 발생한다.</p>
 <h5 id="example_21">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X2</span> <span class="p">{</span>
@@ -11141,7 +11095,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="alternative_1">Alternative</h5>
 <p>생성자에 기본 인자를 주는 것을 생각해볼 수 있다. 오래된 코드에선 꽤 흔한 방법이다. 하지만, 이는 명시적이지 않고, 더 많은 인자가 전달되도록 만든다. 생성자가 여럿인 경우, 기본 인자 코드를 반복적으로 작성해야 한다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X3</span> <span class="p">{</span>   <span class="c1">// BAD: inexplicit, argument passing overhead</span>
@@ -11154,7 +11107,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_28">Enforcement</h5>
 <ul>
@@ -11173,7 +11125,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_13">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>   <span class="c1">// BAD</span>
         <span class="n">string</span> <span class="n">s1</span><span class="p">;</span>
@@ -11190,7 +11141,6 @@ Regular Type은 다음의 조건을 모두 만족하는 타입을 의미합니�
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-better-still">Example, better still</h5>
 <p><a href="../SL/#Rstr-view">함수에 문자열 인수를 제시하는 보다 일반적인 방법</a>)으로,
 <code>const char*</code> 대신에 'gsl::string_span' 또는 'std::string_view'(C++17)를 사용할 수 있다.</p>
@@ -11201,7 +11151,6 @@ public:
     // ...
 };
 </code></pre></div>
-
 
 <h3 id="c50-virtual"><a name="Rc-factory"></a>C.50: 초기화 과정에서 <code>virtual</code> 동작이 필요하다면, 팩토리 함수를 사용하라</h3>
 <h5 id="reason_30">Reason</h5>
@@ -11223,7 +11172,6 @@ public:
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="example_22">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
@@ -11254,7 +11202,6 @@ public:
     <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">D</span><span class="o">::</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">D</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// creating a D object</span>
 </code></pre></div>
 
-
 <p>생성자를 <code>protected</code>로 만듦으로써, 개체가 불완전하게 생성된 후 사용자 코드에 노출되는 것을 막을 수 있다.
 팩토리 함수 <code>Create()</code>를 지원하면 (자유 저장소 영역에) 개체 생성을 좀 더 쉽게할 수 있다.</p>
 <h5 id="note_44">Note</h5>
@@ -11281,7 +11228,6 @@ public:
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>똑같은 동작을 작성하는 것은 지루하고 실수로 인해 똑같지 않을 수도 있다.</p>
 <h5 id="example_23">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Date2</span> <span class="p">{</span>
@@ -11298,7 +11244,6 @@ public:
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="see-also_5">See also</h5>
 <p>만약 "반복된 동작"이 단순한 초기화라면, <a href="#Rc-in-class-initializer">클래스 내 멤버 초기화</a>를 고려하라.</p>
@@ -11320,9 +11265,8 @@ public:
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_16">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nl">Rec2</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Rec</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Rec2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Rec</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="k">using</span> <span class="n">Rec</span><span class="o">::</span><span class="n">Rec</span><span class="p">;</span>
     <span class="p">};</span>
@@ -11330,7 +11274,6 @@ public:
     <span class="n">Rec2</span> <span class="n">r</span> <span class="p">{</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
     <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>   <span class="c1">// uninitialized</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_30">Enforcement</h5>
 <p>하위 클래스의 모든 멤버들이 초기화되는지 검사한다</p>
@@ -11362,14 +11305,13 @@ public:
     <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">();</span>  <span class="c1">// r-value 대입 : 이동일수도 있다</span>
 </code></pre></div>
 
-
 <h5 id="note_45">Note</h5>
 <p><code>swap</code>함수의 구현은 <a href="../Bibliography/#Abrahams01">강한 예외 안전성 보장</a>을 가능하게 한다.</p>
 <h5 id="example_26">Example</h5>
 <p>하지만 만약 임시 사본을 만들지 않음으로써 훨씬 더 좋은 성능을 얻을 수 있다면 어떨까? 
 크고 같은 크기의 <code>Vector</code>들의 대입이 빈번한 영역을 위한 간단한 <code>Vector</code>를 생각해보라.  </p>
 <p>이 경우, <code>swap</code>구현 기법에 의한 원소들의 사본은 상당한 비용 증가를 야기할 수 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">Vector</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&amp;</span><span class="p">);</span>
@@ -11392,7 +11334,6 @@ public:
         <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>대상 원소들에 직접 쓰기 연산을 함으로써, <code>swap</code>기법이 제공하는 강한 예외 보장 대신 <a href="../Bibliography/#Abrahams01">기본적인 예외 보장</a>만 얻게 될 것이다.<br />
 <a href="#Rc-copy-self">자기 대입</a>에 주의하라.</p>
@@ -11440,7 +11381,6 @@ public:
     <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="k">throw</span> <span class="n">Bad</span><span class="p">{};</span>   <span class="c1">// assume value semantics</span>
 </code></pre></div>
 
-
 <h5 id="example_28">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">X2</span> <span class="p">{</span>  <span class="c1">// OK: pointer semantics</span>
     <span class="k">public</span><span class="o">:</span>
@@ -11466,7 +11406,6 @@ public:
     <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span> <span class="k">throw</span> <span class="n">Bad</span><span class="p">{};</span>  <span class="c1">// assume pointer semantics</span>
 </code></pre></div>
 
-
 <h5 id="note_46">Note</h5>
 <p>"스마트 포인터"를 만들고 있지 않다면 복사 의미구조을 선호하라. 값 의미구조은 가장 간단하며, 표준 라이브러리의 기능들이 기대하는 것이다.</p>
 <h5 id="enforcement_32">Enforcement</h5>
@@ -11481,10 +11420,9 @@ public:
     <span class="c1">// the value of v is still {3, 1, 4, 1, 5, 9}</span>
 </code></pre></div>
 
-
 <h5 id="note_47">Note</h5>
 <p>멤버들로부터 생성된 기본 대입 연산은 자기 대입에 안전하다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Bar</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Bar</span> <span class="p">{</span>
         <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
         <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">;</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
@@ -11494,7 +11432,6 @@ public:
     <span class="c1">// ...</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>   <span class="c1">// 정확하고, 효율적이다</span>
 </code></pre></div>
-
 
 <h5 id="note_48">Note</h5>
 <p>자기 대입을 명시적으로 검사함으로써 처리할 수도 있을 것이다. 하지만 종종 그런 검사 없이도 우아하고 빠르게 동작하도록 할 수 있다 (가령, <a href="#Rc-swap"><code>swap</code> 사용법</a>).</p>
@@ -11515,7 +11452,6 @@ public:
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 방법은 분명 안전하고 효율적이다.
 하지만, 만약 백만번 마다 한번씩 자기 대입을 한다면 어떻겠는가?<br />
 그 말은 백만번이나 장황한 검사를해야 한다는 것과 같다 (하지만 자기 대입의 결과는 반드시 자신과 같아야 하기 때문에, 컴퓨터의 분기 예측은 매번 맞아떨어질 것이다.)  </p>
@@ -11527,7 +11463,6 @@ public:
         <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>std::string</code>은 자기 대입에 안전하고, <code>int</code> 역시 안전하다. (희소하게 발생하는) 자기 대입에 대해서만 비용이 발생하게 된다.</p>
 <h5 id="enforcement_33">Enforcement</h5>
@@ -11550,7 +11485,7 @@ public:
 <h5 id="reason_37">Reason</h5>
 <p>일반적으로 기대하는 의미구조(semantics)이다. <code>x = std::move(y)</code>를 수행한 후에는, <code>x</code>의 값은 <code>y</code>여야 하며, <code>y</code>는 유효한 상태여야 한다.</p>
 <h5 id="example_30">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>   <span class="c1">// OK: value semantics</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">X</span><span class="p">();</span>
@@ -11578,7 +11513,6 @@ public:
         <span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">{};</span>   <span class="c1">// OK</span>
     <span class="p">}</span> <span class="c1">// OK: x 는 소멸 가능하다</span>
 </code></pre></div>
-
 
 <h5 id="note_49">Note</h5>
 <p>이상적으로는, 이동연산을 해준 개체는 해당 타입의 기본 값이어야 한다. 그렇지 않아야 하는 이유가 있지 않는한 기본 값을 가지도록 확실히 하라. 
@@ -11611,7 +11545,6 @@ public:
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>백만번에 한번 발생하는 <code>if (this == &amp;a) return *this;</code>에 대한 논쟁이 있다. <a href="#Rc-copy-self">자기 대입</a> 항목에서의 논의는 자기 이동과 더 관련이 있다.</p>
 <h5 id="note_51">Note</h5>
 <p><code>if (this == &amp;a) return *this;</code>을 쓰지 않는 방법은 알려진 것이 없다. 이동 대입 연산에서 검사를 수행하고 정확한 결과를 얻으라.(가령, <code>x=x</code>를 수행한 뒤에 <code>x</code>가 변화하지 않는다.)  </p>
@@ -11626,7 +11559,6 @@ public:
     <span class="n">ptr</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_36">Enforcement</h5>
 <ul>
 <li>(중간) 이러한 자기 대입의 경우, 이동 대입 연산자는 대입 받는 개체의 포인터 멤버를 <code>delete</code>된 상태 또는 <code>nullptr</code>로 남겨놓아서는 안된다.</li>
@@ -11637,7 +11569,7 @@ public:
 <p>예외를 던지는 이동 연산은 대다수의 사람들의 타당한 가정을 무너뜨린다.
 예외를 던지지 않는 이동은 표준 라이브러리와 언어 특징들에 의해 더 효율적으로 사용될 수 있다.</p>
 <h5 id="example_33">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Vector</span> <span class="p">{</span>
         <span class="c1">// ...</span>
         <span class="n">Vector</span><span class="p">(</span><span class="n">Vector</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="k">noexcept</span> <span class="o">:</span><span class="n">elem</span><span class="p">{</span><span class="n">a</span><span class="p">.</span><span class="n">elem</span><span class="p">},</span> <span class="n">sz</span><span class="p">{</span><span class="n">a</span><span class="p">.</span><span class="n">sz</span><span class="p">}</span> <span class="p">{</span> <span class="n">a</span><span class="p">.</span><span class="n">sz</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">a</span><span class="p">.</span><span class="n">elem</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
@@ -11649,10 +11581,9 @@ public:
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 복사 연산들은 예외를 던지지 않는다.</p>
 <h5 id="example-bad_17">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Vector2</span> <span class="p">{</span>
         <span class="c1">// ...</span>
         <span class="n">Vector2</span><span class="p">(</span><span class="n">Vector2</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="o">*</span><span class="k">this</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="p">}</span>             <span class="c1">// just use the copy</span>
@@ -11663,7 +11594,6 @@ public:
         <span class="kt">int</span> <span class="n">sz</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>이 <code>Vector2</code>는 비 효율적일 뿐만 아니라, 벡터가 메모리 할당을 요구하기 때문에 예외를 던질 수 있다.</p>
 <h5 id="enforcement_37">Enforcement</h5>
@@ -11693,13 +11623,12 @@ public:
     <span class="n">f</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
 </code></pre></div>
 
-
 <h5 id="example_34">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="c1">// GOOD: polymorphic class suppresses copying</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="n">B</span><span class="p">(</span><span class="k">const</span> <span class="n">B</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
         <span class="n">B</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">B</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">char</span> <span class="nf">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">virtual</span> <span class="kt">char</span> <span class="n">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="sc">&#39;B&#39;</span><span class="p">;</span> <span class="p">}</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
@@ -11716,7 +11645,6 @@ public:
     <span class="n">D</span> <span class="n">d</span><span class="p">;</span>
     <span class="n">f</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
 </code></pre></div>
-
 
 <h5 id="note_53">Note</h5>
 <p>다형적인 개체에 깊은 복사를 사용해야 한다면, <code>clone()</code> 함수들을 사용하라: <a href="#Rh-copy">C.130</a>를 참고하라.</p>
@@ -11746,7 +11674,6 @@ public:
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>소멸자를 정의했기 때문에, 우리는 복사, 이동 연산들을 정의해야만 한다. 이를 위해선 <code>=default</code>가 가장 최선이고, 간단한 방법이다.</p>
 <h5 id="example-bad_19">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Tracer2</span> <span class="p">{</span>
@@ -11761,7 +11688,6 @@ public:
         <span class="n">Tracer2</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Tracer2</span><span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="n">message</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">message</span><span class="p">;</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>복사와 이동 연산들의 함수들을 일일이 작성하는 것은 번거롭고, 지루하며, 에러에 취약하다. 컴파일러가 이 작업을 더 잘 할수있다.</p>
 <h5 id="enforcement_39">Enforcement</h5>
@@ -11785,7 +11711,6 @@ public:
         <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>       <span class="c1">// error: *p를 소멸시킬 수 없다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example_37">Example</h5>
 <p><code>unique_ptr</code>는 이동 가능하지만, 복사는 불가능하다. 이 클래스의 복사를 막기 위해, 복사 연산들은 삭제되었다. l-value로부터 복사 연산을 막기 위해서는 <code>=delete</code>가 필요하다:</p>
@@ -11811,7 +11736,6 @@ public:
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>delete된 함수들이 public이라는 점에 주목하라</p>
 <h5 id="enforcement_40">Enforcement</h5>
 <p>기본 연산을 제거하는 것은 해당 클래스에 부합하는 근거가 있어야 한다.
@@ -11826,8 +11750,8 @@ public:
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Base</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// 구현되지 않았다</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">g</span><span class="p">();</span>       <span class="c1">// 기본 버전을 구현하였다</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">h</span><span class="p">();</span>       <span class="c1">// 기본 버전을 구현하였다</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">g</span><span class="p">();</span>       <span class="c1">// 기본 버전을 구현하였다</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">h</span><span class="p">();</span>       <span class="c1">// 기본 버전을 구현하였다</span>
     <span class="p">};</span>
 
     <span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span> <span class="p">{</span>
@@ -11851,7 +11775,6 @@ public:
         <span class="p">}</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>특정하게 명시적으로 한정된 함수는 <code>virtual</code>로 선언되었다고 하더라도 가상호출이 발생하지 않음을 기억하라.</p>
 <h5 id="see-also_7">See also</h5>
@@ -11882,14 +11805,12 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>호출자들의 편의를 위해서 같은 네임스페이스에 비-멤버 <code>swap</code>함수를 제공하라.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="n">Foo</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">Foo</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">a</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_42">Enforcement</h5>
 <ul>
@@ -11909,7 +11830,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이 경우는 느릴 뿐만 아니라, <code>tmp</code>내의 원소들에 메모리 할당이 발생하면, 이 <code>swap</code> 연산은 예외를 던지고 이를 사용하는 STL 알고리즘들이 실패할 수 있다.</p>
 <h5 id="enforcement_43">Enforcement</h5>
 <ul>
@@ -11928,7 +11848,7 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
 <p>피연산자들에 비대칭적인 처리는 기대에 부합하지 않고, 형변환이 가능한 경우 에러를 유발할 수 있다.
 <code>==</code>는 기본적인 연산이며 프로그래머들이 이 연산을 사용할 때 연산 실패에 대한 고민이 없어야 한다.</p>
 <h5 id="example_38">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">X</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
     <span class="p">};</span>
@@ -11937,7 +11857,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
         <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">.</span><span class="n">number</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">number</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="example-bad_22">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
@@ -11949,7 +11868,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>B</code>의 비교 연산은 두번째 피연산자에 대해 형변환을 용인하지만, 첫번째 피연산자에 대해서는 그렇지 않다.</p>
 <h5 id="note_55">Note</h5>
@@ -11977,7 +11895,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>B</code>의 비교 연산은 두번째 피연산자에 대해서 타입 변환을 허용하지만, 첫번째 피연산자에 대해서는 허용하지 않는다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">D</span> <span class="o">:</span><span class="n">B</span> <span class="p">{</span>
         <span class="kt">char</span> <span class="n">character</span><span class="p">;</span>
@@ -11998,7 +11915,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
     <span class="n">b2</span> <span class="o">==</span> <span class="n">d</span><span class="p">;</span>   <span class="c1">// compares name and number, ignores d2&#39;s and d&#39;s character</span>
 </code></pre></div>
 
-
 <p>물론 계층 구조 안에서 <code>==</code>가 동작하도록 하는 방법들이 있지만, 단순한(naive) 방법들은 고려하지 말아라.</p>
 <h4 id="note_57">Note</h4>
 <p>이 규칙은 모든 일반 비교연산자에 대해서도 동일하다 : <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code></p>
@@ -12012,7 +11928,7 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
 이는 표준 라이브러리의 요구사항이다.  </p>
 <h5 id="example-bad_24">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;&gt;</span>
-    <span class="k">struct</span> <span class="n">hash</span><span class="o">&lt;</span><span class="n">My_type</span><span class="o">&gt;</span> <span class="p">{</span>  <span class="c1">// 정말정말 안좋은 해시 특수화</span>
+    <span class="k">struct</span> <span class="nc">hash</span><span class="o">&lt;</span><span class="n">My_type</span><span class="o">&gt;</span> <span class="p">{</span>  <span class="c1">// 정말정말 안좋은 해시 특수화</span>
         <span class="k">using</span> <span class="n">result_type</span> <span class="o">=</span> <span class="kt">size_t</span><span class="p">;</span>
         <span class="k">using</span> <span class="n">argument_type</span> <span class="o">=</span> <span class="n">My_type</span><span class="p">;</span>
 
@@ -12032,7 +11948,6 @@ swap함수을 이용해서 복사 대입을 구현하는 것을 고려하라. <a
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">m</span><span class="p">[</span><span class="n">My_type</span><span class="p">{</span> <span class="s">&quot;asdfg&quot;</span> <span class="p">}]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>hash</code> 특수화를 정의할 때는, 간단하게 <code>^</code> (xor)와 함께 표준 라이브러리의 <code>hash</code> 특수화와 통합되도록 하라.<br />
 비 전문가들을 위해선 이 방법이 더 적합하다.</p>
@@ -12061,14 +11976,12 @@ struct derived : public base
 };
 </code></pre></div>
 
-
 <h5 id="example-bad_25">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>void init(derived&amp; a)
 {
     memset(&amp;a, 0, sizeof(derived));
 }
 </code></pre></div>
-
 
 <p>불안전한 타입이며, 가상 함수 테이블이 손상(overwrite)된다.</p>
 <h5 id="example-bad_26">Example, bad</h5>
@@ -12077,7 +11990,6 @@ struct derived : public base
     memcpy(&amp;a, &amp;b, sizeof(derived));
 }
 </code></pre></div>
-
 
 <p>이 또한 불안전한 타입이며, 가상 함수 테이블이 손상(overwrite)된다.</p>
 <h5 id="enforcement_48">Enforcement</h5>
@@ -12107,7 +12019,7 @@ struct derived : public base
 <h5 id="example_39">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="c1">// simplified (e.g., no allocators):</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Sorted_vector</span> <span class="p">{</span>
         <span class="k">using</span> <span class="n">value_type</span> <span class="o">=</span> <span class="n">T</span><span class="p">;</span>
         <span class="c1">// ... iterator types ...</span>
@@ -12134,11 +12046,10 @@ struct derived : public base
         <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rep</span><span class="p">;</span>  <span class="c1">// use a std::vector to hold elements</span>
     <span class="p">};</span>
 
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
-    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
     <span class="c1">// ...</span>
 </code></pre></div>
-
 
 <p>위 예시에선, 표준 템플릿 라이브러리 스타일을 불완전하게 따른다. 이런 경우는 흔히 볼 수 있다. 최소한의 기능만 제공하는 것은 특별히 구현된 컨테이너에게는 타당하다. 
 핵심은 그 컨테이너에게 맞게 전통적인 생성자, 대입, 소멸, 그리고 반복자를 전통적인 의미구조를 지원하도록 정의하는 것이다. 
@@ -12160,7 +12071,6 @@ struct derived : public base
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_50">Enforcement</h5>
 <p>???</p>
 <h3 id="c102"><a name="Rcon-move"></a>C.102: 이동 연산을 제공하라</h3>
@@ -12178,16 +12088,14 @@ struct derived : public base
     <span class="n">A</span> <span class="n">user</span> <span class="n">can</span> <span class="n">reasonably</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">standard</span><span class="o">-</span><span class="n">like</span> <span class="n">container</span> <span class="n">is</span> <span class="n">cheap</span><span class="p">.</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_51">Enforcement</h5>
 <p>???</p>
 <h3 id="c103"><a name="Rcon-init"></a>C.103: 초기화 리스트 생성자를 지원하라</h3>
 <h5 id="reason_54">Reason</h5>
 <p>사람들은 값 집합을 사용해서 컨테이너 초기화가 가능할 것이라 기대한다. 자연스럽다.</p>
 <h5 id="example_42">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="n">Sorted_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span> <span class="c1">// Sorted_vector sorts elements as needed</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">Sorted_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sv</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">-1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span> <span class="c1">// Sorted_vector sorts elements as needed</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_52">Enforcement</h5>
 <p>???</p>
@@ -12198,7 +12106,6 @@ struct derived : public base
 <div class="codehilite"><pre><span></span><code>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Sorted_sequence</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">vs</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>    <span class="c1">// 100 Sorted_sequences each with the value &quot;&quot;</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_53">Enforcement</h5>
 <p>???</p>
 <h3 id="c109-"><a name="Rcon-ptr"></a>C.109: 리소스 핸들이 포인터 의미구조를 따를 경우에는, <code>*</code> 과 <code>-&gt;</code> 연산자를 제공하라</h3>
@@ -12207,7 +12114,6 @@ struct derived : public base
 <h5 id="example_44">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="enforcement_54">Enforcement</h5>
 <p>???</p>
@@ -12281,7 +12187,7 @@ struct derived : public base
 
     <span class="k">class</span> <span class="nc">PushButton</span> <span class="o">:</span> <span class="k">public</span> <span class="n">AbstractButton</span> <span class="p">{</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">render</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">onClick</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
@@ -12290,27 +12196,25 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_27">Example, bad</h5>
 <p>계층적이지 않은 개념을 클래스 계층구조로 표현해선 <em>안된다</em>.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Container</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="c1">// list operations:</span>
         <span class="k">virtual</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">get</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">put</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="n">Position</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">put</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">insert</span><span class="p">(</span><span class="n">Position</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// ...</span>
         <span class="c1">// vector operations:</span>
         <span class="k">virtual</span> <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">sort</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// ...</span>
         <span class="c1">// tree operations:</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">balance</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">balance</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>위 예에서 대부분의 하위 클래스들은 인터페이스에서 요구하는 함수들을 잘 재정의(override)할 수 없다. 때문에 상위 클래스는 구현 부담을 발생시킨다.
 나아가서, <code>Container</code>의 사용자는 멤버 함수들이 실제로 유의미한 연산들을 효율적으로 실행하는지 신뢰할 수 없다: 연산을 수행하지 않고 예외를 던질 수도 있다.</p>
@@ -12330,7 +12234,6 @@ struct derived : public base
         <span class="k">virtual</span> <span class="o">~</span><span class="n">My_interface</span><span class="p">()</span> <span class="p">{}</span>   <span class="c1">// or =default</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="example-bad_28">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Goof</span> <span class="p">{</span>
@@ -12352,7 +12255,6 @@ struct derived : public base
     <span class="p">}</span> <span class="c1">// leak</span>
 </code></pre></div>
 
-
 <p><code>Derived</code> 클래스는 <code>Goof</code>를 통해서 소멸되기 때문에, 멤버 <code>string</code>에서 누수가 발생한다. <code>Goof</code>에서 가상 소멸자를 제공하면 모든게 원활하게 돌아간다.</p>
 <h5 id="enforcement_56">Enforcement</h5>
 <ul>
@@ -12362,27 +12264,26 @@ struct derived : public base
 <h5 id="reason_59">Reason</h5>
 <p>예를 들어 ABI(Application Binary Interface)를 사용하는 지점에서 이런 작업이 필요하다.</p>
 <h5 id="example_47">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Device</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Device</span> <span class="p">{</span>
         <span class="k">virtual</span> <span class="o">~</span><span class="n">Device</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">inbuf</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">read</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">inbuf</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">};</span>
 
     <span class="k">class</span> <span class="nc">D1</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Device</span> <span class="p">{</span>
         <span class="c1">// ... data ...</span>
 
-        <span class="kt">void</span> <span class="n">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
         <span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">inbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
     <span class="p">};</span>
 
     <span class="k">class</span> <span class="nc">D2</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Device</span> <span class="p">{</span>
         <span class="c1">// ... different data ...</span>
 
-        <span class="kt">void</span> <span class="n">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+        <span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">outbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
         <span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">inbuf</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>위와 같은 코드에서 사용자는 <code>Device</code>에서 제공하는 인터페이스를 통해서 <code>D1</code>과 <code>D2</code>를 교환하면서 사용할 수 있다. 나아가서, <code>Device</code>를 통해서 접근되는 한 <code>D1</code>과 <code>D2</code>를 구 버전과 호환되지 않도록(not binary compatible) 업데이트 할 수 있다.</p>
 <h5 id="enforcement_57">Enforcement</h5>
@@ -12394,7 +12295,6 @@ struct derived : public base
 <h5 id="example_48">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="exception_8">Exception</h5>
 <ul>
@@ -12408,13 +12308,13 @@ struct derived : public base
 <p>가상 함수를 가진 클래스들은 보통 상위 클래스의 포인터를 통해서 사용된다. 많은 경우, 마지막 사용자가 상위 클래스 포인터를 통해 delete 하거나 스마트 포인터를 사용해 소멸시킨다. 때문에 소멸자는 public 범위에 있으면서 가상 함수여야 한다. 
 드물게는, 상위 클래스 포인터를 사용한 소멸을 의도적으로 지원하지 않는다면, 소멸자는 protected 범위에 있으면서 가상 함수가 아니어야 한다; <a href="#Rc-dtor-virtual">C.35</a>를 참고하라</p>
 <h5 id="example-bad_29">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
         <span class="k">virtual</span> <span class="kt">int</span> <span class="n">f</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="c1">// ... no user-written destructor, defaults to public nonvirtual ...</span>
     <span class="p">};</span>
 
     <span class="c1">// bad: derived from a class without a virtual destructor</span>
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span> <span class="p">{</span><span class="s">&quot;default&quot;</span><span class="p">};</span>
     <span class="p">};</span>
 
@@ -12424,7 +12324,6 @@ struct derived : public base
         <span class="c1">// ...</span>
     <span class="p">}</span> <span class="c1">// undefined behavior. May call B::~B only and leak the string</span>
 </code></pre></div>
-
 
 <h5 id="note_60">Note</h5>
 <p><code>shared_ptr</code>를 통해 클래스를 사용하기 때문에 이 규칙을 따르지 않는 사람들도 있다: <code>std::shared_ptr&lt;B&gt; p = std::make_shared&lt;D&gt;(args);</code> 이런 경우, 공유 포인터가 소멸을 담당할 것이다. 그러니 부적절한 상위 클래스의 <code>delete</code>로 인한 누수가 발생하지 않는다. 
@@ -12446,31 +12345,29 @@ struct derived : public base
 </ul>
 <p>만약 상위 클래스의 소멸자가 <code>virtual</code>로 선언되었다면, 하위 클래스 소멸자들은 <code>virtual</code> 혹은 <code>override</code>가 된다. 어떤 코드 혹은 지원도구에서 소멸자에 <code>override</code>를 사용하도록 강요할 수도 있지만, 이 가이드라인에서는 그 방법은 권하지 않는다.</p>
 <h5 id="example-bad_30">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
-        <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f2</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f3</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>
-        <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>        <span class="c1">// bad (hope for a warning): D::f1() hides B::f1()</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>        <span class="c1">// bad (hope for a warning): D::f1() hides B::f1()</span>
         <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>  <span class="c1">// bad (but conventional and valid): no explicit override</span>
         <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>     <span class="c1">// bad (hope for a warning): D::f3() hides B::f3()</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="example-good_5">Example, good</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nl">Better</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>
-        <span class="kt">void</span> <span class="n">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>        <span class="c1">// error (caught): D::f1() hides B::f1()</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Better</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
+        <span class="kt">void</span> <span class="nf">f1</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>        <span class="c1">// error (caught): D::f1() hides B::f1()</span>
         <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
         <span class="kt">void</span> <span class="nf">f3</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>     <span class="c1">// error (caught): D::f3() hides B::f3()</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h4 id="discussion_1">Discussion</h4>
 <p>우리는 이 규칙을 통해 2가지 오류를 없애고자 한다:</p>
@@ -12524,9 +12421,9 @@ struct derived : public base
         <span class="n">Color</span> <span class="n">color</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">col</span><span class="p">;</span> <span class="p">}</span>
 
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="n">cent</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">redraw</span><span class="p">();</span> <span class="p">}</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="p">{</span> <span class="n">cent</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">redraw</span><span class="p">();</span> <span class="p">}</span>
 
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">redraw</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">redraw</span><span class="p">();</span>
 
         <span class="c1">// ...</span>
     <span class="k">private</span><span class="o">:</span>
@@ -12550,7 +12447,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>위 예시는 아래와 같은 문제들을 가지고 있다:</p>
 <ul>
 <li>계층구조가 늘고 <code>Shape</code>의 데이터가 늘어난다. 생성자를 작성하고 관리하기 어려워진다</li>
@@ -12564,17 +12460,16 @@ struct derived : public base
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Shape</span> <span class="p">{</span>  <span class="c1">// pure interface</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="k">virtual</span> <span class="n">Point</span> <span class="n">center</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="n">Color</span> <span class="nf">color</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="n">Color</span> <span class="n">color</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">redraw</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">redraw</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>순수 인터페이스들이 생성자를 가지는 경우는 드물다는 점에 주의하라: 생성할 데이터가 존재하지 않는다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Circle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span> <span class="p">{</span>
@@ -12592,7 +12487,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>인터페이스는 이제 좀 더 견고해졌지만, 멤버 함수의 구현을 위해 더 많은 작업을 해야 한다. 예를 들어, <code>center</code>는 모든 하위 클래스에서 제각기 구현해야 한다.</p>
 <h5 id="example-dual-hierarchy">Example, dual hierarchy</h5>
 <p>어떻게 하면 인터페이스 상속에 의한 안정적인 계층구조와 구현 상속의 효율적인 재사용을 결합할 수 있을까?
@@ -12602,12 +12496,12 @@ struct derived : public base
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Shape</span> <span class="p">{</span>   <span class="c1">// pure interface</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="k">virtual</span> <span class="n">Point</span> <span class="n">center</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="n">Color</span> <span class="nf">color</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="n">Color</span> <span class="n">color</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">rotate</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">move</span><span class="p">(</span><span class="n">Point</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">redraw</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">redraw</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
         <span class="c1">// ...</span>
     <span class="p">};</span>
@@ -12618,7 +12512,6 @@ struct derived : public base
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>이 인터페이스를 유용하게 만드려면, 구현 클래스들가 필요하다. (여기서는 <code>Impl</code> 네임스페이스에서 클래스를 하나 더 정의한다):</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Impl</span><span class="o">::</span><span class="nl">Shape</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Shape</span> <span class="p">{</span> <span class="c1">// implementation</span>
@@ -12637,7 +12530,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이제 <code>Shape</code>는 구현을 가진 클래스의 지저분한 예시가 되었지만, 좀 더 복잡한 계층구조를 위한 단순한 예시이기 때문에 참아줄 수 있다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Impl</span><span class="o">::</span><span class="nl">Circle</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Circle</span><span class="p">,</span> <span class="k">public</span> <span class="n">Impl</span><span class="o">::</span><span class="n">Shape</span> <span class="p">{</span>   <span class="c1">// implementation</span>
     <span class="k">public</span><span class="o">:</span>
@@ -12647,7 +12539,6 @@ struct derived : public base
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>여기서 <code>Smiley</code>클래스를 더해 계층구조를 확장해보자:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Smiley</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Circle</span> <span class="p">{</span> <span class="c1">// pure interface</span>
@@ -12662,7 +12553,6 @@ struct derived : public base
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>여기에는 두 계층구조가 혼합되어 있다:</p>
 <ul>
 <li>인터페이스: Smiley -&gt; Circle -&gt; Shape</li>
@@ -12674,7 +12564,6 @@ struct derived : public base
       |                     |               |
     Impl::Smiley -&gt; Impl::Circle -&gt; Impl::Shape
 </code></pre></div>
-
 
 <p>앞서 언급한 것처럼, 이는 이중 계층을 구현하기 위한 한 방법일 뿐이다.</p>
 <p>추상 인터페이스가 아니라 구현 계층을 통해서 바로 사용될수도 있다.</p>
@@ -12690,7 +12579,6 @@ struct derived : public base
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>추상 인터페이스에서 지원하지 않는 멤버를 구현 클래스에서 지원하는 경우 유용할 수 있다. 
 또 멤버를 직접 사용함으로써 최적화의 가능성도 제공한다 (가령, 구현 멤버함수가 <code>final</code>로 선언되었다면)</p>
@@ -12728,7 +12616,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>보편적인 경우, 소유권을 표현하기 위해 스마트 포인터를 사용하는 것이 권장된다.(<a href="../Resource/#Rr-owner">R.20</a> 참고). 하지만, 언어 규칙으로 인해, 공변적인 반환타입은 스마트 포인터가 될 수 없다: <code>D::clone</code>은 <code>unique_ptr&lt;D&gt;</code>을 반환할 수 없는 반면 <code>B::clone</code>는 <code>unique_ptr&lt;B&gt;</code>를 반환할 수 있다. 이로 인해, 모든 재정의에서 항상 <code>unique_ptr&lt;B&gt;</code> 혹은 <a href="../GSL/#SS-views">Guidelines Support Library</a>의 <code>owner&lt;&gt;</code>를 반환할 수 밖에 없다.</p>
 <h3 id="c131-getter-setter"><a name="Rh-get"></a>C.131: 자잘한 getter와 setter를 사용하지 말아라</h3>
 <h5 id="reason_65">Reason</h5>
@@ -12747,14 +12634,12 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이런 클래스를 <code>struct</code>로 만드는 것을 고려하라 -- 즉, 어떤 행위도 하지 않는 변수들을 public 데이터로 만들고 멤버함수를 가지지 않는 것이다.</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Point</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Point</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
         <span class="kt">int</span> <span class="n">y</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>멤버 변수들에 기본 초기화를 사용할 수 있다는 점에 유의하라: <a href="#Rc-initialize">C.49: 생성자 안에서의 대입 보다는 초기화를 선호하라</a>.</p>
 <h5 id="note_64">Note</h5>
@@ -12778,7 +12663,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이런 "vector"는 기본 클래스로 사용되는 것을 전혀 의도하지 않았다.</p>
 <h5 id="enforcement_63">Enforcement</h5>
 <ul>
@@ -12801,7 +12685,6 @@ struct derived : public base
         <span class="n">Style</span> <span class="n">st</span><span class="p">;</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p>이 예에서 모든 <code>Shape</code>의 하위 타입들은 protected 데이터를 정확하게 변경해야만 한다. 흔히 볼수 있으면서 유지보수 문제를 일으키는 주요 원인 중 하나에 해당한다. 클래스 계층구조가 큰 경우, 일관적으로 protected 데이터를 사용하는 것은 코드가 양적으로 많고 분산되어 있기 때문에 관리되기 어렵다.
 상속되는 데이터를 변경할 수 있는 클래스는 더 늘어날 수 있다: 새로 클래스를 상속받아 protected 데이터를 변경하기 시작할 수 있다.
@@ -12847,7 +12730,6 @@ struct derived : public base
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>istream</code>은 입력 연산에 필요한 인터페이스를 제공한다. <code>ostream</code>은 출력 연산에 필요한 인터페이스를 제공한다.
 <code>iostream</code>은 <code>istream</code>과 <code>ostream</code> 인터페이스를 결합하면서 단일 스트림에서의 입출력 동기화를 제공한다.</p>
 <h5 id="note_67">Note</h5>
@@ -12866,7 +12748,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p><code>istream</code>은 입력 연산에 필요한 인터페이스를 제공한다. <code>ostream</code>은 출력 연산에 필요한 인터페이스를 제공한다.
 <code>iostream</code>은 <code>istream</code>과 <code>ostream</code> 인터페이스를 결합하면서 단일 스트림에서의 입출력 동기화를 제공한다.</p>
 <h5 id="note_69">Note</h5>
@@ -12880,15 +12761,15 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="reason_71">Reason</h5>
 <p>공유 데이터와 인터페이스의 분리가 가능하게 만든다. 공유 데이터가 최상위 클래스에 배치되는 것을 막는다.</p>
 <h5 id="example_55">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">Interface</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">Interface</span> <span class="p">{</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
-        <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">g</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="kt">int</span> <span class="n">g</span><span class="p">();</span>
         <span class="c1">// ... no data here ...</span>
     <span class="p">};</span>
 
     <span class="k">class</span> <span class="nc">Utility</span> <span class="p">{</span>  <span class="c1">// with data</span>
-        <span class="kt">void</span> <span class="n">utility1</span><span class="p">();</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">utility2</span><span class="p">();</span>    <span class="c1">// customization point</span>
+        <span class="kt">void</span> <span class="nf">utility1</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">utility2</span><span class="p">();</span>    <span class="c1">// customization point</span>
     <span class="k">public</span><span class="o">:</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
@@ -12906,7 +12787,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>Utility</code>를 추출하는 것은 수많은 하위 클래스들이 "구현 내용(implementation details)"의 많은 부분을 공유한다면 이치에 맞는 작업이다.</p>
 <h5 id="note_70">Note</h5>
@@ -12939,7 +12819,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="example-good_6">Example, good</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">class</span> <span class="nc">D</span><span class="o">:</span> <span class="k">public</span> <span class="n">B</span> <span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -12948,16 +12827,14 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="note_72">Note</h5>
 <p>이 이슈는 가상/비 가상 멤버 함수 모두에 적용된다.</p>
 <p>상위 클래스를 가변적으로 결정할 수 있도록, C++17은 가변 using 선언을 추가했다(introduced).</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span> <span class="o">&lt;</span><span class="n">class</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="nl">Overloader</span> <span class="p">:</span> <span class="n">Ts</span><span class="p">...</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
+    <span class="k">struct</span> <span class="nc">Overloader</span> <span class="o">:</span> <span class="n">Ts</span><span class="p">...</span> <span class="p">{</span>
         <span class="k">using</span> <span class="n">Ts</span><span class="o">::</span><span class="k">operator</span><span class="p">()...;</span> <span class="c1">// exposes operator() from every base</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_69">Enforcement</h5>
 <p>이름을 덮어쓰는 경우를 찾아낸다</p>
@@ -12972,7 +12849,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 
     <span class="k">class</span> <span class="nc">My_improved_widget</span> <span class="o">:</span> <span class="k">public</span> <span class="n">My_widget</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>  <span class="c1">// error: can&#39;t do that</span>
 </code></pre></div>
-
 
 <h5 id="note_73">Note</h5>
 <p>모든 클래스가 상위 클래스로써 작성되지는 않는다. 대부분의 표준 라이브러리 클래스들이 이런 경우에 속한다 (예컨대, <code>std::vector</code>와 <code>std::string</code>는 하위 클래스를 고려하지 않는다). 
@@ -13011,7 +12887,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="n">d</span><span class="p">.</span><span class="n">multiply</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// with different arguments and so different results</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_71">Enforcement</h5>
 <p>가상함수의 기본인자가 상위/하위 클래스의 선언에서 서로 다르면 지적한다</p>
 <h2 id="chier-access">C.hier-access: 계층 구조 내 개체 접근</h2>
@@ -13019,8 +12894,8 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="reason_75">Reason</h5>
 <p>가상 함수를 가진 클래스가 있다면, 당신은 (일반적으로) 어떤 클래스가 실행될 함수를 제공할지 알 수 없다.</p>
 <h5 id="example_56">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">f</span><span class="p">();</span> <span class="p">};</span>
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span> <span class="kt">int</span> <span class="nf">f</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="n">f</span><span class="p">();</span> <span class="p">};</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span> <span class="kt">int</span> <span class="nf">f</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span> <span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="n">B</span> <span class="n">b</span><span class="p">)</span>
     <span class="p">{</span>
@@ -13036,7 +12911,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>Both <code>d</code>s are sliced.</p>
 <h5 id="exception_10">Exception</h5>
 <p>개체가 정의된 범위 안에서는 이름이 있는 다형적 개체에 안전하게 접근할 수 있다. 단지 복사 손실이 생기지 않도록 하라.</p>
@@ -13047,21 +12921,20 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_72">Enforcement</h5>
 <p>모든 절단(slicing)을 지적하라.</p>
 <h3 id="c146-dynamic_cast"><a name="Rh-dynamic_cast"></a>C.146: 클래스 계층구조 탐색이 불가피한 경우에만 <code>dynamic_cast</code>를 사용하라</h3>
 <h5 id="reason_76">Reason</h5>
 <p><code>dynamic_cast</code>는 실행시간에 검사된다.</p>
 <h5 id="example_57">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>   <span class="c1">// 인터페이스</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>   <span class="c1">// 인터페이스</span>
         <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f</span><span class="p">();</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">g</span><span class="p">();</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">g</span><span class="p">();</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>   <span class="c1">// 확장된 인터페이스</span>
-        <span class="kt">void</span> <span class="n">f</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">h</span><span class="p">();</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>   <span class="c1">// 확장된 인터페이스</span>
+        <span class="kt">void</span> <span class="nf">f</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">h</span><span class="p">();</span>
     <span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">user</span><span class="p">(</span><span class="n">B</span><span class="o">*</span> <span class="n">pb</span><span class="p">)</span>
@@ -13074,7 +12947,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="p">}</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>다른 캐스팅 방법은 타입 안전성을 해치고 프로그램이 실제로 <code>X</code>인 변수를 <code>Z</code>처럼 사용하게 만든다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">user2</span><span class="p">(</span><span class="n">B</span><span class="o">*</span> <span class="n">pb</span><span class="p">)</span>   <span class="c1">// bad</span>
@@ -13103,7 +12975,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="note_76">Note</h5>
 <p>다른 모든 캐스팅처럼, <code>dynamic_cast</code>는 너무 자주 사용된다.</p>
 <p><a href="#Rh-use-virtual">캐스팅 보다는 가상 함수들을 사용하라</a>.
@@ -13114,16 +12985,16 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 반면 <code>typeid</code>는 "이 개체의 정확한 타입을 찾는" 연산이다. 후자는 단순하고 더 빠르게 처리될 것이 분명하다.
 <code>typeid</code>는 필요하다면 쉽게 작성할 수 있다(모종의 이유로 RTTI가 지원되지 않는다면). <code>dynamic_cast</code>는 보통 정확하게 구현하기 훨씬 어렵다.</p>
 <p>다음과 같은 예를 생각해보라:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span>
         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span> <span class="p">{</span><span class="s">&quot;B&quot;</span><span class="p">};</span>
         <span class="c1">// if pb1-&gt;id() == pb2-&gt;id() *pb1 is the same type as *pb2</span>
-        <span class="k">virtual</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">id</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">virtual</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">id</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span> <span class="p">{</span><span class="s">&quot;D&quot;</span><span class="p">};</span>
-        <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">id</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span> <span class="p">{</span> <span class="k">return</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 
@@ -13144,7 +13015,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>pb2-&gt;id() == "D"</code>의 결과는 실제로는 구현에 의해 결정된 것이다. 이는 직접 작성한 RTTI의 위험을 경고하기 위한 예시다.
 수년간 이 코드가 기대한 대로 동작할수도 있지만, 새로운 기계, 컴파일러, 혹은 링커에서 소스코드 내 문자(character literals)를 통일하지 않으면 실패하게 된다.</p>
 <p>RTTI를 직접 구현하고자 한다면, 주의하라.</p>
@@ -13159,12 +13029,11 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 그렇게 하더라도, 우리 경험으로 미루어 "나는 지금 뭘 하는지 몰라요"는 버그의 근원이다.</p>
 <h5 id="exception_12">Exception</h5>
 <p>다음과 같은 코드는 예외로 볼 수 있다:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">B</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">B</span><span class="o">&gt;</span>
     <span class="k">class</span> <span class="nc">Dx</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_73">Enforcement</h5>
 <ul>
@@ -13177,7 +13046,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="example_58">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="enforcement_74">Enforcement</h5>
 <p>???</p>
@@ -13208,7 +13076,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="notes_1">Notes</h5>
 <p>탐색 실패로 인해 <code>dynamic_cast</code>이 null을 반환하기 때문에, null 포인터 참조가 발생하고 미정의 동작으로 이어질 것이다.
 따라서 <code>dynamic_cast</code>의 결과는 항상 null 값인지 검사되어야 한다.</p>
@@ -13228,7 +13095,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>                       <span class="c1">// too late</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_76">Enforcement</h5>
 <ul>
@@ -13257,7 +13123,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="n">f</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">bar</span><span class="p">());</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_77">Enforcement</h5>
 <ul>
 <li>반복적인 템플릿 특수화 <code>&lt;Foo&gt;</code>의 사용을 지적한다</li>
@@ -13275,7 +13140,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_78">Enforcement</h5>
 <ul>
 <li>반복적인 템플릿 특수화 <code>&lt;Bar&gt;</code>의 사용을 지적한다</li>
@@ -13285,8 +13149,8 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="reason_82">Reason</h5>
 <p>상위 타입 포인터를 대입하면 부적절한 개체 접근이 발생하고 아마도 메모리 손상을 일으킬 것이다.</p>
 <h5 id="example_63">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="p">};</span>
-    <span class="k">struct</span> <span class="nl">D</span> <span class="p">:</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="p">};</span>
+    <span class="k">struct</span> <span class="nc">D</span> <span class="o">:</span> <span class="n">B</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span> <span class="p">};</span>
 
     <span class="kt">void</span> <span class="nf">use</span><span class="p">(</span><span class="n">B</span><span class="o">*</span><span class="p">);</span>
 
@@ -13296,7 +13160,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 
     <span class="n">use</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>       <span class="c1">// bad: a decays to &amp;a[0] which is converted to a B*</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_79">Enforcement</h5>
 <ul>
@@ -13309,7 +13172,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="example_64">Example</h5>
 <div class="codehilite"><pre><span></span><code>    ???
 </code></pre></div>
-
 
 <h5 id="enforcement_80">Enforcement</h5>
 <p><a href="#Rh-dynamic_cast">C.146</a>를 참고하라</p>
@@ -13342,12 +13204,10 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <p>이 예시에선 전통적인 의미구조를 따른다: <a href="#SS-copy">복사된 개체는 동등한 값을 가진다</a>.</p>
 <h5 id="example-bad_37">Example, bad</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="n">X</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">X</span> <span class="n">a</span><span class="p">,</span> <span class="n">X</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">b</span><span class="p">.</span><span class="n">v</span><span class="p">;</span> <span class="p">}</span>   <span class="c1">// bad: makes + subtract</span>
 </code></pre></div>
-
 
 <h5 id="note_78">Note</h5>
 <p>멤버가 아닌 연산자들은 friend이거나 <a href="#Ro-namespace">피연산자들과 같은 네임스페이스에 정의되어야 한다</a>.
@@ -13362,7 +13222,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <div class="codehilite"><pre><span></span><code>    <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">Point</span> <span class="n">a</span><span class="p">,</span> <span class="n">Point</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_82">Enforcement</h5>
 <p>멤버 함수인 연산자들을 지적하라.</p>
 <h3 id="c162"><a name="Ro-equivalent"></a>C.162: 거의 동등한 연산들을 중복정의하라</h3>
@@ -13375,13 +13234,11 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>이 세 함수들은 인자를 출력한다. 다른 경우:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">print_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">);</span>
     <span class="kt">void</span> <span class="nf">print_based</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span><span class="p">);</span>
     <span class="kt">void</span> <span class="nf">print_string</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>이 세 함수들은 인자를 출력한다. 인자 타입을 이름에 붙이는 것은 불필요하고 일반적인 코드를 작성하지 못하게 한다.</p>
 <h5 id="enforcement_83">Enforcement</h5>
@@ -13395,12 +13252,10 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="kt">void</span> <span class="nf">fopen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span><span class="p">);</span>   <span class="c1">// open file</span>
 </code></pre></div>
 
-
 <p>이 두 함수는 근본적으로 다르고 연관성이 없다. 따라서 다른 이름을 가지는 것이 좋다. 다른 경우:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">open</span><span class="p">(</span><span class="n">Gate</span><span class="o">&amp;</span> <span class="n">g</span><span class="p">);</span>   <span class="c1">// remove obstacle from garage exit lane</span>
     <span class="kt">void</span> <span class="nf">open</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">mode</span> <span class="o">=</span><span class="s">&quot;r&quot;</span><span class="p">);</span>   <span class="c1">// open file</span>
 </code></pre></div>
-
 
 <p>이 두 연산은 여전히 근본적으로 다르고 연관성을 가지지 않는다. 하지만 이름이 축약되었고 혼란의 가능성을 만든다. 다행히도, 이들의 시그니처가 다르기 때문에 타입시스템이 실수를 잡아낼 것이다.</p>
 <h5 id="note_79">Note</h5>
@@ -13415,13 +13270,13 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 "정말 필요한"은 응용 프로그램의 영역에서 기본적이고 자연스러우며 자주 필요한 경우를 의미한다. (가령 정수를 복소수로 변환하는 것처럼) 
 (변환 연산자 또는 암묵적 생성자를 통해서) 암묵적 변환을 사용하지 마라. 약간의 편안함만 얻을 수 있을 뿐이다.</p>
 <h5 id="example_69">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">S1</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">S1</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="c1">// ...</span>
         <span class="k">operator</span> <span class="kt">char</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">data</span><span class="p">();</span> <span class="p">}</span>  <span class="c1">// BAD, likely to cause surprises</span>
     <span class="p">};</span>
 
-    <span class="k">struct</span> <span class="n">S2</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">S2</span> <span class="p">{</span>
         <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
         <span class="c1">// ...</span>
         <span class="k">explicit</span> <span class="k">operator</span> <span class="kt">char</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">data</span><span class="p">();</span> <span class="p">}</span>
@@ -13435,7 +13290,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>이런 놀랍고 잠재적 피해가 발생할 수 있는 암묵적 변환은 찾아내기 어려운 문맥 속에서 발생할 수 있다. 예를 들어,</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">S1</span> <span class="nf">ff</span><span class="p">();</span>
 
@@ -13444,7 +13298,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="k">return</span> <span class="n">ff</span><span class="p">();</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>ff()</code>에서 반환된 문자열이 포인터가 사용되기 전에 파괴된다.</p>
 <h5 id="enforcement_85">Enforcement</h5>
@@ -13468,7 +13321,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>f1()</code>함수 안에서 <code>std::swap()</code>을 사용하는 것은 코드 그대로 실행된다: <code>std</code> 네임스페이스의 <code>swap()</code>을 호출할 것이다.
 불행히도, 그게 우리가 원하는 것은 아니다. <code>N::X</code> 타입에 맞게 호출되게 하려면 어떻게 해야 할까?</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">f2</span><span class="p">(</span><span class="n">N</span><span class="o">::</span><span class="n">X</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">N</span><span class="o">::</span><span class="n">X</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
@@ -13476,7 +13328,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>   <span class="c1">// calls N::swap</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>이 방법은 우리가 원하는 일반화된 코드가 아닐 수 있다. 
 우리는 보통 특별히 작성된 함수가 있으면 그 함수를 쓰고 그렇지 않은 경우에는 범용 함수(general function)를 호출하기를 원한다. 이는 함수 탐색에 범용 함수를 포함하는 것으로 해결할 수 있다:</p>
@@ -13486,7 +13337,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>       <span class="c1">// N 네임스페이스에 swap이 존재하면 호출하고, 그렇지 않으면 std::swap을 호출한다</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_86">Enforcement</h5>
 <p><code>swap</code>같이 잘 알려진 커스터마이징을 제외하면 할 수 있는게 거의 없다.
@@ -13514,7 +13364,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="note_81">Note</h5>
 <p><code>&amp;</code> 연산자로 "뭔가 하려면" <code>-&gt;</code>, <code>[]</code>, <code>*</code>, <code>.</code> 연산자들에 적합한 정의(반환 타입)를 가지도록 하라. <code>.</code> 연산자는 현재로써는 중복정의할 수 없기 때문에 완벽한 체계를 갖추는 것은 불가능하다.</p>
 <p>다음 문서를 보기를 권한다: <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4477.pdf">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4477.pdf</a>.
@@ -13536,13 +13385,11 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>그 자체로, <code>cout_my_class</code>는 문제가 없다. 하지만 관례적으로 출력에 사용하는 <code>&lt;&lt;</code> 연산자에 맞게 작성할 수 없다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">My_class</span> <span class="n">var</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
     <span class="c1">// ...</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;var = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">var</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h5 id="note_82">Note</h5>
 <p>대부분의 연산자들은 강력하고 흔히 사용되는 의미를 가지고 있다</p>
@@ -13559,18 +13406,17 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="reason_92">Reason</h5>
 <p>가독성. 인자 기반 탐색(ADL)이 가능하다. 다른 네임스페이스에 정의하는 것은 일관적이지 않다.</p>
 <h5 id="example_73">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span> <span class="p">};</span>
     <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">S</span><span class="p">);</span>   <span class="c1">// OK: in the same namespace as S, and even next to S</span>
     <span class="n">S</span> <span class="n">s</span><span class="p">;</span>
 
     <span class="kt">bool</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="p">);</span>
 </code></pre></div>
 
-
 <p>기본적인 <code>==</code> 연산자가 하는 일이다.</p>
 <h5 id="example_74">Example</h5>
 <div class="codehilite"><pre><span></span><code>    <span class="k">namespace</span> <span class="n">N</span> <span class="p">{</span>
-        <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span> <span class="p">};</span>
+        <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span> <span class="p">};</span>
         <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">S</span><span class="p">);</span>   <span class="c1">// OK: in the same namespace as S, and even next to S</span>
     <span class="p">}</span>
 
@@ -13579,9 +13425,8 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="kt">bool</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// finds N::operator==() by ADL</span>
 </code></pre></div>
 
-
 <h5 id="example-bad_38">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">S</span> <span class="p">{</span> <span class="p">};</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">S</span> <span class="p">{</span> <span class="p">};</span>
     <span class="n">S</span> <span class="n">s</span><span class="p">;</span>
 
     <span class="k">namespace</span> <span class="n">N</span> <span class="p">{</span>
@@ -13595,14 +13440,12 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>네임스페이스 <code>N</code>과 <code>M</code> 에서 <code>!s</code>의 의미가 달라진다. 굉장히 혼란스러울 수 있다. <code>namespace M</code>의 정의를 제거하면 실수가 발생할 가능성의 사라진다.</p>
 <h5 id="note_83">Note</h5>
 <p>이항 연산자가 다른 네임스페이스에 있는 두 타입에 대해서 정의되었다면, 이 규칙을 따를 수 없다.
 예를 들어:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">Vec</span><span class="o">::</span><span class="n">Vector</span> <span class="k">operator</span><span class="o">*</span><span class="p">(</span><span class="k">const</span> <span class="n">Vec</span><span class="o">::</span><span class="n">Vector</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Mat</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>이런 경우는 피하는 것이 최선이다.</p>
 <h5 id="see-also_9">See also</h5>
@@ -13625,7 +13468,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="k">auto</span> <span class="n">h</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>   <span class="c1">// OK</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_90">Enforcement</h5>
 <p>컴파일러가 람다를 중복 정의하려는 시도를 잡아낸다.</p>
 <h2 id="cunion-union"><a name="SS-union"></a>C.union: 공용체(Union)</h2>
@@ -13644,7 +13486,7 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <h5 id="reason_94">Reason</h5>
 <p><code>union</code>은 하나의 메모리 조각이 다른 시각에 다른 타입의 개체들로 사용될 수 있도록 해준다. 결과적으로, 다른 개체들이 동시에 사용되지 않는다면 메모리를 절약하는데 사용할 수 있다.</p>
 <h5 id="example_76">Example</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="n">Value</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="nc">Value</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
     <span class="p">};</span>
@@ -13654,7 +13496,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="mf">987.654</span><span class="p">;</span>  <span class="c1">// now v holds a double</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>    <span class="c1">// write 987.654</span>
 </code></pre></div>
-
 
 <p>하지만 경고를 유심히 보라: <a href="#Ru-naked">표지 없는(naked) <code>union</code>을 사용하지 말아라</a></p>
 <h5 id="example_77">Example</h5>
@@ -13698,14 +13539,13 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">};</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_91">Enforcement</h5>
 <p>???</p>
 <h3 id="c181-naked-union"><a name="Ru-naked"></a>C.181: 표지 없는(naked) <code>union</code>을 사용하지 말아라</h3>
 <h5 id="reason_95">Reason</h5>
 <p><em>표지 없는(naked) union</em>은 어떤 멤버를 사용하는지 알 수 없는 union을 의미한다. 이런 경우 프로그래머가 계속 추적해야 한다. 타입 오류의 원인이 된다.</p>
 <h5 id="example-bad_39">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="n">Value</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="nc">Value</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
     <span class="p">};</span>
@@ -13714,11 +13554,9 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="mf">987.654</span><span class="p">;</span>  <span class="c1">// v holds a double</span>
 </code></pre></div>
 
-
 <p>여기까진 문제가 없다. 하지만 <code>union</code>은 잘못 사용하기 쉽다:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>    <span class="c1">// BAD, undefined behavior: v holds a double, but we read it as an int</span>
 </code></pre></div>
-
 
 <p>명시적 변환이 없음에도 타입 오류가 발생한 점에 주목하라.
 마지막으로 이 프로그램을 테스트 했을떄 출력된 값은 <code>987.654</code>의 비트 패턴을 정수로 해석한 <code>1683627180</code>이었다.
@@ -13727,7 +13565,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 <div class="codehilite"><pre><span></span><code>    <span class="n">v</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>    <span class="c1">// BAD: undefined behavior</span>
 </code></pre></div>
-
 
 <h5 id="alternative_2">Alternative</h5>
 <p>타입 필드를 추가해서 <code>union</code>을 클래스로 감싼다.</p>
@@ -13738,7 +13575,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="n">v</span> <span class="o">=</span> <span class="mf">123.456</span><span class="p">;</span>    <span class="c1">// v holds a double</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">get</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
 </code></pre></div>
-
 
 <h5 id="enforcement_92">Enforcement</h5>
 <p>???</p>
@@ -13760,7 +13596,7 @@ If the operations are virtual the use of inheritance is necessary, if not using 
             <span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// string has default constructor, copy operations, and destructor</span>
         <span class="p">};</span>
     <span class="k">public</span><span class="o">:</span>
-        <span class="k">struct</span> <span class="n">Bad_entry</span> <span class="p">{</span> <span class="p">};</span> <span class="c1">// used for exceptions</span>
+        <span class="k">struct</span> <span class="nc">Bad_entry</span> <span class="p">{</span> <span class="p">};</span> <span class="c1">// used for exceptions</span>
 
         <span class="o">~</span><span class="n">Value</span><span class="p">();</span>
         <span class="n">Value</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Value</span><span class="o">&amp;</span><span class="p">);</span>   <span class="c1">// necessary because of the string variant</span>
@@ -13832,7 +13668,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <h5 id="enforcement_93">Enforcement</h5>
 <p>???</p>
 <h3 id="c183-type-punning-union"><a name="Ru-pun"></a>C.183: 타입 재해석(type punning)을 위해 <code>union</code>을 사용하지 말아라</h3>
@@ -13841,12 +13676,11 @@ If the operations are virtual the use of inheritance is necessary, if not using 
 이런 해석은 보이지 않고, 타입 이름을 사용하는 것보다 찾아내기 어렵다.
 <code>union</code>을 사용한 타입 재해석은(type punning)은 오류의 원인이다.</p>
 <h5 id="example-bad_40">Example, bad</h5>
-<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="n">Pun</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">union</span> <span class="nc">Pun</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
         <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)];</span>
     <span class="p">};</span>
 </code></pre></div>
-
 
 <p><code>Pun</code> 타입의 의도는 <code>int</code>를 <code>char</code> 형태로 접근하는 것이다.</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">bad</span><span class="p">(</span><span class="n">Pun</span><span class="o">&amp;</span> <span class="n">u</span><span class="p">)</span>
@@ -13856,7 +13690,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p><code>int</code>의 바이트를 확인하고 싶다면, 타입 이름을 사용한 형변환(named cast)를 사용하라:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="kt">void</span> <span class="nf">if_you_must_pun</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
     <span class="p">{</span>
@@ -13865,7 +13698,6 @@ If the operations are virtual the use of inheritance is necessary, if not using 
         <span class="c1">// ...</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>reinterpret_cast</code>을 사용해 타입을 바꿔서 접근하는 것은 정의된 행동(defined behavior)이다(비록  <code>reinterpret_cast</code>이 권장되지는 않지만).
 이러면 최소한 신경을 많이 써야하는 것들이 사라진 것을 보여준다.</p>
@@ -13893,7 +13725,7 @@ If the operations are virtual the use of inheritance is necessary, if not using 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Architecture/" title="Architecture" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Architecture/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -13908,7 +13740,7 @@ If the operations are virtual the use of inheritance is necessary, if not using 
           </a>
         
         
-          <a href="../Concurrency/" title="Concurrency" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../Concurrency/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -13945,15 +13777,15 @@ If the operations are virtual the use of inheritance is necessary, if not using 
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
