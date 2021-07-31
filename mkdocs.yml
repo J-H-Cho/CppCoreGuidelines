@@ -35,9 +35,9 @@ docs_dir: sections
 nav:
   - Overview: home.md
   - Introduction: 
-    - Introduction.md
+    - 'In: 소개': Introduction.md
   - References: 
-    - References.md
+    - 'RF: 레퍼런스': References.md
   - Sections:
     - Architecture: Architecture.md
     - Class: Class.md
