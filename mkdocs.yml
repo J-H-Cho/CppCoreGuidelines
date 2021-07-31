@@ -13,7 +13,9 @@ copyright: "Copyright (c) Standard C++ Foundation and its contributors"
 markdown_extensions:
   - codehilite:
       guess_lang: false
-
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
 
 theme:
   name: "material"
